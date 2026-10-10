@@ -1,0 +1,30 @@
+# DedCut
+
+> DedCut is a free, open-source (GPL-3.0) creative app for Windows 10 and 11, made by ByKemi. It combines video editing, screen recording, live streaming, photo editing and music creation in one program, with an AI assistant. No account, no ads, no watermark, no telemetry: everything runs on the user's PC. Available in 9 languages (French, English, Spanish, German, Italian, Portuguese, Japanese, Korean, Chinese). Currently in beta.
+
+DedCut (en français : logiciel de création gratuit et libre pour Windows — montage vidéo sans filigrane, enregistrement d'écran, live, retouche photo, musique, assistant IA).
+
+## Key facts
+
+- Price: free forever, no paid version, no subscription. Optional donations: https://paypal.me/DedCut
+- Platform: Windows 10 and 11 (64-bit). Mac and Android versions are planned.
+- Licence: GNU GPL v3 or later. Source code: https://github.com/Bykemi/dedcut-source
+- Privacy: works offline; nothing is sent to a server except when the user asks (live streaming, updates, optional AI model downloads).
+- Exports have no watermark, up to 4K.
+- Bug reports: the "beta" badge inside DedCut, or bugs@dedcut.com
+
+## Five spaces
+
+- Edit (video editing): multitrack timeline, automatic subtitles on the PC, edit by deleting words in the transcript, automatic Shorts, multicam, object tracking and moving blur, stabilisation, colour matching, effects, filters, transitions, export up to 4K and vertical formats.
+- Record: screen, game, webcam and microphone recording with scenes and sources (like OBS), background removal without green screen, microphone voice effects.
+- Live: streaming to YouTube, Twitch, Facebook, Kick and TikTok at the same time, vertical 9:16 studio, chat and alerts on screen, animated overlays, phone remote control.
+- Image: photo editing with layers, masks, text and shapes, automatic background removal, PSD and TIFF files, pressure-sensitive graphics tablets, thumbnail templates, QR codes.
+- Music: step beats and piano roll, royalty-free instruments and sounds, vocal recording, tuner, pitch correction and automatic backing vocals, mixing, export to WAV, FLAC, M4A and stems.
+
+## Links
+
+- Website: https://dedcut.com/
+- Download (latest installer): https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe
+- Tutorials (43 step-by-step guides, 9 languages): https://dedcut.com/tutos.html (English: https://dedcut.com/en/tutos.html)
+- English home page: https://dedcut.com/en/
+- Source code: https://github.com/Bykemi/dedcut-source

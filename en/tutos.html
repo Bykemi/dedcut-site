@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DedCut tutorials — learn in a few minutes</title>
+<meta name="description" content="Free step-by-step DedCut tutorials: video editing, screen recording, live streaming, photo editing, music and AI.">
+<meta name="theme-color" content="#09080f">
+<link rel="canonical" href="https://dedcut.com/en/tutos.html">
+<link rel="alternate" hreflang="fr" href="https://dedcut.com/tutos.html">
+<link rel="alternate" hreflang="en" href="https://dedcut.com/en/tutos.html">
+<link rel="alternate" hreflang="es" href="https://dedcut.com/es/tutos.html">
+<link rel="alternate" hreflang="de" href="https://dedcut.com/de/tutos.html">
+<link rel="alternate" hreflang="it" href="https://dedcut.com/it/tutos.html">
+<link rel="alternate" hreflang="pt" href="https://dedcut.com/pt/tutos.html">
+<link rel="alternate" hreflang="ja" href="https://dedcut.com/ja/tutos.html">
+<link rel="alternate" hreflang="ko" href="https://dedcut.com/ko/tutos.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://dedcut.com/zh/tutos.html">
+<link rel="alternate" hreflang="x-default" href="https://dedcut.com/tutos.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DedCut">
+<meta property="og:url" content="https://dedcut.com/en/tutos.html">
+<meta property="og:title" content="DedCut tutorials — learn in a few minutes">
+<meta property="og:description" content="Free step-by-step DedCut tutorials: video editing, screen recording, live streaming, photo editing, music and AI.">
+<meta property="og:image" content="https://dedcut.com/assets/editor.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.png">
+<style>
+:root{
+  --bg:#09080f;--bg2:#0e0c16;--panel:#13101d;--panel2:#1a1626;--line:#272233;--line2:#3a3349;
+  --ink:#f4f2fa;--dim:#a7a1b8;--dim2:#7d7790;--cyan:#22d3ee;--violet:#7c3aed;--violet2:#a78bfa;
+  --grad:linear-gradient(120deg,#22d3ee,#7c3aed);--r:6px;
+  --font:"Bahnschrift","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--font);overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button,select{font:inherit}
+::selection{background:var(--cyan);color:#05070a}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.wrap{width:min(1180px,calc(100% - 32px));margin-inline:auto}
+.skip{position:absolute;left:12px;top:-60px;background:var(--cyan);color:#05070a;padding:10px 14px;border-radius:var(--r);z-index:100}.skip:focus{top:12px}
+
+/* tête de lecture = progression de la page */
+.playbar{position:fixed;inset:0 0 auto 0;height:3px;z-index:60;background:transparent;pointer-events:none}
+.playbar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--grad)}
+.playbar b{position:absolute;top:-3px;width:2px;height:12px;background:var(--cyan);box-shadow:0 0 12px var(--cyan);left:0}
+
+/* en-tête */
+.top{position:sticky;top:0;z-index:50;background:rgba(9,8,15,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+.top.scrolled{border-bottom-color:var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:21px;letter-spacing:-.3px}
+.brand img{width:32px;height:32px}
+.brand span b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand small{font-size:11px;font-weight:500;color:var(--dim2);letter-spacing:.8px;text-transform:uppercase;margin-left:4px;padding-left:10px;border-left:1px solid var(--line2)}
+.nav{display:flex;gap:26px;margin-left:auto;font-size:14.5px;color:var(--dim)}
+.nav a:hover{color:var(--ink)}
+.lang{background:var(--panel);color:var(--ink);border:1px solid var(--line2);border-radius:var(--r);padding:7px 8px;font-size:13px;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 20px;border-radius:var(--r);font-weight:700;font-size:15px;border:1px solid var(--line2);background:var(--panel);color:var(--ink);transition:transform .15s,box-shadow .2s,border-color .2s;white-space:nowrap}
+.btn:hover{border-color:var(--violet2);transform:translateY(-1px)}
+.btn.pri{background:var(--grad);border:0;color:#fff;box-shadow:0 10px 30px -10px rgba(124,58,237,.8)}
+.btn.pri:hover{box-shadow:0 14px 38px -10px rgba(34,211,238,.7)}
+.btn svg{width:18px;height:18px;flex:none}
+.top .btn{padding:9px 14px;font-size:14px}
+.menu{display:none;margin-left:auto;background:var(--panel);border:1px solid var(--line2);color:var(--ink);border-radius:var(--r);padding:8px 12px}
+
+/* héros */
+.hero{position:relative;padding:76px 0 40px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:-20% -10% auto;height:720px;background:radial-gradient(600px 340px at 18% 20%,rgba(34,211,238,.16),transparent 70%),radial-gradient(700px 420px at 82% 10%,rgba(124,58,237,.26),transparent 70%);pointer-events:none}
+.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,.035) 1px,transparent 1px);background-size:80px 100%;mask-image:linear-gradient(to bottom,#000 0,transparent 70%);-webkit-mask-image:linear-gradient(to bottom,#000 0,transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--dim);font-weight:600}
+.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+h1{font-size:clamp(32px,9.6vw,96px);line-height:.98;letter-spacing:-.035em;font-weight:700;margin:22px 0 0;max-width:900px}
+h1 .l1{display:block}
+/* signature DedCut : le mot coupé en diagonale, comme le logo */
+.cut{position:relative;display:inline-block;color:transparent;padding-right:.06em;white-space:nowrap}
+.cut:before,.cut:after{content:attr(data-t);position:absolute;inset:0;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.cut:before{clip-path:polygon(0 0,100% 0,100% 44%,0 66%);transform:translateX(-.16em);animation:cj 1s .35s cubic-bezier(.2,.8,.2,1) forwards}
+.cut:after{clip-path:polygon(0 65.6%,100% 43.6%,100% 100%,0 100%);transform:translateX(.16em);animation:cj 1s .35s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes cj{to{transform:none}}
+.hero-row{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:end;margin-top:26px}
+.lead{font-size:19px;line-height:1.6;color:#cdc8da;margin:0;max-width:560px}
+.cta{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.vline{font-size:13px;color:var(--dim2)}
+.vline b{color:var(--dim);font-weight:600}
+.langhint{position:fixed;left:16px;bottom:16px;z-index:90;padding:9px 15px;border-radius:999px;background:rgba(19,16,29,.92);border:1px solid var(--line2);color:var(--ink);font-size:14px;font-weight:600;box-shadow:0 12px 30px -12px rgba(0,0,0,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.langhint:hover{border-color:var(--cyan)}
+.vbeta{display:inline-block;padding:1px 7px;border-radius:999px;background:var(--grad);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;vertical-align:1px}
+.betapill{display:inline-flex;align-items:center;gap:9px;margin:0 0 0 10px;padding:5px 14px 5px 6px;border:1px solid rgba(34,211,238,.35);border-radius:999px;background:rgba(34,211,238,.08);color:#d7f6fc;font-size:13px;line-height:1.3;vertical-align:middle}
+.betapill b{padding:2px 9px;border-radius:999px;background:var(--grad);color:#fff;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.betapill:hover{border-color:rgba(34,211,238,.7)}
+.brand .bbeta{margin-left:-2px;padding:1px 6px;border-radius:999px;background:var(--grad);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;align-self:center}
+@media (max-width:640px){.betapill{margin:10px 0 0;display:flex;width:max-content;max-width:100%}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{font-size:13px;color:#d9d4e6;border:1px solid var(--line2);background:rgba(255,255,255,.02);padding:6px 11px;border-radius:999px;display:inline-flex;gap:7px;align-items:center}
+.chip svg{width:14px;height:14px;color:var(--cyan)}
+.shot{margin:56px 0 0;position:relative}
+.shot .frame{position:relative;border-radius:10px;padding:1px;background:linear-gradient(140deg,rgba(34,211,238,.55),rgba(124,58,237,.55) 45%,rgba(255,255,255,.06));box-shadow:0 40px 120px -30px rgba(124,58,237,.55),0 0 0 1px rgba(0,0,0,.4)}
+.shot .frame>div{border-radius:9px;overflow:hidden;background:#0b0a12}
+.shot img,.shot video{width:100%;height:auto;display:block}
+.don-btn{border-color:rgba(236,72,153,.45)}.don-btn svg{color:#f472b6}.don-btn:hover{border-color:#f472b6;box-shadow:0 8px 24px -12px rgba(236,72,153,.8)}
+.shot figcaption{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.vbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--line2);color:var(--dim);border-radius:var(--r);padding:2px 9px;font-size:12px;cursor:pointer}.vbtn:hover{color:var(--ink);border-color:var(--violet2)}
+.vbtn svg{width:15px;height:15px}#vsnd .w1,#vsnd .w2{display:none}#vsnd[aria-pressed=true] .w1,#vsnd[aria-pressed=true] .w2{display:inline}#vsnd[aria-pressed=true] .x{display:none}
+.vvol{display:inline-flex;align-items:center}.vvol input{width:110px;accent-color:#22d3ee;cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:980px){.top .don-btn{display:none}}
+.nav a{white-space:nowrap}
+/* en-tête : si le menu ne tient pas (langues longues), on retire d'abord « par ByKemi », puis Vie privée et Soutenir (fitTop) */
+.brand{flex:none}.brand small{white-space:nowrap}
+.top .wrap.t1 .brand small{display:none}.top .wrap.t2 .nav a[href="#vie-privee"],.top .wrap.t2 .don-btn{display:none}
+@media (min-width:981px) and (max-width:1211px){.top .don-btn{display:none}.nav{gap:20px}.nav a[href="#vie-privee"]{display:none}}
+.shot figcaption{margin-top:12px;font-size:12.5px;color:var(--dim2);text-align:center}
+
+/* bandeau défilant */
+.marquee{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;margin-top:64px}
+.marquee .track{display:flex;gap:40px;width:max-content;padding:16px 0;animation:mq 40s linear infinite}
+.marquee span{display:inline-flex;align-items:center;gap:40px;font-size:15px;color:#d6d1e3;white-space:nowrap}
+.marquee span:after{content:"";width:9px;height:9px;transform:skewX(-20deg);background:var(--grad);display:inline-block}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{position:relative}
+.sec{padding:110px 0}
+.sec-head{max-width:720px;margin-bottom:46px}
+h2{font-size:clamp(32px,4.4vw,54px);line-height:1.05;letter-spacing:-.03em;margin:16px 0 0;font-weight:700}
+.sec-head p{color:var(--dim);font-size:17px;margin:16px 0 0}
+
+/* grille des fonctions */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tile{position:relative;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:10px;padding:24px;overflow:hidden;transition:border-color .2s,transform .2s}
+.tile:hover{border-color:var(--line2);transform:translateY(-2px)}
+.tile.w2{grid-column:span 2}
+.spaces{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.spaces .tile{padding:22px 20px}
+.spaces .tile p{font-size:14.5px}
+.spaces ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+.spaces li{position:relative;padding-left:16px;font-size:14px;color:#d6d1e3;line-height:1.45}
+.shots2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}.shots2 .shot{margin:0}.shots2 img{aspect-ratio:5/3;object-fit:cover;object-position:top left}
+.spaces li:before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;transform:skewX(-20deg);background:var(--grad)}
+@media (max-width:1180px){.spaces{grid-template-columns:repeat(3,1fr)}}
+.tile .ic{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;background:rgba(124,58,237,.14);color:var(--violet2);border:1px solid rgba(167,139,250,.25);margin-bottom:16px}
+.tile .ic svg{width:21px;height:21px}
+.tile h3{font-size:19px;letter-spacing:-.01em;margin:0 0 8px;font-weight:700}
+.tile p{margin:0;color:var(--dim);font-size:15px;line-height:1.55}
+.tile .tag{position:absolute;top:18px;right:18px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:#fde68a;border:1px solid rgba(250,204,21,.35);background:rgba(250,204,21,.08);padding:3px 8px;border-radius:999px}
+/* mini timeline animée */
+.mini{margin:22px -24px -24px;padding:16px 20px 20px;background:#0b0a12;border-top:1px solid var(--line);position:relative}
+.mini .row{height:22px;margin:7px 0;display:flex;gap:4px}
+.mini .c{border-radius:3px;height:100%;background:#3b2a63;border:1px solid #6d55a8}
+.mini .c.t{background:#0e3a45;border-color:#1f7f92}
+.mini .c.a{background:repeating-linear-gradient(90deg,#1d4239 0 2px,#132c26 2px 5px);border-color:#2f7563}
+.mini .ph{position:absolute;top:8px;bottom:8px;width:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan);left:20px;animation:ph 6s ease-in-out infinite alternate}
+@keyframes ph{to{left:calc(100% - 22px)}}
+/* rangée d'icônes */
+.icons{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.icons svg{width:38px;height:38px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.5));animation:pop 2.4s ease-in-out infinite}
+.icons svg:nth-child(2n){animation-delay:.3s}.icons svg:nth-child(3n){animation-delay:.6s}
+@keyframes pop{0%,70%,100%{transform:scale(1)}80%{transform:scale(1.18)}90%{transform:scale(.96)}}
+
+/* assistant IA */
+.ai{background:radial-gradient(800px 400px at 85% 30%,rgba(124,58,237,.18),transparent 70%),var(--bg2);border-block:1px solid var(--line)}
+.ai-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.ai ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.ai li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
+.ai li svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--cyan)}
+.ai li small{display:block;color:var(--dim2);font-size:13px}
+.note{margin-top:22px;font-size:13.5px;color:var(--dim);border-left:2px solid var(--violet);padding:4px 0 4px 14px}
+.phone{justify-self:center;width:min(380px,100%);border-radius:10px;padding:1px;background:linear-gradient(160deg,rgba(167,139,250,.6),rgba(34,211,238,.35),rgba(255,255,255,.05));box-shadow:0 30px 90px -25px rgba(124,58,237,.6)}
+.phone img{border-radius:9px;width:100%}
+.phone+figcaption,.ai figcaption{font-size:12.5px;color:var(--dim2);text-align:center;margin-top:10px}
+
+/* vie privée */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.trio article{border:1px solid var(--line);border-radius:10px;padding:26px;background:var(--panel)}
+.trio .n{font:700 13px/1 Consolas,ui-monospace,monospace;color:var(--cyan);letter-spacing:1px}
+.trio h3{font-size:20px;margin:14px 0 8px}.trio p{margin:0;color:var(--dim);font-size:15px}
+
+/* installation */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}
+.step{border-top:2px solid var(--line2);padding:22px 4px 0;counter-increment:s}
+.step:before{content:"0" counter(s);font:700 14px Consolas,ui-monospace,monospace;color:var(--violet2)}
+.step h3{font-size:22px;margin:10px 0 8px}.step p{margin:0;color:var(--dim);font-size:15px}
+/* téléchargements : Windows, Mac, Android (Mac et Android s'activent dès qu'ils sont publiés) + VirusTotal */
+.dlgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 34px}
+.dlc{display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+.dlc.main{border-color:rgba(124,58,237,.55);background:linear-gradient(180deg,rgba(124,58,237,.14),var(--panel) 65%)}
+.dlc .os{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:700}
+.dlc .os svg{width:24px;height:24px;flex:none}
+.dlc .tag{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--panel2);color:var(--violet2)}
+.dlc .tag.beta{background:rgba(250,204,21,.12);color:#facc15}
+.dlc p{margin:0;color:var(--dim);font-size:14px}
+.dlc small{display:block;color:var(--dim2);font-size:12.5px;line-height:1.45;flex:1}
+.dlc .btn{width:100%;margin-top:4px}
+.dlc .btn svg{width:18px;height:18px}
+.dlc .btn[aria-disabled=true]{opacity:.5;pointer-events:none;box-shadow:none}
+.vt{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:-16px 0 34px;font-size:13px;color:var(--dim2)}
+.vt a,.vt-mini{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid rgba(34,197,94,.45);background:rgba(34,197,94,.10);color:#4ade80;line-height:1.25;text-decoration:none}
+.vt a:hover,.vt-mini:hover{background:rgba(34,197,94,.18)}
+.vt a span{display:flex;flex-direction:column}.vt a b{color:#e7fbe9;font-weight:600}.vt a small{color:#86efac;opacity:.85}
+.vt code{font:12px Consolas,monospace;color:var(--dim);word-break:break-all}
+.vt-mini{padding:2px 9px;gap:5px;font-size:12px;vertical-align:middle}.vt-mini svg{width:14px;height:14px}
+.vt[hidden],.vt-mini[hidden]{display:none}
+/* boutons Mac / Android du haut : « bientôt » (renvoie vers les explications) tant que le fichier n'est pas publié */
+.os-btn{position:relative;padding:12px 16px}.os-btn svg{width:18px;height:18px}
+.os-btn .soon{position:absolute;top:-9px;right:-6px;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;padding:3px 7px;border-radius:999px;border:1px solid var(--line2);background:var(--bg2);color:var(--dim)}
+.cta-btns .br{flex-basis:100%;height:0;margin-top:-12px}
+/* Windows, Mac et Android tiennent sur une ligne dans toutes les langues (482 px au plus, en allemand) */
+@media (min-width:981px){.hero-row{grid-template-columns:minmax(0,1.25fr) minmax(490px,1fr)}}
+.os-btn.ok .soon{display:none}
+.step:first-child{border-top-color:var(--cyan)}
+
+/* questions */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-weight:600;font-size:17px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"";position:absolute;right:6px;top:50%;width:10px;height:10px;border-right:2px solid var(--cyan);border-bottom:2px solid var(--cyan);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+details[open] summary:after{transform:translateY(-30%) rotate(-135deg)}
+details p{margin:0;padding:0 36px 22px 0;color:var(--dim)}
+
+/* tutoriels */
+.tubox{display:grid;grid-template-columns:1fr 1.15fr;gap:44px;align-items:center;padding:40px;border-radius:14px;border:1px solid var(--line);background:radial-gradient(120% 140% at 0% 0%,rgba(34,211,238,.10),transparent 55%),linear-gradient(180deg,var(--panel2),var(--panel))}
+.tutxt h2{margin:14px 0 0}
+.tutxt p{color:var(--dim);font-size:17px;margin:14px 0 24px}
+.tun{display:block;margin-top:14px;color:var(--dim2);font-size:13.5px}.tun b{color:var(--ink)}
+.tucats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tucats a{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:rgba(9,8,15,.45);font-weight:600;font-size:15px;transition:border-color .2s,transform .2s}
+.tucats a:hover{border-color:rgba(167,139,250,.55);transform:translateY(-2px)}
+.tui{flex:none;width:34px;height:34px;border-radius:8px;display:grid;place-items:center;background:rgba(124,58,237,.14);color:var(--violet2);border:1px solid rgba(167,139,250,.25)}
+.tui svg{width:18px;height:18px}
+.faqmore{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--cyan);font-weight:600}
+.faqmore:hover{text-decoration:underline}
+@media (max-width:980px){.tubox{grid-template-columns:1fr;gap:28px;padding:28px}}
+@media (max-width:420px){.tucats{grid-template-columns:1fr}.tubox{padding:22px 18px}}
+
+/* appel final */
+.final{margin:20px auto 0;border-radius:14px;padding:64px 48px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#0f2a35,#25124a 55%,#120c22);border:1px solid #3c2f5a}
+.final:before{content:"";position:absolute;inset:auto -10% -60% -10%;height:120%;background:radial-gradient(closest-side,rgba(34,211,238,.25),transparent);pointer-events:none}
+.final img{width:76px;height:76px;margin:0 auto 18px;position:relative}
+.final h2{margin:0 auto;max-width:700px;position:relative}
+.final p{color:#cfc9de;margin:14px 0 26px;position:relative}
+.final .btn{position:relative}
+.final .vline{margin-top:14px;position:relative}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-top:56px}
+.stat{border-left:2px solid var(--line2);padding:4px 0 4px 18px}
+.stat b{display:block;font-size:clamp(34px,4vw,50px);line-height:1;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;margin-top:8px;color:var(--dim);font-size:14px}
+.don{background:radial-gradient(700px 380px at 12% 40%,rgba(236,72,153,.12),transparent 70%),var(--bg2);border-block:1px solid var(--line)}
+.don-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start}
+.don-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:26px}
+.don .btn.pri{background:linear-gradient(120deg,#ec4899,#7c3aed);box-shadow:0 10px 30px -10px rgba(236,72,153,.7)}
+.don .btn.pri[aria-disabled=true]{opacity:.55;pointer-events:none}
+.don-soon{font-size:13.5px;color:var(--dim)}
+.uses{display:grid;gap:12px}
+.use{display:flex;gap:16px;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:20px 22px}
+.use .n{font:700 13px/1.6 Consolas,ui-monospace,monospace;color:#f472b6;letter-spacing:1px}
+.use h3{font-size:18px;margin:0 0 6px}.use p{margin:0;color:var(--dim);font-size:15px}
+footer{padding:64px 0 28px;color:var(--dim2);font-size:14px;border-top:1px solid var(--line);margin-top:40px}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:28px}
+.fcol{display:flex;flex-direction:column;gap:10px}.fcol h4{margin:0 0 4px;color:var(--ink);font-size:14px;letter-spacing:.4px}
+.fcol a{color:var(--dim)}.fcol a:hover{color:var(--ink)}
+.fbrand p{margin:6px 0 0;max-width:260px}
+.fbottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px}
+footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;height:28px}
+
+/* apparition au défilement */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .nav{display:none}.menu{display:block}.top .btn{display:none}
+  .nav.open{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:#0f0d17;border-bottom:1px solid var(--line);padding:6px 16px 14px}
+  .nav.open a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .hero-row,.ai-grid,.faq{grid-template-columns:1fr;gap:32px}
+  .bento,.spaces{grid-template-columns:repeat(2,1fr)}.shots2{grid-template-columns:1fr}
+  .trio,.steps,.dlgrid{grid-template-columns:1fr}
+  .don-grid{grid-template-columns:1fr;gap:32px}.stats{grid-template-columns:repeat(2,1fr)}.foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .brand small{display:none}
+  .hero{padding-top:44px}
+  .lead{font-size:17px}
+  .bento,.spaces{grid-template-columns:1fr}.tile.w2{grid-column:auto}
+  .sec{padding:72px 0}
+  .final{padding:44px 20px}
+  .cta-btns .btn{flex:1 1 100%}
+  .fbrand{grid-column:1/-1}
+}
+@media (max-width:420px){.brand span{display:none}.lang{padding:6px 4px}}
+/* haut de page « cinéma » (2026-10-07) : aurore cyan-violet, pistes de timeline qui défilent avec leur tête de lecture,
+   titre centré, vidéo qui se redresse en défilant. Tout est en CSS (transform / opacité), mis en pause hors de l'écran. */
+.hero:before,.hero:after{display:none}
+.hx{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.hx-aur{position:absolute;inset:-4% -10% 22%;mask-image:linear-gradient(#000 45%,transparent);-webkit-mask-image:linear-gradient(#000 45%,transparent)}
+.hx-aur i{position:absolute;width:62vw;height:62vw;max-width:980px;max-height:980px;border-radius:50%;opacity:.8;will-change:transform;animation:hxa 24s ease-in-out infinite alternate}
+.hx-aur i:nth-child(1){left:-6%;top:-20%;background:radial-gradient(closest-side,rgba(34,211,238,.55),rgba(34,211,238,0))}
+.hx-aur i:nth-child(2){right:-8%;top:-28%;background:radial-gradient(closest-side,rgba(124,58,237,.75),rgba(124,58,237,0));animation-duration:30s;animation-delay:-9s}
+.hx-aur i:nth-child(3){left:28%;top:4%;width:44vw;height:44vw;background:radial-gradient(closest-side,rgba(236,72,153,.32),rgba(236,72,153,0));animation-duration:36s;animation-delay:-17s}
+@keyframes hxa{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(7vw,4vh,0) scale(1.12)}100%{transform:translate3d(-5vw,8vh,0) scale(.94)}}
+.hx-tl{position:absolute;left:-12%;right:-12%;top:clamp(40px,9vh,110px);height:clamp(300px,52vh,520px);display:flex;flex-direction:column;justify-content:space-between;opacity:.24;transform:perspective(1300px) rotateX(24deg) rotateZ(-5deg);mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+.hx-tr{display:flex;gap:12px;width:max-content;will-change:transform;animation:hxm var(--d,60s) linear infinite}
+.hx-tr.rev{animation-direction:reverse}
+.hx-tr b{flex:none;height:clamp(18px,2.6vw,30px);border-radius:7px;width:var(--w);background:var(--c);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+@keyframes hxm{to{transform:translate3d(-50%,0,0)}}
+.hx-ph{position:absolute;top:-6%;bottom:-6%;left:22%;width:2px;background:linear-gradient(transparent,#22d3ee 20%,#22d3ee 80%,transparent);box-shadow:0 0 22px 2px rgba(34,211,238,.8);animation:hxp 11s ease-in-out infinite alternate}
+.hx-ph:before{content:"";position:absolute;top:-2px;left:-6px;width:14px;height:14px;background:#22d3ee;clip-path:polygon(0 0,100% 0,50% 100%)}
+@keyframes hxp{to{left:78%}}
+.hx-vig{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 30%,transparent 40%,rgba(9,8,15,.75) 100%),linear-gradient(transparent 70%,var(--bg))}
+.hero.hx-off .hx *{animation-play-state:paused}
+/* texte centré */
+.hero .wrap{text-align:center}
+.hero .eyebrow{padding:7px 15px 7px 13px;border:1px solid rgba(167,139,250,.35);border-radius:999px;background:rgba(124,58,237,.12);color:#e4defa;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.hero h1{margin-inline:auto;max-width:1040px;text-shadow:0 10px 60px rgba(9,8,15,.6)}
+.hero h1 .l1{animation:hxin .9s .05s cubic-bezier(.2,.8,.2,1) both}
+.hero-row{display:flex;flex-direction:column;align-items:center;gap:26px;margin-top:26px}
+.hero .lead{margin-inline:auto;text-align:center;max-width:640px;animation:hxin .9s .25s cubic-bezier(.2,.8,.2,1) both}
+.hero .cta{align-items:center;animation:hxin .9s .4s cubic-bezier(.2,.8,.2,1) both}
+.hero .cta-btns{justify-content:center}
+.hero .chips{justify-content:center;animation:hxin .9s .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes hxin{from{opacity:0;transform:translateY(22px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.hero .btn.pri{position:relative;overflow:hidden}
+.hero .btn.pri:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);animation:hxs 5s 1.6s ease-in-out infinite}
+@keyframes hxs{0%,70%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+/* vidéo de présentation : penchée au départ, elle se redresse en défilant ; lueur dessous */
+.hero-shot{perspective:1600px;margin-top:64px}
+.hero-shot .frame{transform:rotateX(var(--tilt,0deg)) scale(var(--sc,1));transform-origin:50% 0;will-change:transform}
+.hero-shot:before{content:"";position:absolute;left:8%;right:8%;top:12%;bottom:-6%;background:radial-gradient(closest-side,rgba(124,58,237,.55),rgba(34,211,238,.18) 60%,transparent);filter:blur(30px);z-index:-1}
+/* cartes : lueur qui suit la souris */
+.tile:after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(320px circle at var(--mx,50%) var(--my,-40%),rgba(34,211,238,.13),rgba(124,58,237,.08) 40%,transparent 65%);opacity:0;transition:opacity .25s;pointer-events:none}
+.tile:hover:after{opacity:1}
+.tile:hover{border-color:rgba(167,139,250,.45);box-shadow:0 18px 50px -24px rgba(124,58,237,.6)}
+@media (max-width:760px){.hx-tl{opacity:.16;top:30px;height:300px}.hx-aur i{opacity:.4}.hero-shot{margin-top:40px}}
+@media (prefers-reduced-motion:reduce){.hx-tr,.hx-ph,.hx-aur i{animation:none!important}.hero-shot .frame{transform:none!important}.hero h1 .l1,.hero .lead,.hero .cta,.hero .chips{opacity:1;transform:none;filter:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.cut:before,.cut:after{transform:none}.rv{opacity:1;transform:none}
+}
+@media (max-width:600px){.cta-btns .os-btn{flex:1 1 calc(50% - 6px)}}
+
+/* ---------- tutoriels ---------- */
+.thero{padding:56px 0 18px}.thero h1{font-size:clamp(34px,5vw,56px);line-height:1.05;margin:10px 0 14px;letter-spacing:-1px}
+.thero .lead{max-width:680px;color:var(--dim);font-size:18px;margin:0 0 22px}
+/* haut de page « cinéma » (styles hx-* et hxin repris de l'accueil) */
+.thero{position:relative;overflow:hidden;padding:84px 0 46px;text-align:center}.thero .wrap{position:relative;z-index:1}
+.thero .eyebrow{padding:7px 15px 7px 13px;border:1px solid rgba(167,139,250,.35);border-radius:999px;background:rgba(124,58,237,.12);color:#e4defa;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.thero h1{font-size:clamp(36px,6vw,72px);margin:18px auto 14px;max-width:900px;letter-spacing:-.03em;text-shadow:0 10px 60px rgba(9,8,15,.6);animation:hxin .9s .05s cubic-bezier(.2,.8,.2,1) both}
+.thero .lead{margin:0 auto 26px;color:#cdc8da;animation:hxin .9s .2s cubic-bezier(.2,.8,.2,1) both}
+.thero .tsearch{margin:0 auto;max-width:640px;height:56px;background:rgba(19,16,29,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 20px 60px -24px rgba(124,58,237,.7);text-align:left;animation:hxin .9s .35s cubic-bezier(.2,.8,.2,1) both}
+.thero .hx-tl{top:16px;height:min(420px,92%)}
+.thero.hx-off .hx *{animation-play-state:paused}
+.tbar .chipf.on{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 8px 24px -12px rgba(124,58,237,.9)}
+.tcat-i{box-shadow:0 0 34px -10px rgba(34,211,238,.55)}
+.tc{position:relative}.tc:after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(320px circle at var(--mx,50%) var(--my,-40%),rgba(34,211,238,.12),rgba(124,58,237,.07) 40%,transparent 65%);opacity:0;transition:opacity .25s;pointer-events:none}
+.tc:hover:after{opacity:1}.tgrid .tc:hover{border-color:rgba(167,139,250,.45)}
+.wrap .tmore{background:linear-gradient(135deg,#0f2a35,#25124a 55%,#120c22);border-color:#3c2f5a}
+@media (prefers-reduced-motion:reduce){.thero h1,.thero .lead,.thero .tsearch{opacity:1;transform:none;filter:none}}
+.tsearch{display:flex;align-items:center;gap:10px;max-width:620px;background:var(--panel);border:1px solid var(--line2);border-radius:12px;padding:0 14px;height:52px}
+.tsearch:focus-within{border-color:var(--cyan)}.tsearch svg{width:20px;height:20px;color:var(--dim2);flex:none}
+.tsearch input{flex:1;background:none;border:0;color:var(--ink);font:inherit;font-size:16px;outline:none;min-width:0}
+.tbar{position:sticky;top:68px;z-index:40;background:rgba(9,8,15,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);margin-top:26px}
+.tbar .wrap{display:flex;gap:8px;overflow-x:auto;padding:12px 0;scrollbar-width:none}.tbar .wrap::-webkit-scrollbar{display:none}
+.chipf{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;padding:8px 14px;border-radius:999px;border:1px solid var(--line2);background:var(--panel);color:var(--dim);cursor:pointer;font-size:14px}
+.chipf svg{width:16px;height:16px}.chipf:hover{color:var(--ink)}.chipf.on{background:var(--ink);color:#0b0816;border-color:var(--ink)}
+.tcat{padding:44px 0 6px;scroll-margin-top:140px}.tcat[hidden]{display:none}
+.tcat-h{display:flex;gap:16px;align-items:center;margin-bottom:18px}.tcat-h h2{margin:0;font-size:28px;letter-spacing:-.4px}.tcat-h p{margin:2px 0 0;color:var(--dim)}
+.tcat-i{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(34,211,238,.16),rgba(124,58,237,.22));border:1px solid var(--line2);color:var(--cyan);flex:none}.tcat-i svg{width:26px;height:26px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px;align-items:start}
+.tc{background:var(--panel);border:1px solid var(--line);border-radius:12px;scroll-margin-top:150px;transition:border-color .15s}.tc[hidden]{display:none}
+.tc:hover,.tc.open{border-color:var(--line2)}.tc.open{background:var(--panel2)}
+.tc-h{width:100%;display:grid;grid-template-columns:1fr auto;gap:6px 10px;text-align:left;background:none;border:0;color:inherit;padding:16px 16px 14px;cursor:pointer;border-radius:12px}
+.tc-t{font-weight:700;font-size:17px;line-height:1.3}.tc-a{width:20px;height:20px;color:var(--dim2);grid-row:1/3;grid-column:2;align-self:center;transition:transform .2s}.tc.open .tc-a{transform:rotate(180deg)}
+.tc-m{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:13px;color:var(--dim2)}
+.lv{padding:1px 8px;border-radius:999px;font-weight:600;font-size:12px}.lv.l1{background:rgba(34,211,238,.13);color:#67e8f9}.lv.l2{background:rgba(167,139,250,.16);color:#c4b5fd}
+.tc-b{padding:0 16px 16px}.tc-b ol{margin:0;padding:0;list-style:none;counter-reset:st}
+.tc-b li{counter-increment:st;position:relative;padding:8px 0 8px 40px;border-top:1px solid var(--line);line-height:1.55}
+.tc-b li::before{content:counter(st);position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:var(--grad);color:#05070a;font-weight:700;font-size:13px;display:grid;place-items:center}
+.tc-b b.ui{color:var(--ink);background:rgba(255,255,255,.07);border:1px solid var(--line2);border-radius:5px;padding:0 6px;font-weight:600;white-space:nowrap}
+.tperm{display:inline-block;margin-top:10px;font-size:13px;color:var(--cyan)}.tperm:hover{text-decoration:underline}
+kbd{font:inherit;font-size:.85em;background:#05070a;border:1px solid var(--line2);border-bottom-width:2px;border-radius:5px;padding:0 6px;white-space:nowrap}
+.tip{margin:10px 0 0;padding:10px 12px;border-radius:10px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25);color:var(--dim);font-size:14.5px}.tip>b:first-child{color:#67e8f9;margin-right:4px}
+.tnone{padding:40px 0;color:var(--dim)}.tmore{margin:56px 0 70px;padding:26px;border:1px solid var(--line);border-radius:14px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;background:var(--panel)}
+.tmore p{margin:0;font-size:18px;font-weight:600}.tmore a.lnk{color:var(--cyan)}
+.tnav{display:flex;gap:22px;margin-left:auto;font-size:14.5px;color:var(--dim)}.tnav a:hover,.tnav a.on{color:var(--ink)}
+/* page d'un tuto */
+.tpage{max-width:820px;padding-top:44px}.tcrumb{font-size:14px;color:var(--dim2);display:flex;flex-wrap:wrap;gap:8px}.tcrumb a{color:var(--cyan)}.tcrumb a:hover{text-decoration:underline}
+.tpage h1{font-size:clamp(30px,4.6vw,46px);line-height:1.1;margin:14px 0 12px;letter-spacing:-.02em}
+.tpage .tc-m{font-size:14px;margin-bottom:18px}.tpage .tc-b{padding:0;font-size:17px}.tpage .tc-b li{padding:12px 0 12px 44px}.tpage .tc-b li::before{top:12px}
+.tsame{margin:36px 0 0}.tsame h2{font-size:20px;margin:0 0 10px}.tsame ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.tsame a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.tsame a:hover{border-color:var(--line2);color:var(--ink)}
+@media (max-width:720px){.tgrid{grid-template-columns:1fr}.tnav{display:none}.tbar{top:60px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="playbar" aria-hidden="true"><i></i><b></b></div>
+<header class="top">
+  <div class="wrap">
+    <a href="/en/" class="brand" aria-label="DedCut"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Ded<b>Cut</b></span></a>
+    <nav class="tnav"><a href="/en/">Back to home</a><a href="/en/tutos.html" class="on">Tutorials</a><a href="/en/#questions">See the FAQ</a></nav>
+    <select class="lang" id="lang" aria-label="Langue / Language">
+      <option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option><option value="de">DE</option><option value="it">IT</option><option value="pt">PT</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="zh">中文</option>
+    </select>
+    <a class="btn pri dl" href="https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe">Download DedCut</a>
+  </div>
+</header>
+<main id="contenu">
+<section class="thero"><div class="hx" aria-hidden="true"><div class="hx-aur"><i></i><i></i><i></i></div><div class="hx-tl" id="hxtl"><span class="hx-ph"></span></div><div class="hx-vig"></div></div><div class="wrap">
+  <div class="eyebrow">Tutorials</div>
+  <h1>Learn DedCut step by step</h1>
+  <p class="lead">Short, simple guides for every DedCut space. Pick a category or search for what you want to do.</p>
+  <label class="tsearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="Search a tutorial (subtitles, live, thumbnail…)" aria-label="Search a tutorial (subtitles, live, thumbnail…)"></label>
+</div></section>
+<div class="tbar"><div class="wrap" id="chips"><button class="chipf on" data-f="">All</button><button class="chipf" data-f="debut"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l14 9-14 9z"/></svg><span>Getting started</span></button><button class="chipf" data-f="montage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="3"/><circle cx="6" cy="17" r="3"/><path d="M8.6 8.6L20 18M8.6 15.4L20 6"/></svg><span>Video editing</span></button><button class="chipf" data-f="rec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg><span>Screen recording</span></button><button class="chipf" data-f="live"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.5"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2"/></svg><span>Live</span></button><button class="chipf" data-f="image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg><span>Image</span></button><button class="chipf" data-f="musique"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg><span>Music</span></button><button class="chipf" data-f="ia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><span>Artificial intelligence</span></button><button class="chipf" data-f="aide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg><span>Common problems</span></button></div></div>
+<div class="wrap" id="tlist"><section class="tcat" id="debut" data-cat="debut"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l14 9-14 9z"/></svg></span><div><h2>Getting started</h2><p>Install DedCut and discover the essentials.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-installer" data-id="installer"><button class="tc-h" aria-expanded="false" aria-controls="s-installer"><span class="tc-t">Install DedCut</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-installer" hidden><ol><li>On this site, click Download: the file DedCut-Installation.exe lands in your Downloads folder.</li><li>Open it. If Windows shows “Windows protected your PC”, click “More info” then “Run anyway” (DedCut is new, Windows doesn’t know it yet).</li><li>Installation takes a few seconds, with no account and no admin rights.</li><li>DedCut opens on the home screen: it’s ready.</li></ol><p class="tip"><b>Tip</b> Updates then happen on their own: DedCut tells you when a new version is ready.</p><a class="tperm" href="/en/tutos/installer.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-espaces" data-id="espaces"><button class="tc-h" aria-expanded="false" aria-controls="s-espaces"><span class="tc-t">The five DedCut spaces</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>6 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-espaces" hidden><ol><li>On the home screen, choose what you want to do, or switch spaces with the buttons at the very top of the window.</li><li><b class="ui">Edit</b>: edit your videos (cut, text, effects, music, subtitles, export).</li><li><b class="ui">Record</b>: record your screen, a game, your webcam and your mic.</li><li><b class="ui">Live</b>: stream live on one or several platforms.</li><li><b class="ui">Image</b>: create thumbnails, edit photos, draw.</li><li><b class="ui">Music</b>: make music, from drums to export.</li></ol><p class="tip"><b>Tip</b> The spaces talk to each other: a song or an image goes to the editor in one click.</p><a class="tperm" href="/en/tutos/espaces.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-bases" data-id="bases"><button class="tc-h" aria-expanded="false" aria-controls="s-bases"><span class="tc-t">The basics</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>3 min</span><span>5 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-bases" hidden><ol><li><kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes your last action, <kbd>Ctrl</kbd>+<kbd>Y</kbd> redoes it. You can undo as many times as you like.</li><li><kbd>Ctrl</kbd>+<kbd>S</kbd> saves your project. DedCut also autosaves so you lose nothing.</li><li>The keyboard button at the top right shows every shortcut, and you can change them.</li><li>The menu (top left) creates, opens and saves your projects, opens the <b class="ui">Settings</b> and replays the guided tour.</li><li>You can move the panels, put the timeline at the top or bottom, and pop a panel out into its own window.</li></ol><p class="tip"><b>Tip</b> DedCut comes in 9 languages: pick yours in the <b class="ui">Settings</b> (<b class="ui">Language</b> section).</p><a class="tperm" href="/en/tutos/bases.html">Direct link to this tutorial</a></div></article></div></section>
+<section class="tcat" id="montage" data-cat="montage"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="3"/><circle cx="6" cy="17" r="3"/><path d="M8.6 8.6L20 18M8.6 15.4L20 6"/></svg></span><div><h2>Video editing</h2><p>Cut, add text, effects and music, and export.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-m-import" data-id="m-import"><button class="tc-h" aria-expanded="false" aria-controls="s-m-import"><span class="tc-t">Import and place your videos</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-import" hidden><ol><li>Open the <b class="ui">Edit</b> space, then the <b class="ui">Media</b> tab on the left.</li><li>Drag your videos, photos and sounds from Windows Explorer, or click the area to pick them.</li><li>Then drag each item onto the timeline at the bottom: that’s where your video is built.</li><li>Press <kbd>Space</kbd> to play or pause the preview.</li></ol><p class="tip"><b>Tip</b> A big 4K video? DedCut makes a light copy on its own so the preview stays smooth; the export keeps the original quality.</p><a class="tperm" href="/en/tutos/m-import.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-m-couper" data-id="m-couper"><button class="tc-h" aria-expanded="false" aria-controls="s-m-couper"><span class="tc-t">Cut and trim</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-couper" hidden><ol><li>Place the playhead (the vertical line) where you want.</li><li>Click the scissors above the timeline, or press <kbd>S</kbd>: the clip is split in two.</li><li>Click the part you don’t want, then press <kbd>Del</kbd>.</li><li>To shorten without cutting, drag the start or end of a clip.</li></ol><p class="tip"><b>Tip</b> In the <b class="ui">Audio</b> tab, “<b class="ui">Cut the silences</b>” removes every gap in a voice-over in one click.</p><a class="tperm" href="/en/tutos/m-couper.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-m-texte" data-id="m-texte"><button class="tc-h" aria-expanded="false" aria-controls="s-m-texte"><span class="tc-t">Add a title or text</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-texte" hidden><ol><li>Place the playhead where the text should appear.</li><li>Open the <b class="ui">Text</b> tab and click a style: the text is added to the timeline.</li><li>Type your text in the settings panel on the right, then pick the font, colour and animation.</li><li>In the preview, move the text with the mouse and drag a corner to resize it.</li></ol><p class="tip"><b>Tip</b> More than 200 text styles and 100 fonts come with DedCut, free to use anywhere.</p><a class="tperm" href="/en/tutos/m-texte.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-m-effets" data-id="m-effets"><button class="tc-h" aria-expanded="false" aria-controls="s-m-effets"><span class="tc-t">Effects, filters and transitions</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>3 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-effets" hidden><ol><li>Click a clip on the timeline to select it.</li><li><b class="ui">Effects</b> tab: hover an effect to see it move, click to add or remove it.</li><li><b class="ui">Filters</b> tab: click a filter to change the clip’s colours; one button applies it to the whole video.</li><li><b class="ui">Transitions</b> tab: choose a transition at the start or end of the clip, or a soft fade with the previous clip.</li></ol><p class="tip"><b>Tip</b> Each effect’s strength is set in the panel on the right.</p><a class="tperm" href="/en/tutos/m-effets.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-m-son" data-id="m-son"><button class="tc-h" aria-expanded="false" aria-controls="s-m-son"><span class="tc-t">Music, sound effects and volume</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>3 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-son" hidden><ol><li>Open the <b class="ui">Audio</b> tab.</li><li>In “<b class="ui">Music</b>”, listen to and add royalty-free music (real songs and music made by DedCut).</li><li>Add sound effects (whoosh, click, applause…) at the right moment of your video.</li><li>Click a clip to set its volume in the panel on the right, or mute a whole track.</li></ol><p class="tip"><b>Tip</b> This music can be used on YouTube, TikTok and everywhere, with no copyright risk.</p><a class="tperm" href="/en/tutos/m-son.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-m-soustitres" data-id="m-soustitres"><button class="tc-h" aria-expanded="false" aria-controls="s-m-soustitres"><span class="tc-t">Automatic subtitles</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>5 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-soustitres" hidden><ol><li>Open the <b class="ui">Captions</b> tab.</li><li>Choose the accuracy: fast, balanced or accurate.</li><li>The first time, click “<b class="ui">Download the model</b>” (a single download).</li><li>Click “<b class="ui">Create captions</b>”: DedCut listens to your video and writes the subtitles on the timeline.</li><li>Click a subtitle to fix its text in the panel on the right; change its style, then “<b class="ui">Apply this style to all</b>”.</li></ol><p class="tip"><b>Tip</b> Everything happens on your PC: neither your voice nor your video is sent over the internet.</p><a class="tperm" href="/en/tutos/m-soustitres.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-m-textedit" data-id="m-textedit"><button class="tc-h" aria-expanded="false" aria-controls="s-m-textedit"><span class="tc-t">Cut by deleting words</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-textedit" hidden><ol><li>Open the <b class="ui">Captions</b> tab and click “<b class="ui">Open edit by text</b>” (or right-click a clip → “<b class="ui">Edit by text</b>”).</li><li>The first time, DedCut writes down everything said in the video, on your PC.</li><li>Select words with the mouse and press <kbd>Del</kbd>: the video is cut at the same place and everything after moves back.</li><li>“Remove hesitations” removes all the “uh”s at once; “Shorten the pauses” trims long silences.</li></ol><p class="tip"><b>Tip</b> Subtitles follow your cuts. <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes.</p><a class="tperm" href="/en/tutos/m-textedit.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-m-vertical" data-id="m-vertical"><button class="tc-h" aria-expanded="false" aria-controls="s-m-vertical"><span class="tc-t">Make a vertical video (TikTok, Shorts)</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-vertical" hidden><ol><li>Click an empty spot of the timeline (or press <kbd>Esc</kbd>): the <b class="ui">Project</b> panel appears on the right.</li><li>In “<b class="ui">1-click format</b>”, choose “<b class="ui">Vertical 9:16 (TikTok, Shorts)</b>”.</li><li>Your videos keep their whole frame, with a blurred background behind.</li><li>Move or resize each clip in the preview if you want a different framing.</li></ol><p class="tip"><b>Tip</b> The same panel switches back to horizontal at any time.</p><a class="tperm" href="/en/tutos/m-vertical.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-m-shorts" data-id="m-shorts"><button class="tc-h" aria-expanded="false" aria-controls="s-m-shorts"><span class="tc-t">Make Shorts automatically</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-shorts" hidden><ol><li>Open a long video in Edit (with its subtitles, it is even better).</li><li>Click “<b class="ui">Export</b>” then “<b class="ui">Auto Shorts</b>”.</li><li>Choose the length and the number of Shorts, then “<b class="ui">Find the moments</b>”: DedCut finds the liveliest moments.</li><li>Keep the moments you like and make the Shorts: each one becomes a vertical project, with a frame that follows the person.</li></ol><p class="tip"><b>Tip</b> You can also ask the assistant: “make Shorts”.</p><a class="tperm" href="/en/tutos/m-shorts.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-m-multicam" data-id="m-multicam"><button class="tc-h" aria-expanded="false" aria-controls="s-m-multicam"><span class="tc-t">Multicam: the camera of whoever speaks</span>
+<span class="tc-m"><span class="lv l2">A bit further</span><span>3 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-multicam" hidden><ol><li>Put 2 to 4 videos filmed at the same time on the timeline (one camera per person, each with its microphone).</li><li>Select them with <kbd>Ctrl</kbd>+click, then right-click → “Create a multicam”: DedCut syncs them by their sound.</li><li>In the “<b class="ui">Multicam</b>” bar above the preview, click “<b class="ui">Auto</b>”, choose the pace, then “<b class="ui">Start</b>”.</li><li>DedCut shows the camera of whoever is speaking. Change a shot with keys <kbd>1</kbd> to <kbd>4</kbd>.</li></ol><p class="tip"><b>Tip</b> Nothing is deleted: <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes everything.</p><a class="tperm" href="/en/tutos/m-multicam.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-m-suivi" data-id="m-suivi"><button class="tc-h" aria-expanded="false" aria-controls="s-m-suivi"><span class="tc-t">Track an object, blur a licence plate</span>
+<span class="tc-m"><span class="lv l2">A bit further</span><span>2 min</span><span>3 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-suivi" hidden><ol><li>Put an element (text, sticker, arrow…) over the object, with the playhead at the start of the moment.</li><li>Right-click the element → “<b class="ui">Track an object</b>”: DedCut tracks the object in the video and the element follows it.</li><li>To hide a plate or a face: right-click the video → “<b class="ui">Blur something that moves</b>”, put the zone over the object, then “<b class="ui">Track an object</b>”.</li></ol><p class="tip"><b>Tip</b> If the object disappears, tracking stops there: start it again a bit later.</p><a class="tperm" href="/en/tutos/m-suivi.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-m-export" data-id="m-export"><button class="tc-h" aria-expanded="false" aria-controls="s-m-export"><span class="tc-t">Export your video</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-export" hidden><ol><li>Click “<b class="ui">Export</b>” at the top right (or <kbd>Ctrl</kbd>+<kbd>E</kbd>).</li><li>Give it a name, choose the quality (up to 4K) and the frame rate.</li><li>Start the export, then choose where to save the file.</li><li>You can also export the sound only (WAV or M4A).</li></ol><p class="tip"><b>Tip</b> Minimise DedCut during a long export: it keeps going in the background.</p><a class="tperm" href="/en/tutos/m-export.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-m-ytdesc" data-id="m-ytdesc"><button class="tc-h" aria-expanded="false" aria-controls="s-m-ytdesc"><span class="tc-t">Write the YouTube description</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>1 min</span><span>3 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-ytdesc" hidden><ol><li>First make the subtitles of your video (<b class="ui">Captions</b> tab).</li><li>Click “<b class="ui">Export</b>” then “<b class="ui">YouTube description</b>”.</li><li>Pick one of the suggested titles, edit the description and hashtags, then “<b class="ui">Copy the description</b>”.</li></ol><p class="tip"><b>Tip</b> Your chapters (markers) are added automatically. With the DedCut AI brain, everything is written on your PC.</p><a class="tperm" href="/en/tutos/m-ytdesc.html">Direct link to this tutorial</a></div></article></div></section>
+<section class="tcat" id="rec" data-cat="rec"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></span><div><h2>Screen recording</h2><p>Record your screen, a game, your webcam and your voice.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-r-ecran" data-id="r-ecran"><button class="tc-h" aria-expanded="false" aria-controls="s-r-ecran"><span class="tc-t">Record your screen or a game</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>3 min</span><span>5 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-r-ecran" hidden><ol><li>Open the <b class="ui">Record</b> space.</li><li>In <b class="ui">Sources</b>, click “<b class="ui">Add a source</b>” then “<b class="ui">Screen / window</b>”.</li><li>The “<b class="ui">What do you want to share?</b>” window opens: choose a screen or a window, shown with a small preview.</li><li>Tick “<b class="ui">Share the PC sound</b>” to keep the sound of the game, music or Discord (without DedCut’s own sounds).</li><li>Click “<b class="ui">Start recording</b>”. To stop, click again or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>.</li></ol><p class="tip"><b>Tip</b> The video goes to your editor media and to the Videos\DedCut folder.</p><a class="tperm" href="/en/tutos/r-ecran.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-r-cam" data-id="r-cam"><button class="tc-h" aria-expanded="false" aria-controls="s-r-cam"><span class="tc-t">Add your webcam and mic</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-r-cam" hidden><ol><li>In <b class="ui">Sources</b>, click “<b class="ui">Add a source</b>” then “<b class="ui">Webcam</b>”: choose your camera.</li><li>In the preview, move the webcam and drag a corner to resize it; its settings allow a round shape.</li><li>In the audio mixer, choose your mic and set its volume while talking: the bar should stay in the green.</li><li>The mic filters reduce background noise and breathing.</li></ol><p class="tip"><b>Tip</b> Wear headphones: otherwise the sound of your speakers comes back into the mic.</p><a class="tperm" href="/en/tutos/r-cam.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-r-scenes" data-id="r-scenes"><button class="tc-h" aria-expanded="false" aria-controls="s-r-scenes"><span class="tc-t">Prepare several scenes</span>
+<span class="tc-m"><span class="lv l2">A bit further</span><span>3 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-r-scenes" hidden><ol><li>In <b class="ui">Scenes</b>, a scene is a layout (for example “Screen + webcam”, “Be right back”).</li><li>Add a scene with the + button, then its sources: screen, webcam, images, text, chat…</li><li>Click a scene to show it. During a recording or a live, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd> to <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>9</kbd> switch scenes, even in a game.</li><li>Drag a scene or a source to change the order.</li></ol><p class="tip"><b>Tip</b> Scenes are shared by <b class="ui">Record</b> and <b class="ui">Live</b>.</p><a class="tperm" href="/en/tutos/r-scenes.html">Direct link to this tutorial</a></div></article></div></section>
+<section class="tcat" id="live" data-cat="live"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.5"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2"/></svg></span><div><h2>Live</h2><p>Stream live on YouTube, Twitch, Facebook or Kick.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-l-premier" data-id="l-premier"><button class="tc-h" aria-expanded="false" aria-controls="s-l-premier"><span class="tc-t">Your first live stream</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>4 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-l-premier" hidden><ol><li>Open the <b class="ui">Live</b> space and set up your scene (screen, webcam, mic).</li><li><b class="ui">Settings</b> tab on the right: in “<b class="ui">Where to stream?</b>”, choose the platform (YouTube, Twitch, Facebook, Kick or another).</li><li>Copy your stream key from the platform’s dashboard and paste it into “<b class="ui">Stream key</b>”.</li><li>Click “<b class="ui">Go live</b>”. An indicator shows you’re live; click again to stop.</li></ol><p class="tip"><b>Tip</b> Your stream key stays secret: DedCut keeps it encrypted on your PC.</p><a class="tperm" href="/en/tutos/l-premier.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-l-multi" data-id="l-multi"><button class="tc-h" aria-expanded="false" aria-controls="s-l-multi"><span class="tc-t">Stream to several platforms</span>
+<span class="tc-m"><span class="lv l2">A bit further</span><span>3 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-l-multi" hidden><ol><li>In the <b class="ui">Settings</b> tab, click “<b class="ui">Add a destination</b>” and add a second platform with its key.</li><li>Tick the destinations to use: the live goes everywhere at once.</li><li>For TikTok or YouTube Shorts, turn on “<b class="ui">Vertical live (TikTok, Shorts)</b>”: DedCut also sends a 9:16 version.</li><li>Check your connection: each destination needs its share of upload speed.</li></ol><p class="tip"><b>Tip</b> Start with a single platform to test your connection.</p><a class="tperm" href="/en/tutos/l-multi.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-l-chat" data-id="l-chat"><button class="tc-h" aria-expanded="false" aria-controls="s-l-chat"><span class="tc-t">Show the chat and alerts</span>
+<span class="tc-m"><span class="lv l2">A bit further</span><span>3 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-l-chat" hidden><ol><li><b class="ui">Chat</b> tab on the right: connect your channel to read the messages.</li><li>Add the “<b class="ui">Stream chat</b>” source to show the chat on screen, then place it in the preview.</li><li>Add the “<b class="ui">Alerts</b>” source to show new followers and donations.</li><li>Polls, goal bar and counters are also in “<b class="ui">Add a source</b>”.</li></ol><p class="tip"><b>Tip</b> A voice can read the chat aloud: setting in the <b class="ui">Tools</b> tab.</p><a class="tperm" href="/en/tutos/l-chat.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-l-overlays" data-id="l-overlays"><button class="tc-h" aria-expanded="false" aria-controls="s-l-overlays"><span class="tc-t">Add overlays</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-l-overlays" hidden><ol><li>In <b class="ui">Live</b> (or <b class="ui">Record</b>), click “<b class="ui">Add a source</b>” then “<b class="ui">Overlay</b>”.</li><li>In the right panel, pick one of 30 styles: webcam frames, name lower thirds, waiting screens, borders, reminders and ambiences. Hover a thumbnail to see it move.</li><li>Type your name or message, then choose the two colours and the speed.</li><li>Place the overlay with the mouse on the preview and drag a corner to resize it.</li></ol><p class="tip"><b>Tip</b> For a webcam frame, keep the “<b class="ui">Overlay</b>” source above the webcam in the sources list.</p><a class="tperm" href="/en/tutos/l-overlays.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-l-tiktok" data-id="l-tiktok"><button class="tc-h" aria-expanded="false" aria-controls="s-l-tiktok"><span class="tc-t">Go live on TikTok</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-l-tiktok" hidden><ol><li>On a computer, open TikTok LIVE Producer and set up your live: TikTok gives you a server address and a key.</li><li>In <b class="ui">Live</b>, add the TikTok destination and paste “<b class="ui">Server address</b>” and “<b class="ui">Stream key</b>”.</li><li>For a vertical live, choose “<b class="ui">Switch the studio to vertical (TikTok scenes)</b>”: your TikTok scenes are ready.</li><li>Start the live from DedCut.</li></ol><p class="tip"><b>Tip</b> On TikTok the key changes for every live: copy it again each time and never show it.</p><a class="tperm" href="/en/tutos/l-tiktok.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-l-pendant" data-id="l-pendant"><button class="tc-h" aria-expanded="false" aria-controls="s-l-pendant"><span class="tc-t">During the live</span>
+<span class="tc-m"><span class="lv l2">A bit further</span><span>3 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-l-pendant" hidden><ol><li>Switch scenes with a click, or with <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd> to <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>9</kbd>, even from a game.</li><li>“<b class="ui">Record too</b>” keeps a copy of the live on your PC.</li><li><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> drops a marker on a great moment so you can find it when editing.</li><li>Studio mode prepares the next scene in the preview before sending it live.</li></ol><p class="tip"><b>Tip</b> After the live, the recorded video goes to the editor so you can make clips.</p><a class="tperm" href="/en/tutos/l-pendant.html">Direct link to this tutorial</a></div></article></div></section>
+<section class="tcat" id="image" data-cat="image"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg></span><div><h2>Image</h2><p>Thumbnails, photo editing, cutouts and drawing.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-i-miniature" data-id="i-miniature"><button class="tc-h" aria-expanded="false" aria-controls="s-i-miniature"><span class="tc-t">Make a YouTube thumbnail</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>3 min</span><span>5 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-i-miniature" hidden><ol><li>Open the <b class="ui">Image</b> space and click “<b class="ui">New image</b>”.</li><li>Choose the “Video thumbnail” preset (1280 × 720), then Create.</li><li>Add a photo (drag it into the window), then a title with the <b class="ui">Text</b> tool.</li><li>Add an outline or a shadow to the text in the layer effects so it reads from afar.</li><li><b class="ui">File</b> menu &gt; “<b class="ui">Export</b>”: save as PNG or JPG.</li></ol><p class="tip"><b>Tip</b> Each element is on its own layer: you can change everything later.</p><a class="tperm" href="/en/tutos/i-miniature.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-i-retouche" data-id="i-retouche"><button class="tc-h" aria-expanded="false" aria-controls="s-i-retouche"><span class="tc-t">Edit a photo</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-i-retouche" hidden><ol><li>Open your photo (drag it into the <b class="ui">Image</b> space).</li><li><b class="ui">Image</b> menu &gt; “<b class="ui">Auto enhance</b>” fixes light and colours in one click.</li><li><b class="ui">Filter</b> menu: Brightness, Curves, Levels, Hue… to adjust by hand, with a live preview.</li><li>Crop with the crop tool, then export.</li></ol><p class="tip"><b>Tip</b> The original stays intact as long as you don’t save over it.</p><a class="tperm" href="/en/tutos/i-retouche.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-i-detourer" data-id="i-detourer"><button class="tc-h" aria-expanded="false" aria-controls="s-i-detourer"><span class="tc-t">Cut out a person or an object</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-i-detourer" hidden><ol><li>Open your photo in <b class="ui">Image</b>.</li><li><b class="ui">Select</b> menu &gt; “<b class="ui">Select subject</b>”: the AI selects the main person or object.</li><li><b class="ui">Layer</b> menu &gt; “<b class="ui">Remove background (mask)</b>” removes the background (it’s hidden by a mask, so you can bring it back).</li><li>Export as PNG to keep the transparency.</li></ol><p class="tip"><b>Tip</b> The cutout is computed on your PC: your photo is sent nowhere.</p><a class="tperm" href="/en/tutos/i-detourer.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-i-tablette" data-id="i-tablette"><button class="tc-h" aria-expanded="false" aria-controls="s-i-tablette"><span class="tc-t">Draw with a graphics tablet</span>
+<span class="tc-m"><span class="lv l2">A bit further</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-i-tablette" hidden><ol><li>Plug in your tablet (Wacom, XP-Pen, Huion…) or use your screen’s pen.</li><li><b class="ui">Edit</b> menu &gt; “<b class="ui">Pen and drawing tablet</b>”: set the pressure and try it in the test area.</li><li>Choose the <b class="ui">Brush</b> tool: pressure changes the size, tilt the angle, and the eraser end erases.</li><li>If pressure doesn’t come through, turn on “Windows Ink” in your tablet’s software.</li></ol><p class="tip"><b>Tip</b> Draw on a new layer to fix mistakes without spoiling the rest.</p><a class="tperm" href="/en/tutos/i-tablette.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-i-qrcode" data-id="i-qrcode"><button class="tc-h" aria-expanded="false" aria-controls="s-i-qrcode"><span class="tc-t">Add a QR code</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>1 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-i-qrcode" hidden><ol><li>Edit: <kbd>Ctrl</kbd>+<kbd>K</kbd> then “Add a QR code”, or in the elements, Social media category.</li><li>Live: “<b class="ui">Add a source</b>” then “<b class="ui">QR code</b>”.</li><li>Image: Layer menu → “<b class="ui">QR code</b>”.</li><li>Type your link (channel, social network, website): viewers scan it with their phone.</li></ol><p class="tip"><b>Tip</b> Keep dark modules on a light background, and a QR code big enough.</p><a class="tperm" href="/en/tutos/i-qrcode.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-i-montage" data-id="i-montage"><button class="tc-h" aria-expanded="false" aria-controls="s-i-montage"><span class="tc-t">Send an image to the editor (and back)</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>1 min</span><span>2 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-i-montage" hidden><ol><li>In <b class="ui">Image</b>, right-click the image: “<b class="ui">Send the image to Editing</b>”. It lands on the editor’s timeline.</li><li>In <b class="ui">Edit</b>, right-click a clip: “<b class="ui">Send to Image</b>” opens the frame in the Image space to edit it.</li></ol><p class="tip"><b>Tip</b> Handy for making a thumbnail from a frame of your video.</p><a class="tperm" href="/en/tutos/i-montage.html">Direct link to this tutorial</a></div></article></div></section>
+<section class="tcat" id="musique" data-cat="musique"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></span><div><h2>Music</h2><p>Make a beat, a melody, record your voice and export.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-mu-beat" data-id="mu-beat"><button class="tc-h" aria-expanded="false" aria-controls="s-mu-beat"><span class="tc-t">Your first beat</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>4 min</span><span>5 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-mu-beat" hidden><ol><li>Open the <b class="ui">Music</b> space, <b class="ui">File</b> menu &gt; “<b class="ui">New project</b>”, choose the “<b class="ui">Beat</b>” template and a tempo (for example 120).</li><li>Click the drums clip, then the <b class="ui">Steps</b> tab at the bottom.</li><li>Each row is a sound (kick, snare, hi-hat…), each box a step: click to turn it on or off.</li><li>Press <kbd>Space</kbd> to listen. Try the swing for a livelier groove.</li><li><b class="ui">Mixer</b> tab: set each track’s volume.</li></ol><p class="tip"><b>Tip</b> DedCut’s drum sounds are made by DedCut: usable everywhere, even in music you sell.</p><a class="tperm" href="/en/tutos/mu-beat.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-mu-melodie" data-id="mu-melodie"><button class="tc-h" aria-expanded="false" aria-controls="s-mu-melodie"><span class="tc-t">Write a melody</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>3 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-mu-melodie" hidden><ol><li>On an instrument track, double-click an empty spot: a clip is created and opens.</li><li><b class="ui">Piano roll</b> tab: click the grid to place a note, drag it to move it, pull its edge to lengthen it.</li><li>Right-click or <kbd>Del</kbd> deletes a note.</li><li>The keyboard button, right of the playback controls, turns your computer keyboard into a piano.</li></ol><p class="tip"><b>Tip</b> Pick another sound for the track in the Instrument tab (piano, synth, strings…).</p><a class="tperm" href="/en/tutos/mu-melodie.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-mu-voix" data-id="mu-voix"><button class="tc-h" aria-expanded="false" aria-controls="s-mu-voix"><span class="tc-t">Record your voice</span>
+<span class="tc-m"><span class="lv l2">A bit further</span><span>4 min</span><span>5 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-mu-voix" hidden><ol><li>Plug in your mic and wear headphones.</li><li><b class="ui">Settings</b> menu &gt; Sound: allow the mic and measure the latency once.</li><li><b class="ui">Track</b> menu: add an audio track, choose the input, then arm the track (round button).</li><li>Press <kbd>R</kbd> to record. With the loop on, each pass becomes a take: all of them are kept.</li><li><b class="ui">Audio clip</b> tab: keep the best of each take, then add the “Clear voice” effect chain.</li></ol><p class="tip"><b>Tip</b> If DedCut closes while recording, the take can be recovered at the next start.</p><a class="tperm" href="/en/tutos/mu-voix.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-mu-justesse" data-id="mu-justesse"><button class="tc-h" aria-expanded="false" aria-controls="s-mu-justesse"><span class="tc-t">Correct the pitch, add backing vocals</span>
+<span class="tc-m"><span class="lv l2">A bit further</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-mu-justesse" hidden><ol><li>In <b class="ui">Music</b>, click your sung vocal (a voice on its own, no music on it).</li><li>Open “<b class="ui">Ideas and analysis</b>” (the sparkle button).</li><li>In “<b class="ui">Sung vocals</b>”, check the key, choose Natural, Strong or Robot, then “<b class="ui">Correct the pitch</b>”.</li><li>For backing vocals, tick the voices you want, then “<b class="ui">Add backing vocals</b>”: each voice gets its own track.</li></ol><p class="tip"><b>Tip</b> The original voice is kept (muted): unmute it to compare.</p><a class="tperm" href="/en/tutos/mu-justesse.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-mu-export" data-id="mu-export"><button class="tc-h" aria-expanded="false" aria-controls="s-mu-export"><span class="tc-t">Export your music</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>5 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-mu-export" hidden><ol><li>Listen to the whole song: the master’s red light must stay off (no clipping).</li><li><b class="ui">File</b> menu &gt; “<b class="ui">Export audio</b>”.</li><li>Choose the format: lossless WAV or FLAC, or lighter M4A.</li><li>Stems give one file per track, all starting at the same point.</li><li>Tick “<b class="ui">Send to Editing</b>” to find your music in the video editor.</li></ol><p class="tip"><b>Tip</b> The export report shows the length, loudness (LUFS) and peak of each file.</p><a class="tperm" href="/en/tutos/mu-export.html">Direct link to this tutorial</a></div></article></div></section>
+<section class="tcat" id="ia" data-cat="ia"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><div><h2>Artificial intelligence</h2><p>The assistant that edits for you and the AI tools, on your PC.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-a-assistant" data-id="a-assistant"><button class="tc-h" aria-expanded="false" aria-controls="s-a-assistant"><span class="tc-t">The AI assistant that edits for you</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-a-assistant" hidden><ol><li>In the editor, click the bubble at the top right (“<b class="ui">Chat with an AI that edits for you</b>”).</li><li>Type what you want: “cut the silences and add subtitles”, “make my video vertical”…</li><li>The assistant edits right inside DedCut, and one button undoes everything it did.</li><li>You can also ask it questions about DedCut.</li></ol><p class="tip"><b>Tip</b> DedCut AI runs on your PC, free and with no account.</p><a class="tperm" href="/en/tutos/a-assistant.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-a-video" data-id="a-video"><button class="tc-h" aria-expanded="false" aria-controls="s-a-video"><span class="tc-t">Create a video with AI Video</span>
+<span class="tc-m"><span class="lv l2">A bit further</span><span>3 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-a-video" hidden><ol><li>Open the <b class="ui">AI video</b> tab in the editor.</li><li>Add an image to animate, or describe what you want to see.</li><li>Choose a style (realistic, 3D, anime…), then start the creation.</li><li>The first time, the AI model downloads; after that, everything happens on your PC.</li></ol><p class="tip"><b>Tip</b> A recent graphics card speeds up creation a lot.</p><a class="tperm" href="/en/tutos/a-video.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-a-personne" data-id="a-personne"><button class="tc-h" aria-expanded="false" aria-controls="s-a-personne"><span class="tc-t">“Person” effects (blurred background, outline…)</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-a-personne" hidden><ol><li>Select a clip that shows a person.</li><li><b class="ui">Effects</b> tab, Person category: blurred background, black-and-white background, outline, neon, aura…</li><li>The AI cuts out the person on every frame, right on your PC.</li><li>Set the strength in the panel on the right.</li></ol><p class="tip"><b>Tip</b> Great for highlighting someone without a green screen.</p><a class="tperm" href="/en/tutos/a-personne.html">Direct link to this tutorial</a></div></article></div></section>
+<section class="tcat" id="aide" data-cat="aide"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg></span><div><h2>Common problems</h2><p>Fixes for the most frequent issues.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-d-noir" data-id="d-noir"><button class="tc-h" aria-expanded="false" aria-controls="s-d-noir"><span class="tc-t">The game picture is black</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>1 min</span><span>3 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-d-noir" hidden><ol><li>Some games in exclusive fullscreen can’t be captured.</li><li>In the game’s graphics options, choose “Windowed fullscreen” (or “Borderless windowed”).</li><li>In DedCut, choose the whole screen rather than the game window.</li></ol><a class="tperm" href="/en/tutos/d-noir.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-d-son" data-id="d-son"><button class="tc-h" aria-expanded="false" aria-controls="s-d-son"><span class="tc-t">No sound</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>2 min</span><span>3 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-d-son" hidden><ol><li>No game sound in a recording: tick “<b class="ui">Share the PC sound</b>” in the screen picker window.</li><li>Silent mic: choose it in the audio mixer and check that Windows lets DedCut use it.</li><li>No sound when playing in Music with Bluetooth headphones: wait a few seconds for them to wake up, or choose another output in the sound settings.</li></ol><a class="tperm" href="/en/tutos/d-son.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-d-plantage" data-id="d-plantage"><button class="tc-h" aria-expanded="false" aria-controls="s-d-plantage"><span class="tc-t">Recover your work after a crash</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>1 min</span><span>3 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-d-plantage" hidden><ol><li>Reopen DedCut: the editor finds your last project as it was (autosave), and Image and Music offer to recover your work.</li><li>In Image and Music, the File menu also has “<b class="ui">Recover after a crash</b>”.</li><li>An interrupted take in Music is recovered at the next start.</li></ol><p class="tip"><b>Tip</b> Press <kbd>Ctrl</kbd>+<kbd>S</kbd> regularly: it’s the best backup there is.</p><a class="tperm" href="/en/tutos/d-plantage.html">Direct link to this tutorial</a></div></article>
+<article class="tc" id="t-d-bug" data-id="d-bug"><button class="tc-h" aria-expanded="false" aria-controls="s-d-bug"><span class="tc-t">Report a bug</span>
+<span class="tc-m"><span class="lv l1">Beginner</span><span>1 min</span><span>4 steps</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-d-bug" hidden><ol><li>Click the “<b class="ui">beta</b>” badge at the top of DedCut, or <b class="ui">Menu</b> &gt; “<b class="ui">Report a bug</b>”. On the home screen, the link is at the bottom.</li><li>Explain what happened, and what you were doing just before.</li><li>Keep the technical info ticked: it really helps to fix the bug, with no file names and no personal data.</li><li>Click “<b class="ui">Send with Gmail</b>”, “<b class="ui">With Outlook</b>” or “<b class="ui">Other e-mail app</b>”, check the message, then send it.</li></ol><p class="tip"><b>Tip</b> If your e-mail does not open, click “<b class="ui">Copy</b>” and paste the message into an e-mail to bugs@dedcut.com.</p><a class="tperm" href="/en/tutos/d-bug.html">Direct link to this tutorial</a></div></article></div></section></div>
+<div class="wrap"><p class="tnone" id="tnone" hidden>No tutorial matches. Try another word.</p>
+<div class="tmore"><p>A question that isn’t here?</p><span><a class="lnk" href="/en/#questions">See the FAQ</a></span><a class="btn pri dl" href="https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe">Download DedCut</a></div></div>
+</main>
+<footer><div class="wrap fbottom"><span>© 2026 ByKemi · DedCut</span><a href="/en/">Back to home</a></div></footer>
+<script>
+const PLAN={"cats":[{"id":"debut","ico":"<path d=\"M5 3l14 9-14 9z\"/>","tutos":["installer","espaces","bases"]},{"id":"montage","ico":"<circle cx=\"6\" cy=\"7\" r=\"3\"/><circle cx=\"6\" cy=\"17\" r=\"3\"/><path d=\"M8.6 8.6L20 18M8.6 15.4L20 6\"/>","tutos":["m-import","m-couper","m-texte","m-effets","m-son","m-soustitres","m-textedit","m-vertical","m-shorts","m-multicam","m-suivi","m-export","m-ytdesc"]},{"id":"rec","ico":"<circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"4\" fill=\"currentColor\"/>","tutos":["r-ecran","r-cam","r-scenes"]},{"id":"live","ico":"<circle cx=\"12\" cy=\"12\" r=\"2.5\"/><path d=\"M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2\"/>","tutos":["l-premier","l-multi","l-chat","l-overlays","l-tiktok","l-pendant"]},{"id":"image","ico":"<rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"2\"/><circle cx=\"9\" cy=\"10\" r=\"2\"/><path d=\"M21 16l-5-5-9 9\"/>","tutos":["i-miniature","i-retouche","i-detourer","i-tablette","i-qrcode","i-montage"]},{"id":"musique","ico":"<path d=\"M9 18V5l11-2v13\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><circle cx=\"17\" cy=\"16\" r=\"3\"/>","tutos":["mu-beat","mu-melodie","mu-voix","mu-justesse","mu-export"]},{"id":"ia","ico":"<path d=\"M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z\"/><path d=\"M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z\"/>","tutos":["a-assistant","a-video","a-personne"]},{"id":"aide","ico":"<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6\"/><circle cx=\"12\" cy=\"17\" r=\".6\" fill=\"currentColor\"/>","tutos":["d-noir","d-son","d-plantage","d-bug"]}],"meta":{"installer":[1,2],"espaces":[1,2],"bases":[1,3],"m-import":[1,2],"m-couper":[1,2],"m-texte":[1,2],"m-effets":[1,3],"m-son":[1,3],"m-soustitres":[1,2],"m-vertical":[1,2],"m-export":[1,2],"m-textedit":[1,2],"m-shorts":[1,2],"m-multicam":[2,3],"m-suivi":[2,2],"m-ytdesc":[1,1],"r-ecran":[1,3],"r-cam":[1,2],"r-scenes":[2,3],"l-premier":[1,4],"l-multi":[2,3],"l-chat":[2,3],"l-overlays":[1,2],"l-pendant":[2,3],"l-tiktok":[1,2],"i-miniature":[1,3],"i-retouche":[1,2],"i-detourer":[1,2],"i-tablette":[2,2],"i-montage":[1,1],"i-qrcode":[1,1],"mu-beat":[1,4],"mu-melodie":[1,3],"mu-voix":[2,4],"mu-export":[1,2],"mu-justesse":[2,2],"a-assistant":[1,2],"a-video":[2,3],"a-personne":[1,2],"d-noir":[1,1],"d-son":[1,2],"d-plantage":[1,1],"d-bug":[1,1]}};
+const D={"page":{"title":"DedCut tutorials — learn in a few minutes","desc":"Free step-by-step DedCut tutorials: video editing, screen recording, live streaming, photo editing, music and AI.","nav":"Tutorials","eyebrow":"Tutorials","h1":"Learn DedCut step by step","lead":"Short, simple guides for every DedCut space. Pick a category or search for what you want to do.","search":"Search a tutorial (subtitles, live, thumbnail…)","all":"All","none":"No tutorial matches. Try another word.","lvl1":"Beginner","lvl2":"A bit further","min":"%n min","steps":"%n steps","tip":"Tip","open":"Show the steps","close":"Hide","back":"Back to home","more":"A question that isn’t here?","moreLink":"See the FAQ","dl":"Download DedCut","top":"Back to top","homeLink":"All tutorials","homeT":"Learn DedCut in a few minutes","homeP":"Editing, recording, live, image, music, AI: a simple tutorial for everything."},"cat":{"debut":["Getting started","Install DedCut and discover the essentials."],"montage":["Video editing","Cut, add text, effects and music, and export."],"rec":["Screen recording","Record your screen, a game, your webcam and your voice."],"live":["Live","Stream live on YouTube, Twitch, Facebook or Kick."],"image":["Image","Thumbnails, photo editing, cutouts and drawing."],"musique":["Music","Make a beat, a melody, record your voice and export."],"ia":["Artificial intelligence","The assistant that edits for you and the AI tools, on your PC."],"aide":["Common problems","Fixes for the most frequent issues."]},"t":{"installer":{"t":"Install DedCut","s":["On this site, click Download: the file DedCut-Installation.exe lands in your Downloads folder.","Open it. If Windows shows “Windows protected your PC”, click “More info” then “Run anyway” (DedCut is new, Windows doesn’t know it yet).","Installation takes a few seconds, with no account and no admin rights.","DedCut opens on the home screen: it’s ready."],"tip":"Updates then happen on their own: DedCut tells you when a new version is ready."},"espaces":{"t":"The five DedCut spaces","s":["On the home screen, choose what you want to do, or switch spaces with the buttons at the very top of the window.","<b class=\"ui\">Edit</b>: edit your videos (cut, text, effects, music, subtitles, export).","<b class=\"ui\">Record</b>: record your screen, a game, your webcam and your mic.","<b class=\"ui\">Live</b>: stream live on one or several platforms.","<b class=\"ui\">Image</b>: create thumbnails, edit photos, draw.","<b class=\"ui\">Music</b>: make music, from drums to export."],"tip":"The spaces talk to each other: a song or an image goes to the editor in one click."},"bases":{"t":"The basics","s":["<kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes your last action, <kbd>Ctrl</kbd>+<kbd>Y</kbd> redoes it. You can undo as many times as you like.","<kbd>Ctrl</kbd>+<kbd>S</kbd> saves your project. DedCut also autosaves so you lose nothing.","The keyboard button at the top right shows every shortcut, and you can change them.","The menu (top left) creates, opens and saves your projects, opens the <b class=\"ui\">Settings</b> and replays the guided tour.","You can move the panels, put the timeline at the top or bottom, and pop a panel out into its own window."],"tip":"DedCut comes in 9 languages: pick yours in the <b class=\"ui\">Settings</b> (<b class=\"ui\">Language</b> section)."},"m-import":{"t":"Import and place your videos","s":["Open the <b class=\"ui\">Edit</b> space, then the <b class=\"ui\">Media</b> tab on the left.","Drag your videos, photos and sounds from Windows Explorer, or click the area to pick them.","Then drag each item onto the timeline at the bottom: that’s where your video is built.","Press <kbd>Space</kbd> to play or pause the preview."],"tip":"A big 4K video? DedCut makes a light copy on its own so the preview stays smooth; the export keeps the original quality."},"m-couper":{"t":"Cut and trim","s":["Place the playhead (the vertical line) where you want.","Click the scissors above the timeline, or press <kbd>S</kbd>: the clip is split in two.","Click the part you don’t want, then press <kbd>Del</kbd>.","To shorten without cutting, drag the start or end of a clip."],"tip":"In the <b class=\"ui\">Audio</b> tab, “<b class=\"ui\">Cut the silences</b>” removes every gap in a voice-over in one click."},"m-texte":{"t":"Add a title or text","s":["Place the playhead where the text should appear.","Open the <b class=\"ui\">Text</b> tab and click a style: the text is added to the timeline.","Type your text in the settings panel on the right, then pick the font, colour and animation.","In the preview, move the text with the mouse and drag a corner to resize it."],"tip":"More than 200 text styles and 100 fonts come with DedCut, free to use anywhere."},"m-effets":{"t":"Effects, filters and transitions","s":["Click a clip on the timeline to select it.","<b class=\"ui\">Effects</b> tab: hover an effect to see it move, click to add or remove it.","<b class=\"ui\">Filters</b> tab: click a filter to change the clip’s colours; one button applies it to the whole video.","<b class=\"ui\">Transitions</b> tab: choose a transition at the start or end of the clip, or a soft fade with the previous clip."],"tip":"Each effect’s strength is set in the panel on the right."},"m-son":{"t":"Music, sound effects and volume","s":["Open the <b class=\"ui\">Audio</b> tab.","In “<b class=\"ui\">Music</b>”, listen to and add royalty-free music (real songs and music made by DedCut).","Add sound effects (whoosh, click, applause…) at the right moment of your video.","Click a clip to set its volume in the panel on the right, or mute a whole track."],"tip":"This music can be used on YouTube, TikTok and everywhere, with no copyright risk."},"m-soustitres":{"t":"Automatic subtitles","s":["Open the <b class=\"ui\">Captions</b> tab.","Choose the accuracy: fast, balanced or accurate.","The first time, click “<b class=\"ui\">Download the model</b>” (a single download).","Click “<b class=\"ui\">Create captions</b>”: DedCut listens to your video and writes the subtitles on the timeline.","Click a subtitle to fix its text in the panel on the right; change its style, then “<b class=\"ui\">Apply this style to all</b>”."],"tip":"Everything happens on your PC: neither your voice nor your video is sent over the internet."},"m-textedit":{"t":"Cut by deleting words","s":["Open the <b class=\"ui\">Captions</b> tab and click “<b class=\"ui\">Open edit by text</b>” (or right-click a clip → “<b class=\"ui\">Edit by text</b>”).","The first time, DedCut writes down everything said in the video, on your PC.","Select words with the mouse and press <kbd>Del</kbd>: the video is cut at the same place and everything after moves back.","“Remove hesitations” removes all the “uh”s at once; “Shorten the pauses” trims long silences."],"tip":"Subtitles follow your cuts. <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes."},"m-vertical":{"t":"Make a vertical video (TikTok, Shorts)","s":["Click an empty spot of the timeline (or press <kbd>Esc</kbd>): the <b class=\"ui\">Project</b> panel appears on the right.","In “<b class=\"ui\">1-click format</b>”, choose “<b class=\"ui\">Vertical 9:16 (TikTok, Shorts)</b>”.","Your videos keep their whole frame, with a blurred background behind.","Move or resize each clip in the preview if you want a different framing."],"tip":"The same panel switches back to horizontal at any time."},"m-shorts":{"t":"Make Shorts automatically","s":["Open a long video in Edit (with its subtitles, it is even better).","Click “<b class=\"ui\">Export</b>” then “<b class=\"ui\">Auto Shorts</b>”.","Choose the length and the number of Shorts, then “<b class=\"ui\">Find the moments</b>”: DedCut finds the liveliest moments.","Keep the moments you like and make the Shorts: each one becomes a vertical project, with a frame that follows the person."],"tip":"You can also ask the assistant: “make Shorts”."},"m-multicam":{"t":"Multicam: the camera of whoever speaks","s":["Put 2 to 4 videos filmed at the same time on the timeline (one camera per person, each with its microphone).","Select them with <kbd>Ctrl</kbd>+click, then right-click → “Create a multicam”: DedCut syncs them by their sound.","In the “<b class=\"ui\">Multicam</b>” bar above the preview, click “<b class=\"ui\">Auto</b>”, choose the pace, then “<b class=\"ui\">Start</b>”.","DedCut shows the camera of whoever is speaking. Change a shot with keys <kbd>1</kbd> to <kbd>4</kbd>."],"tip":"Nothing is deleted: <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes everything."},"m-suivi":{"t":"Track an object, blur a licence plate","s":["Put an element (text, sticker, arrow…) over the object, with the playhead at the start of the moment.","Right-click the element → “<b class=\"ui\">Track an object</b>”: DedCut tracks the object in the video and the element follows it.","To hide a plate or a face: right-click the video → “<b class=\"ui\">Blur something that moves</b>”, put the zone over the object, then “<b class=\"ui\">Track an object</b>”."],"tip":"If the object disappears, tracking stops there: start it again a bit later."},"m-export":{"t":"Export your video","s":["Click “<b class=\"ui\">Export</b>” at the top right (or <kbd>Ctrl</kbd>+<kbd>E</kbd>).","Give it a name, choose the quality (up to 4K) and the frame rate.","Start the export, then choose where to save the file.","You can also export the sound only (WAV or M4A)."],"tip":"Minimise DedCut during a long export: it keeps going in the background."},"m-ytdesc":{"t":"Write the YouTube description","s":["First make the subtitles of your video (<b class=\"ui\">Captions</b> tab).","Click “<b class=\"ui\">Export</b>” then “<b class=\"ui\">YouTube description</b>”.","Pick one of the suggested titles, edit the description and hashtags, then “<b class=\"ui\">Copy the description</b>”."],"tip":"Your chapters (markers) are added automatically. With the DedCut AI brain, everything is written on your PC."},"r-ecran":{"t":"Record your screen or a game","s":["Open the <b class=\"ui\">Record</b> space.","In <b class=\"ui\">Sources</b>, click “<b class=\"ui\">Add a source</b>” then “<b class=\"ui\">Screen / window</b>”.","The “<b class=\"ui\">What do you want to share?</b>” window opens: choose a screen or a window, shown with a small preview.","Tick “<b class=\"ui\">Share the PC sound</b>” to keep the sound of the game, music or Discord (without DedCut’s own sounds).","Click “<b class=\"ui\">Start recording</b>”. To stop, click again or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>."],"tip":"The video goes to your editor media and to the Videos\\DedCut folder."},"r-cam":{"t":"Add your webcam and mic","s":["In <b class=\"ui\">Sources</b>, click “<b class=\"ui\">Add a source</b>” then “<b class=\"ui\">Webcam</b>”: choose your camera.","In the preview, move the webcam and drag a corner to resize it; its settings allow a round shape.","In the audio mixer, choose your mic and set its volume while talking: the bar should stay in the green.","The mic filters reduce background noise and breathing."],"tip":"Wear headphones: otherwise the sound of your speakers comes back into the mic."},"r-scenes":{"t":"Prepare several scenes","s":["In <b class=\"ui\">Scenes</b>, a scene is a layout (for example “Screen + webcam”, “Be right back”).","Add a scene with the + button, then its sources: screen, webcam, images, text, chat…","Click a scene to show it. During a recording or a live, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd> to <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>9</kbd> switch scenes, even in a game.","Drag a scene or a source to change the order."],"tip":"Scenes are shared by <b class=\"ui\">Record</b> and <b class=\"ui\">Live</b>."},"l-premier":{"t":"Your first live stream","s":["Open the <b class=\"ui\">Live</b> space and set up your scene (screen, webcam, mic).","<b class=\"ui\">Settings</b> tab on the right: in “<b class=\"ui\">Where to stream?</b>”, choose the platform (YouTube, Twitch, Facebook, Kick or another).","Copy your stream key from the platform’s dashboard and paste it into “<b class=\"ui\">Stream key</b>”.","Click “<b class=\"ui\">Go live</b>”. An indicator shows you’re live; click again to stop."],"tip":"Your stream key stays secret: DedCut keeps it encrypted on your PC."},"l-multi":{"t":"Stream to several platforms","s":["In the <b class=\"ui\">Settings</b> tab, click “<b class=\"ui\">Add a destination</b>” and add a second platform with its key.","Tick the destinations to use: the live goes everywhere at once.","For TikTok or YouTube Shorts, turn on “<b class=\"ui\">Vertical live (TikTok, Shorts)</b>”: DedCut also sends a 9:16 version.","Check your connection: each destination needs its share of upload speed."],"tip":"Start with a single platform to test your connection."},"l-chat":{"t":"Show the chat and alerts","s":["<b class=\"ui\">Chat</b> tab on the right: connect your channel to read the messages.","Add the “<b class=\"ui\">Stream chat</b>” source to show the chat on screen, then place it in the preview.","Add the “<b class=\"ui\">Alerts</b>” source to show new followers and donations.","Polls, goal bar and counters are also in “<b class=\"ui\">Add a source</b>”."],"tip":"A voice can read the chat aloud: setting in the <b class=\"ui\">Tools</b> tab."},"l-overlays":{"t":"Add overlays","s":["In <b class=\"ui\">Live</b> (or <b class=\"ui\">Record</b>), click “<b class=\"ui\">Add a source</b>” then “<b class=\"ui\">Overlay</b>”.","In the right panel, pick one of 30 styles: webcam frames, name lower thirds, waiting screens, borders, reminders and ambiences. Hover a thumbnail to see it move.","Type your name or message, then choose the two colours and the speed.","Place the overlay with the mouse on the preview and drag a corner to resize it."],"tip":"For a webcam frame, keep the “<b class=\"ui\">Overlay</b>” source above the webcam in the sources list."},"l-tiktok":{"t":"Go live on TikTok","s":["On a computer, open TikTok LIVE Producer and set up your live: TikTok gives you a server address and a key.","In <b class=\"ui\">Live</b>, add the TikTok destination and paste “<b class=\"ui\">Server address</b>” and “<b class=\"ui\">Stream key</b>”.","For a vertical live, choose “<b class=\"ui\">Switch the studio to vertical (TikTok scenes)</b>”: your TikTok scenes are ready.","Start the live from DedCut."],"tip":"On TikTok the key changes for every live: copy it again each time and never show it."},"l-pendant":{"t":"During the live","s":["Switch scenes with a click, or with <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd> to <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>9</kbd>, even from a game.","“<b class=\"ui\">Record too</b>” keeps a copy of the live on your PC.","<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> drops a marker on a great moment so you can find it when editing.","Studio mode prepares the next scene in the preview before sending it live."],"tip":"After the live, the recorded video goes to the editor so you can make clips."},"i-miniature":{"t":"Make a YouTube thumbnail","s":["Open the <b class=\"ui\">Image</b> space and click “<b class=\"ui\">New image</b>”.","Choose the “Video thumbnail” preset (1280 × 720), then Create.","Add a photo (drag it into the window), then a title with the <b class=\"ui\">Text</b> tool.","Add an outline or a shadow to the text in the layer effects so it reads from afar.","<b class=\"ui\">File</b> menu &gt; “<b class=\"ui\">Export</b>”: save as PNG or JPG."],"tip":"Each element is on its own layer: you can change everything later."},"i-retouche":{"t":"Edit a photo","s":["Open your photo (drag it into the <b class=\"ui\">Image</b> space).","<b class=\"ui\">Image</b> menu &gt; “<b class=\"ui\">Auto enhance</b>” fixes light and colours in one click.","<b class=\"ui\">Filter</b> menu: Brightness, Curves, Levels, Hue… to adjust by hand, with a live preview.","Crop with the crop tool, then export."],"tip":"The original stays intact as long as you don’t save over it."},"i-detourer":{"t":"Cut out a person or an object","s":["Open your photo in <b class=\"ui\">Image</b>.","<b class=\"ui\">Select</b> menu &gt; “<b class=\"ui\">Select subject</b>”: the AI selects the main person or object.","<b class=\"ui\">Layer</b> menu &gt; “<b class=\"ui\">Remove background (mask)</b>” removes the background (it’s hidden by a mask, so you can bring it back).","Export as PNG to keep the transparency."],"tip":"The cutout is computed on your PC: your photo is sent nowhere."},"i-tablette":{"t":"Draw with a graphics tablet","s":["Plug in your tablet (Wacom, XP-Pen, Huion…) or use your screen’s pen.","<b class=\"ui\">Edit</b> menu &gt; “<b class=\"ui\">Pen and drawing tablet</b>”: set the pressure and try it in the test area.","Choose the <b class=\"ui\">Brush</b> tool: pressure changes the size, tilt the angle, and the eraser end erases.","If pressure doesn’t come through, turn on “Windows Ink” in your tablet’s software."],"tip":"Draw on a new layer to fix mistakes without spoiling the rest."},"i-qrcode":{"t":"Add a QR code","s":["Edit: <kbd>Ctrl</kbd>+<kbd>K</kbd> then “Add a QR code”, or in the elements, Social media category.","Live: “<b class=\"ui\">Add a source</b>” then “<b class=\"ui\">QR code</b>”.","Image: Layer menu → “<b class=\"ui\">QR code</b>”.","Type your link (channel, social network, website): viewers scan it with their phone."],"tip":"Keep dark modules on a light background, and a QR code big enough."},"i-montage":{"t":"Send an image to the editor (and back)","s":["In <b class=\"ui\">Image</b>, right-click the image: “<b class=\"ui\">Send the image to Editing</b>”. It lands on the editor’s timeline.","In <b class=\"ui\">Edit</b>, right-click a clip: “<b class=\"ui\">Send to Image</b>” opens the frame in the Image space to edit it."],"tip":"Handy for making a thumbnail from a frame of your video."},"mu-beat":{"t":"Your first beat","s":["Open the <b class=\"ui\">Music</b> space, <b class=\"ui\">File</b> menu &gt; “<b class=\"ui\">New project</b>”, choose the “<b class=\"ui\">Beat</b>” template and a tempo (for example 120).","Click the drums clip, then the <b class=\"ui\">Steps</b> tab at the bottom.","Each row is a sound (kick, snare, hi-hat…), each box a step: click to turn it on or off.","Press <kbd>Space</kbd> to listen. Try the swing for a livelier groove.","<b class=\"ui\">Mixer</b> tab: set each track’s volume."],"tip":"DedCut’s drum sounds are made by DedCut: usable everywhere, even in music you sell."},"mu-melodie":{"t":"Write a melody","s":["On an instrument track, double-click an empty spot: a clip is created and opens.","<b class=\"ui\">Piano roll</b> tab: click the grid to place a note, drag it to move it, pull its edge to lengthen it.","Right-click or <kbd>Del</kbd> deletes a note.","The keyboard button, right of the playback controls, turns your computer keyboard into a piano."],"tip":"Pick another sound for the track in the Instrument tab (piano, synth, strings…)."},"mu-voix":{"t":"Record your voice","s":["Plug in your mic and wear headphones.","<b class=\"ui\">Settings</b> menu &gt; Sound: allow the mic and measure the latency once.","<b class=\"ui\">Track</b> menu: add an audio track, choose the input, then arm the track (round button).","Press <kbd>R</kbd> to record. With the loop on, each pass becomes a take: all of them are kept.","<b class=\"ui\">Audio clip</b> tab: keep the best of each take, then add the “Clear voice” effect chain."],"tip":"If DedCut closes while recording, the take can be recovered at the next start."},"mu-justesse":{"t":"Correct the pitch, add backing vocals","s":["In <b class=\"ui\">Music</b>, click your sung vocal (a voice on its own, no music on it).","Open “<b class=\"ui\">Ideas and analysis</b>” (the sparkle button).","In “<b class=\"ui\">Sung vocals</b>”, check the key, choose Natural, Strong or Robot, then “<b class=\"ui\">Correct the pitch</b>”.","For backing vocals, tick the voices you want, then “<b class=\"ui\">Add backing vocals</b>”: each voice gets its own track."],"tip":"The original voice is kept (muted): unmute it to compare."},"mu-export":{"t":"Export your music","s":["Listen to the whole song: the master’s red light must stay off (no clipping).","<b class=\"ui\">File</b> menu &gt; “<b class=\"ui\">Export audio</b>”.","Choose the format: lossless WAV or FLAC, or lighter M4A.","Stems give one file per track, all starting at the same point.","Tick “<b class=\"ui\">Send to Editing</b>” to find your music in the video editor."],"tip":"The export report shows the length, loudness (LUFS) and peak of each file."},"a-assistant":{"t":"The AI assistant that edits for you","s":["In the editor, click the bubble at the top right (“<b class=\"ui\">Chat with an AI that edits for you</b>”).","Type what you want: “cut the silences and add subtitles”, “make my video vertical”…","The assistant edits right inside DedCut, and one button undoes everything it did.","You can also ask it questions about DedCut."],"tip":"DedCut AI runs on your PC, free and with no account."},"a-video":{"t":"Create a video with AI Video","s":["Open the <b class=\"ui\">AI video</b> tab in the editor.","Add an image to animate, or describe what you want to see.","Choose a style (realistic, 3D, anime…), then start the creation.","The first time, the AI model downloads; after that, everything happens on your PC."],"tip":"A recent graphics card speeds up creation a lot."},"a-personne":{"t":"“Person” effects (blurred background, outline…)","s":["Select a clip that shows a person.","<b class=\"ui\">Effects</b> tab, Person category: blurred background, black-and-white background, outline, neon, aura…","The AI cuts out the person on every frame, right on your PC.","Set the strength in the panel on the right."],"tip":"Great for highlighting someone without a green screen."},"d-noir":{"t":"The game picture is black","s":["Some games in exclusive fullscreen can’t be captured.","In the game’s graphics options, choose “Windowed fullscreen” (or “Borderless windowed”).","In DedCut, choose the whole screen rather than the game window."],"tip":""},"d-son":{"t":"No sound","s":["No game sound in a recording: tick “<b class=\"ui\">Share the PC sound</b>” in the screen picker window.","Silent mic: choose it in the audio mixer and check that Windows lets DedCut use it.","No sound when playing in Music with Bluetooth headphones: wait a few seconds for them to wake up, or choose another output in the sound settings."],"tip":""},"d-plantage":{"t":"Recover your work after a crash","s":["Reopen DedCut: the editor finds your last project as it was (autosave), and Image and Music offer to recover your work.","In Image and Music, the File menu also has “<b class=\"ui\">Recover after a crash</b>”.","An interrupted take in Music is recovered at the next start."],"tip":"Press <kbd>Ctrl</kbd>+<kbd>S</kbd> regularly: it’s the best backup there is."},"d-bug":{"t":"Report a bug","s":["Click the “<b class=\"ui\">beta</b>” badge at the top of DedCut, or <b class=\"ui\">Menu</b> &gt; “<b class=\"ui\">Report a bug</b>”. On the home screen, the link is at the bottom.","Explain what happened, and what you were doing just before.","Keep the technical info ticked: it really helps to fix the bug, with no file names and no personal data.","Click “<b class=\"ui\">Send with Gmail</b>”, “<b class=\"ui\">With Outlook</b>” or “<b class=\"ui\">Other e-mail app</b>”, check the message, then send it."],"tip":"If your e-mail does not open, click “<b class=\"ui\">Copy</b>” and paste the message into an e-mail to bugs@dedcut.com."}}},PERMA="Direct link to this tutorial",TUTO_URL=id=>"/en/tutos/"+id+'.html';
+const PAGE_LANG='en',SITE_LANGS=["fr","en","es","de","it","pt","ja","ko","zh"],langUrl=l=>l==='fr'?'/tutos.html':'/'+l+'/tutos.html';
+document.getElementById('lang').value=PAGE_LANG;
+document.getElementById('lang').addEventListener('change',e=>{const l=e.target.value;try{localStorage.setItem('dedcut-site-lang',l)}catch(x){}location.href=langUrl(l)+location.hash});
+const topEl=document.querySelector('.top'),bar=document.querySelector('.playbar i'),knob=document.querySelector('.playbar b');
+function onScroll(){const d=document.documentElement,p=d.scrollTop/Math.max(1,d.scrollHeight-d.clientHeight);bar.style.width=(p*100)+'%';knob.style.left='calc('+(p*100)+'% - 1px)';topEl.classList.toggle('scrolled',d.scrollTop>8)}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+/* page française et langue déjà choisie ailleurs : on va dans cette langue */
+let saved='';try{saved=localStorage.getItem('dedcut-site-lang')||''}catch(e){}
+if(PAGE_LANG==='fr'&&location.protocol!=='file:'&&saved&&saved!=='fr'&&SITE_LANGS.includes(saved))location.replace(langUrl(saved)+location.hash);
+const icon=c=>'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+c.ico+'</svg>';
+const open=new Set();
+function card(id){const T=D.t[id],[lvl,min]=PLAN.meta[id],o=open.has(id);
+  return '<article class="tc'+(o?' open':'')+'" id="t-'+id+'" data-id="'+id+'"><button class="tc-h" aria-expanded="'+o+'" aria-controls="s-'+id+'"><span class="tc-t">'+T.t+'</span><span class="tc-m"><span class="lv l'+lvl+'">'+(lvl===1?D.page.lvl1:D.page.lvl2)+'</span><span>'+D.page.min.replace('%n',min)+'</span><span>'+D.page.steps.replace('%n',T.s.length)+'</span></span><svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="tc-b" id="s-'+id+'"'+(o?'':' hidden')+'><ol>'+T.s.map(x=>'<li>'+x+'</li>').join('')+'</ol>'+(T.tip?'<p class="tip"><b>'+D.page.tip+'</b> '+T.tip+'</p>':'')+'<a class="tperm" href="'+TUTO_URL(id)+'">'+PERMA+'</a></div></article>'}
+function draw(){
+  document.getElementById('tlist').innerHTML=PLAN.cats.map(c=>'<section class="tcat" id="'+c.id+'" data-cat="'+c.id+'"><div class="tcat-h"><span class="tcat-i">'+icon(c)+'</span><div><h2>'+D.cat[c.id][0]+'</h2><p>'+D.cat[c.id][1]+'</p></div></div><div class="tgrid">'+c.tutos.map(card).join('')+'</div></section>').join('');
+  filter()}
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+function filter(){const q=norm(document.getElementById('q').value.trim()),f=document.querySelector('.chipf.on')?.dataset.f||'';let n=0;
+  document.querySelectorAll('.tcat').forEach(s=>{let k=0;s.querySelectorAll('.tc').forEach(a=>{const T=D.t[a.dataset.id],hit=!q||norm((T.t+' '+T.s.join(' ')+' '+T.tip).replace(/<[^>]+>/g,'')).includes(q);a.hidden=!hit;if(hit)k++});s.hidden=(f&&s.dataset.cat!==f)||!k;if(!s.hidden)n+=k});
+  document.getElementById('tnone').hidden=n>0}
+document.getElementById('tlist').addEventListener('click',e=>{const h=e.target.closest('.tc-h');if(!h)return;const a=h.closest('.tc'),id=a.dataset.id,o=!open.has(id);if(o)open.add(id);else open.delete(id);a.classList.toggle('open',o);h.setAttribute('aria-expanded',o);a.querySelector('.tc-b').hidden=!o;if(o)history.replaceState(null,'','#t-'+id)});
+document.getElementById('chips').addEventListener('click',e=>{const b=e.target.closest('.chipf');if(!b)return;document.querySelectorAll('.chipf').forEach(x=>x.classList.toggle('on',x===b));filter();window.scrollTo({top:document.querySelector('.tbar').offsetTop-68,behavior:'smooth'})});
+document.getElementById('q').addEventListener('input',filter);
+const h=location.hash.match(/^#t-([\w-]+)/);if(h&&PLAN.meta[h[1]]){open.add(h[1]);draw()}
+if(h){const a=document.getElementById('t-'+h[1]);if(a)setTimeout(()=>a.scrollIntoView({block:'center',behavior:'instant'}),50)}else if(location.hash){const s=document.querySelector(location.hash);if(s)setTimeout(()=>s.scrollIntoView({behavior:'instant'}),50)}
+/* haut de page « cinéma » : pistes de timeline qui défilent (comme sur l'accueil), en pause hors de l'écran */
+(()=>{const tl=document.getElementById('hxtl');if(!tl)return;let r=7;const rnd=()=>(r=(r*9301+49297)%233280)/233280;
+  const C=[['#22d3ee','#0891b2'],['#7c3aed','#a78bfa'],['#f59e0b','#fbbf24'],['#10b981','#34d399'],['#ec4899','#f472b6']];
+  [[0,62],[1,48],[2,74],[3,56],[4,66]].forEach(([c,d],i)=>{const tr=document.createElement('div');tr.className='hx-tr'+(i%2?' rev':'');tr.style.setProperty('--d',d+'s');
+    let h='';for(let k=0;k<9;k++){const cc=C[(c+(k%3===2?1:0))%C.length];h+='<b style="--w:'+Math.round(90+rnd()*260)+'px;--c:linear-gradient(90deg,'+cc[0]+','+cc[1]+')"></b>'}
+    tr.innerHTML=h+h;tl.insertBefore(tr,tl.lastElementChild)});
+  const he=document.querySelector('.thero');if('IntersectionObserver' in window)new IntersectionObserver(e=>he.classList.toggle('hx-off',!e[0].isIntersecting)).observe(he);
+  document.addEventListener('visibilitychange',()=>he.classList.toggle('hx-off',document.hidden));
+})();
+/* cartes des tutos : lueur qui suit la souris */
+document.addEventListener('pointermove',e=>{const t=e.target.closest&&e.target.closest('.tc');if(!t)return;const r=t.getBoundingClientRect();t.style.setProperty('--mx',(e.clientX-r.left)+'px');t.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
+</script>
+</body>
+</html>

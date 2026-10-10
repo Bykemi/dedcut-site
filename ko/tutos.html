@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DedCut 튜토리얼 — 몇 분 만에 배우기</title>
+<meta name="description" content="무료 DedCut 단계별 튜토리얼: 동영상 편집, 화면 녹화, 라이브 방송, 사진 편집, 음악, AI.">
+<meta name="theme-color" content="#09080f">
+<link rel="canonical" href="https://dedcut.com/ko/tutos.html">
+<link rel="alternate" hreflang="fr" href="https://dedcut.com/tutos.html">
+<link rel="alternate" hreflang="en" href="https://dedcut.com/en/tutos.html">
+<link rel="alternate" hreflang="es" href="https://dedcut.com/es/tutos.html">
+<link rel="alternate" hreflang="de" href="https://dedcut.com/de/tutos.html">
+<link rel="alternate" hreflang="it" href="https://dedcut.com/it/tutos.html">
+<link rel="alternate" hreflang="pt" href="https://dedcut.com/pt/tutos.html">
+<link rel="alternate" hreflang="ja" href="https://dedcut.com/ja/tutos.html">
+<link rel="alternate" hreflang="ko" href="https://dedcut.com/ko/tutos.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://dedcut.com/zh/tutos.html">
+<link rel="alternate" hreflang="x-default" href="https://dedcut.com/tutos.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DedCut">
+<meta property="og:url" content="https://dedcut.com/ko/tutos.html">
+<meta property="og:title" content="DedCut 튜토리얼 — 몇 분 만에 배우기">
+<meta property="og:description" content="무료 DedCut 단계별 튜토리얼: 동영상 편집, 화면 녹화, 라이브 방송, 사진 편집, 음악, AI.">
+<meta property="og:image" content="https://dedcut.com/assets/editor.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.png">
+<style>
+:root{
+  --bg:#09080f;--bg2:#0e0c16;--panel:#13101d;--panel2:#1a1626;--line:#272233;--line2:#3a3349;
+  --ink:#f4f2fa;--dim:#a7a1b8;--dim2:#7d7790;--cyan:#22d3ee;--violet:#7c3aed;--violet2:#a78bfa;
+  --grad:linear-gradient(120deg,#22d3ee,#7c3aed);--r:6px;
+  --font:"Bahnschrift","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--font);overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button,select{font:inherit}
+::selection{background:var(--cyan);color:#05070a}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.wrap{width:min(1180px,calc(100% - 32px));margin-inline:auto}
+.skip{position:absolute;left:12px;top:-60px;background:var(--cyan);color:#05070a;padding:10px 14px;border-radius:var(--r);z-index:100}.skip:focus{top:12px}
+
+/* tête de lecture = progression de la page */
+.playbar{position:fixed;inset:0 0 auto 0;height:3px;z-index:60;background:transparent;pointer-events:none}
+.playbar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--grad)}
+.playbar b{position:absolute;top:-3px;width:2px;height:12px;background:var(--cyan);box-shadow:0 0 12px var(--cyan);left:0}
+
+/* en-tête */
+.top{position:sticky;top:0;z-index:50;background:rgba(9,8,15,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+.top.scrolled{border-bottom-color:var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:21px;letter-spacing:-.3px}
+.brand img{width:32px;height:32px}
+.brand span b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand small{font-size:11px;font-weight:500;color:var(--dim2);letter-spacing:.8px;text-transform:uppercase;margin-left:4px;padding-left:10px;border-left:1px solid var(--line2)}
+.nav{display:flex;gap:26px;margin-left:auto;font-size:14.5px;color:var(--dim)}
+.nav a:hover{color:var(--ink)}
+.lang{background:var(--panel);color:var(--ink);border:1px solid var(--line2);border-radius:var(--r);padding:7px 8px;font-size:13px;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 20px;border-radius:var(--r);font-weight:700;font-size:15px;border:1px solid var(--line2);background:var(--panel);color:var(--ink);transition:transform .15s,box-shadow .2s,border-color .2s;white-space:nowrap}
+.btn:hover{border-color:var(--violet2);transform:translateY(-1px)}
+.btn.pri{background:var(--grad);border:0;color:#fff;box-shadow:0 10px 30px -10px rgba(124,58,237,.8)}
+.btn.pri:hover{box-shadow:0 14px 38px -10px rgba(34,211,238,.7)}
+.btn svg{width:18px;height:18px;flex:none}
+.top .btn{padding:9px 14px;font-size:14px}
+.menu{display:none;margin-left:auto;background:var(--panel);border:1px solid var(--line2);color:var(--ink);border-radius:var(--r);padding:8px 12px}
+
+/* héros */
+.hero{position:relative;padding:76px 0 40px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:-20% -10% auto;height:720px;background:radial-gradient(600px 340px at 18% 20%,rgba(34,211,238,.16),transparent 70%),radial-gradient(700px 420px at 82% 10%,rgba(124,58,237,.26),transparent 70%);pointer-events:none}
+.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,.035) 1px,transparent 1px);background-size:80px 100%;mask-image:linear-gradient(to bottom,#000 0,transparent 70%);-webkit-mask-image:linear-gradient(to bottom,#000 0,transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--dim);font-weight:600}
+.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+h1{font-size:clamp(32px,9.6vw,96px);line-height:.98;letter-spacing:-.035em;font-weight:700;margin:22px 0 0;max-width:900px}
+h1 .l1{display:block}
+/* signature DedCut : le mot coupé en diagonale, comme le logo */
+.cut{position:relative;display:inline-block;color:transparent;padding-right:.06em;white-space:nowrap}
+.cut:before,.cut:after{content:attr(data-t);position:absolute;inset:0;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.cut:before{clip-path:polygon(0 0,100% 0,100% 44%,0 66%);transform:translateX(-.16em);animation:cj 1s .35s cubic-bezier(.2,.8,.2,1) forwards}
+.cut:after{clip-path:polygon(0 65.6%,100% 43.6%,100% 100%,0 100%);transform:translateX(.16em);animation:cj 1s .35s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes cj{to{transform:none}}
+.hero-row{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:end;margin-top:26px}
+.lead{font-size:19px;line-height:1.6;color:#cdc8da;margin:0;max-width:560px}
+.cta{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.vline{font-size:13px;color:var(--dim2)}
+.vline b{color:var(--dim);font-weight:600}
+.langhint{position:fixed;left:16px;bottom:16px;z-index:90;padding:9px 15px;border-radius:999px;background:rgba(19,16,29,.92);border:1px solid var(--line2);color:var(--ink);font-size:14px;font-weight:600;box-shadow:0 12px 30px -12px rgba(0,0,0,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.langhint:hover{border-color:var(--cyan)}
+.vbeta{display:inline-block;padding:1px 7px;border-radius:999px;background:var(--grad);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;vertical-align:1px}
+.betapill{display:inline-flex;align-items:center;gap:9px;margin:0 0 0 10px;padding:5px 14px 5px 6px;border:1px solid rgba(34,211,238,.35);border-radius:999px;background:rgba(34,211,238,.08);color:#d7f6fc;font-size:13px;line-height:1.3;vertical-align:middle}
+.betapill b{padding:2px 9px;border-radius:999px;background:var(--grad);color:#fff;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.betapill:hover{border-color:rgba(34,211,238,.7)}
+.brand .bbeta{margin-left:-2px;padding:1px 6px;border-radius:999px;background:var(--grad);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;align-self:center}
+@media (max-width:640px){.betapill{margin:10px 0 0;display:flex;width:max-content;max-width:100%}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{font-size:13px;color:#d9d4e6;border:1px solid var(--line2);background:rgba(255,255,255,.02);padding:6px 11px;border-radius:999px;display:inline-flex;gap:7px;align-items:center}
+.chip svg{width:14px;height:14px;color:var(--cyan)}
+.shot{margin:56px 0 0;position:relative}
+.shot .frame{position:relative;border-radius:10px;padding:1px;background:linear-gradient(140deg,rgba(34,211,238,.55),rgba(124,58,237,.55) 45%,rgba(255,255,255,.06));box-shadow:0 40px 120px -30px rgba(124,58,237,.55),0 0 0 1px rgba(0,0,0,.4)}
+.shot .frame>div{border-radius:9px;overflow:hidden;background:#0b0a12}
+.shot img,.shot video{width:100%;height:auto;display:block}
+.don-btn{border-color:rgba(236,72,153,.45)}.don-btn svg{color:#f472b6}.don-btn:hover{border-color:#f472b6;box-shadow:0 8px 24px -12px rgba(236,72,153,.8)}
+.shot figcaption{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.vbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--line2);color:var(--dim);border-radius:var(--r);padding:2px 9px;font-size:12px;cursor:pointer}.vbtn:hover{color:var(--ink);border-color:var(--violet2)}
+.vbtn svg{width:15px;height:15px}#vsnd .w1,#vsnd .w2{display:none}#vsnd[aria-pressed=true] .w1,#vsnd[aria-pressed=true] .w2{display:inline}#vsnd[aria-pressed=true] .x{display:none}
+.vvol{display:inline-flex;align-items:center}.vvol input{width:110px;accent-color:#22d3ee;cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:980px){.top .don-btn{display:none}}
+.nav a{white-space:nowrap}
+/* en-tête : si le menu ne tient pas (langues longues), on retire d'abord « par ByKemi », puis Vie privée et Soutenir (fitTop) */
+.brand{flex:none}.brand small{white-space:nowrap}
+.top .wrap.t1 .brand small{display:none}.top .wrap.t2 .nav a[href="#vie-privee"],.top .wrap.t2 .don-btn{display:none}
+@media (min-width:981px) and (max-width:1211px){.top .don-btn{display:none}.nav{gap:20px}.nav a[href="#vie-privee"]{display:none}}
+.shot figcaption{margin-top:12px;font-size:12.5px;color:var(--dim2);text-align:center}
+
+/* bandeau défilant */
+.marquee{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;margin-top:64px}
+.marquee .track{display:flex;gap:40px;width:max-content;padding:16px 0;animation:mq 40s linear infinite}
+.marquee span{display:inline-flex;align-items:center;gap:40px;font-size:15px;color:#d6d1e3;white-space:nowrap}
+.marquee span:after{content:"";width:9px;height:9px;transform:skewX(-20deg);background:var(--grad);display:inline-block}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{position:relative}
+.sec{padding:110px 0}
+.sec-head{max-width:720px;margin-bottom:46px}
+h2{font-size:clamp(32px,4.4vw,54px);line-height:1.05;letter-spacing:-.03em;margin:16px 0 0;font-weight:700}
+.sec-head p{color:var(--dim);font-size:17px;margin:16px 0 0}
+
+/* grille des fonctions */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tile{position:relative;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:10px;padding:24px;overflow:hidden;transition:border-color .2s,transform .2s}
+.tile:hover{border-color:var(--line2);transform:translateY(-2px)}
+.tile.w2{grid-column:span 2}
+.spaces{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.spaces .tile{padding:22px 20px}
+.spaces .tile p{font-size:14.5px}
+.spaces ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+.spaces li{position:relative;padding-left:16px;font-size:14px;color:#d6d1e3;line-height:1.45}
+.shots2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}.shots2 .shot{margin:0}.shots2 img{aspect-ratio:5/3;object-fit:cover;object-position:top left}
+.spaces li:before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;transform:skewX(-20deg);background:var(--grad)}
+@media (max-width:1180px){.spaces{grid-template-columns:repeat(3,1fr)}}
+.tile .ic{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;background:rgba(124,58,237,.14);color:var(--violet2);border:1px solid rgba(167,139,250,.25);margin-bottom:16px}
+.tile .ic svg{width:21px;height:21px}
+.tile h3{font-size:19px;letter-spacing:-.01em;margin:0 0 8px;font-weight:700}
+.tile p{margin:0;color:var(--dim);font-size:15px;line-height:1.55}
+.tile .tag{position:absolute;top:18px;right:18px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:#fde68a;border:1px solid rgba(250,204,21,.35);background:rgba(250,204,21,.08);padding:3px 8px;border-radius:999px}
+/* mini timeline animée */
+.mini{margin:22px -24px -24px;padding:16px 20px 20px;background:#0b0a12;border-top:1px solid var(--line);position:relative}
+.mini .row{height:22px;margin:7px 0;display:flex;gap:4px}
+.mini .c{border-radius:3px;height:100%;background:#3b2a63;border:1px solid #6d55a8}
+.mini .c.t{background:#0e3a45;border-color:#1f7f92}
+.mini .c.a{background:repeating-linear-gradient(90deg,#1d4239 0 2px,#132c26 2px 5px);border-color:#2f7563}
+.mini .ph{position:absolute;top:8px;bottom:8px;width:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan);left:20px;animation:ph 6s ease-in-out infinite alternate}
+@keyframes ph{to{left:calc(100% - 22px)}}
+/* rangée d'icônes */
+.icons{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.icons svg{width:38px;height:38px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.5));animation:pop 2.4s ease-in-out infinite}
+.icons svg:nth-child(2n){animation-delay:.3s}.icons svg:nth-child(3n){animation-delay:.6s}
+@keyframes pop{0%,70%,100%{transform:scale(1)}80%{transform:scale(1.18)}90%{transform:scale(.96)}}
+
+/* assistant IA */
+.ai{background:radial-gradient(800px 400px at 85% 30%,rgba(124,58,237,.18),transparent 70%),var(--bg2);border-block:1px solid var(--line)}
+.ai-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.ai ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.ai li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
+.ai li svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--cyan)}
+.ai li small{display:block;color:var(--dim2);font-size:13px}
+.note{margin-top:22px;font-size:13.5px;color:var(--dim);border-left:2px solid var(--violet);padding:4px 0 4px 14px}
+.phone{justify-self:center;width:min(380px,100%);border-radius:10px;padding:1px;background:linear-gradient(160deg,rgba(167,139,250,.6),rgba(34,211,238,.35),rgba(255,255,255,.05));box-shadow:0 30px 90px -25px rgba(124,58,237,.6)}
+.phone img{border-radius:9px;width:100%}
+.phone+figcaption,.ai figcaption{font-size:12.5px;color:var(--dim2);text-align:center;margin-top:10px}
+
+/* vie privée */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.trio article{border:1px solid var(--line);border-radius:10px;padding:26px;background:var(--panel)}
+.trio .n{font:700 13px/1 Consolas,ui-monospace,monospace;color:var(--cyan);letter-spacing:1px}
+.trio h3{font-size:20px;margin:14px 0 8px}.trio p{margin:0;color:var(--dim);font-size:15px}
+
+/* installation */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}
+.step{border-top:2px solid var(--line2);padding:22px 4px 0;counter-increment:s}
+.step:before{content:"0" counter(s);font:700 14px Consolas,ui-monospace,monospace;color:var(--violet2)}
+.step h3{font-size:22px;margin:10px 0 8px}.step p{margin:0;color:var(--dim);font-size:15px}
+/* téléchargements : Windows, Mac, Android (Mac et Android s'activent dès qu'ils sont publiés) + VirusTotal */
+.dlgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 34px}
+.dlc{display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+.dlc.main{border-color:rgba(124,58,237,.55);background:linear-gradient(180deg,rgba(124,58,237,.14),var(--panel) 65%)}
+.dlc .os{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:700}
+.dlc .os svg{width:24px;height:24px;flex:none}
+.dlc .tag{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--panel2);color:var(--violet2)}
+.dlc .tag.beta{background:rgba(250,204,21,.12);color:#facc15}
+.dlc p{margin:0;color:var(--dim);font-size:14px}
+.dlc small{display:block;color:var(--dim2);font-size:12.5px;line-height:1.45;flex:1}
+.dlc .btn{width:100%;margin-top:4px}
+.dlc .btn svg{width:18px;height:18px}
+.dlc .btn[aria-disabled=true]{opacity:.5;pointer-events:none;box-shadow:none}
+.vt{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:-16px 0 34px;font-size:13px;color:var(--dim2)}
+.vt a,.vt-mini{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid rgba(34,197,94,.45);background:rgba(34,197,94,.10);color:#4ade80;line-height:1.25;text-decoration:none}
+.vt a:hover,.vt-mini:hover{background:rgba(34,197,94,.18)}
+.vt a span{display:flex;flex-direction:column}.vt a b{color:#e7fbe9;font-weight:600}.vt a small{color:#86efac;opacity:.85}
+.vt code{font:12px Consolas,monospace;color:var(--dim);word-break:break-all}
+.vt-mini{padding:2px 9px;gap:5px;font-size:12px;vertical-align:middle}.vt-mini svg{width:14px;height:14px}
+.vt[hidden],.vt-mini[hidden]{display:none}
+/* boutons Mac / Android du haut : « bientôt » (renvoie vers les explications) tant que le fichier n'est pas publié */
+.os-btn{position:relative;padding:12px 16px}.os-btn svg{width:18px;height:18px}
+.os-btn .soon{position:absolute;top:-9px;right:-6px;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;padding:3px 7px;border-radius:999px;border:1px solid var(--line2);background:var(--bg2);color:var(--dim)}
+.cta-btns .br{flex-basis:100%;height:0;margin-top:-12px}
+/* Windows, Mac et Android tiennent sur une ligne dans toutes les langues (482 px au plus, en allemand) */
+@media (min-width:981px){.hero-row{grid-template-columns:minmax(0,1.25fr) minmax(490px,1fr)}}
+.os-btn.ok .soon{display:none}
+.step:first-child{border-top-color:var(--cyan)}
+
+/* questions */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-weight:600;font-size:17px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"";position:absolute;right:6px;top:50%;width:10px;height:10px;border-right:2px solid var(--cyan);border-bottom:2px solid var(--cyan);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+details[open] summary:after{transform:translateY(-30%) rotate(-135deg)}
+details p{margin:0;padding:0 36px 22px 0;color:var(--dim)}
+
+/* tutoriels */
+.tubox{display:grid;grid-template-columns:1fr 1.15fr;gap:44px;align-items:center;padding:40px;border-radius:14px;border:1px solid var(--line);background:radial-gradient(120% 140% at 0% 0%,rgba(34,211,238,.10),transparent 55%),linear-gradient(180deg,var(--panel2),var(--panel))}
+.tutxt h2{margin:14px 0 0}
+.tutxt p{color:var(--dim);font-size:17px;margin:14px 0 24px}
+.tun{display:block;margin-top:14px;color:var(--dim2);font-size:13.5px}.tun b{color:var(--ink)}
+.tucats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tucats a{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:rgba(9,8,15,.45);font-weight:600;font-size:15px;transition:border-color .2s,transform .2s}
+.tucats a:hover{border-color:rgba(167,139,250,.55);transform:translateY(-2px)}
+.tui{flex:none;width:34px;height:34px;border-radius:8px;display:grid;place-items:center;background:rgba(124,58,237,.14);color:var(--violet2);border:1px solid rgba(167,139,250,.25)}
+.tui svg{width:18px;height:18px}
+.faqmore{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--cyan);font-weight:600}
+.faqmore:hover{text-decoration:underline}
+@media (max-width:980px){.tubox{grid-template-columns:1fr;gap:28px;padding:28px}}
+@media (max-width:420px){.tucats{grid-template-columns:1fr}.tubox{padding:22px 18px}}
+
+/* appel final */
+.final{margin:20px auto 0;border-radius:14px;padding:64px 48px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#0f2a35,#25124a 55%,#120c22);border:1px solid #3c2f5a}
+.final:before{content:"";position:absolute;inset:auto -10% -60% -10%;height:120%;background:radial-gradient(closest-side,rgba(34,211,238,.25),transparent);pointer-events:none}
+.final img{width:76px;height:76px;margin:0 auto 18px;position:relative}
+.final h2{margin:0 auto;max-width:700px;position:relative}
+.final p{color:#cfc9de;margin:14px 0 26px;position:relative}
+.final .btn{position:relative}
+.final .vline{margin-top:14px;position:relative}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-top:56px}
+.stat{border-left:2px solid var(--line2);padding:4px 0 4px 18px}
+.stat b{display:block;font-size:clamp(34px,4vw,50px);line-height:1;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;margin-top:8px;color:var(--dim);font-size:14px}
+.don{background:radial-gradient(700px 380px at 12% 40%,rgba(236,72,153,.12),transparent 70%),var(--bg2);border-block:1px solid var(--line)}
+.don-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start}
+.don-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:26px}
+.don .btn.pri{background:linear-gradient(120deg,#ec4899,#7c3aed);box-shadow:0 10px 30px -10px rgba(236,72,153,.7)}
+.don .btn.pri[aria-disabled=true]{opacity:.55;pointer-events:none}
+.don-soon{font-size:13.5px;color:var(--dim)}
+.uses{display:grid;gap:12px}
+.use{display:flex;gap:16px;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:20px 22px}
+.use .n{font:700 13px/1.6 Consolas,ui-monospace,monospace;color:#f472b6;letter-spacing:1px}
+.use h3{font-size:18px;margin:0 0 6px}.use p{margin:0;color:var(--dim);font-size:15px}
+footer{padding:64px 0 28px;color:var(--dim2);font-size:14px;border-top:1px solid var(--line);margin-top:40px}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:28px}
+.fcol{display:flex;flex-direction:column;gap:10px}.fcol h4{margin:0 0 4px;color:var(--ink);font-size:14px;letter-spacing:.4px}
+.fcol a{color:var(--dim)}.fcol a:hover{color:var(--ink)}
+.fbrand p{margin:6px 0 0;max-width:260px}
+.fbottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px}
+footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;height:28px}
+
+/* apparition au défilement */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .nav{display:none}.menu{display:block}.top .btn{display:none}
+  .nav.open{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:#0f0d17;border-bottom:1px solid var(--line);padding:6px 16px 14px}
+  .nav.open a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .hero-row,.ai-grid,.faq{grid-template-columns:1fr;gap:32px}
+  .bento,.spaces{grid-template-columns:repeat(2,1fr)}.shots2{grid-template-columns:1fr}
+  .trio,.steps,.dlgrid{grid-template-columns:1fr}
+  .don-grid{grid-template-columns:1fr;gap:32px}.stats{grid-template-columns:repeat(2,1fr)}.foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .brand small{display:none}
+  .hero{padding-top:44px}
+  .lead{font-size:17px}
+  .bento,.spaces{grid-template-columns:1fr}.tile.w2{grid-column:auto}
+  .sec{padding:72px 0}
+  .final{padding:44px 20px}
+  .cta-btns .btn{flex:1 1 100%}
+  .fbrand{grid-column:1/-1}
+}
+@media (max-width:420px){.brand span{display:none}.lang{padding:6px 4px}}
+/* haut de page « cinéma » (2026-10-07) : aurore cyan-violet, pistes de timeline qui défilent avec leur tête de lecture,
+   titre centré, vidéo qui se redresse en défilant. Tout est en CSS (transform / opacité), mis en pause hors de l'écran. */
+.hero:before,.hero:after{display:none}
+.hx{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.hx-aur{position:absolute;inset:-4% -10% 22%;mask-image:linear-gradient(#000 45%,transparent);-webkit-mask-image:linear-gradient(#000 45%,transparent)}
+.hx-aur i{position:absolute;width:62vw;height:62vw;max-width:980px;max-height:980px;border-radius:50%;opacity:.8;will-change:transform;animation:hxa 24s ease-in-out infinite alternate}
+.hx-aur i:nth-child(1){left:-6%;top:-20%;background:radial-gradient(closest-side,rgba(34,211,238,.55),rgba(34,211,238,0))}
+.hx-aur i:nth-child(2){right:-8%;top:-28%;background:radial-gradient(closest-side,rgba(124,58,237,.75),rgba(124,58,237,0));animation-duration:30s;animation-delay:-9s}
+.hx-aur i:nth-child(3){left:28%;top:4%;width:44vw;height:44vw;background:radial-gradient(closest-side,rgba(236,72,153,.32),rgba(236,72,153,0));animation-duration:36s;animation-delay:-17s}
+@keyframes hxa{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(7vw,4vh,0) scale(1.12)}100%{transform:translate3d(-5vw,8vh,0) scale(.94)}}
+.hx-tl{position:absolute;left:-12%;right:-12%;top:clamp(40px,9vh,110px);height:clamp(300px,52vh,520px);display:flex;flex-direction:column;justify-content:space-between;opacity:.24;transform:perspective(1300px) rotateX(24deg) rotateZ(-5deg);mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+.hx-tr{display:flex;gap:12px;width:max-content;will-change:transform;animation:hxm var(--d,60s) linear infinite}
+.hx-tr.rev{animation-direction:reverse}
+.hx-tr b{flex:none;height:clamp(18px,2.6vw,30px);border-radius:7px;width:var(--w);background:var(--c);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+@keyframes hxm{to{transform:translate3d(-50%,0,0)}}
+.hx-ph{position:absolute;top:-6%;bottom:-6%;left:22%;width:2px;background:linear-gradient(transparent,#22d3ee 20%,#22d3ee 80%,transparent);box-shadow:0 0 22px 2px rgba(34,211,238,.8);animation:hxp 11s ease-in-out infinite alternate}
+.hx-ph:before{content:"";position:absolute;top:-2px;left:-6px;width:14px;height:14px;background:#22d3ee;clip-path:polygon(0 0,100% 0,50% 100%)}
+@keyframes hxp{to{left:78%}}
+.hx-vig{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 30%,transparent 40%,rgba(9,8,15,.75) 100%),linear-gradient(transparent 70%,var(--bg))}
+.hero.hx-off .hx *{animation-play-state:paused}
+/* texte centré */
+.hero .wrap{text-align:center}
+.hero .eyebrow{padding:7px 15px 7px 13px;border:1px solid rgba(167,139,250,.35);border-radius:999px;background:rgba(124,58,237,.12);color:#e4defa;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.hero h1{margin-inline:auto;max-width:1040px;text-shadow:0 10px 60px rgba(9,8,15,.6)}
+.hero h1 .l1{animation:hxin .9s .05s cubic-bezier(.2,.8,.2,1) both}
+.hero-row{display:flex;flex-direction:column;align-items:center;gap:26px;margin-top:26px}
+.hero .lead{margin-inline:auto;text-align:center;max-width:640px;animation:hxin .9s .25s cubic-bezier(.2,.8,.2,1) both}
+.hero .cta{align-items:center;animation:hxin .9s .4s cubic-bezier(.2,.8,.2,1) both}
+.hero .cta-btns{justify-content:center}
+.hero .chips{justify-content:center;animation:hxin .9s .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes hxin{from{opacity:0;transform:translateY(22px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.hero .btn.pri{position:relative;overflow:hidden}
+.hero .btn.pri:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);animation:hxs 5s 1.6s ease-in-out infinite}
+@keyframes hxs{0%,70%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+/* vidéo de présentation : penchée au départ, elle se redresse en défilant ; lueur dessous */
+.hero-shot{perspective:1600px;margin-top:64px}
+.hero-shot .frame{transform:rotateX(var(--tilt,0deg)) scale(var(--sc,1));transform-origin:50% 0;will-change:transform}
+.hero-shot:before{content:"";position:absolute;left:8%;right:8%;top:12%;bottom:-6%;background:radial-gradient(closest-side,rgba(124,58,237,.55),rgba(34,211,238,.18) 60%,transparent);filter:blur(30px);z-index:-1}
+/* cartes : lueur qui suit la souris */
+.tile:after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(320px circle at var(--mx,50%) var(--my,-40%),rgba(34,211,238,.13),rgba(124,58,237,.08) 40%,transparent 65%);opacity:0;transition:opacity .25s;pointer-events:none}
+.tile:hover:after{opacity:1}
+.tile:hover{border-color:rgba(167,139,250,.45);box-shadow:0 18px 50px -24px rgba(124,58,237,.6)}
+@media (max-width:760px){.hx-tl{opacity:.16;top:30px;height:300px}.hx-aur i{opacity:.4}.hero-shot{margin-top:40px}}
+@media (prefers-reduced-motion:reduce){.hx-tr,.hx-ph,.hx-aur i{animation:none!important}.hero-shot .frame{transform:none!important}.hero h1 .l1,.hero .lead,.hero .cta,.hero .chips{opacity:1;transform:none;filter:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.cut:before,.cut:after{transform:none}.rv{opacity:1;transform:none}
+}
+@media (max-width:600px){.cta-btns .os-btn{flex:1 1 calc(50% - 6px)}}
+
+/* ---------- tutoriels ---------- */
+.thero{padding:56px 0 18px}.thero h1{font-size:clamp(34px,5vw,56px);line-height:1.05;margin:10px 0 14px;letter-spacing:-1px}
+.thero .lead{max-width:680px;color:var(--dim);font-size:18px;margin:0 0 22px}
+/* haut de page « cinéma » (styles hx-* et hxin repris de l'accueil) */
+.thero{position:relative;overflow:hidden;padding:84px 0 46px;text-align:center}.thero .wrap{position:relative;z-index:1}
+.thero .eyebrow{padding:7px 15px 7px 13px;border:1px solid rgba(167,139,250,.35);border-radius:999px;background:rgba(124,58,237,.12);color:#e4defa;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.thero h1{font-size:clamp(36px,6vw,72px);margin:18px auto 14px;max-width:900px;letter-spacing:-.03em;text-shadow:0 10px 60px rgba(9,8,15,.6);animation:hxin .9s .05s cubic-bezier(.2,.8,.2,1) both}
+.thero .lead{margin:0 auto 26px;color:#cdc8da;animation:hxin .9s .2s cubic-bezier(.2,.8,.2,1) both}
+.thero .tsearch{margin:0 auto;max-width:640px;height:56px;background:rgba(19,16,29,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 20px 60px -24px rgba(124,58,237,.7);text-align:left;animation:hxin .9s .35s cubic-bezier(.2,.8,.2,1) both}
+.thero .hx-tl{top:16px;height:min(420px,92%)}
+.thero.hx-off .hx *{animation-play-state:paused}
+.tbar .chipf.on{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 8px 24px -12px rgba(124,58,237,.9)}
+.tcat-i{box-shadow:0 0 34px -10px rgba(34,211,238,.55)}
+.tc{position:relative}.tc:after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(320px circle at var(--mx,50%) var(--my,-40%),rgba(34,211,238,.12),rgba(124,58,237,.07) 40%,transparent 65%);opacity:0;transition:opacity .25s;pointer-events:none}
+.tc:hover:after{opacity:1}.tgrid .tc:hover{border-color:rgba(167,139,250,.45)}
+.wrap .tmore{background:linear-gradient(135deg,#0f2a35,#25124a 55%,#120c22);border-color:#3c2f5a}
+@media (prefers-reduced-motion:reduce){.thero h1,.thero .lead,.thero .tsearch{opacity:1;transform:none;filter:none}}
+.tsearch{display:flex;align-items:center;gap:10px;max-width:620px;background:var(--panel);border:1px solid var(--line2);border-radius:12px;padding:0 14px;height:52px}
+.tsearch:focus-within{border-color:var(--cyan)}.tsearch svg{width:20px;height:20px;color:var(--dim2);flex:none}
+.tsearch input{flex:1;background:none;border:0;color:var(--ink);font:inherit;font-size:16px;outline:none;min-width:0}
+.tbar{position:sticky;top:68px;z-index:40;background:rgba(9,8,15,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);margin-top:26px}
+.tbar .wrap{display:flex;gap:8px;overflow-x:auto;padding:12px 0;scrollbar-width:none}.tbar .wrap::-webkit-scrollbar{display:none}
+.chipf{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;padding:8px 14px;border-radius:999px;border:1px solid var(--line2);background:var(--panel);color:var(--dim);cursor:pointer;font-size:14px}
+.chipf svg{width:16px;height:16px}.chipf:hover{color:var(--ink)}.chipf.on{background:var(--ink);color:#0b0816;border-color:var(--ink)}
+.tcat{padding:44px 0 6px;scroll-margin-top:140px}.tcat[hidden]{display:none}
+.tcat-h{display:flex;gap:16px;align-items:center;margin-bottom:18px}.tcat-h h2{margin:0;font-size:28px;letter-spacing:-.4px}.tcat-h p{margin:2px 0 0;color:var(--dim)}
+.tcat-i{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(34,211,238,.16),rgba(124,58,237,.22));border:1px solid var(--line2);color:var(--cyan);flex:none}.tcat-i svg{width:26px;height:26px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px;align-items:start}
+.tc{background:var(--panel);border:1px solid var(--line);border-radius:12px;scroll-margin-top:150px;transition:border-color .15s}.tc[hidden]{display:none}
+.tc:hover,.tc.open{border-color:var(--line2)}.tc.open{background:var(--panel2)}
+.tc-h{width:100%;display:grid;grid-template-columns:1fr auto;gap:6px 10px;text-align:left;background:none;border:0;color:inherit;padding:16px 16px 14px;cursor:pointer;border-radius:12px}
+.tc-t{font-weight:700;font-size:17px;line-height:1.3}.tc-a{width:20px;height:20px;color:var(--dim2);grid-row:1/3;grid-column:2;align-self:center;transition:transform .2s}.tc.open .tc-a{transform:rotate(180deg)}
+.tc-m{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:13px;color:var(--dim2)}
+.lv{padding:1px 8px;border-radius:999px;font-weight:600;font-size:12px}.lv.l1{background:rgba(34,211,238,.13);color:#67e8f9}.lv.l2{background:rgba(167,139,250,.16);color:#c4b5fd}
+.tc-b{padding:0 16px 16px}.tc-b ol{margin:0;padding:0;list-style:none;counter-reset:st}
+.tc-b li{counter-increment:st;position:relative;padding:8px 0 8px 40px;border-top:1px solid var(--line);line-height:1.55}
+.tc-b li::before{content:counter(st);position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:var(--grad);color:#05070a;font-weight:700;font-size:13px;display:grid;place-items:center}
+.tc-b b.ui{color:var(--ink);background:rgba(255,255,255,.07);border:1px solid var(--line2);border-radius:5px;padding:0 6px;font-weight:600;white-space:nowrap}
+.tperm{display:inline-block;margin-top:10px;font-size:13px;color:var(--cyan)}.tperm:hover{text-decoration:underline}
+kbd{font:inherit;font-size:.85em;background:#05070a;border:1px solid var(--line2);border-bottom-width:2px;border-radius:5px;padding:0 6px;white-space:nowrap}
+.tip{margin:10px 0 0;padding:10px 12px;border-radius:10px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25);color:var(--dim);font-size:14.5px}.tip>b:first-child{color:#67e8f9;margin-right:4px}
+.tnone{padding:40px 0;color:var(--dim)}.tmore{margin:56px 0 70px;padding:26px;border:1px solid var(--line);border-radius:14px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;background:var(--panel)}
+.tmore p{margin:0;font-size:18px;font-weight:600}.tmore a.lnk{color:var(--cyan)}
+.tnav{display:flex;gap:22px;margin-left:auto;font-size:14.5px;color:var(--dim)}.tnav a:hover,.tnav a.on{color:var(--ink)}
+/* page d'un tuto */
+.tpage{max-width:820px;padding-top:44px}.tcrumb{font-size:14px;color:var(--dim2);display:flex;flex-wrap:wrap;gap:8px}.tcrumb a{color:var(--cyan)}.tcrumb a:hover{text-decoration:underline}
+.tpage h1{font-size:clamp(30px,4.6vw,46px);line-height:1.1;margin:14px 0 12px;letter-spacing:-.02em}
+.tpage .tc-m{font-size:14px;margin-bottom:18px}.tpage .tc-b{padding:0;font-size:17px}.tpage .tc-b li{padding:12px 0 12px 44px}.tpage .tc-b li::before{top:12px}
+.tsame{margin:36px 0 0}.tsame h2{font-size:20px;margin:0 0 10px}.tsame ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.tsame a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.tsame a:hover{border-color:var(--line2);color:var(--ink)}
+@media (max-width:720px){.tgrid{grid-template-columns:1fr}.tnav{display:none}.tbar{top:60px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="playbar" aria-hidden="true"><i></i><b></b></div>
+<header class="top">
+  <div class="wrap">
+    <a href="/ko/" class="brand" aria-label="DedCut"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Ded<b>Cut</b></span></a>
+    <nav class="tnav"><a href="/ko/">홈으로</a><a href="/ko/tutos.html" class="on">튜토리얼</a><a href="/ko/#questions">자주 묻는 질문 보기</a></nav>
+    <select class="lang" id="lang" aria-label="Langue / Language">
+      <option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option><option value="de">DE</option><option value="it">IT</option><option value="pt">PT</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="zh">中文</option>
+    </select>
+    <a class="btn pri dl" href="https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe">DedCut 다운로드</a>
+  </div>
+</header>
+<main id="contenu">
+<section class="thero"><div class="hx" aria-hidden="true"><div class="hx-aur"><i></i><i></i><i></i></div><div class="hx-tl" id="hxtl"><span class="hx-ph"></span></div><div class="hx-vig"></div></div><div class="wrap">
+  <div class="eyebrow">튜토리얼</div>
+  <h1>DedCut을 단계별로 배우기</h1>
+  <p class="lead">DedCut의 모든 공간을 위한 짧고 쉬운 안내입니다. 카테고리를 고르거나 하고 싶은 일을 검색하세요.</p>
+  <label class="tsearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="튜토리얼 검색 (자막, 라이브, 썸네일…)" aria-label="튜토리얼 검색 (자막, 라이브, 썸네일…)"></label>
+</div></section>
+<div class="tbar"><div class="wrap" id="chips"><button class="chipf on" data-f="">전체</button><button class="chipf" data-f="debut"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l14 9-14 9z"/></svg><span>시작하기</span></button><button class="chipf" data-f="montage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="3"/><circle cx="6" cy="17" r="3"/><path d="M8.6 8.6L20 18M8.6 15.4L20 6"/></svg><span>동영상 편집</span></button><button class="chipf" data-f="rec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg><span>화면 녹화</span></button><button class="chipf" data-f="live"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.5"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2"/></svg><span>라이브</span></button><button class="chipf" data-f="image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg><span>이미지</span></button><button class="chipf" data-f="musique"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg><span>음악</span></button><button class="chipf" data-f="ia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><span>인공지능</span></button><button class="chipf" data-f="aide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg><span>자주 생기는 문제</span></button></div></div>
+<div class="wrap" id="tlist"><section class="tcat" id="debut" data-cat="debut"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l14 9-14 9z"/></svg></span><div><h2>시작하기</h2><p>DedCut을 설치하고 기본을 알아보세요.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-installer" data-id="installer"><button class="tc-h" aria-expanded="false" aria-controls="s-installer"><span class="tc-t">DedCut 설치하기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-installer" hidden><ol><li>이 사이트에서 다운로드를 클릭하세요. DedCut-Installation.exe 파일이 다운로드 폴더에 저장됩니다.</li><li>파일을 여세요. &quot;Windows의 PC 보호&quot; 창이 뜨면 &quot;추가 정보&quot;, &quot;실행&quot;을 차례로 클릭하세요 (DedCut은 새 프로그램이라 Windows가 아직 모를 뿐입니다).</li><li>설치는 몇 초면 끝나며, 계정도 관리자 권한도 필요 없습니다.</li><li>DedCut이 홈 화면으로 열립니다. 준비 완료!</li></ol><p class="tip"><b>팁</b> 이후 업데이트는 자동입니다. 새 버전이 준비되면 DedCut이 알려 줍니다.</p><a class="tperm" href="/ko/tutos/installer.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-espaces" data-id="espaces"><button class="tc-h" aria-expanded="false" aria-controls="s-espaces"><span class="tc-t">DedCut의 다섯 공간</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>6단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-espaces" hidden><ol><li>홈 화면에서 하고 싶은 일을 고르거나, 창 맨 위의 버튼으로 공간을 바꾸세요.</li><li><b class="ui">편집</b>: 동영상 편집 (컷, 텍스트, 효과, 음악, 자막, 내보내기).</li><li><b class="ui">녹화</b>: 화면, 게임, 웹캠, 마이크 녹화.</li><li><b class="ui">라이브</b>: 하나 또는 여러 플랫폼에서 라이브 방송.</li><li><b class="ui">이미지</b>: 썸네일 만들기, 사진 보정, 그림 그리기.</li><li><b class="ui">음악</b>: 드럼부터 내보내기까지 음악 만들기.</li></ol><p class="tip"><b>팁</b> 공간끼리 연결되어 있어 노래나 이미지를 클릭 한 번으로 편집에 보낼 수 있습니다.</p><a class="tperm" href="/ko/tutos/espaces.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-bases" data-id="bases"><button class="tc-h" aria-expanded="false" aria-controls="s-bases"><span class="tc-t">기본 사용법</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>3분</span><span>5단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-bases" hidden><ol><li><kbd>Ctrl</kbd>+<kbd>Z</kbd>는 마지막 작업 취소, <kbd>Ctrl</kbd>+<kbd>Y</kbd>는 다시 실행입니다. 원하는 만큼 취소할 수 있습니다.</li><li><kbd>Ctrl</kbd>+<kbd>S</kbd>로 프로젝트를 저장합니다. DedCut은 자동으로도 저장해서 아무것도 잃지 않습니다.</li><li>오른쪽 위 키보드 버튼으로 모든 단축키를 보고 바꿀 수 있습니다.</li><li>메뉴(왼쪽 위)에서 프로젝트를 만들고, 열고, 저장하며, <b class="ui">설정</b>을 열고 가이드 투어를 다시 볼 수 있습니다.</li><li>패널을 옮기고, 타임라인을 위나 아래에 두고, 패널을 별도 창으로 분리할 수 있습니다.</li></ol><p class="tip"><b>팁</b> DedCut은 9개 언어를 지원합니다. <b class="ui">설정</b>의 <b class="ui">언어</b> 항목에서 고르세요.</p><a class="tperm" href="/ko/tutos/bases.html">이 튜토리얼 바로가기</a></div></article></div></section>
+<section class="tcat" id="montage" data-cat="montage"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="3"/><circle cx="6" cy="17" r="3"/><path d="M8.6 8.6L20 18M8.6 15.4L20 6"/></svg></span><div><h2>동영상 편집</h2><p>자르고, 텍스트·효과·음악을 넣고, 내보내세요.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-m-import" data-id="m-import"><button class="tc-h" aria-expanded="false" aria-controls="s-m-import"><span class="tc-t">동영상 가져와서 배치하기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-import" hidden><ol><li><b class="ui">편집</b> 공간을 열고 왼쪽의 <b class="ui">미디어</b> 탭을 여세요.</li><li>Windows 탐색기에서 동영상, 사진, 소리를 끌어오거나 영역을 클릭해 고르세요.</li><li>그런 다음 각 항목을 아래 타임라인으로 끄세요. 여기서 동영상이 만들어집니다.</li><li><kbd>Space</kbd>로 미리보기를 재생하거나 멈춥니다.</li></ol><p class="tip"><b>팁</b> 무거운 4K 동영상도 걱정 마세요. DedCut이 가벼운 사본을 알아서 만들어 미리보기가 부드럽고, 내보내기는 원본 화질 그대로입니다.</p><a class="tperm" href="/ko/tutos/m-import.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-m-couper" data-id="m-couper"><button class="tc-h" aria-expanded="false" aria-controls="s-m-couper"><span class="tc-t">자르기와 다듬기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-couper" hidden><ol><li>재생 헤드(세로선)를 원하는 위치에 두세요.</li><li>타임라인 위의 가위를 클릭하거나 <kbd>S</kbd>를 누르면 클립이 둘로 나뉩니다.</li><li>필요 없는 부분을 클릭하고 <kbd>Delete</kbd>를 누르세요.</li><li>자르지 않고 줄이려면 클립의 시작이나 끝을 끄세요.</li></ol><p class="tip"><b>팁</b> <b class="ui">오디오</b> 탭의 &quot;<b class="ui">무음 자르기</b>&quot;는 내레이션의 빈 구간을 클릭 한 번으로 모두 없앱니다.</p><a class="tperm" href="/ko/tutos/m-couper.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-m-texte" data-id="m-texte"><button class="tc-h" aria-expanded="false" aria-controls="s-m-texte"><span class="tc-t">제목이나 텍스트 넣기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-texte" hidden><ol><li>텍스트가 나올 위치에 재생 헤드를 두세요.</li><li><b class="ui">텍스트</b> 탭을 열고 스타일을 클릭하면 타임라인에 텍스트가 추가됩니다.</li><li>오른쪽 설정 패널에 글자를 입력하고 글꼴, 색, 애니메이션을 고르세요.</li><li>미리보기에서 마우스로 텍스트를 옮기고 모서리를 끌어 크기를 바꾸세요.</li></ol><p class="tip"><b>팁</b> 200개가 넘는 텍스트 스타일과 100개의 글꼴이 들어 있으며, 어디서나 자유롭게 쓸 수 있습니다.</p><a class="tperm" href="/ko/tutos/m-texte.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-m-effets" data-id="m-effets"><button class="tc-h" aria-expanded="false" aria-controls="s-m-effets"><span class="tc-t">효과, 필터, 전환</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>3분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-effets" hidden><ol><li>타임라인의 클립을 클릭해 선택하세요.</li><li><b class="ui">효과</b> 탭: 효과에 마우스를 올리면 움직임을 볼 수 있고, 클릭하면 추가하거나 뺍니다.</li><li><b class="ui">필터</b> 탭: 필터를 클릭하면 클립의 색이 바뀌고, 버튼 하나로 동영상 전체에 적용됩니다.</li><li><b class="ui">전환</b> 탭: 클립 시작이나 끝의 전환, 또는 앞 클립과의 부드러운 페이드를 고르세요.</li></ol><p class="tip"><b>팁</b> 각 효과의 세기는 오른쪽 패널에서 조절합니다.</p><a class="tperm" href="/ko/tutos/m-effets.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-m-son" data-id="m-son"><button class="tc-h" aria-expanded="false" aria-controls="s-m-son"><span class="tc-t">음악, 효과음, 볼륨</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>3분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-son" hidden><ol><li><b class="ui">오디오</b> 탭을 여세요.</li><li>&quot;<b class="ui">음악</b>&quot;에서 저작권 걱정 없는 음악(실제 노래와 DedCut이 만든 음악)을 듣고 추가하세요.</li><li>효과음(휙, 클릭, 박수…)을 동영상의 알맞은 순간에 넣으세요.</li><li>클립을 클릭해 오른쪽 패널에서 볼륨을 조절하거나, 트랙 전체를 음소거하세요.</li></ol><p class="tip"><b>팁</b> 이 음악은 YouTube, TikTok 등 어디서나 저작권 걱정 없이 쓸 수 있습니다.</p><a class="tperm" href="/ko/tutos/m-son.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-m-soustitres" data-id="m-soustitres"><button class="tc-h" aria-expanded="false" aria-controls="s-m-soustitres"><span class="tc-t">자동 자막</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>5단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-soustitres" hidden><ol><li><b class="ui">자막</b> 탭을 여세요.</li><li>정확도를 고르세요: 빠름, 균형, 정확.</li><li>처음에는 &quot;<b class="ui">모델 다운로드</b>&quot;를 클릭하세요 (한 번만 다운로드).</li><li>&quot;<b class="ui">자막 만들기</b>&quot;를 클릭하면 DedCut이 동영상을 듣고 타임라인에 자막을 씁니다.</li><li>자막을 클릭해 오른쪽 패널에서 글자를 고치고, 스타일을 바꾼 뒤 &quot;<b class="ui">이 스타일을 모두에 적용</b>&quot;를 누르세요.</li></ol><p class="tip"><b>팁</b> 모든 처리는 내 PC에서 이루어집니다. 목소리도 동영상도 인터넷으로 보내지지 않습니다.</p><a class="tperm" href="/ko/tutos/m-soustitres.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-m-textedit" data-id="m-textedit"><button class="tc-h" aria-expanded="false" aria-controls="s-m-textedit"><span class="tc-t">단어를 지워서 자르기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-textedit" hidden><ol><li><b class="ui">자막</b> 탭을 열고 &quot;<b class="ui">텍스트 편집 열기</b>&quot;을 누르세요 (또는 클립을 오른쪽 클릭 → &quot;<b class="ui">텍스트로 편집</b>&quot;).</li><li>처음 한 번, DedCut이 영상에서 말한 내용을 모두 이 PC에서 받아 적어요.</li><li>마우스로 단어를 선택하고 <kbd>Del</kbd> 키를 누르세요: 영상도 같은 곳이 잘리고 뒤가 당겨져요.</li><li>&quot;머뭇거림 없애기&quot;는 &quot;음…&quot;을 한 번에 없애고, &quot;공백 줄이기&quot;는 긴 멈춤을 줄여요.</li></ol><p class="tip"><b>팁</b> 자막도 자른 대로 따라와요. <kbd>Ctrl</kbd>+<kbd>Z</kbd>로 되돌려요.</p><a class="tperm" href="/ko/tutos/m-textedit.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-m-vertical" data-id="m-vertical"><button class="tc-h" aria-expanded="false" aria-controls="s-m-vertical"><span class="tc-t">세로 동영상 만들기 (TikTok, Shorts)</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-vertical" hidden><ol><li>타임라인의 빈 곳을 클릭하세요 (또는 <kbd>Esc</kbd>). 오른쪽에 <b class="ui">프로젝트</b> 패널이 나타납니다.</li><li>&quot;<b class="ui">원클릭 형식</b>&quot;에서 &quot;<b class="ui">세로 9:16 (TikTok, Shorts)</b>&quot;를 고르세요.</li><li>동영상은 화면 전체를 그대로 유지하고, 뒤에는 흐린 배경이 깔립니다.</li><li>다른 구도를 원하면 미리보기에서 각 클립을 옮기거나 크기를 바꾸세요.</li></ol><p class="tip"><b>팁</b> 같은 패널에서 언제든 가로로 되돌릴 수 있습니다.</p><a class="tperm" href="/ko/tutos/m-vertical.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-m-shorts" data-id="m-shorts"><button class="tc-h" aria-expanded="false" aria-controls="s-m-shorts"><span class="tc-t">쇼츠 자동으로 만들기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-shorts" hidden><ol><li>긴 영상을 편집에서 여세요 (자막이 있으면 더 좋아요).</li><li>&quot;<b class="ui">내보내기</b>&quot; → &quot;<b class="ui">자동 쇼츠</b>&quot;을 누르세요.</li><li>길이와 개수를 고르고 &quot;<b class="ui">순간 찾기</b>&quot;: DedCut이 가장 생생한 순간을 찾아요.</li><li>마음에 드는 순간을 남기고 쇼츠를 만드세요: 각각 세로 프로젝트가 되고, 화면이 사람을 따라가요.</li></ol><p class="tip"><b>팁</b> 어시스턴트에게 &quot;쇼츠 만들어 줘&quot;라고 해도 돼요.</p><a class="tperm" href="/ko/tutos/m-shorts.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-m-multicam" data-id="m-multicam"><button class="tc-h" aria-expanded="false" aria-controls="s-m-multicam"><span class="tc-t">멀티캠: 말하는 사람의 카메라</span>
+<span class="tc-m"><span class="lv l2">조금 더</span><span>3분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-multicam" hidden><ol><li>동시에 찍은 영상 2~4개를 타임라인에 놓으세요 (한 사람에 카메라 하나, 각자 마이크).</li><li><kbd>Ctrl</kbd>+클릭으로 선택하고 오른쪽 클릭 → &quot;멀티캠 만들기&quot;: DedCut이 소리로 맞춰요.</li><li>미리보기 위 &quot;<b class="ui">멀티캠</b>&quot; 막대에서 &quot;<b class="ui">자동</b>&quot;을 누르고 리듬을 고른 뒤 &quot;<b class="ui">시작</b>&quot;.</li><li>DedCut이 매 순간 말하는 사람의 카메라를 보여줘요. <kbd>1</kbd>~<kbd>4</kbd> 키로 장면을 바꿀 수 있어요.</li></ol><p class="tip"><b>팁</b> 아무것도 지워지지 않아요. <kbd>Ctrl</kbd>+<kbd>Z</kbd>로 모두 되돌려요.</p><a class="tperm" href="/ko/tutos/m-multicam.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-m-suivi" data-id="m-suivi"><button class="tc-h" aria-expanded="false" aria-controls="s-m-suivi"><span class="tc-t">물체 추적, 번호판 흐리게</span>
+<span class="tc-m"><span class="lv l2">조금 더</span><span>2분</span><span>3단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-suivi" hidden><ol><li>요소(텍스트, 스티커, 화살표…)를 물체 위에 놓고, 재생 위치를 그 장면의 처음에 두세요.</li><li>요소를 오른쪽 클릭 → &quot;<b class="ui">물체 추적</b>&quot;: DedCut이 영상 속 물체를 따라가고 요소도 따라가요.</li><li>번호판이나 얼굴을 가리려면 영상을 오른쪽 클릭 → &quot;<b class="ui">움직이는 것 흐리게 하기</b>&quot;, 영역을 물체에 놓고 &quot;<b class="ui">물체 추적</b>&quot;.</li></ol><p class="tip"><b>팁</b> 물체가 사라지면 추적이 거기서 멈춰요. 조금 뒤에서 다시 시작하세요.</p><a class="tperm" href="/ko/tutos/m-suivi.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-m-export" data-id="m-export"><button class="tc-h" aria-expanded="false" aria-controls="s-m-export"><span class="tc-t">동영상 내보내기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-export" hidden><ol><li>오른쪽 위의 &quot;<b class="ui">내보내기</b>&quot;를 클릭하세요 (또는 <kbd>Ctrl</kbd>+<kbd>E</kbd>).</li><li>이름을 정하고 화질(최대 4K)과 프레임 레이트를 고르세요.</li><li>내보내기를 시작하고 파일을 저장할 곳을 고르세요.</li><li>소리만 (WAV 또는 M4A) 내보낼 수도 있습니다.</li></ol><p class="tip"><b>팁</b> 긴 내보내기 중에는 DedCut을 최소화해도 됩니다. 백그라운드에서 계속 진행됩니다.</p><a class="tperm" href="/ko/tutos/m-export.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-m-ytdesc" data-id="m-ytdesc"><button class="tc-h" aria-expanded="false" aria-controls="s-m-ytdesc"><span class="tc-t">유튜브 설명 쓰기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>1분</span><span>3단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-m-ytdesc" hidden><ol><li>먼저 영상의 자막을 만드세요 (<b class="ui">자막</b> 탭).</li><li>&quot;<b class="ui">내보내기</b>&quot; → &quot;<b class="ui">유튜브 설명</b>&quot;을 누르세요.</li><li>제안된 제목 중 하나를 고르고 설명과 해시태그를 다듬은 뒤 &quot;<b class="ui">설명 복사</b>&quot;.</li></ol><p class="tip"><b>팁</b> 챕터(마커)는 자동으로 들어가요. DedCut AI 두뇌가 있으면 모두 이 PC에서 써요.</p><a class="tperm" href="/ko/tutos/m-ytdesc.html">이 튜토리얼 바로가기</a></div></article></div></section>
+<section class="tcat" id="rec" data-cat="rec"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></span><div><h2>화면 녹화</h2><p>화면, 게임, 웹캠, 목소리를 녹화하세요.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-r-ecran" data-id="r-ecran"><button class="tc-h" aria-expanded="false" aria-controls="s-r-ecran"><span class="tc-t">화면이나 게임 녹화하기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>3분</span><span>5단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-r-ecran" hidden><ol><li><b class="ui">녹화</b> 공간을 여세요.</li><li><b class="ui">소스</b>에서 &quot;<b class="ui">소스 추가</b>&quot;, &quot;<b class="ui">화면 / 창</b>&quot;을 차례로 클릭하세요.</li><li>&quot;<b class="ui">무엇을 공유할까요?</b>&quot; 창이 열립니다. 작은 미리보기와 함께 보이는 화면이나 창을 고르세요.</li><li>&quot;<b class="ui">PC 소리 공유</b>&quot;에 체크하면 게임, 음악, Discord 소리가 함께 녹음됩니다 (DedCut 자체 소리는 빠집니다).</li><li>&quot;<b class="ui">녹화 시작</b>&quot;를 클릭하세요. 멈추려면 다시 클릭하거나 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>을 누르세요.</li></ol><p class="tip"><b>팁</b> 동영상은 편집 미디어와 동영상\DedCut 폴더에 저장됩니다.</p><a class="tperm" href="/ko/tutos/r-ecran.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-r-cam" data-id="r-cam"><button class="tc-h" aria-expanded="false" aria-controls="s-r-cam"><span class="tc-t">웹캠과 마이크 추가하기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-r-cam" hidden><ol><li><b class="ui">소스</b>에서 &quot;<b class="ui">소스 추가</b>&quot;, &quot;<b class="ui">웹캠</b>&quot;을 클릭하고 카메라를 고르세요.</li><li>미리보기에서 웹캠을 옮기고 모서리를 끌어 크기를 바꾸세요. 설정에서 둥근 모양도 고를 수 있습니다.</li><li>오디오 믹서에서 마이크를 고르고 말하면서 볼륨을 맞추세요. 막대가 초록색 안에 있어야 합니다.</li><li>마이크 필터로 배경 소음과 숨소리를 줄일 수 있습니다.</li></ol><p class="tip"><b>팁</b> 헤드폰을 쓰세요. 아니면 스피커 소리가 마이크로 다시 들어갑니다.</p><a class="tperm" href="/ko/tutos/r-cam.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-r-scenes" data-id="r-scenes"><button class="tc-h" aria-expanded="false" aria-controls="s-r-scenes"><span class="tc-t">여러 장면 준비하기</span>
+<span class="tc-m"><span class="lv l2">조금 더</span><span>3분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-r-scenes" hidden><ol><li><b class="ui">장면</b>에서 장면은 화면 구성입니다 (예: &quot;화면 + 웹캠&quot;, &quot;잠시 후 돌아옵니다&quot;).</li><li>+ 버튼으로 장면을 추가하고 소스(화면, 웹캠, 이미지, 텍스트, 채팅…)를 넣으세요.</li><li>장면을 클릭하면 표시됩니다. 녹화나 라이브 중에는 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd>~<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>9</kbd>로 게임 중에도 장면을 바꿀 수 있습니다.</li><li>장면이나 소스를 끌어서 순서를 바꾸세요.</li></ol><p class="tip"><b>팁</b> 장면은 <b class="ui">녹화</b>과 <b class="ui">라이브</b>에서 함께 씁니다.</p><a class="tperm" href="/ko/tutos/r-scenes.html">이 튜토리얼 바로가기</a></div></article></div></section>
+<section class="tcat" id="live" data-cat="live"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.5"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2"/></svg></span><div><h2>라이브</h2><p>YouTube, Twitch, Facebook, Kick에서 라이브 방송하세요.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-l-premier" data-id="l-premier"><button class="tc-h" aria-expanded="false" aria-controls="s-l-premier"><span class="tc-t">첫 라이브 방송</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>4분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-l-premier" hidden><ol><li><b class="ui">라이브</b> 공간을 열고 장면(화면, 웹캠, 마이크)을 준비하세요.</li><li>오른쪽 <b class="ui">설정</b> 탭: &quot;<b class="ui">어디로 방송할까요?</b>&quot;에서 플랫폼(YouTube, Twitch, Facebook, Kick 등)을 고르세요.</li><li>플랫폼 대시보드에서 스트림 키를 복사해 &quot;<b class="ui">스트림 키</b>&quot;에 붙여 넣으세요.</li><li>&quot;<b class="ui">방송 시작</b>&quot;를 클릭하세요. 방송 중 표시가 나타나며, 다시 클릭하면 멈춥니다.</li></ol><p class="tip"><b>팁</b> 스트림 키는 비밀로 유지됩니다. DedCut이 내 PC에 암호화해 보관합니다.</p><a class="tperm" href="/ko/tutos/l-premier.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-l-multi" data-id="l-multi"><button class="tc-h" aria-expanded="false" aria-controls="s-l-multi"><span class="tc-t">여러 플랫폼에 동시 송출하기</span>
+<span class="tc-m"><span class="lv l2">조금 더</span><span>3분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-l-multi" hidden><ol><li><b class="ui">설정</b> 탭에서 &quot;<b class="ui">방송 대상 추가</b>&quot;를 클릭하고 두 번째 플랫폼과 키를 추가하세요.</li><li>사용할 목적지에 체크하면 라이브가 모든 곳에 동시에 나갑니다.</li><li>TikTok이나 YouTube Shorts용으로 &quot;<b class="ui">세로 라이브(TikTok, 쇼츠)</b>&quot;을 켜면 DedCut이 9:16 버전도 보냅니다.</li><li>인터넷 연결을 확인하세요. 목적지마다 업로드 속도가 필요합니다.</li></ol><p class="tip"><b>팁</b> 먼저 플랫폼 하나로 연결을 시험해 보세요.</p><a class="tperm" href="/ko/tutos/l-multi.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-l-chat" data-id="l-chat"><button class="tc-h" aria-expanded="false" aria-controls="s-l-chat"><span class="tc-t">채팅과 알림 표시하기</span>
+<span class="tc-m"><span class="lv l2">조금 더</span><span>3분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-l-chat" hidden><ol><li>오른쪽 <b class="ui">채팅</b> 탭: 채널을 연결해 메시지를 읽으세요.</li><li>&quot;<b class="ui">방송 채팅</b>&quot; 소스를 추가해 화면에 채팅을 띄우고 미리보기에서 위치를 잡으세요.</li><li>&quot;<b class="ui">알림</b>&quot; 소스를 추가해 새 팔로워와 후원을 표시하세요.</li><li>투표, 목표 바, 카운터도 &quot;<b class="ui">소스 추가</b>&quot;에 있습니다.</li></ol><p class="tip"><b>팁</b> 채팅을 음성으로 읽어 줄 수도 있습니다. <b class="ui">도구</b> 탭에서 설정하세요.</p><a class="tperm" href="/ko/tutos/l-chat.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-l-overlays" data-id="l-overlays"><button class="tc-h" aria-expanded="false" aria-controls="s-l-overlays"><span class="tc-t">오버레이 추가하기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-l-overlays" hidden><ol><li><b class="ui">라이브</b>(또는 <b class="ui">녹화</b>)에서 &quot;<b class="ui">소스 추가</b>&quot;, &quot;<b class="ui">오버레이</b>&quot;를 차례로 클릭하세요.</li><li>오른쪽 패널에서 30가지 스타일 중 하나를 고르세요: 웹캠 프레임, 이름 자막바, 대기 화면, 화면 테두리, 알림 배지, 분위기. 썸네일에 마우스를 올리면 움직임을 볼 수 있어요.</li><li>이름이나 메시지를 쓰고 두 가지 색과 속도를 고르세요.</li><li>미리보기에서 마우스로 오버레이를 배치하고 모서리를 끌어 크기를 바꾸세요.</li></ol><p class="tip"><b>팁</b> 웹캠 프레임은 소스 목록에서 &quot;<b class="ui">오버레이</b>&quot;를 웹캠보다 위에 두세요.</p><a class="tperm" href="/ko/tutos/l-overlays.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-l-tiktok" data-id="l-tiktok"><button class="tc-h" aria-expanded="false" aria-controls="s-l-tiktok"><span class="tc-t">틱톡 라이브하기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-l-tiktok" hidden><ol><li>컴퓨터에서 TikTok LIVE Producer를 열고 라이브를 준비하세요: 서버 주소와 키를 줘요.</li><li><b class="ui">라이브</b>에서 틱톡 송출 대상을 추가하고 &quot;<b class="ui">서버 주소</b>&quot;와 &quot;<b class="ui">스트림 키</b>&quot;를 붙여 넣으세요.</li><li>세로 라이브라면 &quot;<b class="ui">스튜디오를 세로로 바꾸기(TikTok 장면)</b>&quot;: 틱톡용 장면이 준비돼 있어요.</li><li>DedCut에서 라이브를 시작하세요.</li></ol><p class="tip"><b>팁</b> 틱톡은 라이브마다 키가 바뀌어요. 매번 다시 복사하고 절대 보여 주지 마세요.</p><a class="tperm" href="/ko/tutos/l-tiktok.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-l-pendant" data-id="l-pendant"><button class="tc-h" aria-expanded="false" aria-controls="s-l-pendant"><span class="tc-t">라이브 중에</span>
+<span class="tc-m"><span class="lv l2">조금 더</span><span>3분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-l-pendant" hidden><ol><li>클릭이나 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd>~<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>9</kbd>로 장면을 바꾸세요. 게임 중에도 됩니다.</li><li>&quot;<b class="ui">함께 녹화</b>&quot;로 라이브 사본을 내 PC에 남길 수 있습니다.</li><li><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>으로 멋진 순간에 마커를 찍어 편집 때 쉽게 찾으세요.</li><li>스튜디오 모드는 다음 장면을 미리보기에서 준비한 뒤 방송에 내보냅니다.</li></ol><p class="tip"><b>팁</b> 라이브가 끝나면 녹화 영상이 편집으로 들어가 클립을 만들 수 있습니다.</p><a class="tperm" href="/ko/tutos/l-pendant.html">이 튜토리얼 바로가기</a></div></article></div></section>
+<section class="tcat" id="image" data-cat="image"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg></span><div><h2>이미지</h2><p>썸네일, 사진 보정, 누끼, 그림 그리기.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-i-miniature" data-id="i-miniature"><button class="tc-h" aria-expanded="false" aria-controls="s-i-miniature"><span class="tc-t">YouTube 썸네일 만들기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>3분</span><span>5단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-i-miniature" hidden><ol><li><b class="ui">이미지</b> 공간을 열고 &quot;<b class="ui">새 이미지</b>&quot;을 클릭하세요.</li><li>&quot;동영상 썸네일&quot;(1280 × 720)을 고르고 만들기를 누르세요.</li><li>사진을 추가하고(창으로 끌어오기) <b class="ui">텍스트</b> 도구로 제목을 넣으세요.</li><li>멀리서도 읽히도록 레이어 효과에서 텍스트에 외곽선이나 그림자를 넣으세요.</li><li><b class="ui">파일</b> 메뉴 &gt; &quot;<b class="ui">내보내기</b>&quot;: PNG나 JPG로 저장하세요.</li></ol><p class="tip"><b>팁</b> 요소마다 레이어가 따로 있어 나중에 무엇이든 바꿀 수 있습니다.</p><a class="tperm" href="/ko/tutos/i-miniature.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-i-retouche" data-id="i-retouche"><button class="tc-h" aria-expanded="false" aria-controls="s-i-retouche"><span class="tc-t">사진 보정하기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-i-retouche" hidden><ol><li>사진을 여세요 (<b class="ui">이미지</b> 공간으로 끌어오기).</li><li><b class="ui">이미지</b> 메뉴 &gt; &quot;<b class="ui">자동 보정</b>&quot;로 밝기와 색을 클릭 한 번에 보정합니다.</li><li><b class="ui">필터</b> 메뉴: 밝기, 곡선, 레벨, 색조… 를 실시간 미리보기로 직접 조절하세요.</li><li>자르기 도구로 다듬은 뒤 내보내세요.</li></ol><p class="tip"><b>팁</b> 덮어쓰지 않는 한 원본은 그대로 남아 있습니다.</p><a class="tperm" href="/ko/tutos/i-retouche.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-i-detourer" data-id="i-detourer"><button class="tc-h" aria-expanded="false" aria-controls="s-i-detourer"><span class="tc-t">사람이나 물건 누끼 따기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-i-detourer" hidden><ol><li><b class="ui">이미지</b>에서 사진을 여세요.</li><li><b class="ui">선택</b> 메뉴 &gt; &quot;<b class="ui">피사체 선택</b>&quot;: AI가 주인공인 사람이나 물건을 선택합니다.</li><li><b class="ui">레이어</b> 메뉴 &gt; &quot;<b class="ui">배경 제거(마스크)</b>&quot;로 배경을 지웁니다 (마스크로 가려질 뿐이라 되살릴 수 있습니다).</li><li>투명함을 유지하려면 PNG로 내보내세요.</li></ol><p class="tip"><b>팁</b> 누끼는 내 PC에서 계산됩니다. 사진은 어디로도 보내지지 않습니다.</p><a class="tperm" href="/ko/tutos/i-detourer.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-i-tablette" data-id="i-tablette"><button class="tc-h" aria-expanded="false" aria-controls="s-i-tablette"><span class="tc-t">타블렛으로 그리기</span>
+<span class="tc-m"><span class="lv l2">조금 더</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-i-tablette" hidden><ol><li>타블렛(Wacom, XP-Pen, Huion…)을 연결하거나 화면용 펜을 쓰세요.</li><li><b class="ui">편집</b> 메뉴 &gt; &quot;<b class="ui">펜과 드로잉 태블릿</b>&quot;: 필압을 맞추고 테스트 영역에서 시험해 보세요.</li><li><b class="ui">브러시</b> 도구를 고르세요. 필압은 크기, 기울기는 각도를 바꾸고, 지우개 쪽 끝으로 지웁니다.</li><li>필압이 안 먹으면 타블렛 프로그램에서 &quot;Windows Ink&quot;를 켜세요.</li></ol><p class="tip"><b>팁</b> 새 레이어에 그리면 나머지를 망치지 않고 고칠 수 있습니다.</p><a class="tperm" href="/ko/tutos/i-tablette.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-i-qrcode" data-id="i-qrcode"><button class="tc-h" aria-expanded="false" aria-controls="s-i-qrcode"><span class="tc-t">QR 코드 추가</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>1분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-i-qrcode" hidden><ol><li>편집: <kbd>Ctrl</kbd>+<kbd>K</kbd> → &quot;QR 코드 추가&quot;, 또는 요소의 SNS 카테고리.</li><li>라이브: &quot;<b class="ui">소스 추가</b>&quot; → &quot;<b class="ui">QR 코드</b>&quot;.</li><li>이미지: 레이어 메뉴 → &quot;<b class="ui">QR 코드</b>&quot;.</li><li>링크(채널, SNS, 사이트)를 입력하면 시청자가 휴대폰으로 스캔해요.</li></ol><p class="tip"><b>팁</b> 밝은 배경에 어두운 칸으로, 충분히 크게 만드세요.</p><a class="tperm" href="/ko/tutos/i-qrcode.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-i-montage" data-id="i-montage"><button class="tc-h" aria-expanded="false" aria-controls="s-i-montage"><span class="tc-t">이미지를 편집으로 보내기 (그리고 되돌리기)</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>1분</span><span>2단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-i-montage" hidden><ol><li><b class="ui">이미지</b>에서 이미지를 오른쪽 클릭: &quot;<b class="ui">이미지를 편집으로 보내기</b>&quot;. 편집 타임라인에 들어갑니다.</li><li><b class="ui">편집</b>에서 클립을 오른쪽 클릭: &quot;<b class="ui">이미지로 보내기</b>&quot;로 그 프레임을 이미지 공간에서 열어 보정합니다.</li></ol><p class="tip"><b>팁</b> 동영상의 한 장면으로 썸네일을 만들 때 편리합니다.</p><a class="tperm" href="/ko/tutos/i-montage.html">이 튜토리얼 바로가기</a></div></article></div></section>
+<section class="tcat" id="musique" data-cat="musique"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></span><div><h2>음악</h2><p>비트와 멜로디를 만들고, 목소리를 녹음하고, 내보내세요.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-mu-beat" data-id="mu-beat"><button class="tc-h" aria-expanded="false" aria-controls="s-mu-beat"><span class="tc-t">첫 비트 만들기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>4분</span><span>5단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-mu-beat" hidden><ol><li><b class="ui">음악</b> 공간을 열고 <b class="ui">파일</b> 메뉴 &gt; &quot;<b class="ui">새 프로젝트</b>&quot;에서 &quot;<b class="ui">비트</b>&quot; 템플릿과 템포(예: 120)를 고르세요.</li><li>드럼 클립을 클릭한 뒤 아래쪽 <b class="ui">스텝</b> 탭을 여세요.</li><li>각 줄은 소리(킥, 스네어, 하이햇…), 각 칸은 한 스텝입니다. 클릭해서 켜고 끄세요.</li><li><kbd>Space</kbd>로 들어 보세요. 스윙을 넣으면 그루브가 살아납니다.</li><li><b class="ui">믹서</b> 탭: 트랙마다 볼륨을 맞추세요.</li></ol><p class="tip"><b>팁</b> DedCut의 드럼 소리는 DedCut이 직접 만든 것이라 판매하는 음악에도 어디서나 쓸 수 있습니다.</p><a class="tperm" href="/ko/tutos/mu-beat.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-mu-melodie" data-id="mu-melodie"><button class="tc-h" aria-expanded="false" aria-controls="s-mu-melodie"><span class="tc-t">멜로디 쓰기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>3분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-mu-melodie" hidden><ol><li>악기 트랙의 빈 곳을 더블클릭하면 클립이 만들어지고 열립니다.</li><li><b class="ui">피아노 롤</b> 탭: 격자를 클릭해 음표를 놓고, 끌어서 옮기고, 끝을 당겨 늘이세요.</li><li>오른쪽 클릭이나 <kbd>Delete</kbd>로 음표를 지웁니다.</li><li>재생 버튼 오른쪽의 키보드 버튼을 누르면 컴퓨터 키보드가 피아노가 됩니다.</li></ol><p class="tip"><b>팁</b> 악기 탭에서 트랙 소리(피아노, 신스, 현악기…)를 바꿀 수 있습니다.</p><a class="tperm" href="/ko/tutos/mu-melodie.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-mu-voix" data-id="mu-voix"><button class="tc-h" aria-expanded="false" aria-controls="s-mu-voix"><span class="tc-t">목소리 녹음하기</span>
+<span class="tc-m"><span class="lv l2">조금 더</span><span>4분</span><span>5단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-mu-voix" hidden><ol><li>마이크를 연결하고 헤드폰을 쓰세요.</li><li><b class="ui">설정</b> 메뉴 &gt; 사운드: 마이크를 허용하고 지연 시간을 한 번 측정하세요.</li><li><b class="ui">트랙</b> 메뉴: 오디오 트랙을 추가하고 입력을 고른 뒤 트랙을 녹음 대기(동그란 버튼)로 두세요.</li><li><kbd>R</kbd>로 녹음합니다. 반복을 켜면 매번이 테이크가 되고 모두 보관됩니다.</li><li><b class="ui">오디오 클립</b> 탭: 테이크마다 좋은 부분을 남기고 &quot;맑은 목소리&quot; 효과 체인을 추가하세요.</li></ol><p class="tip"><b>팁</b> 녹음 중 DedCut이 닫혀도 다음 실행 때 테이크를 복구할 수 있습니다.</p><a class="tperm" href="/ko/tutos/mu-voix.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-mu-justesse" data-id="mu-justesse"><button class="tc-h" aria-expanded="false" aria-controls="s-mu-justesse"><span class="tc-t">음정 보정, 코러스 추가</span>
+<span class="tc-m"><span class="lv l2">조금 더</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-mu-justesse" hidden><ol><li><b class="ui">음악</b>에서 노래 목소리 클립을 누르세요 (목소리만 있고 음악은 없음).</li><li>&quot;<b class="ui">아이디어와 분석</b>&quot;을 여세요 (반짝이 모양 버튼).</li><li>&quot;<b class="ui">노래 목소리</b>&quot;에서 키를 확인하고 자연스럽게·강하게·로봇을 고른 뒤 &quot;<b class="ui">음정 보정</b>&quot;.</li><li>코러스는 원하는 목소리를 체크하고 &quot;<b class="ui">코러스 추가</b>&quot;: 목소리마다 트랙이 생겨요.</li></ol><p class="tip"><b>팁</b> 원래 목소리는 음소거로 남아요. 비교하려면 켜세요.</p><a class="tperm" href="/ko/tutos/mu-justesse.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-mu-export" data-id="mu-export"><button class="tc-h" aria-expanded="false" aria-controls="s-mu-export"><span class="tc-t">음악 내보내기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>5단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-mu-export" hidden><ol><li>곡 전체를 들어 보세요. 마스터의 빨간 불이 꺼져 있어야 합니다 (클리핑 없음).</li><li><b class="ui">파일</b> 메뉴 &gt; &quot;<b class="ui">오디오 내보내기</b>&quot;.</li><li>형식을 고르세요: 무손실 WAV나 FLAC, 또는 가벼운 M4A.</li><li>스템은 트랙마다 파일 하나씩, 모두 같은 지점에서 시작합니다.</li><li>&quot;<b class="ui">편집으로 보내기</b>&quot;에 체크하면 동영상 편집에서 음악을 바로 쓸 수 있습니다.</li></ol><p class="tip"><b>팁</b> 내보내기 보고서에 파일마다 길이, 라우드니스(LUFS), 피크가 나옵니다.</p><a class="tperm" href="/ko/tutos/mu-export.html">이 튜토리얼 바로가기</a></div></article></div></section>
+<section class="tcat" id="ia" data-cat="ia"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><div><h2>인공지능</h2><p>대신 편집해 주는 어시스턴트와 AI 도구, 모두 내 PC에서.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-a-assistant" data-id="a-assistant"><button class="tc-h" aria-expanded="false" aria-controls="s-a-assistant"><span class="tc-t">대신 편집해 주는 AI 어시스턴트</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-a-assistant" hidden><ol><li>편집에서 오른쪽 위 말풍선(&quot;<b class="ui">대신 편집해 주는 AI와 대화</b>&quot;)을 클릭하세요.</li><li>원하는 것을 쓰세요: &quot;무음 구간 자르고 자막 넣어 줘&quot;, &quot;동영상을 세로로 바꿔 줘&quot;…</li><li>어시스턴트가 DedCut 안에서 바로 편집하고, 버튼 하나로 한 일을 전부 되돌릴 수 있습니다.</li><li>DedCut에 대한 질문도 할 수 있습니다.</li></ol><p class="tip"><b>팁</b> DedCut AI는 내 PC에서 무료로, 계정 없이 동작합니다.</p><a class="tperm" href="/ko/tutos/a-assistant.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-a-video" data-id="a-video"><button class="tc-h" aria-expanded="false" aria-controls="s-a-video"><span class="tc-t">AI 동영상으로 동영상 만들기</span>
+<span class="tc-m"><span class="lv l2">조금 더</span><span>3분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-a-video" hidden><ol><li>편집에서 <b class="ui">AI 영상</b> 탭을 여세요.</li><li>움직이게 할 이미지를 넣거나 보고 싶은 장면을 글로 설명하세요.</li><li>스타일(실사, 3D, 애니메이션…)을 고르고 만들기를 시작하세요.</li><li>처음에는 AI 모델을 다운로드하고, 그다음부터는 모두 내 PC에서 처리됩니다.</li></ol><p class="tip"><b>팁</b> 최신 그래픽 카드가 있으면 훨씬 빨라집니다.</p><a class="tperm" href="/ko/tutos/a-video.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-a-personne" data-id="a-personne"><button class="tc-h" aria-expanded="false" aria-controls="s-a-personne"><span class="tc-t">&quot;인물&quot; 효과 (배경 흐림, 외곽선…)</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-a-personne" hidden><ol><li>사람이 나오는 클립을 선택하세요.</li><li><b class="ui">효과</b> 탭의 인물 카테고리: 배경 흐림, 흑백 배경, 외곽선, 네온, 오라…</li><li>AI가 내 PC에서 모든 프레임의 인물을 따냅니다.</li><li>오른쪽 패널에서 세기를 조절하세요.</li></ol><p class="tip"><b>팁</b> 그린 스크린 없이 사람을 돋보이게 하기 좋습니다.</p><a class="tperm" href="/ko/tutos/a-personne.html">이 튜토리얼 바로가기</a></div></article></div></section>
+<section class="tcat" id="aide" data-cat="aide"><div class="tcat-h"><span class="tcat-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg></span><div><h2>자주 생기는 문제</h2><p>가장 흔한 문제의 해결 방법.</p></div></div>
+<div class="tgrid"><article class="tc" id="t-d-noir" data-id="d-noir"><button class="tc-h" aria-expanded="false" aria-controls="s-d-noir"><span class="tc-t">게임 화면이 검게 나와요</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>1분</span><span>3단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-d-noir" hidden><ol><li>전용 전체 화면 모드의 일부 게임은 캡처할 수 없습니다.</li><li>게임 그래픽 설정에서 &quot;창 모드 전체 화면&quot;(또는 &quot;테두리 없는 창&quot;)을 고르세요.</li><li>DedCut에서는 게임 창 대신 화면 전체를 고르세요.</li></ol><a class="tperm" href="/ko/tutos/d-noir.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-d-son" data-id="d-son"><button class="tc-h" aria-expanded="false" aria-controls="s-d-son"><span class="tc-t">소리가 안 나요</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>2분</span><span>3단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-d-son" hidden><ol><li>녹화에 게임 소리가 없으면: 화면 선택 창에서 &quot;<b class="ui">PC 소리 공유</b>&quot;에 체크하세요.</li><li>마이크가 무음이면: 오디오 믹서에서 마이크를 고르고 Windows가 DedCut의 마이크 사용을 허용하는지 확인하세요.</li><li>블루투스 헤드폰으로 음악 재생 시 소리가 없으면: 헤드폰이 깨어날 때까지 몇 초 기다리거나 사운드 설정에서 다른 출력을 고르세요.</li></ol><a class="tperm" href="/ko/tutos/d-son.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-d-plantage" data-id="d-plantage"><button class="tc-h" aria-expanded="false" aria-controls="s-d-plantage"><span class="tc-t">갑자기 꺼진 뒤 작업 되찾기</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>1분</span><span>3단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-d-plantage" hidden><ol><li>DedCut을 다시 여세요. 편집은 마지막 프로젝트를 그대로 되찾고(자동 저장), 이미지와 음악은 작업 복구를 제안합니다.</li><li>이미지와 음악의 파일 메뉴에도 &quot;<b class="ui">충돌 후 복구</b>&quot;가 있습니다.</li><li>음악에서 중간에 끊긴 테이크는 다음 실행 때 복구됩니다.</li></ol><p class="tip"><b>팁</b> <kbd>Ctrl</kbd>+<kbd>S</kbd>를 자주 누르세요. 그게 가장 좋은 백업입니다.</p><a class="tperm" href="/ko/tutos/d-plantage.html">이 튜토리얼 바로가기</a></div></article>
+<article class="tc" id="t-d-bug" data-id="d-bug"><button class="tc-h" aria-expanded="false" aria-controls="s-d-bug"><span class="tc-t">버그 신고</span>
+<span class="tc-m"><span class="lv l1">입문</span><span>1분</span><span>4단계</span></span>
+<svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="tc-b" id="s-d-bug" hidden><ol><li>DedCut 위쪽의 &quot;<b class="ui">베타</b>&quot; 표시를 누르거나 <b class="ui">메뉴</b> &gt; &quot;<b class="ui">버그 신고</b>&quot;를 누르세요. 홈 화면에서는 아래쪽에 링크가 있어요.</li><li>무슨 일이 있었는지, 바로 전에 무엇을 하고 있었는지 적어 주세요.</li><li>기술 정보는 체크한 채로 두세요. 고치는 데 큰 도움이 되고, 파일 이름이나 개인 정보는 들어가지 않아요.</li><li>&quot;<b class="ui">Gmail로 보내기</b>&quot;, &quot;<b class="ui">Outlook으로</b>&quot; 또는 &quot;<b class="ui">다른 메일 앱</b>&quot;를 누르고, 메시지를 확인한 뒤 보내세요.</li></ol><p class="tip"><b>팁</b> 메일이 열리지 않으면 &quot;<b class="ui">복사</b>&quot;를 누르고 bugs@dedcut.com(으)로 보내는 메일에 붙여 넣으세요.</p><a class="tperm" href="/ko/tutos/d-bug.html">이 튜토리얼 바로가기</a></div></article></div></section></div>
+<div class="wrap"><p class="tnone" id="tnone" hidden>맞는 튜토리얼이 없습니다. 다른 단어로 해 보세요.</p>
+<div class="tmore"><p>여기 없는 질문이 있나요?</p><span><a class="lnk" href="/ko/#questions">자주 묻는 질문 보기</a></span><a class="btn pri dl" href="https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe">DedCut 다운로드</a></div></div>
+</main>
+<footer><div class="wrap fbottom"><span>© 2026 ByKemi · DedCut</span><a href="/ko/">홈으로</a></div></footer>
+<script>
+const PLAN={"cats":[{"id":"debut","ico":"<path d=\"M5 3l14 9-14 9z\"/>","tutos":["installer","espaces","bases"]},{"id":"montage","ico":"<circle cx=\"6\" cy=\"7\" r=\"3\"/><circle cx=\"6\" cy=\"17\" r=\"3\"/><path d=\"M8.6 8.6L20 18M8.6 15.4L20 6\"/>","tutos":["m-import","m-couper","m-texte","m-effets","m-son","m-soustitres","m-textedit","m-vertical","m-shorts","m-multicam","m-suivi","m-export","m-ytdesc"]},{"id":"rec","ico":"<circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"4\" fill=\"currentColor\"/>","tutos":["r-ecran","r-cam","r-scenes"]},{"id":"live","ico":"<circle cx=\"12\" cy=\"12\" r=\"2.5\"/><path d=\"M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2\"/>","tutos":["l-premier","l-multi","l-chat","l-overlays","l-tiktok","l-pendant"]},{"id":"image","ico":"<rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"2\"/><circle cx=\"9\" cy=\"10\" r=\"2\"/><path d=\"M21 16l-5-5-9 9\"/>","tutos":["i-miniature","i-retouche","i-detourer","i-tablette","i-qrcode","i-montage"]},{"id":"musique","ico":"<path d=\"M9 18V5l11-2v13\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><circle cx=\"17\" cy=\"16\" r=\"3\"/>","tutos":["mu-beat","mu-melodie","mu-voix","mu-justesse","mu-export"]},{"id":"ia","ico":"<path d=\"M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z\"/><path d=\"M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z\"/>","tutos":["a-assistant","a-video","a-personne"]},{"id":"aide","ico":"<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6\"/><circle cx=\"12\" cy=\"17\" r=\".6\" fill=\"currentColor\"/>","tutos":["d-noir","d-son","d-plantage","d-bug"]}],"meta":{"installer":[1,2],"espaces":[1,2],"bases":[1,3],"m-import":[1,2],"m-couper":[1,2],"m-texte":[1,2],"m-effets":[1,3],"m-son":[1,3],"m-soustitres":[1,2],"m-vertical":[1,2],"m-export":[1,2],"m-textedit":[1,2],"m-shorts":[1,2],"m-multicam":[2,3],"m-suivi":[2,2],"m-ytdesc":[1,1],"r-ecran":[1,3],"r-cam":[1,2],"r-scenes":[2,3],"l-premier":[1,4],"l-multi":[2,3],"l-chat":[2,3],"l-overlays":[1,2],"l-pendant":[2,3],"l-tiktok":[1,2],"i-miniature":[1,3],"i-retouche":[1,2],"i-detourer":[1,2],"i-tablette":[2,2],"i-montage":[1,1],"i-qrcode":[1,1],"mu-beat":[1,4],"mu-melodie":[1,3],"mu-voix":[2,4],"mu-export":[1,2],"mu-justesse":[2,2],"a-assistant":[1,2],"a-video":[2,3],"a-personne":[1,2],"d-noir":[1,1],"d-son":[1,2],"d-plantage":[1,1],"d-bug":[1,1]}};
+const D={"page":{"title":"DedCut 튜토리얼 — 몇 분 만에 배우기","desc":"무료 DedCut 단계별 튜토리얼: 동영상 편집, 화면 녹화, 라이브 방송, 사진 편집, 음악, AI.","nav":"튜토리얼","eyebrow":"튜토리얼","h1":"DedCut을 단계별로 배우기","lead":"DedCut의 모든 공간을 위한 짧고 쉬운 안내입니다. 카테고리를 고르거나 하고 싶은 일을 검색하세요.","search":"튜토리얼 검색 (자막, 라이브, 썸네일…)","all":"전체","none":"맞는 튜토리얼이 없습니다. 다른 단어로 해 보세요.","lvl1":"입문","lvl2":"조금 더","min":"%n분","steps":"%n단계","tip":"팁","open":"단계 보기","close":"숨기기","back":"홈으로","more":"여기 없는 질문이 있나요?","moreLink":"자주 묻는 질문 보기","dl":"DedCut 다운로드","top":"맨 위로","homeLink":"모든 튜토리얼","homeT":"몇 분 만에 DedCut 배우기","homeP":"편집, 녹화, 라이브, 이미지, 음악, AI: 모든 것에 쉬운 튜토리얼이 있습니다."},"cat":{"debut":["시작하기","DedCut을 설치하고 기본을 알아보세요."],"montage":["동영상 편집","자르고, 텍스트·효과·음악을 넣고, 내보내세요."],"rec":["화면 녹화","화면, 게임, 웹캠, 목소리를 녹화하세요."],"live":["라이브","YouTube, Twitch, Facebook, Kick에서 라이브 방송하세요."],"image":["이미지","썸네일, 사진 보정, 누끼, 그림 그리기."],"musique":["음악","비트와 멜로디를 만들고, 목소리를 녹음하고, 내보내세요."],"ia":["인공지능","대신 편집해 주는 어시스턴트와 AI 도구, 모두 내 PC에서."],"aide":["자주 생기는 문제","가장 흔한 문제의 해결 방법."]},"t":{"installer":{"t":"DedCut 설치하기","s":["이 사이트에서 다운로드를 클릭하세요. DedCut-Installation.exe 파일이 다운로드 폴더에 저장됩니다.","파일을 여세요. &quot;Windows의 PC 보호&quot; 창이 뜨면 &quot;추가 정보&quot;, &quot;실행&quot;을 차례로 클릭하세요 (DedCut은 새 프로그램이라 Windows가 아직 모를 뿐입니다).","설치는 몇 초면 끝나며, 계정도 관리자 권한도 필요 없습니다.","DedCut이 홈 화면으로 열립니다. 준비 완료!"],"tip":"이후 업데이트는 자동입니다. 새 버전이 준비되면 DedCut이 알려 줍니다."},"espaces":{"t":"DedCut의 다섯 공간","s":["홈 화면에서 하고 싶은 일을 고르거나, 창 맨 위의 버튼으로 공간을 바꾸세요.","<b class=\"ui\">편집</b>: 동영상 편집 (컷, 텍스트, 효과, 음악, 자막, 내보내기).","<b class=\"ui\">녹화</b>: 화면, 게임, 웹캠, 마이크 녹화.","<b class=\"ui\">라이브</b>: 하나 또는 여러 플랫폼에서 라이브 방송.","<b class=\"ui\">이미지</b>: 썸네일 만들기, 사진 보정, 그림 그리기.","<b class=\"ui\">음악</b>: 드럼부터 내보내기까지 음악 만들기."],"tip":"공간끼리 연결되어 있어 노래나 이미지를 클릭 한 번으로 편집에 보낼 수 있습니다."},"bases":{"t":"기본 사용법","s":["<kbd>Ctrl</kbd>+<kbd>Z</kbd>는 마지막 작업 취소, <kbd>Ctrl</kbd>+<kbd>Y</kbd>는 다시 실행입니다. 원하는 만큼 취소할 수 있습니다.","<kbd>Ctrl</kbd>+<kbd>S</kbd>로 프로젝트를 저장합니다. DedCut은 자동으로도 저장해서 아무것도 잃지 않습니다.","오른쪽 위 키보드 버튼으로 모든 단축키를 보고 바꿀 수 있습니다.","메뉴(왼쪽 위)에서 프로젝트를 만들고, 열고, 저장하며, <b class=\"ui\">설정</b>을 열고 가이드 투어를 다시 볼 수 있습니다.","패널을 옮기고, 타임라인을 위나 아래에 두고, 패널을 별도 창으로 분리할 수 있습니다."],"tip":"DedCut은 9개 언어를 지원합니다. <b class=\"ui\">설정</b>의 <b class=\"ui\">언어</b> 항목에서 고르세요."},"m-import":{"t":"동영상 가져와서 배치하기","s":["<b class=\"ui\">편집</b> 공간을 열고 왼쪽의 <b class=\"ui\">미디어</b> 탭을 여세요.","Windows 탐색기에서 동영상, 사진, 소리를 끌어오거나 영역을 클릭해 고르세요.","그런 다음 각 항목을 아래 타임라인으로 끄세요. 여기서 동영상이 만들어집니다.","<kbd>Space</kbd>로 미리보기를 재생하거나 멈춥니다."],"tip":"무거운 4K 동영상도 걱정 마세요. DedCut이 가벼운 사본을 알아서 만들어 미리보기가 부드럽고, 내보내기는 원본 화질 그대로입니다."},"m-couper":{"t":"자르기와 다듬기","s":["재생 헤드(세로선)를 원하는 위치에 두세요.","타임라인 위의 가위를 클릭하거나 <kbd>S</kbd>를 누르면 클립이 둘로 나뉩니다.","필요 없는 부분을 클릭하고 <kbd>Delete</kbd>를 누르세요.","자르지 않고 줄이려면 클립의 시작이나 끝을 끄세요."],"tip":"<b class=\"ui\">오디오</b> 탭의 &quot;<b class=\"ui\">무음 자르기</b>&quot;는 내레이션의 빈 구간을 클릭 한 번으로 모두 없앱니다."},"m-texte":{"t":"제목이나 텍스트 넣기","s":["텍스트가 나올 위치에 재생 헤드를 두세요.","<b class=\"ui\">텍스트</b> 탭을 열고 스타일을 클릭하면 타임라인에 텍스트가 추가됩니다.","오른쪽 설정 패널에 글자를 입력하고 글꼴, 색, 애니메이션을 고르세요.","미리보기에서 마우스로 텍스트를 옮기고 모서리를 끌어 크기를 바꾸세요."],"tip":"200개가 넘는 텍스트 스타일과 100개의 글꼴이 들어 있으며, 어디서나 자유롭게 쓸 수 있습니다."},"m-effets":{"t":"효과, 필터, 전환","s":["타임라인의 클립을 클릭해 선택하세요.","<b class=\"ui\">효과</b> 탭: 효과에 마우스를 올리면 움직임을 볼 수 있고, 클릭하면 추가하거나 뺍니다.","<b class=\"ui\">필터</b> 탭: 필터를 클릭하면 클립의 색이 바뀌고, 버튼 하나로 동영상 전체에 적용됩니다.","<b class=\"ui\">전환</b> 탭: 클립 시작이나 끝의 전환, 또는 앞 클립과의 부드러운 페이드를 고르세요."],"tip":"각 효과의 세기는 오른쪽 패널에서 조절합니다."},"m-son":{"t":"음악, 효과음, 볼륨","s":["<b class=\"ui\">오디오</b> 탭을 여세요.","&quot;<b class=\"ui\">음악</b>&quot;에서 저작권 걱정 없는 음악(실제 노래와 DedCut이 만든 음악)을 듣고 추가하세요.","효과음(휙, 클릭, 박수…)을 동영상의 알맞은 순간에 넣으세요.","클립을 클릭해 오른쪽 패널에서 볼륨을 조절하거나, 트랙 전체를 음소거하세요."],"tip":"이 음악은 YouTube, TikTok 등 어디서나 저작권 걱정 없이 쓸 수 있습니다."},"m-soustitres":{"t":"자동 자막","s":["<b class=\"ui\">자막</b> 탭을 여세요.","정확도를 고르세요: 빠름, 균형, 정확.","처음에는 &quot;<b class=\"ui\">모델 다운로드</b>&quot;를 클릭하세요 (한 번만 다운로드).","&quot;<b class=\"ui\">자막 만들기</b>&quot;를 클릭하면 DedCut이 동영상을 듣고 타임라인에 자막을 씁니다.","자막을 클릭해 오른쪽 패널에서 글자를 고치고, 스타일을 바꾼 뒤 &quot;<b class=\"ui\">이 스타일을 모두에 적용</b>&quot;를 누르세요."],"tip":"모든 처리는 내 PC에서 이루어집니다. 목소리도 동영상도 인터넷으로 보내지지 않습니다."},"m-textedit":{"t":"단어를 지워서 자르기","s":["<b class=\"ui\">자막</b> 탭을 열고 &quot;<b class=\"ui\">텍스트 편집 열기</b>&quot;을 누르세요 (또는 클립을 오른쪽 클릭 → &quot;<b class=\"ui\">텍스트로 편집</b>&quot;).","처음 한 번, DedCut이 영상에서 말한 내용을 모두 이 PC에서 받아 적어요.","마우스로 단어를 선택하고 <kbd>Del</kbd> 키를 누르세요: 영상도 같은 곳이 잘리고 뒤가 당겨져요.","&quot;머뭇거림 없애기&quot;는 &quot;음…&quot;을 한 번에 없애고, &quot;공백 줄이기&quot;는 긴 멈춤을 줄여요."],"tip":"자막도 자른 대로 따라와요. <kbd>Ctrl</kbd>+<kbd>Z</kbd>로 되돌려요."},"m-vertical":{"t":"세로 동영상 만들기 (TikTok, Shorts)","s":["타임라인의 빈 곳을 클릭하세요 (또는 <kbd>Esc</kbd>). 오른쪽에 <b class=\"ui\">프로젝트</b> 패널이 나타납니다.","&quot;<b class=\"ui\">원클릭 형식</b>&quot;에서 &quot;<b class=\"ui\">세로 9:16 (TikTok, Shorts)</b>&quot;를 고르세요.","동영상은 화면 전체를 그대로 유지하고, 뒤에는 흐린 배경이 깔립니다.","다른 구도를 원하면 미리보기에서 각 클립을 옮기거나 크기를 바꾸세요."],"tip":"같은 패널에서 언제든 가로로 되돌릴 수 있습니다."},"m-shorts":{"t":"쇼츠 자동으로 만들기","s":["긴 영상을 편집에서 여세요 (자막이 있으면 더 좋아요).","&quot;<b class=\"ui\">내보내기</b>&quot; → &quot;<b class=\"ui\">자동 쇼츠</b>&quot;을 누르세요.","길이와 개수를 고르고 &quot;<b class=\"ui\">순간 찾기</b>&quot;: DedCut이 가장 생생한 순간을 찾아요.","마음에 드는 순간을 남기고 쇼츠를 만드세요: 각각 세로 프로젝트가 되고, 화면이 사람을 따라가요."],"tip":"어시스턴트에게 &quot;쇼츠 만들어 줘&quot;라고 해도 돼요."},"m-multicam":{"t":"멀티캠: 말하는 사람의 카메라","s":["동시에 찍은 영상 2~4개를 타임라인에 놓으세요 (한 사람에 카메라 하나, 각자 마이크).","<kbd>Ctrl</kbd>+클릭으로 선택하고 오른쪽 클릭 → &quot;멀티캠 만들기&quot;: DedCut이 소리로 맞춰요.","미리보기 위 &quot;<b class=\"ui\">멀티캠</b>&quot; 막대에서 &quot;<b class=\"ui\">자동</b>&quot;을 누르고 리듬을 고른 뒤 &quot;<b class=\"ui\">시작</b>&quot;.","DedCut이 매 순간 말하는 사람의 카메라를 보여줘요. <kbd>1</kbd>~<kbd>4</kbd> 키로 장면을 바꿀 수 있어요."],"tip":"아무것도 지워지지 않아요. <kbd>Ctrl</kbd>+<kbd>Z</kbd>로 모두 되돌려요."},"m-suivi":{"t":"물체 추적, 번호판 흐리게","s":["요소(텍스트, 스티커, 화살표…)를 물체 위에 놓고, 재생 위치를 그 장면의 처음에 두세요.","요소를 오른쪽 클릭 → &quot;<b class=\"ui\">물체 추적</b>&quot;: DedCut이 영상 속 물체를 따라가고 요소도 따라가요.","번호판이나 얼굴을 가리려면 영상을 오른쪽 클릭 → &quot;<b class=\"ui\">움직이는 것 흐리게 하기</b>&quot;, 영역을 물체에 놓고 &quot;<b class=\"ui\">물체 추적</b>&quot;."],"tip":"물체가 사라지면 추적이 거기서 멈춰요. 조금 뒤에서 다시 시작하세요."},"m-export":{"t":"동영상 내보내기","s":["오른쪽 위의 &quot;<b class=\"ui\">내보내기</b>&quot;를 클릭하세요 (또는 <kbd>Ctrl</kbd>+<kbd>E</kbd>).","이름을 정하고 화질(최대 4K)과 프레임 레이트를 고르세요.","내보내기를 시작하고 파일을 저장할 곳을 고르세요.","소리만 (WAV 또는 M4A) 내보낼 수도 있습니다."],"tip":"긴 내보내기 중에는 DedCut을 최소화해도 됩니다. 백그라운드에서 계속 진행됩니다."},"m-ytdesc":{"t":"유튜브 설명 쓰기","s":["먼저 영상의 자막을 만드세요 (<b class=\"ui\">자막</b> 탭).","&quot;<b class=\"ui\">내보내기</b>&quot; → &quot;<b class=\"ui\">유튜브 설명</b>&quot;을 누르세요.","제안된 제목 중 하나를 고르고 설명과 해시태그를 다듬은 뒤 &quot;<b class=\"ui\">설명 복사</b>&quot;."],"tip":"챕터(마커)는 자동으로 들어가요. DedCut AI 두뇌가 있으면 모두 이 PC에서 써요."},"r-ecran":{"t":"화면이나 게임 녹화하기","s":["<b class=\"ui\">녹화</b> 공간을 여세요.","<b class=\"ui\">소스</b>에서 &quot;<b class=\"ui\">소스 추가</b>&quot;, &quot;<b class=\"ui\">화면 / 창</b>&quot;을 차례로 클릭하세요.","&quot;<b class=\"ui\">무엇을 공유할까요?</b>&quot; 창이 열립니다. 작은 미리보기와 함께 보이는 화면이나 창을 고르세요.","&quot;<b class=\"ui\">PC 소리 공유</b>&quot;에 체크하면 게임, 음악, Discord 소리가 함께 녹음됩니다 (DedCut 자체 소리는 빠집니다).","&quot;<b class=\"ui\">녹화 시작</b>&quot;를 클릭하세요. 멈추려면 다시 클릭하거나 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>을 누르세요."],"tip":"동영상은 편집 미디어와 동영상\\DedCut 폴더에 저장됩니다."},"r-cam":{"t":"웹캠과 마이크 추가하기","s":["<b class=\"ui\">소스</b>에서 &quot;<b class=\"ui\">소스 추가</b>&quot;, &quot;<b class=\"ui\">웹캠</b>&quot;을 클릭하고 카메라를 고르세요.","미리보기에서 웹캠을 옮기고 모서리를 끌어 크기를 바꾸세요. 설정에서 둥근 모양도 고를 수 있습니다.","오디오 믹서에서 마이크를 고르고 말하면서 볼륨을 맞추세요. 막대가 초록색 안에 있어야 합니다.","마이크 필터로 배경 소음과 숨소리를 줄일 수 있습니다."],"tip":"헤드폰을 쓰세요. 아니면 스피커 소리가 마이크로 다시 들어갑니다."},"r-scenes":{"t":"여러 장면 준비하기","s":["<b class=\"ui\">장면</b>에서 장면은 화면 구성입니다 (예: &quot;화면 + 웹캠&quot;, &quot;잠시 후 돌아옵니다&quot;).","+ 버튼으로 장면을 추가하고 소스(화면, 웹캠, 이미지, 텍스트, 채팅…)를 넣으세요.","장면을 클릭하면 표시됩니다. 녹화나 라이브 중에는 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd>~<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>9</kbd>로 게임 중에도 장면을 바꿀 수 있습니다.","장면이나 소스를 끌어서 순서를 바꾸세요."],"tip":"장면은 <b class=\"ui\">녹화</b>과 <b class=\"ui\">라이브</b>에서 함께 씁니다."},"l-premier":{"t":"첫 라이브 방송","s":["<b class=\"ui\">라이브</b> 공간을 열고 장면(화면, 웹캠, 마이크)을 준비하세요.","오른쪽 <b class=\"ui\">설정</b> 탭: &quot;<b class=\"ui\">어디로 방송할까요?</b>&quot;에서 플랫폼(YouTube, Twitch, Facebook, Kick 등)을 고르세요.","플랫폼 대시보드에서 스트림 키를 복사해 &quot;<b class=\"ui\">스트림 키</b>&quot;에 붙여 넣으세요.","&quot;<b class=\"ui\">방송 시작</b>&quot;를 클릭하세요. 방송 중 표시가 나타나며, 다시 클릭하면 멈춥니다."],"tip":"스트림 키는 비밀로 유지됩니다. DedCut이 내 PC에 암호화해 보관합니다."},"l-multi":{"t":"여러 플랫폼에 동시 송출하기","s":["<b class=\"ui\">설정</b> 탭에서 &quot;<b class=\"ui\">방송 대상 추가</b>&quot;를 클릭하고 두 번째 플랫폼과 키를 추가하세요.","사용할 목적지에 체크하면 라이브가 모든 곳에 동시에 나갑니다.","TikTok이나 YouTube Shorts용으로 &quot;<b class=\"ui\">세로 라이브(TikTok, 쇼츠)</b>&quot;을 켜면 DedCut이 9:16 버전도 보냅니다.","인터넷 연결을 확인하세요. 목적지마다 업로드 속도가 필요합니다."],"tip":"먼저 플랫폼 하나로 연결을 시험해 보세요."},"l-chat":{"t":"채팅과 알림 표시하기","s":["오른쪽 <b class=\"ui\">채팅</b> 탭: 채널을 연결해 메시지를 읽으세요.","&quot;<b class=\"ui\">방송 채팅</b>&quot; 소스를 추가해 화면에 채팅을 띄우고 미리보기에서 위치를 잡으세요.","&quot;<b class=\"ui\">알림</b>&quot; 소스를 추가해 새 팔로워와 후원을 표시하세요.","투표, 목표 바, 카운터도 &quot;<b class=\"ui\">소스 추가</b>&quot;에 있습니다."],"tip":"채팅을 음성으로 읽어 줄 수도 있습니다. <b class=\"ui\">도구</b> 탭에서 설정하세요."},"l-overlays":{"t":"오버레이 추가하기","s":["<b class=\"ui\">라이브</b>(또는 <b class=\"ui\">녹화</b>)에서 &quot;<b class=\"ui\">소스 추가</b>&quot;, &quot;<b class=\"ui\">오버레이</b>&quot;를 차례로 클릭하세요.","오른쪽 패널에서 30가지 스타일 중 하나를 고르세요: 웹캠 프레임, 이름 자막바, 대기 화면, 화면 테두리, 알림 배지, 분위기. 썸네일에 마우스를 올리면 움직임을 볼 수 있어요.","이름이나 메시지를 쓰고 두 가지 색과 속도를 고르세요.","미리보기에서 마우스로 오버레이를 배치하고 모서리를 끌어 크기를 바꾸세요."],"tip":"웹캠 프레임은 소스 목록에서 &quot;<b class=\"ui\">오버레이</b>&quot;를 웹캠보다 위에 두세요."},"l-tiktok":{"t":"틱톡 라이브하기","s":["컴퓨터에서 TikTok LIVE Producer를 열고 라이브를 준비하세요: 서버 주소와 키를 줘요.","<b class=\"ui\">라이브</b>에서 틱톡 송출 대상을 추가하고 &quot;<b class=\"ui\">서버 주소</b>&quot;와 &quot;<b class=\"ui\">스트림 키</b>&quot;를 붙여 넣으세요.","세로 라이브라면 &quot;<b class=\"ui\">스튜디오를 세로로 바꾸기(TikTok 장면)</b>&quot;: 틱톡용 장면이 준비돼 있어요.","DedCut에서 라이브를 시작하세요."],"tip":"틱톡은 라이브마다 키가 바뀌어요. 매번 다시 복사하고 절대 보여 주지 마세요."},"l-pendant":{"t":"라이브 중에","s":["클릭이나 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd>~<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>9</kbd>로 장면을 바꾸세요. 게임 중에도 됩니다.","&quot;<b class=\"ui\">함께 녹화</b>&quot;로 라이브 사본을 내 PC에 남길 수 있습니다.","<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>으로 멋진 순간에 마커를 찍어 편집 때 쉽게 찾으세요.","스튜디오 모드는 다음 장면을 미리보기에서 준비한 뒤 방송에 내보냅니다."],"tip":"라이브가 끝나면 녹화 영상이 편집으로 들어가 클립을 만들 수 있습니다."},"i-miniature":{"t":"YouTube 썸네일 만들기","s":["<b class=\"ui\">이미지</b> 공간을 열고 &quot;<b class=\"ui\">새 이미지</b>&quot;을 클릭하세요.","&quot;동영상 썸네일&quot;(1280 × 720)을 고르고 만들기를 누르세요.","사진을 추가하고(창으로 끌어오기) <b class=\"ui\">텍스트</b> 도구로 제목을 넣으세요.","멀리서도 읽히도록 레이어 효과에서 텍스트에 외곽선이나 그림자를 넣으세요.","<b class=\"ui\">파일</b> 메뉴 &gt; &quot;<b class=\"ui\">내보내기</b>&quot;: PNG나 JPG로 저장하세요."],"tip":"요소마다 레이어가 따로 있어 나중에 무엇이든 바꿀 수 있습니다."},"i-retouche":{"t":"사진 보정하기","s":["사진을 여세요 (<b class=\"ui\">이미지</b> 공간으로 끌어오기).","<b class=\"ui\">이미지</b> 메뉴 &gt; &quot;<b class=\"ui\">자동 보정</b>&quot;로 밝기와 색을 클릭 한 번에 보정합니다.","<b class=\"ui\">필터</b> 메뉴: 밝기, 곡선, 레벨, 색조… 를 실시간 미리보기로 직접 조절하세요.","자르기 도구로 다듬은 뒤 내보내세요."],"tip":"덮어쓰지 않는 한 원본은 그대로 남아 있습니다."},"i-detourer":{"t":"사람이나 물건 누끼 따기","s":["<b class=\"ui\">이미지</b>에서 사진을 여세요.","<b class=\"ui\">선택</b> 메뉴 &gt; &quot;<b class=\"ui\">피사체 선택</b>&quot;: AI가 주인공인 사람이나 물건을 선택합니다.","<b class=\"ui\">레이어</b> 메뉴 &gt; &quot;<b class=\"ui\">배경 제거(마스크)</b>&quot;로 배경을 지웁니다 (마스크로 가려질 뿐이라 되살릴 수 있습니다).","투명함을 유지하려면 PNG로 내보내세요."],"tip":"누끼는 내 PC에서 계산됩니다. 사진은 어디로도 보내지지 않습니다."},"i-tablette":{"t":"타블렛으로 그리기","s":["타블렛(Wacom, XP-Pen, Huion…)을 연결하거나 화면용 펜을 쓰세요.","<b class=\"ui\">편집</b> 메뉴 &gt; &quot;<b class=\"ui\">펜과 드로잉 태블릿</b>&quot;: 필압을 맞추고 테스트 영역에서 시험해 보세요.","<b class=\"ui\">브러시</b> 도구를 고르세요. 필압은 크기, 기울기는 각도를 바꾸고, 지우개 쪽 끝으로 지웁니다.","필압이 안 먹으면 타블렛 프로그램에서 &quot;Windows Ink&quot;를 켜세요."],"tip":"새 레이어에 그리면 나머지를 망치지 않고 고칠 수 있습니다."},"i-qrcode":{"t":"QR 코드 추가","s":["편집: <kbd>Ctrl</kbd>+<kbd>K</kbd> → &quot;QR 코드 추가&quot;, 또는 요소의 SNS 카테고리.","라이브: &quot;<b class=\"ui\">소스 추가</b>&quot; → &quot;<b class=\"ui\">QR 코드</b>&quot;.","이미지: 레이어 메뉴 → &quot;<b class=\"ui\">QR 코드</b>&quot;.","링크(채널, SNS, 사이트)를 입력하면 시청자가 휴대폰으로 스캔해요."],"tip":"밝은 배경에 어두운 칸으로, 충분히 크게 만드세요."},"i-montage":{"t":"이미지를 편집으로 보내기 (그리고 되돌리기)","s":["<b class=\"ui\">이미지</b>에서 이미지를 오른쪽 클릭: &quot;<b class=\"ui\">이미지를 편집으로 보내기</b>&quot;. 편집 타임라인에 들어갑니다.","<b class=\"ui\">편집</b>에서 클립을 오른쪽 클릭: &quot;<b class=\"ui\">이미지로 보내기</b>&quot;로 그 프레임을 이미지 공간에서 열어 보정합니다."],"tip":"동영상의 한 장면으로 썸네일을 만들 때 편리합니다."},"mu-beat":{"t":"첫 비트 만들기","s":["<b class=\"ui\">음악</b> 공간을 열고 <b class=\"ui\">파일</b> 메뉴 &gt; &quot;<b class=\"ui\">새 프로젝트</b>&quot;에서 &quot;<b class=\"ui\">비트</b>&quot; 템플릿과 템포(예: 120)를 고르세요.","드럼 클립을 클릭한 뒤 아래쪽 <b class=\"ui\">스텝</b> 탭을 여세요.","각 줄은 소리(킥, 스네어, 하이햇…), 각 칸은 한 스텝입니다. 클릭해서 켜고 끄세요.","<kbd>Space</kbd>로 들어 보세요. 스윙을 넣으면 그루브가 살아납니다.","<b class=\"ui\">믹서</b> 탭: 트랙마다 볼륨을 맞추세요."],"tip":"DedCut의 드럼 소리는 DedCut이 직접 만든 것이라 판매하는 음악에도 어디서나 쓸 수 있습니다."},"mu-melodie":{"t":"멜로디 쓰기","s":["악기 트랙의 빈 곳을 더블클릭하면 클립이 만들어지고 열립니다.","<b class=\"ui\">피아노 롤</b> 탭: 격자를 클릭해 음표를 놓고, 끌어서 옮기고, 끝을 당겨 늘이세요.","오른쪽 클릭이나 <kbd>Delete</kbd>로 음표를 지웁니다.","재생 버튼 오른쪽의 키보드 버튼을 누르면 컴퓨터 키보드가 피아노가 됩니다."],"tip":"악기 탭에서 트랙 소리(피아노, 신스, 현악기…)를 바꿀 수 있습니다."},"mu-voix":{"t":"목소리 녹음하기","s":["마이크를 연결하고 헤드폰을 쓰세요.","<b class=\"ui\">설정</b> 메뉴 &gt; 사운드: 마이크를 허용하고 지연 시간을 한 번 측정하세요.","<b class=\"ui\">트랙</b> 메뉴: 오디오 트랙을 추가하고 입력을 고른 뒤 트랙을 녹음 대기(동그란 버튼)로 두세요.","<kbd>R</kbd>로 녹음합니다. 반복을 켜면 매번이 테이크가 되고 모두 보관됩니다.","<b class=\"ui\">오디오 클립</b> 탭: 테이크마다 좋은 부분을 남기고 &quot;맑은 목소리&quot; 효과 체인을 추가하세요."],"tip":"녹음 중 DedCut이 닫혀도 다음 실행 때 테이크를 복구할 수 있습니다."},"mu-justesse":{"t":"음정 보정, 코러스 추가","s":["<b class=\"ui\">음악</b>에서 노래 목소리 클립을 누르세요 (목소리만 있고 음악은 없음).","&quot;<b class=\"ui\">아이디어와 분석</b>&quot;을 여세요 (반짝이 모양 버튼).","&quot;<b class=\"ui\">노래 목소리</b>&quot;에서 키를 확인하고 자연스럽게·강하게·로봇을 고른 뒤 &quot;<b class=\"ui\">음정 보정</b>&quot;.","코러스는 원하는 목소리를 체크하고 &quot;<b class=\"ui\">코러스 추가</b>&quot;: 목소리마다 트랙이 생겨요."],"tip":"원래 목소리는 음소거로 남아요. 비교하려면 켜세요."},"mu-export":{"t":"음악 내보내기","s":["곡 전체를 들어 보세요. 마스터의 빨간 불이 꺼져 있어야 합니다 (클리핑 없음).","<b class=\"ui\">파일</b> 메뉴 &gt; &quot;<b class=\"ui\">오디오 내보내기</b>&quot;.","형식을 고르세요: 무손실 WAV나 FLAC, 또는 가벼운 M4A.","스템은 트랙마다 파일 하나씩, 모두 같은 지점에서 시작합니다.","&quot;<b class=\"ui\">편집으로 보내기</b>&quot;에 체크하면 동영상 편집에서 음악을 바로 쓸 수 있습니다."],"tip":"내보내기 보고서에 파일마다 길이, 라우드니스(LUFS), 피크가 나옵니다."},"a-assistant":{"t":"대신 편집해 주는 AI 어시스턴트","s":["편집에서 오른쪽 위 말풍선(&quot;<b class=\"ui\">대신 편집해 주는 AI와 대화</b>&quot;)을 클릭하세요.","원하는 것을 쓰세요: &quot;무음 구간 자르고 자막 넣어 줘&quot;, &quot;동영상을 세로로 바꿔 줘&quot;…","어시스턴트가 DedCut 안에서 바로 편집하고, 버튼 하나로 한 일을 전부 되돌릴 수 있습니다.","DedCut에 대한 질문도 할 수 있습니다."],"tip":"DedCut AI는 내 PC에서 무료로, 계정 없이 동작합니다."},"a-video":{"t":"AI 동영상으로 동영상 만들기","s":["편집에서 <b class=\"ui\">AI 영상</b> 탭을 여세요.","움직이게 할 이미지를 넣거나 보고 싶은 장면을 글로 설명하세요.","스타일(실사, 3D, 애니메이션…)을 고르고 만들기를 시작하세요.","처음에는 AI 모델을 다운로드하고, 그다음부터는 모두 내 PC에서 처리됩니다."],"tip":"최신 그래픽 카드가 있으면 훨씬 빨라집니다."},"a-personne":{"t":"&quot;인물&quot; 효과 (배경 흐림, 외곽선…)","s":["사람이 나오는 클립을 선택하세요.","<b class=\"ui\">효과</b> 탭의 인물 카테고리: 배경 흐림, 흑백 배경, 외곽선, 네온, 오라…","AI가 내 PC에서 모든 프레임의 인물을 따냅니다.","오른쪽 패널에서 세기를 조절하세요."],"tip":"그린 스크린 없이 사람을 돋보이게 하기 좋습니다."},"d-noir":{"t":"게임 화면이 검게 나와요","s":["전용 전체 화면 모드의 일부 게임은 캡처할 수 없습니다.","게임 그래픽 설정에서 &quot;창 모드 전체 화면&quot;(또는 &quot;테두리 없는 창&quot;)을 고르세요.","DedCut에서는 게임 창 대신 화면 전체를 고르세요."],"tip":""},"d-son":{"t":"소리가 안 나요","s":["녹화에 게임 소리가 없으면: 화면 선택 창에서 &quot;<b class=\"ui\">PC 소리 공유</b>&quot;에 체크하세요.","마이크가 무음이면: 오디오 믹서에서 마이크를 고르고 Windows가 DedCut의 마이크 사용을 허용하는지 확인하세요.","블루투스 헤드폰으로 음악 재생 시 소리가 없으면: 헤드폰이 깨어날 때까지 몇 초 기다리거나 사운드 설정에서 다른 출력을 고르세요."],"tip":""},"d-plantage":{"t":"갑자기 꺼진 뒤 작업 되찾기","s":["DedCut을 다시 여세요. 편집은 마지막 프로젝트를 그대로 되찾고(자동 저장), 이미지와 음악은 작업 복구를 제안합니다.","이미지와 음악의 파일 메뉴에도 &quot;<b class=\"ui\">충돌 후 복구</b>&quot;가 있습니다.","음악에서 중간에 끊긴 테이크는 다음 실행 때 복구됩니다."],"tip":"<kbd>Ctrl</kbd>+<kbd>S</kbd>를 자주 누르세요. 그게 가장 좋은 백업입니다."},"d-bug":{"t":"버그 신고","s":["DedCut 위쪽의 &quot;<b class=\"ui\">베타</b>&quot; 표시를 누르거나 <b class=\"ui\">메뉴</b> &gt; &quot;<b class=\"ui\">버그 신고</b>&quot;를 누르세요. 홈 화면에서는 아래쪽에 링크가 있어요.","무슨 일이 있었는지, 바로 전에 무엇을 하고 있었는지 적어 주세요.","기술 정보는 체크한 채로 두세요. 고치는 데 큰 도움이 되고, 파일 이름이나 개인 정보는 들어가지 않아요.","&quot;<b class=\"ui\">Gmail로 보내기</b>&quot;, &quot;<b class=\"ui\">Outlook으로</b>&quot; 또는 &quot;<b class=\"ui\">다른 메일 앱</b>&quot;를 누르고, 메시지를 확인한 뒤 보내세요."],"tip":"메일이 열리지 않으면 &quot;<b class=\"ui\">복사</b>&quot;를 누르고 bugs@dedcut.com(으)로 보내는 메일에 붙여 넣으세요."}}},PERMA="이 튜토리얼 바로가기",TUTO_URL=id=>"/ko/tutos/"+id+'.html';
+const PAGE_LANG='ko',SITE_LANGS=["fr","en","es","de","it","pt","ja","ko","zh"],langUrl=l=>l==='fr'?'/tutos.html':'/'+l+'/tutos.html';
+document.getElementById('lang').value=PAGE_LANG;
+document.getElementById('lang').addEventListener('change',e=>{const l=e.target.value;try{localStorage.setItem('dedcut-site-lang',l)}catch(x){}location.href=langUrl(l)+location.hash});
+const topEl=document.querySelector('.top'),bar=document.querySelector('.playbar i'),knob=document.querySelector('.playbar b');
+function onScroll(){const d=document.documentElement,p=d.scrollTop/Math.max(1,d.scrollHeight-d.clientHeight);bar.style.width=(p*100)+'%';knob.style.left='calc('+(p*100)+'% - 1px)';topEl.classList.toggle('scrolled',d.scrollTop>8)}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+/* page française et langue déjà choisie ailleurs : on va dans cette langue */
+let saved='';try{saved=localStorage.getItem('dedcut-site-lang')||''}catch(e){}
+if(PAGE_LANG==='fr'&&location.protocol!=='file:'&&saved&&saved!=='fr'&&SITE_LANGS.includes(saved))location.replace(langUrl(saved)+location.hash);
+const icon=c=>'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+c.ico+'</svg>';
+const open=new Set();
+function card(id){const T=D.t[id],[lvl,min]=PLAN.meta[id],o=open.has(id);
+  return '<article class="tc'+(o?' open':'')+'" id="t-'+id+'" data-id="'+id+'"><button class="tc-h" aria-expanded="'+o+'" aria-controls="s-'+id+'"><span class="tc-t">'+T.t+'</span><span class="tc-m"><span class="lv l'+lvl+'">'+(lvl===1?D.page.lvl1:D.page.lvl2)+'</span><span>'+D.page.min.replace('%n',min)+'</span><span>'+D.page.steps.replace('%n',T.s.length)+'</span></span><svg class="tc-a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="tc-b" id="s-'+id+'"'+(o?'':' hidden')+'><ol>'+T.s.map(x=>'<li>'+x+'</li>').join('')+'</ol>'+(T.tip?'<p class="tip"><b>'+D.page.tip+'</b> '+T.tip+'</p>':'')+'<a class="tperm" href="'+TUTO_URL(id)+'">'+PERMA+'</a></div></article>'}
+function draw(){
+  document.getElementById('tlist').innerHTML=PLAN.cats.map(c=>'<section class="tcat" id="'+c.id+'" data-cat="'+c.id+'"><div class="tcat-h"><span class="tcat-i">'+icon(c)+'</span><div><h2>'+D.cat[c.id][0]+'</h2><p>'+D.cat[c.id][1]+'</p></div></div><div class="tgrid">'+c.tutos.map(card).join('')+'</div></section>').join('');
+  filter()}
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+function filter(){const q=norm(document.getElementById('q').value.trim()),f=document.querySelector('.chipf.on')?.dataset.f||'';let n=0;
+  document.querySelectorAll('.tcat').forEach(s=>{let k=0;s.querySelectorAll('.tc').forEach(a=>{const T=D.t[a.dataset.id],hit=!q||norm((T.t+' '+T.s.join(' ')+' '+T.tip).replace(/<[^>]+>/g,'')).includes(q);a.hidden=!hit;if(hit)k++});s.hidden=(f&&s.dataset.cat!==f)||!k;if(!s.hidden)n+=k});
+  document.getElementById('tnone').hidden=n>0}
+document.getElementById('tlist').addEventListener('click',e=>{const h=e.target.closest('.tc-h');if(!h)return;const a=h.closest('.tc'),id=a.dataset.id,o=!open.has(id);if(o)open.add(id);else open.delete(id);a.classList.toggle('open',o);h.setAttribute('aria-expanded',o);a.querySelector('.tc-b').hidden=!o;if(o)history.replaceState(null,'','#t-'+id)});
+document.getElementById('chips').addEventListener('click',e=>{const b=e.target.closest('.chipf');if(!b)return;document.querySelectorAll('.chipf').forEach(x=>x.classList.toggle('on',x===b));filter();window.scrollTo({top:document.querySelector('.tbar').offsetTop-68,behavior:'smooth'})});
+document.getElementById('q').addEventListener('input',filter);
+const h=location.hash.match(/^#t-([\w-]+)/);if(h&&PLAN.meta[h[1]]){open.add(h[1]);draw()}
+if(h){const a=document.getElementById('t-'+h[1]);if(a)setTimeout(()=>a.scrollIntoView({block:'center',behavior:'instant'}),50)}else if(location.hash){const s=document.querySelector(location.hash);if(s)setTimeout(()=>s.scrollIntoView({behavior:'instant'}),50)}
+/* haut de page « cinéma » : pistes de timeline qui défilent (comme sur l'accueil), en pause hors de l'écran */
+(()=>{const tl=document.getElementById('hxtl');if(!tl)return;let r=7;const rnd=()=>(r=(r*9301+49297)%233280)/233280;
+  const C=[['#22d3ee','#0891b2'],['#7c3aed','#a78bfa'],['#f59e0b','#fbbf24'],['#10b981','#34d399'],['#ec4899','#f472b6']];
+  [[0,62],[1,48],[2,74],[3,56],[4,66]].forEach(([c,d],i)=>{const tr=document.createElement('div');tr.className='hx-tr'+(i%2?' rev':'');tr.style.setProperty('--d',d+'s');
+    let h='';for(let k=0;k<9;k++){const cc=C[(c+(k%3===2?1:0))%C.length];h+='<b style="--w:'+Math.round(90+rnd()*260)+'px;--c:linear-gradient(90deg,'+cc[0]+','+cc[1]+')"></b>'}
+    tr.innerHTML=h+h;tl.insertBefore(tr,tl.lastElementChild)});
+  const he=document.querySelector('.thero');if('IntersectionObserver' in window)new IntersectionObserver(e=>he.classList.toggle('hx-off',!e[0].isIntersecting)).observe(he);
+  document.addEventListener('visibilitychange',()=>he.classList.toggle('hx-off',document.hidden));
+})();
+/* cartes des tutos : lueur qui suit la souris */
+document.addEventListener('pointermove',e=>{const t=e.target.closest&&e.target.closest('.tc');if(!t)return;const r=t.getBoundingClientRect();t.style.setProperty('--mx',(e.clientX-r.left)+'px');t.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
+</script>
+</body>
+</html>

@@ -1,23 +1,34 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-page-lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DedCut — Vidéo, live, photo et musique, gratuit pour Windows</title>
-<meta name="description" content="DedCut : logiciel de création gratuit pour Windows, par ByKemi. Montage vidéo, studio d’enregistrement, live sur plusieurs plateformes, retouche photo et création musicale, avec un assistant IA. Sans compte, sans pub, tout reste sur ton PC.">
+<title>DedCut — Logiciel de montage vidéo gratuit pour Windows, sans filigrane</title>
+<meta name="description" content="DedCut, logiciel gratuit et libre pour Windows : montage vidéo sans filigrane, enregistrement d’écran, live YouTube, Twitch et TikTok, retouche photo et création musicale, avec un assistant IA. Sans compte, sans pub.">
 <meta name="google-site-verification" content="c9VPZeZfQIBVgm5FsBiaknVwDRS9SdDneG_Q7n9zrn4" />
 <meta name="msvalidate.01" content="501AF4538FBE11897FE0DC71A739CA40" />
 <meta name="theme-color" content="#09080f">
 <link rel="canonical" href="https://dedcut.com/">
+<meta property="og:locale" content="fr_FR">
+<link rel="alternate" hreflang="fr" href="https://dedcut.com/">
+<link rel="alternate" hreflang="en" href="https://dedcut.com/en/">
+<link rel="alternate" hreflang="es" href="https://dedcut.com/es/">
+<link rel="alternate" hreflang="de" href="https://dedcut.com/de/">
+<link rel="alternate" hreflang="it" href="https://dedcut.com/it/">
+<link rel="alternate" hreflang="pt" href="https://dedcut.com/pt/">
+<link rel="alternate" hreflang="ja" href="https://dedcut.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://dedcut.com/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://dedcut.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://dedcut.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DedCut">
 <meta property="og:url" content="https://dedcut.com/">
-<meta property="og:title" content="DedCut — Vidéo, live, photo et musique, gratuit pour Windows">
-<meta property="og:description" content="DedCut : logiciel de création gratuit pour Windows, par ByKemi. Montage vidéo, enregistrement d’écran, live, retouche photo et musique, avec un assistant IA. Sans compte, sans pub, tout reste sur ton PC.">
+<meta property="og:title" content="DedCut — Logiciel de montage vidéo gratuit pour Windows, sans filigrane">
+<meta property="og:description" content="DedCut, logiciel gratuit et libre pour Windows : montage vidéo sans filigrane, enregistrement d’écran, live YouTube, Twitch et TikTok, retouche photo et création musicale, avec un assistant IA. Sans compte, sans pub.">
 <meta property="og:image" content="https://dedcut.com/assets/editor.webp">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DedCut","url":"https://dedcut.com/","description":"DedCut : logiciel de création gratuit pour Windows, par ByKemi. Montage vidéo, enregistrement d’écran, live, retouche photo et musique, avec un assistant IA. Sans compte, sans pub, tout reste sur ton PC.","applicationCategory":"MultimediaApplication","operatingSystem":"Windows 10, Windows 11","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"downloadUrl":"https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe","license":"https://www.gnu.org/licenses/gpl-3.0.html","image":"https://dedcut.com/assets/editor.webp","author":{"@type":"Person","name":"ByKemi"},"inLanguage":["fr","en","es","de","it","pt","ja","ko","zh"]}</script>
-<link rel="icon" href="assets/favicon.png">
+<link rel="icon" href="/assets/favicon.png">
 <style>
 :root{
   --bg:#09080f;--bg2:#0e0c16;--panel:#13101d;--panel2:#1a1626;--line:#272233;--line2:#3a3349;
@@ -79,6 +90,8 @@ h1 .l1{display:block}
 .cta-btns{display:flex;gap:12px;flex-wrap:wrap}
 .vline{font-size:13px;color:var(--dim2)}
 .vline b{color:var(--dim);font-weight:600}
+.langhint{position:fixed;left:16px;bottom:16px;z-index:90;padding:9px 15px;border-radius:999px;background:rgba(19,16,29,.92);border:1px solid var(--line2);color:var(--ink);font-size:14px;font-weight:600;box-shadow:0 12px 30px -12px rgba(0,0,0,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.langhint:hover{border-color:var(--cyan)}
 .vbeta{display:inline-block;padding:1px 7px;border-radius:999px;background:var(--grad);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;vertical-align:1px}
 .betapill{display:inline-flex;align-items:center;gap:9px;margin:0 0 0 10px;padding:5px 14px 5px 6px;border:1px solid rgba(34,211,238,.35);border-radius:999px;background:rgba(34,211,238,.08);color:#d7f6fc;font-size:13px;line-height:1.3;vertical-align:middle}
 .betapill b{padding:2px 9px;border-radius:999px;background:var(--grad);color:#fff;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
@@ -339,7 +352,7 @@ footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;heigh
 
 <header class="top">
   <div class="wrap">
-    <a href="#" class="brand" aria-label="DedCut"><img src="assets/logo.svg" alt="" width="32" height="32"><span>Ded<b>Cut</b></span><em class="bbeta" data-i18n="beta">bêta</em><small data-i18n="by">par ByKemi</small></a>
+    <a href="#" class="brand" aria-label="DedCut"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Ded<b>Cut</b></span><em class="bbeta" data-i18n="beta">bêta</em><small data-i18n="by">par ByKemi</small></a>
     <nav class="nav" id="nav">
       <a href="#espaces" data-i18n="nav.spaces">Espaces</a>
       <a href="#fonctions" data-i18n="nav.features">Fonctions</a>
@@ -385,7 +398,7 @@ footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;heigh
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="chip.oss">Logiciel libre</span></span>
     </div>
     <figure class="shot rv hero-shot" id="heroShot">
-      <div class="frame"><div><video id="promo" src="assets/video/presentation-fr.mp4" poster="assets/presentation.webp" width="1920" height="1080" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo de présentation de DedCut" data-i18n-aria="vid.alt"></video></div></div>
+      <div class="frame"><div><video id="promo" src="/assets/video/presentation-fr.mp4" poster="/assets/presentation.webp" width="1920" height="1080" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo de présentation de DedCut" data-i18n-aria="vid.alt"></video></div></div>
       <figcaption><span data-i18n="vid.cap">La présentation de DedCut, montée avec DedCut.</span> <button class="vbtn" id="vbtn" type="button" data-i18n="vid.pause">Pause</button><button class="vbtn" id="vsnd" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="w1" d="M16 9.5a3.5 3.5 0 0 1 0 5"/><path class="w2" d="M18.5 7a7 7 0 0 1 0 10"/><path class="x" d="M16 9l5 6M21 9l-5 6"/></svg><span id="vsndt" data-i18n="vid.sound">Activer le son</span></button><label class="vvol"><span class="sr" data-i18n="vid.vol">Volume</span><input id="vvol" type="range" min="0" max="100" value="60" aria-label="Volume"></label></figcaption>
     </figure>
   </div>
@@ -439,11 +452,11 @@ footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;heigh
     </div>
     <div class="shots2">
       <figure class="shot rv">
-        <div class="frame"><div><img src="assets/musique.webp" width="1600" height="960" loading="lazy" alt="L’espace Musique de DedCut : pistes de batterie, basse, claviers et nappe, et le piano roll d’un refrain." data-i18n-alt="shotMu.alt"></div></div>
+        <div class="frame"><div><img src="/assets/musique.webp" width="1600" height="960" loading="lazy" alt="L’espace Musique de DedCut : pistes de batterie, basse, claviers et nappe, et le piano roll d’un refrain." data-i18n-alt="shotMu.alt"></div></div>
         <figcaption data-i18n="shotMu.cap">Capture réelle : l’espace Musique, modèle « Chanson » et piano roll.</figcaption>
       </figure>
       <figure class="shot rv">
-        <div class="frame"><div><img src="assets/image.webp" width="1600" height="960" loading="lazy" alt="L’espace Image de DedCut : une photo de paysage ouverte, avec les panneaux Couleur, Propriétés et Calques." data-i18n-alt="shotImg.alt"></div></div>
+        <div class="frame"><div><img src="/assets/image.webp" width="1600" height="960" loading="lazy" alt="L’espace Image de DedCut : une photo de paysage ouverte, avec les panneaux Couleur, Propriétés et Calques." data-i18n-alt="shotImg.alt"></div></div>
         <figcaption data-i18n="shotImg.cap">Capture réelle : l’espace Image, une photo prête à retoucher.</figcaption>
       </figure>
     </div>
@@ -513,7 +526,7 @@ footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;heigh
       </article>
     </div>
     <figure class="shot rv" style="margin-top:46px">
-      <div class="frame"><div><img src="assets/editor.webp" width="1440" height="1040" loading="lazy" alt="L'éditeur DedCut avec un titre, des icônes animées, un bouton S'abonner et une barre de progression sur la timeline." data-i18n-alt="shot.alt"></div></div>
+      <div class="frame"><div><img src="/assets/editor.webp" width="1440" height="1040" loading="lazy" alt="L'éditeur DedCut avec un titre, des icônes animées, un bouton S'abonner et une barre de progression sur la timeline." data-i18n-alt="shot.alt"></div></div>
       <figcaption data-i18n="shot.cap">Capture réelle de DedCut, avec un petit projet de démonstration.</figcaption>
     </figure>
   </div>
@@ -535,7 +548,7 @@ footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;heigh
       <p class="note" data-i18n="ai.note2">Avec DedCut IA, rien ne quitte ton PC. Avec une IA en ligne, seuls ton message et la description du projet sont envoyés, jamais tes fichiers.</p>
     </div>
     <figure class="rv" style="margin:0">
-      <div class="phone"><img src="assets/assistant.webp" width="380" height="620" alt="Le panneau Assistant IA de DedCut avec une demande et la liste des actions faites." data-i18n-alt="ai.alt" loading="lazy"></div>
+      <div class="phone"><img src="/assets/assistant.webp" width="380" height="620" alt="Le panneau Assistant IA de DedCut avec une demande et la liste des actions faites." data-i18n-alt="ai.alt" loading="lazy"></div>
       <figcaption data-i18n="ai.cap">Exemple de conversation dans DedCut.</figcaption>
     </figure>
   </div>
@@ -653,7 +666,7 @@ footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;heigh
 
 <section class="wrap" style="padding-bottom:40px">
   <div class="final rv">
-    <img src="assets/logo.svg" alt="" width="76" height="76">
+    <img src="/assets/logo.svg" alt="" width="76" height="76">
     <h2 data-i18n="cta.title">Ta prochaine création commence ici.</h2>
     <p data-i18n="cta.p">Gratuit, sans compte, prêt en une minute.</p>
     <a class="btn pri dl" href="https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M1 3.3l7.4-1v7.2H1zm8.4-1.1L19 1v8.5H9.4zM1 10.5h7.4v7.2L1 16.7zm8.4 0H19V19l-9.6-1.3z"/></svg><span data-i18n="cta.dl">Télécharger DedCut</span></a>
@@ -665,7 +678,7 @@ footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;heigh
 <footer>
   <div class="wrap foot">
     <div class="fcol fbrand">
-      <a href="#" class="brand"><img src="assets/logo.svg" alt="" width="28" height="28"><span>Ded<b>Cut</b></span></a>
+      <a href="#" class="brand"><img src="/assets/logo.svg" alt="" width="28" height="28"><span>Ded<b>Cut</b></span></a>
       <p data-i18n="foot.by">Imaginé et développé par ByKemi.</p>
     </div>
     <div class="fcol"><h4 data-i18n="foot.product">Produit</h4><a href="#espaces" data-i18n="nav.spaces">Espaces</a><a href="#fonctions" data-i18n="nav.features">Fonctions</a><a href="#assistant" data-i18n="nav.ai">Assistant IA</a><a class="dl" href="https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe" data-i18n="nav.dl">Télécharger</a></div>
@@ -756,7 +769,7 @@ Object.assign(L.zh,{"chip.oss":"开源","qo":"DedCut 是开源的吗？","ao":"�
 const FR_MQ=["Montage vidéo","Live multi-plateforme","Retouche photo","Création musicale","Studio d'enregistrement","Sous-titres automatiques","180+ icônes animées","Assistant IA","82 musiques libres","Export jusqu'à la 4K","9 langues","Mises à jour automatiques"];
 let CUR=null;const FR={'vid.play':'Lecture','vid.alt':'Vidéo de présentation de DedCut','vid.mute':'Couper le son'};document.querySelectorAll('[data-i18n]').forEach(e=>FR[e.dataset.i18n]=e.textContent);document.querySelectorAll('[data-i18n-alt]').forEach(e=>FR[e.dataset.i18nAlt]=e.alt);document.querySelectorAll('[data-i18n-html]').forEach(e=>FR[e.dataset.i18nHtml]=e.innerHTML);
 FR.title=document.title;FR.desc=document.querySelector('meta[name=description]').content;
-const META={en:["DedCut — Video, live, photo and music, free for Windows","DedCut: free creative software for Windows by ByKemi. Video editing, recording studio, multi-platform live streaming, photo editing and music creation, with an AI assistant. No account, no ads, everything stays on your PC."]};
+const META={"fr":["DedCut — Logiciel de montage vidéo gratuit pour Windows, sans filigrane","DedCut, logiciel gratuit et libre pour Windows : montage vidéo sans filigrane, enregistrement d’écran, live YouTube, Twitch et TikTok, retouche photo et création musicale, avec un assistant IA. Sans compte, sans pub."],"en":["DedCut — Free video editing software for Windows, no watermark","DedCut, free and open-source software for Windows: video editing with no watermark, screen recording, live streaming to YouTube, Twitch and TikTok, photo editing and music creation, with an AI assistant. No account, no ads."],"es":["DedCut — Programa de edición de vídeo gratis para Windows, sin marca de agua","DedCut, programa gratuito y libre para Windows: edición de vídeo sin marca de agua, grabación de pantalla, directos en YouTube, Twitch y TikTok, retoque de fotos y creación musical, con asistente de IA. Sin cuenta, sin anuncios."],"de":["DedCut — Kostenloses Videoschnittprogramm für Windows, ohne Wasserzeichen","DedCut, kostenlose und freie Software für Windows: Videoschnitt ohne Wasserzeichen, Bildschirmaufnahme, Livestreams auf YouTube, Twitch und TikTok, Bildbearbeitung und Musikproduktion, mit KI-Assistent. Ohne Konto, ohne Werbung."],"it":["DedCut — Programma di montaggio video gratis per Windows, senza filigrana","DedCut, programma gratuito e libero per Windows: montaggio video senza filigrana, registrazione dello schermo, dirette su YouTube, Twitch e TikTok, fotoritocco e creazione musicale, con assistente IA. Senza account, senza pubblicità."],"pt":["DedCut — Editor de vídeo grátis para Windows, sem marca d’água","DedCut, programa gratuito e livre para Windows: edição de vídeo sem marca d’água, gravação de tela, lives no YouTube, Twitch e TikTok, edição de fotos e criação musical, com assistente de IA. Sem conta, sem anúncios."],"ja":["DedCut — Windows 用の無料動画編集ソフト（透かしなし）","DedCut は Windows 用の無料・オープンソースのソフト。透かしなしの動画編集、画面録画、YouTube・Twitch・TikTok へのライブ配信、写真編集、音楽制作を AI アシスタント付きで。アカウント不要、広告なし。"],"ko":["DedCut — Windows용 무료 동영상 편집 프로그램 (워터마크 없음)","DedCut은 Windows용 무료 오픈 소스 프로그램이에요. 워터마크 없는 동영상 편집, 화면 녹화, YouTube·Twitch·TikTok 라이브, 사진 편집, 음악 제작을 AI 어시스턴트와 함께. 계정도 광고도 없어요."],"zh":["DedCut — 免费的 Windows 视频剪辑软件（无水印）","DedCut 是一款免费开源的 Windows 软件：无水印视频剪辑、屏幕录制、YouTube、Twitch 和 TikTok 直播、照片编辑和音乐制作，并配有 AI 助手。无需账号，没有广告。"]};
 function bugLinks(){const m=['bugs','dedcut.com'].join('@');document.querySelectorAll('.buglink').forEach(a=>{a.href='mailto:'+m+'?subject='+encodeURIComponent('Bug DedCut')})}
 function setLang(l){
   const D=l==='fr'?FR:Object.assign({},FR,L[l]||{});
@@ -766,16 +779,21 @@ function setLang(l){
   document.querySelectorAll('[data-i18n-html]').forEach(e=>{const v=D[e.dataset.i18nHtml];if(v!=null)e.innerHTML=v});bugLinks();
   document.querySelectorAll('[data-i18n-aria]').forEach(e=>{const v=D[e.dataset.i18nAria];if(v)e.setAttribute('aria-label',v)});
   CUR=D;vlabel();fitTop();
-  const pv=document.getElementById('promo'),want='assets/video/presentation-'+l+'.mp4';if(pv&&!pv.getAttribute('src').endsWith(want)){pv.setAttribute('src',want);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)pv.play().catch(()=>{})}
+  const pv=document.getElementById('promo'),want='/assets/video/presentation-'+l+'.mp4';if(pv&&!pv.getAttribute('src').endsWith(want)){pv.setAttribute('src',want);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)pv.play().catch(()=>{})}
   if(META[l]){document.title=META[l][0]}else if(l==='fr')document.title=FR.title;
   const items=(l==='fr'?FR_MQ:(L[l]&&L[l].mq))||FR_MQ,mq=document.getElementById('mq');
   mq.innerHTML='';for(let k=0;k<2;k++)items.forEach(t=>{const s=document.createElement('span');s.textContent=t;mq.appendChild(s)});
-  document.getElementById('lang').value=l;try{localStorage.setItem('dedcut-site-lang',l)}catch(e){}
+  document.getElementById('lang').value=l;
 }
-let start='fr';try{start=localStorage.getItem('dedcut-site-lang')||''}catch(e){}
-if(!start){const n=(navigator.language||'fr').toLowerCase().slice(0,2);start=['fr','en','es','de','it','pt','ja','ko','zh'].includes(n)?n:'en'}
-setLang(start);
-document.getElementById('lang').addEventListener('change',e=>setLang(e.target.value));
+/* une page par langue (/, /en/, /es/…) : Google voit chaque langue à sa propre adresse ; le menu des langues ouvre l'autre page */
+const PAGE_LANG=document.documentElement.dataset.pageLang||'fr',SITE_LANGS=["fr","en","es","de","it","pt","ja","ko","zh"],LANG_HINT={"fr":"Version française →","en":"English version →","es":"Versión en español →","de":"Deutsche Version →","it":"Versione italiana →","pt":"Versão em português →","ja":"日本語版 →","ko":"한국어 버전 →","zh":"中文版 →"};
+const langUrl=l=>l==='fr'?'/':'/'+l+'/';
+let saved='';try{saved=localStorage.getItem('dedcut-site-lang')||''}catch(e){}
+if(PAGE_LANG==='fr'&&location.protocol!=='file:'&&saved&&saved!=='fr'&&SITE_LANGS.includes(saved))location.replace(langUrl(saved)+location.hash);
+setLang(PAGE_LANG);
+document.getElementById('lang').addEventListener('change',e=>{const l=e.target.value;try{localStorage.setItem('dedcut-site-lang',l)}catch(x){}location.href=langUrl(l)+location.hash});
+/* navigateur dans une autre langue et rien de choisi : petit lien vers sa version */
+if(!saved){const n=(navigator.language||'').toLowerCase().slice(0,2);if(n!==PAGE_LANG&&SITE_LANGS.includes(n)){const a=document.createElement('a');a.className='langhint';a.href=langUrl(n);a.textContent=LANG_HINT[n];a.addEventListener('click',()=>{try{localStorage.setItem('dedcut-site-lang',n)}catch(x){}});document.body.appendChild(a)}}
 
 /* vidéo de présentation : pause au clic, arrêt si l'utilisateur préfère moins d'animations */
 const vid=document.getElementById('promo'),vbtn=document.getElementById('vbtn');
