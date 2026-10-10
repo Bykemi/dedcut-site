@@ -28,3 +28,4 @@ DedCut (en français : logiciel de création gratuit et libre pour Windows — m
 - Tutorials (43 step-by-step guides, 9 languages): https://dedcut.com/tutos.html (English: https://dedcut.com/en/tutos.html)
 - English home page: https://dedcut.com/en/
 - Source code: https://github.com/Bykemi/dedcut-source
+- X (Twitter): https://x.com/DedCutt
