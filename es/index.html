@@ -28,7 +28,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DedCut","url":"https://dedcut.com/es/","description":"DedCut, programa gratuito y libre para Windows: edición de vídeo sin marca de agua, grabación de pantalla, directos en YouTube, Twitch y TikTok, retoque de fotos y creación musical, con asistente de IA. Sin cuenta, sin anuncios.","applicationCategory":"MultimediaApplication","operatingSystem":"Windows 10, Windows 11","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"downloadUrl":"https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe","license":"https://www.gnu.org/licenses/gpl-3.0.html","image":"https://dedcut.com/assets/editor.webp","author":{"@type":"Person","name":"ByKemi"},"inLanguage":["fr","en","es","de","it","pt","ja","ko","zh"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"DedCut","url":"https://dedcut.com/","logo":"https://dedcut.com/assets/icon-256.png","founder":{"@type":"Person","name":"ByKemi"},"sameAs":["https://x.com/DedCutt","https://github.com/Bykemi/dedcut-source","https://github.com/Bykemi"]}</script>
 <link rel="icon" href="/assets/favicon.png">
-<script>/* thème Halloween : classe hw sur <html> du 1er octobre au 2 novembre (?hw=1 ou ?hw=0 pour forcer) */(function(){var d=new Date(),m=d.getMonth(),q=location.search,on=m===9||(m===10&&d.getDate()<=2);if(/[?&]hw=1/.test(q))on=true;if(/[?&]hw=0/.test(q))on=false;if(on)document.documentElement.classList.add('hw')})()</script>
+<script>/* thèmes de saison, classe sur <html> : hw = Halloween (1er octobre au 2 novembre), xm = Noël (1er décembre au 6 janvier) ; ?theme=halloween, ?theme=noel ou ?theme=aucun pour forcer */(function(){var d=new Date(),m=d.getMonth(),j=d.getDate(),t=m===9||(m===10&&j<=2)?'hw':m===11||(m===0&&j<=6)?'xm':'',q=/[?&]theme=(\w+)/.exec(location.search);if(q)t={halloween:'hw',noel:'xm'}[q[1]]||'';if(t)document.documentElement.classList.add(t)})()</script>
 <style>
 :root{
   --bg:#09080f;--bg2:#0e0c16;--panel:#13101d;--panel2:#1a1626;--line:#272233;--line2:#3a3349;
@@ -347,7 +347,7 @@ footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;heigh
 /* thème Halloween (2026-10-12) : classe hw posée par le petit script du <head>, du 1er octobre au 2 novembre.
    Orange citrouille + violet, chauves-souris, toile d'araignée et chapeau de sorcière (dessins originaux, ajoutés par le
    script en bas de page), pastille avec une citrouille. Rien ne vole si l'on a demandé moins d'animations. */
-.hwpill{display:none}
+.fete{display:none}
 html.hw{--cyan:#fb923c;--grad:linear-gradient(120deg,#fb923c,#7c3aed)}
 .hw .btn.pri:hover{box-shadow:0 14px 38px -10px rgba(251,146,60,.7)}
 .hw .hx-aur i:nth-child(1){background:radial-gradient(closest-side,rgba(249,115,22,.5),rgba(249,115,22,0))}
@@ -359,11 +359,12 @@ html.hw{--cyan:#fb923c;--grad:linear-gradient(120deg,#fb923c,#7c3aed)}
 .hw .shot .frame{background:linear-gradient(140deg,rgba(251,146,60,.6),rgba(124,58,237,.55) 45%,rgba(255,255,255,.06))}
 .hw .hero-shot:before{background:radial-gradient(closest-side,rgba(124,58,237,.55),rgba(251,146,60,.2) 60%,transparent)}
 .hw .vvol input{accent-color:#fb923c}
-.hw .hwpill{display:flex;width:max-content;max-width:100%;margin:14px auto 0;align-items:center;gap:10px;padding:5px 16px 5px 7px;border:1px solid rgba(251,146,60,.45);border-radius:999px;background:rgba(251,146,60,.1);color:#ffe4cc;font-size:14px;font-weight:600;line-height:1.3;text-align:left}
-.hw .hwpill:hover{border-color:rgba(251,146,60,.85)}
-.hwpill svg{width:30px;height:30px;flex:none;filter:drop-shadow(0 0 9px rgba(251,146,60,.65))}
+.hw .hwpill,.xm .xmpill{display:flex;width:max-content;max-width:100%;margin:14px auto 0;align-items:center;gap:10px;padding:5px 16px 5px 7px;border:1px solid rgba(var(--fc),.45);border-radius:999px;background:rgba(var(--fc),.1);color:var(--ft);font-size:14px;font-weight:600;line-height:1.3;text-align:left}
+.hw .hwpill:hover,.xm .xmpill:hover{border-color:rgba(var(--fc),.85)}
+.fete svg{width:30px;height:30px;flex:none;filter:drop-shadow(0 0 9px rgba(var(--fc),.65))}
+.hwpill{--fc:251,146,60;--ft:#ffe4cc}.xmpill{--fc:244,63,94;--ft:#ffe4e6}
 .brand{position:relative}
-.hwhat{position:absolute;left:-9px;top:-11px;width:30px;height:24px;transform:rotate(-20deg);pointer-events:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.6))}
+.hwhat,.xmhat{position:absolute;left:-9px;top:-11px;width:30px;height:24px;transform:rotate(-20deg);pointer-events:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.6))}
 .hwbat{position:absolute;left:0;top:var(--y);animation:hwx var(--d) linear var(--del) infinite}
 .hwbat i{display:block;animation:hwy var(--b,2.6s) ease-in-out infinite alternate}
 .hwbat svg{display:block;width:var(--s);color:#1a0f26;filter:drop-shadow(0 0 1.5px rgba(253,186,116,.95)) drop-shadow(0 0 12px rgba(251,146,60,.5));animation:hwflap .34s ease-in-out infinite alternate;transform-origin:50% 45%}
@@ -377,6 +378,25 @@ html.hw{--cyan:#fb923c;--grad:linear-gradient(120deg,#fb923c,#7c3aed)}
 @keyframes hwspi{from{transform:translateY(70px)}to{transform:translateY(150px)}}
 @media (max-width:640px){.hwbat:nth-child(n+4){display:none}.hwspider{display:none}.hwweb{width:110px;opacity:.4}}
 @media (prefers-reduced-motion:reduce){.hwbat,.hwspider{display:none}}
+/* thème Noël (2026-10-12) : classe xm, du 1er décembre au 6 janvier. Rouge + violet, reflets dorés, neige qui tombe, guirlande
+   lumineuse en haut, bonnet sur le logo, pastille avec un sapin (dessins originaux, ajoutés par le script en bas de page). */
+html.xm{--cyan:#fbbf24;--grad:linear-gradient(120deg,#f43f5e,#7c3aed)}
+.xm .btn.pri:hover{box-shadow:0 14px 38px -10px rgba(244,63,94,.7)}
+.xm .hx-aur i:nth-child(1){background:radial-gradient(closest-side,rgba(225,29,72,.45),rgba(225,29,72,0))}
+.xm .hx-aur i:nth-child(3){background:radial-gradient(closest-side,rgba(22,163,74,.24),rgba(22,163,74,0))}
+.xm .hx-ph{background:linear-gradient(transparent,#fbbf24 20%,#fbbf24 80%,transparent);box-shadow:0 0 22px 2px rgba(251,191,36,.8)}
+.xm .hx-ph:before{background:#fbbf24}
+.xm .betapill{border-color:rgba(244,63,94,.35);background:rgba(244,63,94,.08);color:#ffe4e6}
+.xm .betapill:hover{border-color:rgba(244,63,94,.7)}
+.xm .shot .frame{background:linear-gradient(140deg,rgba(244,63,94,.6),rgba(124,58,237,.55) 45%,rgba(255,255,255,.06))}
+.xm .hero-shot:before{background:radial-gradient(closest-side,rgba(124,58,237,.55),rgba(244,63,94,.2) 60%,transparent)}
+.xm .vvol input{accent-color:#f43f5e}
+.xmflake{position:absolute;top:-12px;width:var(--s);height:var(--s);border-radius:50%;background:#fff;box-shadow:0 0 6px rgba(255,255,255,.8);animation:xmfall var(--d) linear var(--del) infinite}
+@keyframes xmfall{to{transform:translate3d(var(--dx),var(--fall,110vh),0)}}
+.xmlights{position:absolute;left:0;top:0;width:100%;height:70px;overflow:visible}
+.xmlights circle{fill:currentColor;filter:drop-shadow(0 0 6px currentColor);animation:xmblink 1.4s ease-in-out infinite alternate}
+@keyframes xmblink{to{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.xmflake{display:none}}
 </style>
 </head>
 <body>
@@ -409,7 +429,8 @@ html.hw{--cyan:#fb923c;--grad:linear-gradient(120deg,#fb923c,#7c3aed)}
   <div class="hx" aria-hidden="true"><div class="hx-aur"><i></i><i></i><i></i></div><div class="hx-tl" id="hxtl"><span class="hx-ph"></span></div><div class="hx-vig"></div></div>
   <div class="wrap">
     <div class="eyebrow" data-i18n="hero.eyebrow">Programa de creación gratuito · Windows</div><a class="betapill" href="#q-beta"><b data-i18n="beta">beta</b><span data-i18n="beta.hero">DedCut está en beta: ¿un error? Díselo a ByKemi.</span></a>
-    <a class="hwpill" href="#fonctions"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 8.2c-.6-2.8.2-4.8 2.6-5.8" fill="none" stroke="#65a30d" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="10.6" cy="18.6" rx="7.6" ry="10" fill="#c2410c"/><ellipse cx="21.4" cy="18.6" rx="7.6" ry="10" fill="#c2410c"/><ellipse cx="16" cy="18.6" rx="7.4" ry="10.6" fill="#f97316"/><path d="M9.4 16.4l3-3.8 1.9 4zM22.6 16.4l-3-3.8-1.9 4zM15 19l1-1.7 1 1.7z" fill="#fde047"/><path d="M9.4 20.6Q16 27 22.6 20.6l-1.8 1-1 1.7-1.4-1.2-2.4 1.9-2.4-1.9-1.4 1.2-1-1.7z" fill="#fde047"/></svg><span data-i18n="hw.pill">Especial Halloween: crea tus vídeos de miedo gratis</span></a>
+    <a class="fete hwpill" href="#fonctions"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 8.2c-.6-2.8.2-4.8 2.6-5.8" fill="none" stroke="#65a30d" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="10.6" cy="18.6" rx="7.6" ry="10" fill="#c2410c"/><ellipse cx="21.4" cy="18.6" rx="7.6" ry="10" fill="#c2410c"/><ellipse cx="16" cy="18.6" rx="7.4" ry="10.6" fill="#f97316"/><path d="M9.4 16.4l3-3.8 1.9 4zM22.6 16.4l-3-3.8-1.9 4zM15 19l1-1.7 1 1.7z" fill="#fde047"/><path d="M9.4 20.6Q16 27 22.6 20.6l-1.8 1-1 1.7-1.4-1.2-2.4 1.9-2.4-1.9-1.4 1.2-1-1.7z" fill="#fde047"/></svg><span data-i18n="hw.pill">Especial Halloween: crea tus vídeos de miedo gratis</span></a>
+    <a class="fete xmpill" href="#fonctions"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5 23.5 14H8.5ZM16 10 25.5 21H6.5ZM16 15.5 27.5 27.5H4.5Z" fill="#16a34a"/><rect x="14" y="27" width="4" height="4" rx="1" fill="#92400e"/><path d="M16 .6l1.1 2.3 2.5.3-1.8 1.7.5 2.5L16 6.2l-2.3 1.2.5-2.5-1.8-1.7 2.5-.3z" fill="#fbbf24"/><circle cx="13" cy="17.5" r="1.3" fill="#f43f5e"/><circle cx="19.6" cy="21.6" r="1.3" fill="#fbbf24"/><circle cx="11.6" cy="24.6" r="1.3" fill="#60a5fa"/><circle cx="18.8" cy="13.4" r="1.1" fill="#f472b6"/><circle cx="21.4" cy="25.4" r="1.2" fill="#f43f5e"/></svg><span data-i18n="xm.pill">¡Felices fiestas! Edita tus vídeos de Navidad gratis</span></a>
     <h1><span class="l1" data-i18n="hero.t1">Vídeo, directo, foto, música.</span><span class="cut" data-i18n="hero.t2" data-t="Sin pagar nada.">Sin pagar nada.</span></h1>
     <div class="hero-row">
       <p class="lead" data-i18n="hero.p">Edita tus vídeos, graba tu pantalla y emite en directo, retoca tus imágenes y compón tu música, con un asistente de IA. Todo ocurre en tu PC.</p>
@@ -808,6 +829,14 @@ Object.assign(L.pt,{"hw.pill":"Especial de Halloween: edite seus vídeos assusta
 Object.assign(L.ja,{"hw.pill":"ハロウィン特集：こわい動画も無料で編集しよう"});
 Object.assign(L.ko,{"hw.pill":"할로윈 특집: 무서운 영상도 무료로 편집하세요"});
 Object.assign(L.zh,{"hw.pill":"万圣节特辑：免费剪辑你的恐怖视频"});
+Object.assign(L.en,{"xm.pill":"Happy holidays! Edit your Christmas videos for free"});
+Object.assign(L.es,{"xm.pill":"¡Felices fiestas! Edita tus vídeos de Navidad gratis"});
+Object.assign(L.de,{"xm.pill":"Frohe Feiertage! Schneide deine Weihnachtsvideos kostenlos"});
+Object.assign(L.it,{"xm.pill":"Buone feste! Monta i tuoi video di Natale gratis"});
+Object.assign(L.pt,{"xm.pill":"Boas festas! Edite seus vídeos de Natal de graça"});
+Object.assign(L.ja,{"xm.pill":"ハッピーホリデー！クリスマスの動画も無料で編集しよう"});
+Object.assign(L.ko,{"xm.pill":"즐거운 연말 보내세요! 크리스마스 영상도 무료로 편집하세요"});
+Object.assign(L.zh,{"xm.pill":"节日快乐！免费剪辑你的圣诞视频"});
 const FR_MQ=["Montage vidéo","Live multi-plateforme","Retouche photo","Création musicale","Studio d'enregistrement","Sous-titres automatiques","180+ icônes animées","Assistant IA","82 musiques libres","Export jusqu'à la 4K","9 langues","Mises à jour automatiques"];
 let CUR=null;const FR={'vid.play':'Lecture','vid.alt':'Vidéo de présentation de DedCut','vid.mute':'Couper le son'};document.querySelectorAll('[data-i18n]').forEach(e=>FR[e.dataset.i18n]=e.textContent);document.querySelectorAll('[data-i18n-alt]').forEach(e=>FR[e.dataset.i18nAlt]=e.alt);document.querySelectorAll('[data-i18n-html]').forEach(e=>FR[e.dataset.i18nHtml]=e.innerHTML);
 FR.title=document.title;FR.desc=document.querySelector('meta[name=description]').content;
@@ -873,7 +902,7 @@ fetch('https://api.github.com/repos/Bykemi/DedCut-mises-a-jour/releases/latest',
 
 /* haut de page « cinéma » : pistes de timeline (clips aux couleurs des pistes de DedCut), toujours les mêmes d'une visite à l'autre */
 (()=>{const tl=document.getElementById('hxtl');if(!tl)return;let r=7;const rnd=()=>(r=(r*9301+49297)%233280)/233280;
-  const C=document.documentElement.classList.contains('hw')?[['#fb923c','#ea580c'],['#7c3aed','#a78bfa'],['#f59e0b','#fbbf24'],['#65a30d','#84cc16'],['#dc2626','#f87171']]:[['#22d3ee','#0891b2'],['#7c3aed','#a78bfa'],['#f59e0b','#fbbf24'],['#10b981','#34d399'],['#ec4899','#f472b6']];
+  const th=document.documentElement.classList,C=th.contains('hw')?[['#fb923c','#ea580c'],['#7c3aed','#a78bfa'],['#f59e0b','#fbbf24'],['#65a30d','#84cc16'],['#dc2626','#f87171']]:th.contains('xm')?[['#f43f5e','#e11d48'],['#7c3aed','#a78bfa'],['#fbbf24','#f59e0b'],['#16a34a','#22c55e'],['#e2e8f0','#94a3b8']]:[['#22d3ee','#0891b2'],['#7c3aed','#a78bfa'],['#f59e0b','#fbbf24'],['#10b981','#34d399'],['#ec4899','#f472b6']];
   [[0,62],[1,48],[2,74],[3,56],[4,66]].forEach(([c,d],i)=>{const tr=document.createElement('div');tr.className='hx-tr'+(i%2?' rev':'');tr.style.setProperty('--d',d+'s');
     let h='';for(let k=0;k<9;k++){const cc=C[(c+(k%3===2?1:0))%C.length];h+='<b style="--w:'+Math.round(90+rnd()*260)+'px;--c:linear-gradient(90deg,'+cc[0]+','+cc[1]+')"></b>'}
     tr.innerHTML=h+h;tl.insertBefore(tr,tl.lastElementChild)});
@@ -893,6 +922,21 @@ fetch('https://api.github.com/repos/Bykemi/DedCut-mises-a-jour/releases/latest',
   h+='<div class="hwspider"><svg viewBox="0 0 22 22"><path d="M8 9 3 5 1 8M8 11 2 10 0 13M8 13 3 15 1 19M9 14 5 18 4 21M14 9 19 5 21 8M14 11 20 10 22 13M14 13 19 15 21 19M13 14 17 18 18 21" fill="none" stroke="#130b1d" stroke-width="1.6" stroke-linecap="round"/><ellipse cx="11" cy="12" rx="4.6" ry="5.4" fill="#130b1d"/><circle cx="11" cy="6.6" r="2.8" fill="#130b1d"/><circle cx="10" cy="6.4" r=".7" fill="#fb923c"/><circle cx="12" cy="6.4" r=".7" fill="#fb923c"/></svg></div>';
   hx.insertAdjacentHTML('beforeend',h);
   if(br)br.insertAdjacentHTML('afterbegin','<svg class="hwhat" viewBox="0 0 30 24" aria-hidden="true"><path d="M8 18.5 14.6 4.4Q17-.6 21 2.6 17.6 2.8 17.6 6.8L22 18.5Z" fill="#1c1030" stroke="#a78bfa" stroke-width=".9"/><path d="M8.9 15.6h12.3l.6 2.8H7.8z" fill="#fb923c"/><ellipse cx="15" cy="19.6" rx="14" ry="3.5" fill="#1c1030" stroke="#a78bfa" stroke-width=".9"/></svg>');
+})();
+/* thème Noël : neige, guirlande lumineuse en haut de page, bonnet sur le logo (dessins originaux) */
+(()=>{if(!document.documentElement.classList.contains('xm'))return;const hx=document.querySelector('.hero .hx'),br=document.querySelector('.top .brand');if(!hx)return;
+  const R=Math.random,n=matchMedia('(max-width:640px)').matches?26:72;let h='';
+  for(let k=0;k<n;k++)h+='<i class="xmflake" style="left:'+(R()*100).toFixed(1)+'%;--s:'+(2.5+R()*4).toFixed(1)+'px;--d:'+(9+R()*11).toFixed(1)+'s;--del:-'+(R()*20).toFixed(1)+'s;--dx:'+Math.round((R()-.5)*90)+'px;opacity:'+(.3+R()*.55).toFixed(2)+'"></i>';
+  hx.insertAdjacentHTML('beforeend',h+'<svg class="xmlights"></svg>');
+  const sv=hx.querySelector('.xmlights'),col=['#f43f5e','#fbbf24','#22c55e','#60a5fa','#f472b6'];
+  // guirlande : un fil qui pend entre des points d'accroche tous les 190 px environ, quatre ampoules par arc
+  const fil=()=>{const W=hx.clientWidth,seg=Math.max(2,Math.round(W/190)),L=W/seg,y1=56;let p='',b='',k=0;
+    for(let s=0;s<seg;s++){const x0=s*L,x1=x0+L,cx=x0+L/2;p+='M'+x0.toFixed(1)+' 4Q'+cx.toFixed(1)+' '+y1+' '+x1.toFixed(1)+' 4';
+      for(const t of [.2,.4,.6,.8]){const u=1-t,x=u*u*x0+2*u*t*cx+t*t*x1,y=u*u*4+2*u*t*y1+t*t*4;b+='<circle cx="'+x.toFixed(1)+'" cy="'+(y+5).toFixed(1)+'" r="4.2" style="color:'+col[k%5]+';animation-delay:-'+((k*.37)%1.4).toFixed(2)+'s"/>';k++}}
+    sv.setAttribute('viewBox','0 0 '+W+' 70');sv.innerHTML='<path d="'+p+'" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.4"/>'+b;
+    hx.style.setProperty('--fall',(hx.clientHeight+24)+'px')};
+  fil();let q=0;addEventListener('resize',()=>{if(!q)q=requestAnimationFrame(()=>{q=0;fil()})});
+  if(br)br.insertAdjacentHTML('afterbegin','<svg class="xmhat" viewBox="0 0 30 26" aria-hidden="true"><path d="M5 19C6 9 12 3 19 4 23 4.6 25.5 7.5 26.5 11 24.5 9.5 22 9 20 9.5 19 12.5 18.8 15.5 19 19Z" fill="#dc2626"/><circle cx="26.5" cy="12" r="3" fill="#fff"/><rect x="2.5" y="17" width="20" height="6" rx="3" fill="#fff"/></svg>');
 })();
 /* la vidéo de présentation se redresse quand on la fait monter dans l'écran */
 (()=>{const f=document.getElementById('heroShot');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const fr=f.querySelector('.frame');let q=0;
