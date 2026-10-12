@@ -340,6 +340,39 @@ footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;heigh
   html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.cut:before,.cut:after{transform:none}.rv{opacity:1;transform:none}
 }
 @media (max-width:600px){.cta-btns .os-btn{flex:1 1 calc(50% - 6px)}}
+/* thème Halloween (2026-10-12) : classe hw posée par le petit script du <head>, du 1er octobre au 2 novembre.
+   Orange citrouille + violet, chauves-souris, toile d'araignée et chapeau de sorcière (dessins originaux, ajoutés par le
+   script en bas de page), pastille avec une citrouille. Rien ne vole si l'on a demandé moins d'animations. */
+.hwpill{display:none}
+html.hw{--cyan:#fb923c;--grad:linear-gradient(120deg,#fb923c,#7c3aed)}
+.hw .btn.pri:hover{box-shadow:0 14px 38px -10px rgba(251,146,60,.7)}
+.hw .hx-aur i:nth-child(1){background:radial-gradient(closest-side,rgba(249,115,22,.5),rgba(249,115,22,0))}
+.hw .hx-aur i:nth-child(3){background:radial-gradient(closest-side,rgba(220,38,38,.26),rgba(220,38,38,0))}
+.hw .hx-ph{background:linear-gradient(transparent,#fb923c 20%,#fb923c 80%,transparent);box-shadow:0 0 22px 2px rgba(251,146,60,.8)}
+.hw .hx-ph:before{background:#fb923c}
+.hw .betapill{border-color:rgba(251,146,60,.35);background:rgba(251,146,60,.08);color:#ffe4cc}
+.hw .betapill:hover{border-color:rgba(251,146,60,.7)}
+.hw .shot .frame{background:linear-gradient(140deg,rgba(251,146,60,.6),rgba(124,58,237,.55) 45%,rgba(255,255,255,.06))}
+.hw .hero-shot:before{background:radial-gradient(closest-side,rgba(124,58,237,.55),rgba(251,146,60,.2) 60%,transparent)}
+.hw .vvol input{accent-color:#fb923c}
+.hw .hwpill{display:flex;width:max-content;max-width:100%;margin:14px auto 0;align-items:center;gap:10px;padding:5px 16px 5px 7px;border:1px solid rgba(251,146,60,.45);border-radius:999px;background:rgba(251,146,60,.1);color:#ffe4cc;font-size:14px;font-weight:600;line-height:1.3;text-align:left}
+.hw .hwpill:hover{border-color:rgba(251,146,60,.85)}
+.hwpill svg{width:30px;height:30px;flex:none;filter:drop-shadow(0 0 9px rgba(251,146,60,.65))}
+.brand{position:relative}
+.hwhat{position:absolute;left:-9px;top:-11px;width:30px;height:24px;transform:rotate(-20deg);pointer-events:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.6))}
+.hwbat{position:absolute;left:0;top:var(--y);animation:hwx var(--d) linear var(--del) infinite}
+.hwbat i{display:block;animation:hwy var(--b,2.6s) ease-in-out infinite alternate}
+.hwbat svg{display:block;width:var(--s);color:#1a0f26;filter:drop-shadow(0 0 1.5px rgba(253,186,116,.95)) drop-shadow(0 0 12px rgba(251,146,60,.5));animation:hwflap .34s ease-in-out infinite alternate;transform-origin:50% 45%}
+@keyframes hwx{from{transform:translateX(-14vw)}to{transform:translateX(114vw)}}
+@keyframes hwy{to{transform:translateY(38px)}}
+@keyframes hwflap{to{transform:scaleY(.62)}}
+.hwweb{position:absolute;right:0;top:0;width:clamp(130px,17vw,230px);opacity:.5}
+.hwspider{position:absolute;right:clamp(52px,7vw,92px);top:0;width:22px;transform-origin:50% 0;filter:drop-shadow(0 0 5px rgba(251,146,60,.55));animation:hwspi 5s ease-in-out infinite alternate}
+.hwspider:before{content:"";position:absolute;left:10.5px;bottom:100%;width:1px;height:400px;background:rgba(255,255,255,.35)}
+.hwspider svg{display:block;width:22px;height:22px}
+@keyframes hwspi{from{transform:translateY(70px)}to{transform:translateY(150px)}}
+@media (max-width:640px){.hwbat:nth-child(n+4){display:none}.hwspider{display:none}.hwweb{width:110px;opacity:.4}}
+@media (prefers-reduced-motion:reduce){.hwbat,.hwspider{display:none}}
 
 /* ---------- tutoriels ---------- */
 .thero{padding:56px 0 18px}.thero h1{font-size:clamp(34px,5vw,56px);line-height:1.05;margin:10px 0 14px;letter-spacing:-1px}

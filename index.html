@@ -30,6 +30,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DedCut","url":"https://dedcut.com/","description":"DedCut, logiciel gratuit et libre pour Windows : montage vidéo sans filigrane, enregistrement d’écran, live YouTube, Twitch et TikTok, retouche photo et création musicale, avec un assistant IA. Sans compte, sans pub.","applicationCategory":"MultimediaApplication","operatingSystem":"Windows 10, Windows 11","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"downloadUrl":"https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe","license":"https://www.gnu.org/licenses/gpl-3.0.html","image":"https://dedcut.com/assets/editor.webp","author":{"@type":"Person","name":"ByKemi"},"inLanguage":["fr","en","es","de","it","pt","ja","ko","zh"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"DedCut","url":"https://dedcut.com/","logo":"https://dedcut.com/assets/icon-256.png","founder":{"@type":"Person","name":"ByKemi"},"sameAs":["https://x.com/DedCutt","https://github.com/Bykemi/dedcut-source","https://github.com/Bykemi"]}</script>
 <link rel="icon" href="/assets/favicon.png">
+<script>/* thème Halloween : classe hw sur <html> du 1er octobre au 2 novembre (?hw=1 ou ?hw=0 pour forcer) */(function(){var d=new Date(),m=d.getMonth(),q=location.search,on=m===9||(m===10&&d.getDate()<=2);if(/[?&]hw=1/.test(q))on=true;if(/[?&]hw=0/.test(q))on=false;if(on)document.documentElement.classList.add('hw')})()</script>
 <style>
 :root{
   --bg:#09080f;--bg2:#0e0c16;--panel:#13101d;--panel2:#1a1626;--line:#272233;--line2:#3a3349;
@@ -345,6 +346,39 @@ footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;heigh
   html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.cut:before,.cut:after{transform:none}.rv{opacity:1;transform:none}
 }
 @media (max-width:600px){.cta-btns .os-btn{flex:1 1 calc(50% - 6px)}}
+/* thème Halloween (2026-10-12) : classe hw posée par le petit script du <head>, du 1er octobre au 2 novembre.
+   Orange citrouille + violet, chauves-souris, toile d'araignée et chapeau de sorcière (dessins originaux, ajoutés par le
+   script en bas de page), pastille avec une citrouille. Rien ne vole si l'on a demandé moins d'animations. */
+.hwpill{display:none}
+html.hw{--cyan:#fb923c;--grad:linear-gradient(120deg,#fb923c,#7c3aed)}
+.hw .btn.pri:hover{box-shadow:0 14px 38px -10px rgba(251,146,60,.7)}
+.hw .hx-aur i:nth-child(1){background:radial-gradient(closest-side,rgba(249,115,22,.5),rgba(249,115,22,0))}
+.hw .hx-aur i:nth-child(3){background:radial-gradient(closest-side,rgba(220,38,38,.26),rgba(220,38,38,0))}
+.hw .hx-ph{background:linear-gradient(transparent,#fb923c 20%,#fb923c 80%,transparent);box-shadow:0 0 22px 2px rgba(251,146,60,.8)}
+.hw .hx-ph:before{background:#fb923c}
+.hw .betapill{border-color:rgba(251,146,60,.35);background:rgba(251,146,60,.08);color:#ffe4cc}
+.hw .betapill:hover{border-color:rgba(251,146,60,.7)}
+.hw .shot .frame{background:linear-gradient(140deg,rgba(251,146,60,.6),rgba(124,58,237,.55) 45%,rgba(255,255,255,.06))}
+.hw .hero-shot:before{background:radial-gradient(closest-side,rgba(124,58,237,.55),rgba(251,146,60,.2) 60%,transparent)}
+.hw .vvol input{accent-color:#fb923c}
+.hw .hwpill{display:flex;width:max-content;max-width:100%;margin:14px auto 0;align-items:center;gap:10px;padding:5px 16px 5px 7px;border:1px solid rgba(251,146,60,.45);border-radius:999px;background:rgba(251,146,60,.1);color:#ffe4cc;font-size:14px;font-weight:600;line-height:1.3;text-align:left}
+.hw .hwpill:hover{border-color:rgba(251,146,60,.85)}
+.hwpill svg{width:30px;height:30px;flex:none;filter:drop-shadow(0 0 9px rgba(251,146,60,.65))}
+.brand{position:relative}
+.hwhat{position:absolute;left:-9px;top:-11px;width:30px;height:24px;transform:rotate(-20deg);pointer-events:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.6))}
+.hwbat{position:absolute;left:0;top:var(--y);animation:hwx var(--d) linear var(--del) infinite}
+.hwbat i{display:block;animation:hwy var(--b,2.6s) ease-in-out infinite alternate}
+.hwbat svg{display:block;width:var(--s);color:#1a0f26;filter:drop-shadow(0 0 1.5px rgba(253,186,116,.95)) drop-shadow(0 0 12px rgba(251,146,60,.5));animation:hwflap .34s ease-in-out infinite alternate;transform-origin:50% 45%}
+@keyframes hwx{from{transform:translateX(-14vw)}to{transform:translateX(114vw)}}
+@keyframes hwy{to{transform:translateY(38px)}}
+@keyframes hwflap{to{transform:scaleY(.62)}}
+.hwweb{position:absolute;right:0;top:0;width:clamp(130px,17vw,230px);opacity:.5}
+.hwspider{position:absolute;right:clamp(52px,7vw,92px);top:0;width:22px;transform-origin:50% 0;filter:drop-shadow(0 0 5px rgba(251,146,60,.55));animation:hwspi 5s ease-in-out infinite alternate}
+.hwspider:before{content:"";position:absolute;left:10.5px;bottom:100%;width:1px;height:400px;background:rgba(255,255,255,.35)}
+.hwspider svg{display:block;width:22px;height:22px}
+@keyframes hwspi{from{transform:translateY(70px)}to{transform:translateY(150px)}}
+@media (max-width:640px){.hwbat:nth-child(n+4){display:none}.hwspider{display:none}.hwweb{width:110px;opacity:.4}}
+@media (prefers-reduced-motion:reduce){.hwbat,.hwspider{display:none}}
 </style>
 </head>
 <body>
@@ -377,6 +411,7 @@ footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;heigh
   <div class="hx" aria-hidden="true"><div class="hx-aur"><i></i><i></i><i></i></div><div class="hx-tl" id="hxtl"><span class="hx-ph"></span></div><div class="hx-vig"></div></div>
   <div class="wrap">
     <div class="eyebrow" data-i18n="hero.eyebrow">Logiciel de création gratuit · Windows</div><a class="betapill" href="#q-beta"><b data-i18n="beta">bêta</b><span data-i18n="beta.hero">DedCut est en version bêta : un bug ? Dis-le à ByKemi.</span></a>
+    <a class="hwpill" href="#fonctions"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 8.2c-.6-2.8.2-4.8 2.6-5.8" fill="none" stroke="#65a30d" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="10.6" cy="18.6" rx="7.6" ry="10" fill="#c2410c"/><ellipse cx="21.4" cy="18.6" rx="7.6" ry="10" fill="#c2410c"/><ellipse cx="16" cy="18.6" rx="7.4" ry="10.6" fill="#f97316"/><path d="M9.4 16.4l3-3.8 1.9 4zM22.6 16.4l-3-3.8-1.9 4zM15 19l1-1.7 1 1.7z" fill="#fde047"/><path d="M9.4 20.6Q16 27 22.6 20.6l-1.8 1-1 1.7-1.4-1.2-2.4 1.9-2.4-1.9-1.4 1.2-1-1.7z" fill="#fde047"/></svg><span data-i18n="hw.pill">Spécial Halloween : monte tes vidéos qui font peur, gratuitement</span></a>
     <h1><span class="l1" data-i18n="hero.t1">Vidéo, live, photo, musique.</span><span class="cut" data-i18n="hero.t2" data-t="Sans rien payer.">Sans rien payer.</span></h1>
     <div class="hero-row">
       <p class="lead" data-i18n="hero.p">Monte tes vidéos, filme ton écran et diffuse en direct, retouche tes images et compose ta musique, avec un assistant IA. Tout se passe sur ton PC.</p>
@@ -767,6 +802,14 @@ Object.assign(L.pt,{"chip.oss":"Código aberto","qo":"O DedCut é de código abe
 Object.assign(L.ja,{"chip.oss":"オープンソース","qo":"DedCut はオープンソースですか？","ao":"はい。DedCut はフリーソフトウェアです。コードは <a href=\"https://github.com/Bykemi/dedcut-source\" target=\"_blank\" rel=\"noopener\">GitHub</a> で GPL-3.0 ライセンスのもと公開されていて、誰でも読んで隠れた動作がないことを確認でき、自由なままであれば再利用もできます。DedCut の名前とロゴは ByKemi のものです。","foot.code":"ソースコード"});
 Object.assign(L.ko,{"chip.oss":"오픈 소스","qo":"DedCut은 오픈 소스인가요?","ao":"네. DedCut은 자유 소프트웨어예요. 코드는 <a href=\"https://github.com/Bykemi/dedcut-source\" target=\"_blank\" rel=\"noopener\">GitHub</a>에 GPL-3.0 라이선스로 공개되어 있어, 누구나 읽고 숨겨진 동작이 없는지 확인할 수 있고, 자유 소프트웨어로 남는다면 다시 쓸 수도 있어요. DedCut의 이름과 로고는 ByKemi의 것이에요.","foot.code":"소스 코드"});
 Object.assign(L.zh,{"chip.oss":"开源","qo":"DedCut 是开源的吗？","ao":"是的：DedCut 是自由软件。代码以 GPL-3.0 许可证公开在 <a href=\"https://github.com/Bykemi/dedcut-source\" target=\"_blank\" rel=\"noopener\">GitHub</a> 上：任何人都可以阅读，确认它没有隐藏的行为；只要保持自由，也可以重新使用。DedCut 的名称和标志仍归 ByKemi 所有。","foot.code":"源代码"});
+Object.assign(L.en,{"hw.pill":"Halloween special: make your spooky videos for free"});
+Object.assign(L.es,{"hw.pill":"Especial Halloween: crea tus vídeos de miedo gratis"});
+Object.assign(L.de,{"hw.pill":"Halloween-Special: schneide deine Gruselvideos kostenlos"});
+Object.assign(L.it,{"hw.pill":"Speciale Halloween: monta i tuoi video da paura, gratis"});
+Object.assign(L.pt,{"hw.pill":"Especial de Halloween: edite seus vídeos assustadores de graça"});
+Object.assign(L.ja,{"hw.pill":"ハロウィン特集：こわい動画も無料で編集しよう"});
+Object.assign(L.ko,{"hw.pill":"할로윈 특집: 무서운 영상도 무료로 편집하세요"});
+Object.assign(L.zh,{"hw.pill":"万圣节特辑：免费剪辑你的恐怖视频"});
 const FR_MQ=["Montage vidéo","Live multi-plateforme","Retouche photo","Création musicale","Studio d'enregistrement","Sous-titres automatiques","180+ icônes animées","Assistant IA","82 musiques libres","Export jusqu'à la 4K","9 langues","Mises à jour automatiques"];
 let CUR=null;const FR={'vid.play':'Lecture','vid.alt':'Vidéo de présentation de DedCut','vid.mute':'Couper le son'};document.querySelectorAll('[data-i18n]').forEach(e=>FR[e.dataset.i18n]=e.textContent);document.querySelectorAll('[data-i18n-alt]').forEach(e=>FR[e.dataset.i18nAlt]=e.alt);document.querySelectorAll('[data-i18n-html]').forEach(e=>FR[e.dataset.i18nHtml]=e.innerHTML);
 FR.title=document.title;FR.desc=document.querySelector('meta[name=description]').content;
@@ -832,12 +875,26 @@ fetch('https://api.github.com/repos/Bykemi/DedCut-mises-a-jour/releases/latest',
 
 /* haut de page « cinéma » : pistes de timeline (clips aux couleurs des pistes de DedCut), toujours les mêmes d'une visite à l'autre */
 (()=>{const tl=document.getElementById('hxtl');if(!tl)return;let r=7;const rnd=()=>(r=(r*9301+49297)%233280)/233280;
-  const C=[['#22d3ee','#0891b2'],['#7c3aed','#a78bfa'],['#f59e0b','#fbbf24'],['#10b981','#34d399'],['#ec4899','#f472b6']];
+  const C=document.documentElement.classList.contains('hw')?[['#fb923c','#ea580c'],['#7c3aed','#a78bfa'],['#f59e0b','#fbbf24'],['#65a30d','#84cc16'],['#dc2626','#f87171']]:[['#22d3ee','#0891b2'],['#7c3aed','#a78bfa'],['#f59e0b','#fbbf24'],['#10b981','#34d399'],['#ec4899','#f472b6']];
   [[0,62],[1,48],[2,74],[3,56],[4,66]].forEach(([c,d],i)=>{const tr=document.createElement('div');tr.className='hx-tr'+(i%2?' rev':'');tr.style.setProperty('--d',d+'s');
     let h='';for(let k=0;k<9;k++){const cc=C[(c+(k%3===2?1:0))%C.length];h+='<b style="--w:'+Math.round(90+rnd()*260)+'px;--c:linear-gradient(90deg,'+cc[0]+','+cc[1]+')"></b>'}
     tr.innerHTML=h+h;tl.insertBefore(tr,tl.lastElementChild)});
   const hero=document.querySelector('.hero');if('IntersectionObserver' in window)new IntersectionObserver(e=>hero.classList.toggle('hx-off',!e[0].isIntersecting)).observe(hero);
   document.addEventListener('visibilitychange',()=>hero.classList.toggle('hx-off',document.hidden));
+})();
+/* thème Halloween : chauves-souris, toile et araignée dans le haut de page, chapeau de sorcière sur le logo (dessins originaux) */
+(()=>{if(!document.documentElement.classList.contains('hw'))return;const hx=document.querySelector('.hero .hx'),br=document.querySelector('.top .brand');if(!hx)return;
+  const half='M32 10.5 35.2 7.2 35.8 11.6C40 8.5 50 5.5 62 10Q58 12.6 55.5 15.4 52.5 13.6 49.5 16.4 46.5 15 43.5 18.6 38.5 19.5 32 25Z';
+  const bat='<svg viewBox="0 0 64 32"><path d="'+half+'" fill="currentColor"/><path d="'+half+'" fill="currentColor" transform="matrix(-1 0 0 1 64 0)"/><ellipse cx="32" cy="15.5" rx="4" ry="7" fill="currentColor"/></svg>';
+  let h='';[[70,'14%',26,-3,2.4],[52,'30%',34,-14,2.9],[86,'7%',21,-11,2.2],[44,'44%',40,-27,3.2],[60,'22%',30,-21,2.7]].forEach(([s,y,d,del,b])=>{h+='<div class="hwbat" style="--s:'+s+'px;--y:'+y+';--d:'+d+'s;--del:'+del+'s;--b:'+b+'s"><i>'+bat+'</i></div>'});
+  // toile : rayons depuis le coin haut droit, fils qui pendent un peu entre deux rayons
+  const P=(r,a)=>[(220+r*Math.cos(a*Math.PI/180)).toFixed(1),(r*Math.sin(a*Math.PI/180)).toFixed(1)],A=[90,108,126,144,162,180];let w='';
+  A.forEach(a=>{const p=P(230,a);w+='M220 0L'+p[0]+' '+p[1]});
+  [42,80,118,156,194].forEach(r=>A.forEach((a,k)=>{const p=P(r,a);if(!k){w+='M'+p[0]+' '+p[1];return}const c=P(r*.84,a-9);w+='Q'+c[0]+' '+c[1]+' '+p[0]+' '+p[1]}));
+  h+='<svg class="hwweb" viewBox="0 0 220 220"><path d="'+w+'" fill="none" stroke="#e9e4f5" stroke-width="1.1"/></svg>';
+  h+='<div class="hwspider"><svg viewBox="0 0 22 22"><path d="M8 9 3 5 1 8M8 11 2 10 0 13M8 13 3 15 1 19M9 14 5 18 4 21M14 9 19 5 21 8M14 11 20 10 22 13M14 13 19 15 21 19M13 14 17 18 18 21" fill="none" stroke="#130b1d" stroke-width="1.6" stroke-linecap="round"/><ellipse cx="11" cy="12" rx="4.6" ry="5.4" fill="#130b1d"/><circle cx="11" cy="6.6" r="2.8" fill="#130b1d"/><circle cx="10" cy="6.4" r=".7" fill="#fb923c"/><circle cx="12" cy="6.4" r=".7" fill="#fb923c"/></svg></div>';
+  hx.insertAdjacentHTML('beforeend',h);
+  if(br)br.insertAdjacentHTML('afterbegin','<svg class="hwhat" viewBox="0 0 30 24" aria-hidden="true"><path d="M8 18.5 14.6 4.4Q17-.6 21 2.6 17.6 2.8 17.6 6.8L22 18.5Z" fill="#1c1030" stroke="#a78bfa" stroke-width=".9"/><path d="M8.9 15.6h12.3l.6 2.8H7.8z" fill="#fb923c"/><ellipse cx="15" cy="19.6" rx="14" ry="3.5" fill="#1c1030" stroke="#a78bfa" stroke-width=".9"/></svg>');
 })();
 /* la vidéo de présentation se redresse quand on la fait monter dans l'écran */
 (()=>{const f=document.getElementById('heroShot');if(!f||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const fr=f.querySelector('.frame');let q=0;
