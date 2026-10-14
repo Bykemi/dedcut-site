@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wiki di DedCut — tutto sul programma</title>
+<meta name="description" content="La wiki di DedCut: ogni funzione spiegata in modo semplice — montaggio video, sottotitoli, registrazione dello schermo, dirette, immagine, musica, IA, privacy e risoluzione dei problemi.">
+<meta name="theme-color" content="#09080f">
+<link rel="canonical" href="https://dedcut.com/it/wiki/">
+<link rel="alternate" hreflang="fr" href="https://dedcut.com/wiki/">
+<link rel="alternate" hreflang="en" href="https://dedcut.com/en/wiki/">
+<link rel="alternate" hreflang="es" href="https://dedcut.com/es/wiki/">
+<link rel="alternate" hreflang="de" href="https://dedcut.com/de/wiki/">
+<link rel="alternate" hreflang="it" href="https://dedcut.com/it/wiki/">
+<link rel="alternate" hreflang="pt" href="https://dedcut.com/pt/wiki/">
+<link rel="alternate" hreflang="ja" href="https://dedcut.com/ja/wiki/">
+<link rel="alternate" hreflang="ko" href="https://dedcut.com/ko/wiki/">
+<link rel="alternate" hreflang="zh-Hans" href="https://dedcut.com/zh/wiki/">
+<link rel="alternate" hreflang="x-default" href="https://dedcut.com/wiki/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DedCut">
+<meta property="og:url" content="https://dedcut.com/it/wiki/">
+<meta property="og:title" content="Wiki di DedCut — tutto sul programma">
+<meta property="og:description" content="La wiki di DedCut: ogni funzione spiegata in modo semplice — montaggio video, sottotitoli, registrazione dello schermo, dirette, immagine, musica, IA, privacy e risoluzione dei problemi.">
+<meta property="og:image" content="https://dedcut.com/assets/editor.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Wiki di DedCut — tutto sul programma","description":"La wiki di DedCut: ogni funzione spiegata in modo semplice — montaggio video, sottotitoli, registrazione dello schermo, dirette, immagine, musica, IA, privacy e risoluzione dei problemi.","inLanguage":"it","url":"https://dedcut.com/it/wiki/","about":{"@type":"SoftwareApplication","name":"DedCut","applicationCategory":"MultimediaApplication","operatingSystem":"Windows 10, Windows 11"}}</script>
+<style>
+:root{
+  --bg:#09080f;--bg2:#0e0c16;--panel:#13101d;--panel2:#1a1626;--line:#272233;--line2:#3a3349;
+  --ink:#f4f2fa;--dim:#a7a1b8;--dim2:#7d7790;--cyan:#22d3ee;--violet:#7c3aed;--violet2:#a78bfa;
+  --grad:linear-gradient(120deg,#22d3ee,#7c3aed);--r:6px;
+  --font:"Bahnschrift","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--font);overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button,select{font:inherit}
+::selection{background:var(--cyan);color:#05070a}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.wrap{width:min(1180px,calc(100% - 32px));margin-inline:auto}
+.skip{position:absolute;left:12px;top:-60px;background:var(--cyan);color:#05070a;padding:10px 14px;border-radius:var(--r);z-index:100}.skip:focus{top:12px}
+
+/* tête de lecture = progression de la page */
+.playbar{position:fixed;inset:0 0 auto 0;height:3px;z-index:60;background:transparent;pointer-events:none}
+.playbar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--grad)}
+.playbar b{position:absolute;top:-3px;width:2px;height:12px;background:var(--cyan);box-shadow:0 0 12px var(--cyan);left:0}
+
+/* en-tête */
+.top{position:sticky;top:0;z-index:50;background:rgba(9,8,15,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+.top.scrolled{border-bottom-color:var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:21px;letter-spacing:-.3px}
+.brand img{width:32px;height:32px}
+.brand span b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand small{font-size:11px;font-weight:500;color:var(--dim2);letter-spacing:.8px;text-transform:uppercase;margin-left:4px;padding-left:10px;border-left:1px solid var(--line2)}
+.nav{display:flex;gap:26px;margin-left:auto;font-size:14.5px;color:var(--dim)}
+.nav a:hover{color:var(--ink)}
+.lang{background:var(--panel);color:var(--ink);border:1px solid var(--line2);border-radius:var(--r);padding:7px 8px;font-size:13px;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 20px;border-radius:var(--r);font-weight:700;font-size:15px;border:1px solid var(--line2);background:var(--panel);color:var(--ink);transition:transform .15s,box-shadow .2s,border-color .2s;white-space:nowrap}
+.btn:hover{border-color:var(--violet2);transform:translateY(-1px)}
+.btn.pri{background:var(--grad);border:0;color:#fff;box-shadow:0 10px 30px -10px rgba(124,58,237,.8)}
+.btn.pri:hover{box-shadow:0 14px 38px -10px rgba(34,211,238,.7)}
+.btn svg{width:18px;height:18px;flex:none}
+.top .btn{padding:9px 14px;font-size:14px}
+.menu{display:none;margin-left:auto;background:var(--panel);border:1px solid var(--line2);color:var(--ink);border-radius:var(--r);padding:8px 12px}
+
+/* héros */
+.hero{position:relative;padding:76px 0 40px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:-20% -10% auto;height:720px;background:radial-gradient(600px 340px at 18% 20%,rgba(34,211,238,.16),transparent 70%),radial-gradient(700px 420px at 82% 10%,rgba(124,58,237,.26),transparent 70%);pointer-events:none}
+.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,.035) 1px,transparent 1px);background-size:80px 100%;mask-image:linear-gradient(to bottom,#000 0,transparent 70%);-webkit-mask-image:linear-gradient(to bottom,#000 0,transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--dim);font-weight:600}
+.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+h1{font-size:clamp(32px,9.6vw,96px);line-height:.98;letter-spacing:-.035em;font-weight:700;margin:22px 0 0;max-width:900px}
+h1 .l1{display:block}
+/* signature DedCut : le mot coupé en diagonale, comme le logo */
+.cut{position:relative;display:inline-block;color:transparent;padding-right:.06em;white-space:nowrap}
+.cut:before,.cut:after{content:attr(data-t);position:absolute;inset:0;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.cut:before{clip-path:polygon(0 0,100% 0,100% 44%,0 66%);transform:translateX(-.16em);animation:cj 1s .35s cubic-bezier(.2,.8,.2,1) forwards}
+.cut:after{clip-path:polygon(0 65.6%,100% 43.6%,100% 100%,0 100%);transform:translateX(.16em);animation:cj 1s .35s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes cj{to{transform:none}}
+.hero-row{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:end;margin-top:26px}
+.lead{font-size:19px;line-height:1.6;color:#cdc8da;margin:0;max-width:560px}
+.cta{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.vline{font-size:13px;color:var(--dim2)}
+.vline b{color:var(--dim);font-weight:600}
+.langhint{position:fixed;left:16px;bottom:16px;z-index:90;padding:9px 15px;border-radius:999px;background:rgba(19,16,29,.92);border:1px solid var(--line2);color:var(--ink);font-size:14px;font-weight:600;box-shadow:0 12px 30px -12px rgba(0,0,0,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.langhint:hover{border-color:var(--cyan)}
+.vbeta{display:inline-block;padding:1px 7px;border-radius:999px;background:var(--grad);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;vertical-align:1px}
+.betapill{display:inline-flex;align-items:center;gap:9px;margin:0 0 0 10px;padding:5px 14px 5px 6px;border:1px solid rgba(34,211,238,.35);border-radius:999px;background:rgba(34,211,238,.08);color:#d7f6fc;font-size:13px;line-height:1.3;vertical-align:middle}
+.betapill b{padding:2px 9px;border-radius:999px;background:var(--grad);color:#fff;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.betapill:hover{border-color:rgba(34,211,238,.7)}
+.brand .bbeta{margin-left:-2px;padding:1px 6px;border-radius:999px;background:var(--grad);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;align-self:center}
+@media (max-width:640px){.betapill{margin:10px 0 0;display:flex;width:max-content;max-width:100%}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{font-size:13px;color:#d9d4e6;border:1px solid var(--line2);background:rgba(255,255,255,.02);padding:6px 11px;border-radius:999px;display:inline-flex;gap:7px;align-items:center}
+.chip svg{width:14px;height:14px;color:var(--cyan)}
+.shot{margin:56px 0 0;position:relative}
+.shot .frame{position:relative;border-radius:10px;padding:1px;background:linear-gradient(140deg,rgba(34,211,238,.55),rgba(124,58,237,.55) 45%,rgba(255,255,255,.06));box-shadow:0 40px 120px -30px rgba(124,58,237,.55),0 0 0 1px rgba(0,0,0,.4)}
+.shot .frame>div{border-radius:9px;overflow:hidden;background:#0b0a12}
+.shot img,.shot video{width:100%;height:auto;display:block}
+.don-btn{border-color:rgba(236,72,153,.45)}.don-btn svg{color:#f472b6}.don-btn:hover{border-color:#f472b6;box-shadow:0 8px 24px -12px rgba(236,72,153,.8)}
+.shot figcaption{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.vbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--line2);color:var(--dim);border-radius:var(--r);padding:2px 9px;font-size:12px;cursor:pointer}.vbtn:hover{color:var(--ink);border-color:var(--violet2)}
+.vbtn svg{width:15px;height:15px}#vsnd .w1,#vsnd .w2{display:none}#vsnd[aria-pressed=true] .w1,#vsnd[aria-pressed=true] .w2{display:inline}#vsnd[aria-pressed=true] .x{display:none}
+.vvol{display:inline-flex;align-items:center}.vvol input{width:110px;accent-color:#22d3ee;cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:980px){.top .don-btn{display:none}}
+.nav a{white-space:nowrap}
+/* en-tête : si le menu ne tient pas (langues longues), on retire d'abord « par ByKemi », puis Vie privée et Soutenir, puis Questions (fitTop) */
+.brand{flex:none}.brand small{white-space:nowrap}
+.top .wrap.t1 .brand small{display:none}.top .wrap.t2 .nav a[href="#vie-privee"],.top .wrap.t2 .don-btn{display:none}.top .wrap.t3 .nav a[href="#questions"]{display:none}
+@media (min-width:981px) and (max-width:1211px){.top .don-btn{display:none}.nav{gap:20px}.nav a[href="#vie-privee"]{display:none}}
+.shot figcaption{margin-top:12px;font-size:12.5px;color:var(--dim2);text-align:center}
+
+/* bandeau défilant */
+.marquee{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;margin-top:64px}
+.marquee .track{display:flex;gap:40px;width:max-content;padding:16px 0;animation:mq 40s linear infinite}
+.marquee span{display:inline-flex;align-items:center;gap:40px;font-size:15px;color:#d6d1e3;white-space:nowrap}
+.marquee span:after{content:"";width:9px;height:9px;transform:skewX(-20deg);background:var(--grad);display:inline-block}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{position:relative}
+.sec{padding:110px 0}
+.sec-head{max-width:720px;margin-bottom:46px}
+h2{font-size:clamp(32px,4.4vw,54px);line-height:1.05;letter-spacing:-.03em;margin:16px 0 0;font-weight:700}
+.sec-head p{color:var(--dim);font-size:17px;margin:16px 0 0}
+
+/* grille des fonctions */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tile{position:relative;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:10px;padding:24px;overflow:hidden;transition:border-color .2s,transform .2s}
+.tile:hover{border-color:var(--line2);transform:translateY(-2px)}
+.tile.w2{grid-column:span 2}
+.spaces{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.spaces .tile{padding:22px 20px}
+.spaces .tile p{font-size:14.5px}
+.spaces ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+.spaces li{position:relative;padding-left:16px;font-size:14px;color:#d6d1e3;line-height:1.45}
+.shots2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}.shots2 .shot{margin:0}.shots2 img{aspect-ratio:5/3;object-fit:cover;object-position:top left}
+.spaces li:before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;transform:skewX(-20deg);background:var(--grad)}
+@media (max-width:1180px){.spaces{grid-template-columns:repeat(3,1fr)}}
+.tile .ic{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;background:rgba(124,58,237,.14);color:var(--violet2);border:1px solid rgba(167,139,250,.25);margin-bottom:16px}
+.tile .ic svg{width:21px;height:21px}
+.tile h3{font-size:19px;letter-spacing:-.01em;margin:0 0 8px;font-weight:700}
+.tile p{margin:0;color:var(--dim);font-size:15px;line-height:1.55}
+.tile .tag{position:absolute;top:18px;right:18px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:#fde68a;border:1px solid rgba(250,204,21,.35);background:rgba(250,204,21,.08);padding:3px 8px;border-radius:999px}
+/* mini timeline animée */
+.mini{margin:22px -24px -24px;padding:16px 20px 20px;background:#0b0a12;border-top:1px solid var(--line);position:relative}
+.mini .row{height:22px;margin:7px 0;display:flex;gap:4px}
+.mini .c{border-radius:3px;height:100%;background:#3b2a63;border:1px solid #6d55a8}
+.mini .c.t{background:#0e3a45;border-color:#1f7f92}
+.mini .c.a{background:repeating-linear-gradient(90deg,#1d4239 0 2px,#132c26 2px 5px);border-color:#2f7563}
+.mini .ph{position:absolute;top:8px;bottom:8px;width:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan);left:20px;animation:ph 6s ease-in-out infinite alternate}
+@keyframes ph{to{left:calc(100% - 22px)}}
+/* rangée d'icônes */
+.icons{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.icons svg{width:38px;height:38px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.5));animation:pop 2.4s ease-in-out infinite}
+.icons svg:nth-child(2n){animation-delay:.3s}.icons svg:nth-child(3n){animation-delay:.6s}
+@keyframes pop{0%,70%,100%{transform:scale(1)}80%{transform:scale(1.18)}90%{transform:scale(.96)}}
+
+/* assistant IA */
+.ai{background:radial-gradient(800px 400px at 85% 30%,rgba(124,58,237,.18),transparent 70%),var(--bg2);border-block:1px solid var(--line)}
+.ai-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.ai ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.ai li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
+.ai li svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--cyan)}
+.ai li small{display:block;color:var(--dim2);font-size:13px}
+.note{margin-top:22px;font-size:13.5px;color:var(--dim);border-left:2px solid var(--violet);padding:4px 0 4px 14px}
+.phone{justify-self:center;width:min(380px,100%);border-radius:10px;padding:1px;background:linear-gradient(160deg,rgba(167,139,250,.6),rgba(34,211,238,.35),rgba(255,255,255,.05));box-shadow:0 30px 90px -25px rgba(124,58,237,.6)}
+.phone img{border-radius:9px;width:100%}
+.phone+figcaption,.ai figcaption{font-size:12.5px;color:var(--dim2);text-align:center;margin-top:10px}
+
+/* vie privée */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.trio article{border:1px solid var(--line);border-radius:10px;padding:26px;background:var(--panel)}
+.trio .n{font:700 13px/1 Consolas,ui-monospace,monospace;color:var(--cyan);letter-spacing:1px}
+.trio h3{font-size:20px;margin:14px 0 8px}.trio p{margin:0;color:var(--dim);font-size:15px}
+
+/* installation */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}
+.step{border-top:2px solid var(--line2);padding:22px 4px 0;counter-increment:s}
+.step:before{content:"0" counter(s);font:700 14px Consolas,ui-monospace,monospace;color:var(--violet2)}
+.step h3{font-size:22px;margin:10px 0 8px}.step p{margin:0;color:var(--dim);font-size:15px}
+/* téléchargements : Windows, Mac, Android (Mac et Android s'activent dès qu'ils sont publiés) + VirusTotal */
+.dlgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 34px}
+.dlc{display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+.dlc.main{border-color:rgba(124,58,237,.55);background:linear-gradient(180deg,rgba(124,58,237,.14),var(--panel) 65%)}
+.dlc .os{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:700}
+.dlc .os svg{width:24px;height:24px;flex:none}
+.dlc .tag{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--panel2);color:var(--violet2)}
+.dlc .tag.beta{background:rgba(250,204,21,.12);color:#facc15}
+.dlc p{margin:0;color:var(--dim);font-size:14px}
+.dlc small{display:block;color:var(--dim2);font-size:12.5px;line-height:1.45;flex:1}
+.dlc .btn{width:100%;margin-top:4px}
+.dlc .btn svg{width:18px;height:18px}
+.dlc .btn[aria-disabled=true]{opacity:.5;pointer-events:none;box-shadow:none}
+.vt{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:-16px 0 34px;font-size:13px;color:var(--dim2)}
+.vt a,.vt-mini{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid rgba(34,197,94,.45);background:rgba(34,197,94,.10);color:#4ade80;line-height:1.25;text-decoration:none}
+.vt a:hover,.vt-mini:hover{background:rgba(34,197,94,.18)}
+.vt a span{display:flex;flex-direction:column}.vt a b{color:#e7fbe9;font-weight:600}.vt a small{color:#86efac;opacity:.85}
+.vt code{font:12px Consolas,monospace;color:var(--dim);word-break:break-all}
+.vt-mini{padding:2px 9px;gap:5px;font-size:12px;vertical-align:middle}.vt-mini svg{width:14px;height:14px}
+.vt[hidden],.vt-mini[hidden]{display:none}
+/* boutons Mac / Android du haut : « bientôt » (renvoie vers les explications) tant que le fichier n'est pas publié */
+.os-btn{position:relative;padding:12px 16px}.os-btn svg{width:18px;height:18px}
+.os-btn .soon{position:absolute;top:-9px;right:-6px;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;padding:3px 7px;border-radius:999px;border:1px solid var(--line2);background:var(--bg2);color:var(--dim)}
+.cta-btns .br{flex-basis:100%;height:0;margin-top:-12px}
+/* Windows, Mac et Android tiennent sur une ligne dans toutes les langues (482 px au plus, en allemand) */
+@media (min-width:981px){.hero-row{grid-template-columns:minmax(0,1.25fr) minmax(490px,1fr)}}
+.os-btn.ok .soon{display:none}
+.step:first-child{border-top-color:var(--cyan)}
+
+/* questions */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-weight:600;font-size:17px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"";position:absolute;right:6px;top:50%;width:10px;height:10px;border-right:2px solid var(--cyan);border-bottom:2px solid var(--cyan);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+details[open] summary:after{transform:translateY(-30%) rotate(-135deg)}
+details p{margin:0;padding:0 36px 22px 0;color:var(--dim)}
+
+/* tutoriels */
+.tubox{display:grid;grid-template-columns:1fr 1.15fr;gap:44px;align-items:center;padding:40px;border-radius:14px;border:1px solid var(--line);background:radial-gradient(120% 140% at 0% 0%,rgba(34,211,238,.10),transparent 55%),linear-gradient(180deg,var(--panel2),var(--panel))}
+.tutxt h2{margin:14px 0 0}
+.tutxt p{color:var(--dim);font-size:17px;margin:14px 0 24px}
+.tun{display:block;margin-top:14px;color:var(--dim2);font-size:13.5px}.tun b{color:var(--ink)}
+.tucats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tucats a{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:rgba(9,8,15,.45);font-weight:600;font-size:15px;transition:border-color .2s,transform .2s}
+.tucats a:hover{border-color:rgba(167,139,250,.55);transform:translateY(-2px)}
+.tui{flex:none;width:34px;height:34px;border-radius:8px;display:grid;place-items:center;background:rgba(124,58,237,.14);color:var(--violet2);border:1px solid rgba(167,139,250,.25)}
+.tui svg{width:18px;height:18px}
+.faqmore{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--cyan);font-weight:600}
+.faqmore:hover{text-decoration:underline}
+@media (max-width:980px){.tubox{grid-template-columns:1fr;gap:28px;padding:28px}}
+@media (max-width:420px){.tucats{grid-template-columns:1fr}.tubox{padding:22px 18px}}
+
+/* appel final */
+.final{margin:20px auto 0;border-radius:14px;padding:64px 48px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#0f2a35,#25124a 55%,#120c22);border:1px solid #3c2f5a}
+.final:before{content:"";position:absolute;inset:auto -10% -60% -10%;height:120%;background:radial-gradient(closest-side,rgba(34,211,238,.25),transparent);pointer-events:none}
+.final img{width:76px;height:76px;margin:0 auto 18px;position:relative}
+.final h2{margin:0 auto;max-width:700px;position:relative}
+.final p{color:#cfc9de;margin:14px 0 26px;position:relative}
+.final .btn{position:relative}
+.final .vline{margin-top:14px;position:relative}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-top:56px}
+.stat{border-left:2px solid var(--line2);padding:4px 0 4px 18px}
+.stat b{display:block;font-size:clamp(34px,4vw,50px);line-height:1;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;margin-top:8px;color:var(--dim);font-size:14px}
+.don{background:radial-gradient(700px 380px at 12% 40%,rgba(236,72,153,.12),transparent 70%),var(--bg2);border-block:1px solid var(--line)}
+.don-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start}
+.don-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:26px}
+.don .btn.pri{background:linear-gradient(120deg,#ec4899,#7c3aed);box-shadow:0 10px 30px -10px rgba(236,72,153,.7)}
+.don .btn.pri[aria-disabled=true]{opacity:.55;pointer-events:none}
+.don-soon{font-size:13.5px;color:var(--dim)}
+.uses{display:grid;gap:12px}
+.use{display:flex;gap:16px;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:20px 22px}
+.use .n{font:700 13px/1.6 Consolas,ui-monospace,monospace;color:#f472b6;letter-spacing:1px}
+.use h3{font-size:18px;margin:0 0 6px}.use p{margin:0;color:var(--dim);font-size:15px}
+footer{padding:64px 0 28px;color:var(--dim2);font-size:14px;border-top:1px solid var(--line);margin-top:40px}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:28px}
+.fcol{display:flex;flex-direction:column;gap:10px}.fcol h4{margin:0 0 4px;color:var(--ink);font-size:14px;letter-spacing:.4px}
+.fcol a{color:var(--dim)}.fcol a:hover{color:var(--ink)}
+.fbrand p{margin:6px 0 0;max-width:260px}
+.fbottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px}
+footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;height:28px}
+
+/* apparition au défilement */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .nav{display:none}.menu{display:block}.top .btn{display:none}
+  .nav.open{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:#0f0d17;border-bottom:1px solid var(--line);padding:6px 16px 14px}
+  .nav.open a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .hero-row,.ai-grid,.faq{grid-template-columns:1fr;gap:32px}
+  .bento,.spaces{grid-template-columns:repeat(2,1fr)}.shots2{grid-template-columns:1fr}
+  .trio,.steps,.dlgrid{grid-template-columns:1fr}
+  .don-grid{grid-template-columns:1fr;gap:32px}.stats{grid-template-columns:repeat(2,1fr)}.foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .brand small{display:none}
+  .hero{padding-top:44px}
+  .lead{font-size:17px}
+  .bento,.spaces{grid-template-columns:1fr}.tile.w2{grid-column:auto}
+  .sec{padding:72px 0}
+  .final{padding:44px 20px}
+  .cta-btns .btn{flex:1 1 100%}
+  .fbrand{grid-column:1/-1}
+}
+@media (max-width:420px){.brand span{display:none}.lang{padding:6px 4px}}
+/* haut de page « cinéma » (2026-10-07) : aurore cyan-violet, pistes de timeline qui défilent avec leur tête de lecture,
+   titre centré, vidéo qui se redresse en défilant. Tout est en CSS (transform / opacité), mis en pause hors de l'écran. */
+.hero:before,.hero:after{display:none}
+.hx{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.hx-aur{position:absolute;inset:-4% -10% 22%;mask-image:linear-gradient(#000 45%,transparent);-webkit-mask-image:linear-gradient(#000 45%,transparent)}
+.hx-aur i{position:absolute;width:62vw;height:62vw;max-width:980px;max-height:980px;border-radius:50%;opacity:.8;will-change:transform;animation:hxa 24s ease-in-out infinite alternate}
+.hx-aur i:nth-child(1){left:-6%;top:-20%;background:radial-gradient(closest-side,rgba(34,211,238,.55),rgba(34,211,238,0))}
+.hx-aur i:nth-child(2){right:-8%;top:-28%;background:radial-gradient(closest-side,rgba(124,58,237,.75),rgba(124,58,237,0));animation-duration:30s;animation-delay:-9s}
+.hx-aur i:nth-child(3){left:28%;top:4%;width:44vw;height:44vw;background:radial-gradient(closest-side,rgba(236,72,153,.32),rgba(236,72,153,0));animation-duration:36s;animation-delay:-17s}
+@keyframes hxa{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(7vw,4vh,0) scale(1.12)}100%{transform:translate3d(-5vw,8vh,0) scale(.94)}}
+.hx-tl{position:absolute;left:-12%;right:-12%;top:clamp(40px,9vh,110px);height:clamp(300px,52vh,520px);display:flex;flex-direction:column;justify-content:space-between;opacity:.24;transform:perspective(1300px) rotateX(24deg) rotateZ(-5deg);mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+.hx-tr{display:flex;gap:12px;width:max-content;will-change:transform;animation:hxm var(--d,60s) linear infinite}
+.hx-tr.rev{animation-direction:reverse}
+.hx-tr b{flex:none;height:clamp(18px,2.6vw,30px);border-radius:7px;width:var(--w);background:var(--c);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+@keyframes hxm{to{transform:translate3d(-50%,0,0)}}
+.hx-ph{position:absolute;top:-6%;bottom:-6%;left:22%;width:2px;background:linear-gradient(transparent,#22d3ee 20%,#22d3ee 80%,transparent);box-shadow:0 0 22px 2px rgba(34,211,238,.8);animation:hxp 11s ease-in-out infinite alternate}
+.hx-ph:before{content:"";position:absolute;top:-2px;left:-6px;width:14px;height:14px;background:#22d3ee;clip-path:polygon(0 0,100% 0,50% 100%)}
+@keyframes hxp{to{left:78%}}
+.hx-vig{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 30%,transparent 40%,rgba(9,8,15,.75) 100%),linear-gradient(transparent 70%,var(--bg))}
+.hero.hx-off .hx *{animation-play-state:paused}
+/* texte centré */
+.hero .wrap{text-align:center}
+.hero .eyebrow{padding:7px 15px 7px 13px;border:1px solid rgba(167,139,250,.35);border-radius:999px;background:rgba(124,58,237,.12);color:#e4defa;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.hero h1{margin-inline:auto;max-width:1040px;text-shadow:0 10px 60px rgba(9,8,15,.6)}
+.hero h1 .l1{animation:hxin .9s .05s cubic-bezier(.2,.8,.2,1) both}
+.hero-row{display:flex;flex-direction:column;align-items:center;gap:26px;margin-top:26px}
+.hero .lead{margin-inline:auto;text-align:center;max-width:640px;animation:hxin .9s .25s cubic-bezier(.2,.8,.2,1) both}
+.hero .cta{align-items:center;animation:hxin .9s .4s cubic-bezier(.2,.8,.2,1) both}
+.hero .cta-btns{justify-content:center}
+.hero .chips{justify-content:center;animation:hxin .9s .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes hxin{from{opacity:0;transform:translateY(22px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.hero .btn.pri{position:relative;overflow:hidden}
+.hero .btn.pri:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);animation:hxs 5s 1.6s ease-in-out infinite}
+@keyframes hxs{0%,70%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+/* vidéo de présentation : penchée au départ, elle se redresse en défilant ; lueur dessous */
+.hero-shot{perspective:1600px;margin-top:64px}
+.hero-shot .frame{transform:rotateX(var(--tilt,0deg)) scale(var(--sc,1));transform-origin:50% 0;will-change:transform}
+.hero-shot:before{content:"";position:absolute;left:8%;right:8%;top:12%;bottom:-6%;background:radial-gradient(closest-side,rgba(124,58,237,.55),rgba(34,211,238,.18) 60%,transparent);filter:blur(30px);z-index:-1}
+/* cartes : lueur qui suit la souris */
+.tile:after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(320px circle at var(--mx,50%) var(--my,-40%),rgba(34,211,238,.13),rgba(124,58,237,.08) 40%,transparent 65%);opacity:0;transition:opacity .25s;pointer-events:none}
+.tile:hover:after{opacity:1}
+.tile:hover{border-color:rgba(167,139,250,.45);box-shadow:0 18px 50px -24px rgba(124,58,237,.6)}
+@media (max-width:760px){.hx-tl{opacity:.16;top:30px;height:300px}.hx-aur i{opacity:.4}.hero-shot{margin-top:40px}}
+@media (prefers-reduced-motion:reduce){.hx-tr,.hx-ph,.hx-aur i{animation:none!important}.hero-shot .frame{transform:none!important}.hero h1 .l1,.hero .lead,.hero .cta,.hero .chips{opacity:1;transform:none;filter:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.cut:before,.cut:after{transform:none}.rv{opacity:1;transform:none}
+}
+@media (max-width:600px){.cta-btns .os-btn{flex:1 1 calc(50% - 6px)}}
+/* thème Halloween (2026-10-12) : classe hw posée par le petit script du <head>, du 1er octobre au 2 novembre.
+   Orange citrouille + violet, chauves-souris, toile d'araignée et chapeau de sorcière (dessins originaux, ajoutés par le
+   script en bas de page), pastille avec une citrouille. Rien ne vole si l'on a demandé moins d'animations. */
+.fete{display:none}
+html.hw{--cyan:#fb923c;--grad:linear-gradient(120deg,#fb923c,#7c3aed)}
+.hw .btn.pri:hover{box-shadow:0 14px 38px -10px rgba(251,146,60,.7)}
+.hw .hx-aur i:nth-child(1){background:radial-gradient(closest-side,rgba(249,115,22,.5),rgba(249,115,22,0))}
+.hw .hx-aur i:nth-child(3){background:radial-gradient(closest-side,rgba(220,38,38,.26),rgba(220,38,38,0))}
+.hw .hx-ph{background:linear-gradient(transparent,#fb923c 20%,#fb923c 80%,transparent);box-shadow:0 0 22px 2px rgba(251,146,60,.8)}
+.hw .hx-ph:before{background:#fb923c}
+.hw .betapill{border-color:rgba(251,146,60,.35);background:rgba(251,146,60,.08);color:#ffe4cc}
+.hw .betapill:hover{border-color:rgba(251,146,60,.7)}
+.hw .shot .frame{background:linear-gradient(140deg,rgba(251,146,60,.6),rgba(124,58,237,.55) 45%,rgba(255,255,255,.06))}
+.hw .hero-shot:before{background:radial-gradient(closest-side,rgba(124,58,237,.55),rgba(251,146,60,.2) 60%,transparent)}
+.hw .vvol input{accent-color:#fb923c}
+.hw .hwpill,.xm .xmpill{display:flex;width:max-content;max-width:100%;margin:14px auto 0;align-items:center;gap:10px;padding:5px 16px 5px 7px;border:1px solid rgba(var(--fc),.45);border-radius:999px;background:rgba(var(--fc),.1);color:var(--ft);font-size:14px;font-weight:600;line-height:1.3;text-align:left}
+.hw .hwpill:hover,.xm .xmpill:hover{border-color:rgba(var(--fc),.85)}
+.fete svg{width:30px;height:30px;flex:none;filter:drop-shadow(0 0 9px rgba(var(--fc),.65))}
+.hwpill{--fc:251,146,60;--ft:#ffe4cc}.xmpill{--fc:244,63,94;--ft:#ffe4e6}
+.brand{position:relative}
+.hwhat,.xmhat{position:absolute;left:-9px;top:-11px;width:30px;height:24px;transform:rotate(-20deg);pointer-events:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.6))}
+.hwbat{position:absolute;left:0;top:var(--y);animation:hwx var(--d) linear var(--del) infinite}
+.hwbat i{display:block;animation:hwy var(--b,2.6s) ease-in-out infinite alternate}
+.hwbat svg{display:block;width:var(--s);color:#1a0f26;filter:drop-shadow(0 0 1.5px rgba(253,186,116,.95)) drop-shadow(0 0 12px rgba(251,146,60,.5));animation:hwflap .34s ease-in-out infinite alternate;transform-origin:50% 45%}
+@keyframes hwx{from{transform:translateX(-14vw)}to{transform:translateX(114vw)}}
+@keyframes hwy{to{transform:translateY(38px)}}
+@keyframes hwflap{to{transform:scaleY(.62)}}
+.hwweb{position:absolute;right:0;top:0;width:clamp(130px,17vw,230px);opacity:.5}
+.hwspider{position:absolute;right:clamp(52px,7vw,92px);top:0;width:22px;transform-origin:50% 0;filter:drop-shadow(0 0 5px rgba(251,146,60,.55));animation:hwspi 5s ease-in-out infinite alternate}
+.hwspider:before{content:"";position:absolute;left:10.5px;bottom:100%;width:1px;height:400px;background:rgba(255,255,255,.35)}
+.hwspider svg{display:block;width:22px;height:22px}
+@keyframes hwspi{from{transform:translateY(70px)}to{transform:translateY(150px)}}
+@media (max-width:640px){.hwbat:nth-child(n+4){display:none}.hwspider{display:none}.hwweb{width:110px;opacity:.4}}
+@media (prefers-reduced-motion:reduce){.hwbat,.hwspider{display:none}}
+/* thème Noël (2026-10-12) : classe xm, du 1er décembre au 6 janvier. Rouge + violet, reflets dorés, neige qui tombe, guirlande
+   lumineuse en haut, bonnet sur le logo, pastille avec un sapin (dessins originaux, ajoutés par le script en bas de page). */
+html.xm{--cyan:#fbbf24;--grad:linear-gradient(120deg,#f43f5e,#7c3aed)}
+.xm .btn.pri:hover{box-shadow:0 14px 38px -10px rgba(244,63,94,.7)}
+.xm .hx-aur i:nth-child(1){background:radial-gradient(closest-side,rgba(225,29,72,.45),rgba(225,29,72,0))}
+.xm .hx-aur i:nth-child(3){background:radial-gradient(closest-side,rgba(22,163,74,.24),rgba(22,163,74,0))}
+.xm .hx-ph{background:linear-gradient(transparent,#fbbf24 20%,#fbbf24 80%,transparent);box-shadow:0 0 22px 2px rgba(251,191,36,.8)}
+.xm .hx-ph:before{background:#fbbf24}
+.xm .betapill{border-color:rgba(244,63,94,.35);background:rgba(244,63,94,.08);color:#ffe4e6}
+.xm .betapill:hover{border-color:rgba(244,63,94,.7)}
+.xm .shot .frame{background:linear-gradient(140deg,rgba(244,63,94,.6),rgba(124,58,237,.55) 45%,rgba(255,255,255,.06))}
+.xm .hero-shot:before{background:radial-gradient(closest-side,rgba(124,58,237,.55),rgba(244,63,94,.2) 60%,transparent)}
+.xm .vvol input{accent-color:#f43f5e}
+.xmflake{position:absolute;top:-12px;width:var(--s);height:var(--s);border-radius:50%;background:#fff;box-shadow:0 0 6px rgba(255,255,255,.8);animation:xmfall var(--d) linear var(--del) infinite}
+@keyframes xmfall{to{transform:translate3d(var(--dx),var(--fall,110vh),0)}}
+.xmlights{position:absolute;left:0;top:0;width:100%;height:70px;overflow:visible}
+.xmlights circle{fill:currentColor;filter:drop-shadow(0 0 6px currentColor);animation:xmblink 1.4s ease-in-out infinite alternate}
+@keyframes xmblink{to{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.xmflake{display:none}}
+
+/* ---------- wiki ---------- */
+.whero{position:relative;overflow:hidden;padding:76px 0 34px;text-align:center}.whero .wrap{position:relative;z-index:1}
+.whero .eyebrow{padding:7px 15px 7px 13px;border:1px solid rgba(167,139,250,.35);border-radius:999px;background:rgba(124,58,237,.12);color:#e4defa}
+.whero h1{font-size:clamp(36px,6vw,70px);margin:18px auto 12px;max-width:900px;letter-spacing:-.03em;line-height:1.05}
+.whero .lead{margin:0 auto 24px;color:#cdc8da;max-width:700px;font-size:18px}
+.wsearch{display:flex;align-items:center;gap:10px;margin:0 auto;max-width:640px;height:56px;background:rgba(19,16,29,.85);border:1px solid var(--line2);border-radius:12px;padding:0 14px;text-align:left;box-shadow:0 20px 60px -24px rgba(124,58,237,.7)}
+.wsearch:focus-within{border-color:var(--cyan)}.wsearch svg{width:20px;height:20px;color:var(--dim2);flex:none}
+.wsearch input{flex:1;background:none;border:0;color:var(--ink);font:inherit;font-size:16px;outline:none;min-width:0}
+.wmeta{margin:14px 0 0;color:var(--dim2);font-size:14px}
+.wsec{padding:38px 0 4px;scroll-margin-top:90px}.wsec[hidden]{display:none}
+.wsec-h{display:flex;gap:16px;align-items:center;margin-bottom:16px}.wsec-h h2{margin:0;font-size:26px;letter-spacing:-.4px}.wsec-h p{margin:2px 0 0;color:var(--dim)}
+.wsec-i{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(34,211,238,.16),rgba(124,58,237,.22));border:1px solid var(--line2);color:var(--cyan);flex:none}.wsec-i svg{width:25px;height:25px}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.wcard{display:block;padding:16px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;transition:border-color .15s,transform .15s}.wcard[hidden]{display:none}
+.wcard:hover{border-color:rgba(167,139,250,.5);transform:translateY(-2px)}.wcard b{display:block;font-size:17px;margin-bottom:4px;color:var(--ink)}.wcard span{color:var(--dim);font-size:14.5px;line-height:1.5}
+.wnone{padding:30px 0;color:var(--dim)}
+.wlay{display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;padding:40px 0 30px;align-items:start}
+.wside{position:sticky;top:90px;max-height:calc(100vh - 110px);overflow:auto;font-size:14px;padding-right:6px;scrollbar-width:thin}
+.wside h3{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:var(--dim2);margin:18px 0 6px}.wside h3:first-child{margin-top:0}
+.wside a{display:block;padding:5px 10px;border-radius:7px;color:var(--dim)}.wside a:hover{color:var(--ink);background:var(--panel)}.wside a.on{color:var(--ink);background:var(--panel2);box-shadow:inset 2px 0 0 var(--cyan)}
+.wart{max-width:780px}.wcrumb{font-size:14px;color:var(--dim2);display:flex;flex-wrap:wrap;gap:8px}.wcrumb a{color:var(--cyan)}.wcrumb a:hover{text-decoration:underline}
+.wart h1{font-size:clamp(30px,4.4vw,46px);line-height:1.1;margin:14px 0 10px;letter-spacing:-.02em}
+.wart .wd{font-size:19px;color:#d9d4e6;margin:0 0 18px;line-height:1.5}.wart p{line-height:1.7}
+.wart h2{font-size:21px;margin:30px 0 10px}
+.wwhere{margin:18px 0;padding:14px 16px;border-radius:12px;background:rgba(124,58,237,.1);border:1px solid rgba(167,139,250,.3);line-height:1.6}.wwhere b.lbl{display:block;color:#c4b5fd;font-size:13px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.wart ul.wl{margin:0;padding:0;list-style:none}.wart ul.wl li{position:relative;padding:8px 0 8px 30px;border-top:1px solid var(--line);line-height:1.6}
+.wart ul.wl li:before{content:"";position:absolute;left:6px;top:17px;width:9px;height:9px;border-radius:50%;background:var(--grad)}
+.wtip{margin:8px 0;padding:11px 14px;border-radius:10px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25);color:var(--dim);line-height:1.6}
+.wart b.ui{color:var(--ink);background:rgba(255,255,255,.07);border:1px solid var(--line2);border-radius:5px;padding:0 6px;font-weight:600;white-space:nowrap}
+kbd{font:inherit;font-size:.85em;background:#05070a;border:1px solid var(--line2);border-bottom-width:2px;border-radius:5px;padding:0 6px;white-space:nowrap}
+.wlinks{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}.wlinks a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink)}.wlinks a:hover{border-color:var(--line2)}.wlinks small{display:block;color:var(--dim);margin-top:3px;line-height:1.4}
+.wpn{display:flex;justify-content:space-between;gap:12px;margin:38px 0 10px;flex-wrap:wrap}.wpn a{flex:1;min-width:200px;padding:12px 16px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.wpn a:hover{border-color:var(--line2)}.wpn small{display:block;color:var(--dim2)}.wpn .nx{text-align:right}
+.wver{color:var(--dim2);font-size:13px;margin-top:22px}
+.tnav{display:flex;gap:22px;margin-left:auto;font-size:14.5px;color:var(--dim)}.tnav a:hover,.tnav a.on{color:var(--ink)}
+.wmore{margin:46px 0 60px;padding:24px;border:1px solid var(--line);border-radius:14px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#0f2a35,#25124a 55%,#120c22)}.wmore p{margin:0;font-size:18px;font-weight:600}
+@media (max-width:900px){.wlay{grid-template-columns:1fr;gap:20px}.wside{position:static;max-height:none;display:none}}
+@media (max-width:720px){.wgrid{grid-template-columns:1fr}.tnav{display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Sommario</a>
+<div class="playbar" aria-hidden="true"><i></i><b></b></div>
+<header class="top">
+  <div class="wrap">
+    <a href="/it/" class="brand" aria-label="DedCut"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Ded<b>Cut</b></span></a>
+    <nav class="tnav"><a href="/it/">Torna alla home</a><a href="/it/tutos.html">Tutorial</a><a href="/it/wiki/" class="on">Wiki</a></nav>
+    <select class="lang" id="lang" aria-label="Langue / Language"><option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option><option value="de">DE</option><option value="it">IT</option><option value="pt">PT</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="zh">中文</option></select>
+    <a class="btn pri dl" href="https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe">Scarica DedCut</a>
+  </div>
+</header>
+<main id="contenu">
+<section class="whero"><div class="hx" aria-hidden="true"><div class="hx-aur"><i></i><i></i><i></i></div><div class="hx-vig"></div></div><div class="wrap">
+  <div class="eyebrow">Wiki</div>
+  <h1>Tutto su DedCut</h1>
+  <p class="lead">Ogni funzione di DedCut spiegata in modo semplice: cosa fa, dove trovarla e cosa sapere. Per i passaggi, segui i tutorial.</p>
+  <label class="wsearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="Cerca nella wiki (sottotitoli, diretta, esporta…)" aria-label="Cerca nella wiki (sottotitoli, diretta, esporta…)"></label>
+  <p class="wmeta">37 articoli · Aggiornato per DedCut 4.67.2</p>
+</div></section>
+<div class="wrap" id="wlist"><section class="wsec" id="base"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-1.5z"/><path d="M8 7h6M8 11h6"/></svg></span><div><h2>Le basi</h2><p>Scoprire DedCut, installarlo e orientarsi.</p></div></div>
+<div class="wgrid"><a class="wcard" href="/it/wiki/dedcut.html" data-q="che cos’è dedcut? un programma creativo gratuito e libero per windows: montaggio, registrazione, dirette, immagine e musica. dedcut riunisce cinque strumenti creativi in un solo programma, con un assistente ia. è fatto da bykemi, è gratis per sempre e il suo codice è libero (gpl-3.0). tutto avviene sul tuo pc: niente account, niente pubblicità, niente filigrana. dedcut è ancora in beta: tutto funziona, ma possono restare dei bug. montare video fino al 4k, con sottotitoli automatici creati sul tuo pc. registrare lo schermo, un gioco, la webcam e il microfono, come in uno studio. andare in diretta su youtube, twitch, facebook, kick e tiktok contemporaneamente. ritoccare foto, creare miniature, disegnare con una tavoletta grafica. comporre musica, registrare la tua voce e correggerne l’intonazione."><b>Che cos’è DedCut?</b><span>Un programma creativo gratuito e libero per Windows: montaggio, registrazione, dirette, immagine e musica.</span></a><a class="wcard" href="/it/wiki/installer.html" data-q="installare dedcut cosa serve a dedcut per funzionare e come installarlo in pochi secondi. dedcut si installa per il tuo utente windows, senza diritti di amministratore e senza creare un account. il programma di installazione pesa circa 18 mb. se manca il componente webview2 di microsoft (raro su windows 10 e 11), viene installato da solo. windows 10 o 11, 64 bit. una scheda grafica recente rende più veloci anteprima, effetti ed esportazione, ma non è obbligatoria. i modelli di ia (sottotitoli, assistente, video ia) vengono scaricati solo se li usi."><b>Installare DedCut</b><span>Cosa serve a DedCut per funzionare e come installarlo in pochi secondi.</span></a><a class="wcard" href="/it/wiki/maj.html" data-q="aggiornamenti come dedcut si aggiorna da solo, in tutta sicurezza. all’avvio, dedcut controlla se esiste una nuova versione. se c’è, te la propone con l’elenco delle novità: la installi quando vuoi, con un clic. vedere le novità di ogni versione prima di installare. conservare il tuo lavoro: l’aggiornamento non tocca i tuoi progetti né le impostazioni."><b>Aggiornamenti</b><span>Come DedCut si aggiorna da solo, in tutta sicurezza.</span></a><a class="wcard" href="/it/wiki/espaces.html" data-q="la schermata iniziale e i cinque spazi montaggio, registra, diretta, immagine e musica: a cosa serve ogni spazio. dedcut è diviso in cinque spazi, uno per attività. la schermata iniziale li presenta e dà accesso ai tuoi progetti recenti. gli spazi comunicano tra loro: un’immagine, una musica o una registrazione passa dall’uno all’altro con un clic. montaggio: montare i tuoi video. registra: registrare lo schermo, un gioco e la webcam. diretta: trasmettere in diretta. immagine: ritoccare foto e creare grafiche. musica: comporre e registrare musica."><b>La schermata iniziale e i cinque spazi</b><span>Montaggio, Registra, Diretta, Immagine e Musica: a cosa serve ogni spazio.</span></a><a class="wcard" href="/it/wiki/projets.html" data-q="progetti e salvataggio come dedcut conserva il tuo lavoro: file .dedcut, salvataggio automatico e versioni di sicurezza. un progetto di montaggio è un file .dedcut. non copia i tuoi video: ricorda dove sono e tutto ciò che hai fatto. dedcut salva anche automaticamente il tuo lavoro e conserva versioni di sicurezza per tornare indietro. salvare con ctrl+s. riaprire un progetto recente dalla schermata iniziale, o fare doppio clic su un file .dedcut. ripristinare una versione di sicurezza di un progetto. spostare un progetto nel cestino dalla schermata iniziale."><b>Progetti e salvataggio</b><span>Come DedCut conserva il tuo lavoro: file .dedcut, salvataggio automatico e versioni di sicurezza.</span></a><a class="wcard" href="/it/wiki/raccourcis.html" data-q="scorciatoie da tastiera i tasti che fanno risparmiare tempo e come cambiarli. dedcut ha scorciatoie per quasi tutto. puoi vederle e modificarle tutte. ctrl+z / ctrl+y: annulla / ripeti. ctrl+s: salva; ctrl+e: esporta. spazio: riproduci / pausa; s: dividi la clip; canc: elimina. ctrl+k: cerca un comando (scrivi cosa vuoi fare). ctrl+maiusc+r: avvia / ferma una registrazione; da ctrl+maiusc+1 a ctrl+maiusc+9: cambia scena; ctrl+maiusc+m: aggiungi un marcatore."><b>Scorciatoie da tastiera</b><span>I tasti che fanno risparmiare tempo e come cambiarli.</span></a><a class="wcard" href="/it/wiki/reglages.html" data-q="lingua, temi e impostazioni cambiare la lingua, i colori dell’interfaccia e le altre impostazioni. dedcut si adatta a te: 9 lingue, diversi colori dell’interfaccia, un’animazione di avvio che si può disattivare e una modalità semplice per iniziare. scegliere la lingua in impostazioni &gt; lingua. scegliere il colore dell’interfaccia. disattivare o rivedere l’animazione e il suono di avvio. aprire la cartella in cui dedcut tiene i tuoi file."><b>Lingua, temi e impostazioni</b><span>Cambiare la lingua, i colori dell’interfaccia e le altre impostazioni.</span></a></div></section>
+<section class="wsec" id="montage"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="3"/><circle cx="6" cy="17" r="3"/><path d="M8.6 8.6L20 18M8.6 15.4L20 6"/></svg></span><div><h2>Montaggio video</h2><p>Tutto per montare, decorare ed esportare un video.</p></div></div>
+<div class="wgrid"><a class="wcard" href="/it/wiki/timeline.html" data-q="la timeline, le tracce e le clip dove si costruisce il tuo video: tracce, clip, tagli, gruppi e marcatori. la timeline, in basso nello spazio di montaggio, mostra il tuo video nel tempo. ogni video, immagine, testo o suono posato sopra è una clip, su una traccia. puoi aggiungere tutte le tracce che vuoi e riordinarle. trascinare i tuoi media sulla timeline, tagliare con s, accorciare tirando i bordi. raggruppare clip, dar loro un colore, mettere marcatori. cambiare la velocità di una clip (il suono mantiene la sua intonazione), riprodurla al contrario. creare più scene (più timeline) in uno stesso progetto."><b>La timeline, le tracce e le clip</b><span>Dove si costruisce il tuo video: tracce, clip, tagli, gruppi e marcatori.</span></a><a class="wcard" href="/it/wiki/textes.html" data-q="testi, titoli ed elementi oltre 200 stili di testo, 100 caratteri e una libreria di elementi animati. aggiungi titoli, sottopancia, contatori, forme o sticker. ogni elemento si posiziona con il mouse nell’anteprima e può essere animato. scegliere tra oltre 200 stili di testo e 100 caratteri inclusi in dedcut. animare l’entrata e l’uscita di un testo. aggiungere forme, frecce, sticker, contatori, timer, codici qr. usare modelli pronti (ganci, social network…)."><b>Testi, titoli ed elementi</b><span>Oltre 200 stili di testo, 100 caratteri e una libreria di elementi animati.</span></a><a class="wcard" href="/it/wiki/soustitres.html" data-q="sottotitoli automatici dedcut ascolta il tuo video e scrive i sottotitoli, sul tuo pc. dedcut trascrive tutto ciò che viene detto nel tuo video e posiziona i sottotitoli sulla timeline. il riconoscimento avviene sul tuo computer con un modello di ia libero: né la tua voce né il tuo video vanno su internet. scegliere la precisione: veloce, bilanciata o precisa. correggere una parola cliccando su un sottotitolo. cambiare lo stile di tutti i sottotitoli in una volta. tradurre i sottotitoli in un’altra lingua."><b>Sottotitoli automatici</b><span>DedCut ascolta il tuo video e scrive i sottotitoli, sul tuo PC.</span></a><a class="wcard" href="/it/wiki/montage-texte.html" data-q="montaggio dal testo tagliare il tuo video cancellando parole, come in un programma di scrittura. dedcut scrive tutto ciò che viene detto nel tuo video. selezioni delle parole e le cancelli: il video viene tagliato nello stesso punto e il resto arretra da solo. cancellare frasi intere selezionandole con il mouse. togliere tutti gli «ehm» in un colpo. accorciare le pause lunghe."><b>Montaggio dal testo</b><span>Tagliare il tuo video cancellando parole, come in un programma di scrittura.</span></a><a class="wcard" href="/it/wiki/effets.html" data-q="gli effetti 263 effetti combinabili: glitch, luci, particelle, persona, viso, halloween… gli effetti trasformano una clip: tremolio, neon, pioggia, coriandoli, retrò, distorsioni… si combinano e l’intensità di ognuno si regola. gli effetti calcolati dalla scheda grafica restano fluidi. effetti «persona»: sfondo sfocato, sfondo in bianco e nero, contorno, neon… l’ia scontorna la persona senza green screen. effetti «viso»: occhiali, corona, orecchie, travestimenti di halloween… che seguono il viso. effetti «a ritmo di musica», sincronizzati con i tempi forti. preimpostazioni: più effetti combinati in un clic."><b>Gli effetti</b><span>263 effetti combinabili: glitch, luci, particelle, persona, viso, Halloween…</span></a><a class="wcard" href="/it/wiki/filtres.html" data-q="filtri e colori 199 filtri e regolazioni di colore precise per dare un’atmosfera al tuo video. un filtro cambia i colori di una clip con un clic: cinema, retrò, bianco e nero, stagioni, halloween… puoi anche regolare da solo luminosità, contrasto, saturazione e tonalità. mettere un filtro su una clip o su tutto il video. regolare luminosità, contrasto, saturazione, tonalità, vignettatura e grana. uniformare i colori di due clip girate in modo diverso."><b>Filtri e colori</b><span>199 filtri e regolazioni di colore precise per dare un’atmosfera al tuo video.</span></a><a class="wcard" href="/it/wiki/transitions.html" data-q="transizioni 82 transizioni tra due clip, tra cui transizioni calcolate dalla scheda grafica. una transizione addolcisce o rende dinamico il passaggio da una clip all’altra: dissolvenza, scorrimento, zoom, sfocatura, forme… regolare la durata di ogni transizione. vedere un’anteprima della transizione con un clic. fare una dissolvenza morbida con la clip precedente."><b>Transizioni</b><span>82 transizioni tra due clip, tra cui transizioni calcolate dalla scheda grafica.</span></a><a class="wcard" href="/it/wiki/son.html" data-q="suono, musica e voce musica libera da diritti, effetti sonori, voce fuori campo, pulizia della voce e regolazioni del suono. la scheda audio raccoglie tutto il suono del tuo video: una libreria di vere canzoni libere da diritti, effetti sonori, la voce fuori campo e strumenti per un suono pulito. aggiungere una musica da «musica» o effetti sonori. «taglia i silenzi»: togliere tutti i silenzi di un commento. pulire la voce, regolare equalizzatore, riverbero, volume fino al 400%. abbassare la musica automaticamente quando qualcuno parla. registrare una voce fuori campo o far leggere un testo da una voce di windows."><b>Suono, musica e voce</b><span>Musica libera da diritti, effetti sonori, voce fuori campo, pulizia della voce e regolazioni del suono.</span></a><a class="wcard" href="/it/wiki/animation.html" data-q="animazione, maschere e scontorno fotogrammi chiave, curve, maschere e sfondo rimosso senza green screen. tutto può muoversi: posizione, dimensione, rotazione, opacità… con fotogrammi chiave e curve di accelerazione. le maschere nascondono parte di una clip e lo scontorno rimuove uno sfondo. mettere fotogrammi chiave e scegliere la curva tra due. disegnare una maschera a mano libera o usare una forma. rimuovere un green screen, o rimuovere lo sfondo con l’ia senza green screen. cambiare la modalità di fusione di un livello."><b>Animazione, maschere e scontorno</b><span>Fotogrammi chiave, curve, maschere e sfondo rimosso senza green screen.</span></a><a class="wcard" href="/it/wiki/outils-pro.html" data-q="multicam, tracciamento e stabilizzazione gli strumenti avanzati del montaggio: multicam automatico, tracciamento di oggetti, stabilizzazione e reinquadratura. per video più ambiziosi, dedcut sa montare più telecamere, seguire un oggetto, stabilizzare un video mosso e reinquadrare automaticamente su una persona. multicam: sincronizzare da 2 a 4 telecamere tramite il suono e mostrare automaticamente quella di chi parla. tracciamento: un testo o uno sticker segue un oggetto; sfocare una targa o un volto in movimento. stabilizzare un video girato a mano. zoom e reinquadratura automatici che seguono un volto."><b>Multicam, tracciamento e stabilizzazione</b><span>Gli strumenti avanzati del montaggio: multicam automatico, tracciamento di oggetti, stabilizzazione e reinquadratura.</span></a><a class="wcard" href="/it/wiki/vertical.html" data-q="video verticali e shorts passare al 9:16 per tiktok, reels e shorts, e creare shorts automaticamente. dedcut mette in verticale un video orizzontale con un clic, con uno sfondo sfocato dietro. può anche cercare i momenti migliori di un video lungo e trasformarli in più shorts. passare in verticale o tornare in orizzontale in qualsiasi momento. creare shorts la cui inquadratura segue la persona. vedere la durata del tuo video rispetto ai limiti delle app (15 s, 60 s, 3 min…)."><b>Video verticali e Shorts</b><span>Passare al 9:16 per TikTok, Reels e Shorts, e creare Shorts automaticamente.</span></a><a class="wcard" href="/it/wiki/export.html" data-q="esportare un video mp4 fino al 4k, gif, solo audio, preimpostazioni per i social, senza filigrana. l’esportazione crea il tuo video finale. dedcut calcola ogni fotogramma senza perdita di qualità e non aggiunge mai una filigrana. scegliere la risoluzione (fino al 4k) e i fotogrammi al secondo (da 24 a 60). usare una preimpostazione: youtube, tiktok, discord (sotto i 10 o 50 mb). esportare solo una parte, o solo il suono (wav, m4a). fare una gif. scrivere la descrizione di youtube a partire dai sottotitoli."><b>Esportare un video</b><span>MP4 fino al 4K, GIF, solo audio, preimpostazioni per i social, senza filigrana.</span></a></div></section>
+<section class="wsec" id="rec"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></span><div><h2>Registra</h2><p>Registrare lo schermo, un gioco, la webcam e il microfono.</p></div></div>
+<div class="wgrid"><a class="wcard" href="/it/wiki/studio.html" data-q="lo studio: scene e sorgenti come funziona lo spazio registra (e diretta): scene fatte di sorgenti. lo studio di dedcut funziona come i programmi di streaming: una scena è una disposizione (per esempio «schermo + webcam»), fatta di sorgenti posizionate con il mouse. le scene sono comuni a registra e diretta. aggiungere sorgenti: schermo, finestra, webcam, immagini, testi, chat, avvisi, overlay, codice qr… creare più scene e passare dall’una all’altra, anche in gioco. regolare ogni suono nel mixer audio. usare uno studio verticale 9:16 per tiktok e shorts."><b>Lo studio: scene e sorgenti</b><span>Come funziona lo spazio Registra (e Diretta): scene fatte di sorgenti.</span></a><a class="wcard" href="/it/wiki/capture.html" data-q="schermo, gioco, webcam e microfono registrare lo schermo o un gioco con il suono del pc, la webcam e la tua voce. dedcut registra lo schermo o una finestra con il suono del pc, la webcam e il microfono. il video viene scritto man mano nella cartella video\dedcut e poi compare da solo nello spazio di montaggio. registrare il suono del gioco, della musica o di discord, senza i suoni di dedcut. sfocare o rimuovere lo sfondo della webcam senza green screen. aggiungere effetti vocali in diretta al microfono. avviare e fermare con ctrl+maiusc+r."><b>Schermo, gioco, webcam e microfono</b><span>Registrare lo schermo o un gioco con il suono del PC, la webcam e la tua voce.</span></a></div></section>
+<section class="wsec" id="live"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.5"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2"/></svg></span><div><h2>Diretta</h2><p>Trasmettere in diretta su una o più piattaforme.</p></div></div>
+<div class="wgrid"><a class="wcard" href="/it/wiki/live.html" data-q="fare una diretta trasmettere su youtube, twitch, facebook, kick e tiktok, anche contemporaneamente. dedcut invia la tua scena in diretta a una o più piattaforme insieme. incolli la chiave di streaming che ti dà ogni piattaforma e parti. una versione verticale può essere inviata insieme per tiktok o shorts. trasmettere su più piattaforme contemporaneamente («aggiungi una destinazione»). inviare anche una versione 9:16 («diretta verticale (tiktok, shorts)»). conservare una copia della diretta sul tuo pc («registra anche»). controllare la diretta dal telefono."><b>Fare una diretta</b><span>Trasmettere su YouTube, Twitch, Facebook, Kick e TikTok, anche contemporaneamente.</span></a><a class="wcard" href="/it/wiki/chat-alertes.html" data-q="chat, avvisi e strumenti della diretta mostrare chat e avvisi sullo schermo, far leggere la chat, sondaggi e contatori. durante la diretta, dedcut legge la chat del tuo canale e può mostrarla sullo schermo, con avvisi per i nuovi follower e le donazioni. ogni sorgente ha il suo stile, che puoi salvare. scegliere uno stile di chat e di avvisi (anche uno di halloween). far leggere la chat ad alta voce (scheda strumenti). aggiungere un sondaggio, una barra obiettivo, un contatore. segnare un bel momento con ctrl+maiusc+m per ritrovarlo al montaggio."><b>Chat, avvisi e strumenti della diretta</b><span>Mostrare chat e avvisi sullo schermo, far leggere la chat, sondaggi e contatori.</span></a><a class="wcard" href="/it/wiki/overlays.html" data-q="overlay grafiche animate per dirette e registrazioni: cornici, banner con il nome, schermate di attesa… gli overlay vestono la tua diretta: cornici per la webcam, banner con il nome, schermate di attesa, bordi dello schermo, promemoria «iscriviti» e atmosfere. sono tutti disegnati da dedcut e si regolano (testi, colori, velocità). scegliere tra oltre 40 stili, tra cui una famiglia «gioco in città al neon» e una famiglia di halloween. scrivere il tuo nome o il tuo messaggio, scegliere due colori e la velocità. usare gli stessi disegni nel montaggio, come elemento «overlay»."><b>Overlay</b><span>Grafiche animate per dirette e registrazioni: cornici, banner con il nome, schermate di attesa…</span></a></div></section>
+<section class="wsec" id="image"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg></span><div><h2>Immagine</h2><p>Fotoritocco, miniature e disegno.</p></div></div>
+<div class="wgrid"><a class="wcard" href="/it/wiki/image.html" data-q="lo spazio immagine fotoritocco con livelli, maschere, filtri e scontorno con l’ia. lo spazio immagine è un vero programma di fotoritocco: livelli, maschere, testi, forme, filtri regolabili con anteprima e selezione automatica di una persona o di un oggetto. correggere luce e colori («miglioramento automatico»), curve, livelli, tonalità. selezionare il soggetto con l’ia e rimuovere lo sfondo. aprire e salvare file psd e tiff con i loro livelli. inviare un’immagine al montaggio, o un fotogramma del tuo video a immagine."><b>Lo spazio Immagine</b><span>Fotoritocco con livelli, maschere, filtri e scontorno con l’IA.</span></a><a class="wcard" href="/it/wiki/miniatures.html" data-q="miniature e codici qr creare miniature per youtube con i modelli e aggiungere codici qr ovunque. dedcut offre modelli di miniature e formati pronti (miniatura 1280 × 720, post quadrato…). puoi anche creare un codice qr verso il tuo canale o il tuo sito. partire da un modello di miniatura e cambiare testi, foto e colori. far risaltare un testo con un contorno o un’ombra. creare un codice qr a scheda «scansionami», quadrato classico o a punti rotondi."><b>Miniature e codici QR</b><span>Creare miniature per YouTube con i modelli e aggiungere codici QR ovunque.</span></a><a class="wcard" href="/it/wiki/tablette.html" data-q="tavolette grafiche disegnare con la pressione della penna nello spazio immagine. dedcut riconosce le tavolette grafiche (wacom, xp-pen, huion…) e le penne per schermo: la pressione cambia lo spessore, l’inclinazione l’angolo e la gomma della penna cancella. regolare la curva di pressione e provarla in una zona di prova. disegnare su un nuovo livello per correggere senza rovinare il resto."><b>Tavolette grafiche</b><span>Disegnare con la pressione della penna nello spazio Immagine.</span></a></div></section>
+<section class="wsec" id="musique"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></span><div><h2>Musica</h2><p>Comporre, registrare la tua voce ed esportare.</p></div></div>
+<div class="wgrid"><a class="wcard" href="/it/wiki/musique.html" data-q="lo spazio musica comporre un brano: beat a passi, piano roll, strumenti, mixaggio ed esportazione. lo spazio musica è un piccolo studio: tracce di strumenti e audio, un sequencer di batteria a passi, un piano roll per le melodie, un mixer ed effetti. i suoni di batteria e gli strumenti sono liberi da usare. fare un beat nella scheda step. scrivere una melodia nella scheda piano roll, o suonare con la tastiera del computer. mixare le tracce nella scheda mixer. esportare in wav, flac o m4a, o un file per traccia (stems), e inviarlo al montaggio."><b>Lo spazio Musica</b><span>Comporre un brano: beat a passi, piano roll, strumenti, mixaggio ed esportazione.</span></a><a class="wcard" href="/it/wiki/voix-chantee.html" data-q="voce, intonazione e cori registrare la tua voce in più take, correggere l’intonazione e aggiungere cori. in musica puoi registrare la tua voce in loop (ogni passaggio diventa una take), tenere il meglio di ogni take e poi correggere l’intonazione e aggiungere cori automaticamente. accordare la voce o la chitarra con l’accordatore. correggere l’intonazione: naturale, forte o robot. aggiungere cori (terza, quinta, ottava), ognuno sulla sua traccia. applicare la catena di effetti «voce chiara»."><b>Voce, intonazione e cori</b><span>Registrare la tua voce in più take, correggere l’intonazione e aggiungere cori.</span></a></div></section>
+<section class="wsec" id="ia"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><div><h2>Intelligenza artificiale</h2><p>L’assistente e gli strumenti di IA di DedCut.</p></div></div>
+<div class="wgrid"><a class="wcard" href="/it/wiki/dedcut-ia.html" data-q="dedcut ia, l’assistente un assistente che monta per te e risponde alle tue domande, gratis e senza internet. dedcut ia capisce richieste semplici («taglia i silenzi e aggiungi i sottotitoli», «metti il mio video in verticale») e le esegue direttamente in dedcut. funziona nei cinque spazi e risponde alle domande sul programma. chiedere un montaggio, sottotitoli, un formato, shorts, una descrizione… fare una domanda su una funzione di dedcut. annullare tutto con un clic se il risultato non ti piace."><b>DedCut IA, l’assistente</b><span>Un assistente che monta per te e risponde alle tue domande, gratis e senza internet.</span></a><a class="wcard" href="/it/wiki/ia-externes.html" data-q="claude, chatgpt, gemini, ollama e mcp collegare l’ia che preferisci all’assistente, o controllare dedcut da claude desktop. se vuoi un’ia più potente, l’assistente può usare claude, chatgpt o gemini con la tua chiave, oppure ollama sul tuo pc. dedcut offre anche un connettore mcp perché claude desktop controlli il tuo montaggio. usare claude o chatgpt con la tua chiave api (a pagamento presso di loro). usare gemini con una chiave gratuita (con limiti). usare un modello ollama installato sul tuo pc. collegare claude desktop a dedcut (connettore mcp)."><b>Claude, ChatGPT, Gemini, Ollama e MCP</b><span>Collegare l’IA che preferisci all’assistente, o controllare DedCut da Claude Desktop.</span></a><a class="wcard" href="/it/wiki/video-ia.html" data-q="video ia creare un breve video da un testo o animare un’immagine, sul tuo pc. il video ia crea pochi secondi di video da una descrizione, oppure anima un’immagine. il modello gira sul tuo computer: è gratis, ma serve una macchina abbastanza potente. animare un’immagine (per esempio un personaggio o un oggetto). creare un video da un testo, con uno stile (realistico, 3d, anime…). scegliere il modello e la durata (fino a 15 secondi)."><b>Video IA</b><span>Creare un breve video da un testo o animare un’immagine, sul tuo PC.</span></a></div></section>
+<section class="wsec" id="aide"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg></span><div><h2>Aiuto e privacy</h2><p>I tuoi dati, i problemi comuni e come contattarci.</p></div></div>
+<div class="wgrid"><a class="wcard" href="/it/wiki/vie-privee.html" data-q="privacy e sicurezza cosa fa dedcut con i tuoi dati: niente esce senza di te. dedcut non ha account, né pubblicità, né tracciamento. i tuoi video, foto e suoni restano sul tuo pc, e gli strumenti di ia (sottotitoli, scontorno, assistente) funzionano sulla tua macchina. lavorare completamente offline. sapere cosa usa internet: la diretta, il controllo degli aggiornamenti, i download dei modelli che richiedi e l’ia online se scegli di usarla. leggere il codice sorgente per verificare."><b>Privacy e sicurezza</b><span>Cosa fa DedCut con i tuoi dati: niente esce senza di te.</span></a><a class="wcard" href="/it/wiki/depannage.html" data-q="risoluzione dei problemi le soluzioni ai problemi più comuni. la maggior parte dei problemi si risolve in pochi secondi. ecco i più frequenti. windows blocca l’installazione: «ulteriori informazioni» poi «esegui comunque». immagine di un gioco nera: metti il gioco in «schermo intero in finestra». nessun suono del gioco: spunta la condivisione dell’audio nella finestra di scelta dello schermo. microfono muto: sceglilo nel mixer e autorizzalo nelle impostazioni di windows. anteprima a scatti: lascia che dedcut crei la copia leggera dei video pesanti."><b>Risoluzione dei problemi</b><span>Le soluzioni ai problemi più comuni.</span></a><a class="wcard" href="/it/wiki/bug.html" data-q="segnalare un bug avvisare bykemi di un problema, in pochi clic. dedcut è in beta: i tuoi riscontri aiutano molto. la finestra «segnala un bug» prepara un messaggio con, se vuoi, informazioni tecniche utili (nessun nome di file né dato personale). il messaggio parte dalla tua e-mail verso bugs@dedcut.com. spiegare cosa è successo e cosa stavi facendo subito prima. vedere esattamente cosa viene allegato prima di inviare. inviare con gmail, outlook, un’altra app di posta, o copiare il messaggio."><b>Segnalare un bug</b><span>Avvisare ByKemi di un problema, in pochi clic.</span></a></div></section>
+<section class="wsec" id="dev"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg></span><div><h2>Software libero</h2><p>Licenza, codice sorgente e contributi.</p></div></div>
+<div class="wgrid"><a class="wcard" href="/it/wiki/libre.html" data-q="software libero, licenze e donazioni dedcut è libero (gpl-3.0) e gratis per sempre. il codice di dedcut è pubblico sotto la licenza gnu gpl versione 3 o successiva: chiunque può leggerlo, modificarlo e condividerlo, purché ciò che viene condiviso resti libero. il nome e il logo di dedcut appartengono a bykemi. leggere il codice sorgente su github (bykemi/dedcut-source). consultare le licenze dei componenti di terze parti, tutte libere. sostenere il progetto con una donazione facoltativa (paypal.me/dedcut): non sblocca niente, è già tutto gratis."><b>Software libero, licenze e donazioni</b><span>DedCut è libero (GPL-3.0) e gratis per sempre.</span></a><a class="wcard" href="/it/wiki/contribuer.html" data-q="compilare dedcut e contribuire costruire dedcut da te e proporre miglioramenti o traduzioni. dedcut è fatto con tauri 2 (nucleo in rust), un’interfaccia react e un motore di montaggio in javascript. puoi compilarlo sul tuo pc e proporre correzioni. servono windows 10 o 11, node.js 20 o successivo e rust stabile. nella cartella tauri: npm install, poi npm run tauri dev. i testi delle 9 lingue sono in tauri/public/locales: le traduzioni sono benvenute."><b>Compilare DedCut e contribuire</b><span>Costruire DedCut da te e proporre miglioramenti o traduzioni.</span></a></div></section></div>
+<div class="wrap"><p class="wnone" id="wnone" hidden>Nessun articolo corrisponde. Prova un’altra parola.</p><div class="wmore"><p>Ogni funzione di DedCut spiegata in modo semplice: cosa fa, dove trovarla e cosa sapere.</p><a class="btn pri dl" href="https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe">Scarica DedCut</a></div></div>
+</main>
+<footer><div class="wrap fbottom"><span>© 2026 ByKemi · DedCut</span><a href="/it/wiki/">Wiki</a><a href="/it/">Torna alla home</a></div></footer>
+<script>
+const PAGE_LANG='it',langUrl=l=>l==='fr'?'/wiki/':'/'+l+'/wiki/';document.getElementById('lang').value=PAGE_LANG;
+document.getElementById('lang').addEventListener('change',e=>{const l=e.target.value;try{localStorage.setItem('dedcut-site-lang',l)}catch(x){}location.href=langUrl(l)});
+const topEl=document.querySelector('.top'),bar=document.querySelector('.playbar i'),knob=document.querySelector('.playbar b');
+function onScroll(){const d=document.documentElement,p=d.scrollTop/Math.max(1,d.scrollHeight-d.clientHeight);bar.style.width=(p*100)+'%';knob.style.left='calc('+(p*100)+'% - 1px)';topEl.classList.toggle('scrolled',d.scrollTop>8)}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+document.getElementById('q').addEventListener('input',e=>{const q=norm(e.target.value.trim());let n=0;
+  document.querySelectorAll('.wsec').forEach(s=>{let k=0;s.querySelectorAll('.wcard').forEach(c=>{const hit=!q||norm(c.dataset.q).includes(q);c.hidden=!hit;if(hit)k++});s.hidden=!k;n+=k});
+  document.getElementById('wnone').hidden=n>0});
+</script>
+</body>
+</html>

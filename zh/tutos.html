@@ -109,9 +109,9 @@ h1 .l1{display:block}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @media (max-width:980px){.top .don-btn{display:none}}
 .nav a{white-space:nowrap}
-/* en-tête : si le menu ne tient pas (langues longues), on retire d'abord « par ByKemi », puis Vie privée et Soutenir (fitTop) */
+/* en-tête : si le menu ne tient pas (langues longues), on retire d'abord « par ByKemi », puis Vie privée et Soutenir, puis Questions (fitTop) */
 .brand{flex:none}.brand small{white-space:nowrap}
-.top .wrap.t1 .brand small{display:none}.top .wrap.t2 .nav a[href="#vie-privee"],.top .wrap.t2 .don-btn{display:none}
+.top .wrap.t1 .brand small{display:none}.top .wrap.t2 .nav a[href="#vie-privee"],.top .wrap.t2 .don-btn{display:none}.top .wrap.t3 .nav a[href="#questions"]{display:none}
 @media (min-width:981px) and (max-width:1211px){.top .don-btn{display:none}.nav{gap:20px}.nav a[href="#vie-privee"]{display:none}}
 .shot figcaption{margin-top:12px;font-size:12.5px;color:var(--dim2);text-align:center}
 
@@ -453,7 +453,7 @@ kbd{font:inherit;font-size:.85em;background:#05070a;border:1px solid var(--line2
 <header class="top">
   <div class="wrap">
     <a href="/zh/" class="brand" aria-label="DedCut"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Ded<b>Cut</b></span></a>
-    <nav class="tnav"><a href="/zh/">返回首页</a><a href="/zh/tutos.html" class="on">教程</a><a href="/zh/#questions">查看常见问题</a></nav>
+    <nav class="tnav"><a href="/zh/">返回首页</a><a href="/zh/tutos.html" class="on">教程</a><a href="/zh/wiki/">Wiki</a><a href="/zh/#questions">查看常见问题</a></nav>
     <select class="lang" id="lang" aria-label="Langue / Language">
       <option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option><option value="de">DE</option><option value="it">IT</option><option value="pt">PT</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="zh">中文</option>
     </select>

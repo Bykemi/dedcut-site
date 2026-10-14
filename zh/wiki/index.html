@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DedCut Wiki — 软件的一切</title>
+<meta name="description" content="DedCut 百科：视频剪辑、字幕、录屏、直播、图片、音乐、AI、隐私与故障排除，用简单的话讲清每个功能。">
+<meta name="theme-color" content="#09080f">
+<link rel="canonical" href="https://dedcut.com/zh/wiki/">
+<link rel="alternate" hreflang="fr" href="https://dedcut.com/wiki/">
+<link rel="alternate" hreflang="en" href="https://dedcut.com/en/wiki/">
+<link rel="alternate" hreflang="es" href="https://dedcut.com/es/wiki/">
+<link rel="alternate" hreflang="de" href="https://dedcut.com/de/wiki/">
+<link rel="alternate" hreflang="it" href="https://dedcut.com/it/wiki/">
+<link rel="alternate" hreflang="pt" href="https://dedcut.com/pt/wiki/">
+<link rel="alternate" hreflang="ja" href="https://dedcut.com/ja/wiki/">
+<link rel="alternate" hreflang="ko" href="https://dedcut.com/ko/wiki/">
+<link rel="alternate" hreflang="zh-Hans" href="https://dedcut.com/zh/wiki/">
+<link rel="alternate" hreflang="x-default" href="https://dedcut.com/wiki/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DedCut">
+<meta property="og:url" content="https://dedcut.com/zh/wiki/">
+<meta property="og:title" content="DedCut Wiki — 软件的一切">
+<meta property="og:description" content="DedCut 百科：视频剪辑、字幕、录屏、直播、图片、音乐、AI、隐私与故障排除，用简单的话讲清每个功能。">
+<meta property="og:image" content="https://dedcut.com/assets/editor.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"DedCut Wiki — 软件的一切","description":"DedCut 百科：视频剪辑、字幕、录屏、直播、图片、音乐、AI、隐私与故障排除，用简单的话讲清每个功能。","inLanguage":"zh-CN","url":"https://dedcut.com/zh/wiki/","about":{"@type":"SoftwareApplication","name":"DedCut","applicationCategory":"MultimediaApplication","operatingSystem":"Windows 10, Windows 11"}}</script>
+<style>
+:root{
+  --bg:#09080f;--bg2:#0e0c16;--panel:#13101d;--panel2:#1a1626;--line:#272233;--line2:#3a3349;
+  --ink:#f4f2fa;--dim:#a7a1b8;--dim2:#7d7790;--cyan:#22d3ee;--violet:#7c3aed;--violet2:#a78bfa;
+  --grad:linear-gradient(120deg,#22d3ee,#7c3aed);--r:6px;
+  --font:"Bahnschrift","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--font);overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button,select{font:inherit}
+::selection{background:var(--cyan);color:#05070a}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.wrap{width:min(1180px,calc(100% - 32px));margin-inline:auto}
+.skip{position:absolute;left:12px;top:-60px;background:var(--cyan);color:#05070a;padding:10px 14px;border-radius:var(--r);z-index:100}.skip:focus{top:12px}
+
+/* tête de lecture = progression de la page */
+.playbar{position:fixed;inset:0 0 auto 0;height:3px;z-index:60;background:transparent;pointer-events:none}
+.playbar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--grad)}
+.playbar b{position:absolute;top:-3px;width:2px;height:12px;background:var(--cyan);box-shadow:0 0 12px var(--cyan);left:0}
+
+/* en-tête */
+.top{position:sticky;top:0;z-index:50;background:rgba(9,8,15,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+.top.scrolled{border-bottom-color:var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:21px;letter-spacing:-.3px}
+.brand img{width:32px;height:32px}
+.brand span b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand small{font-size:11px;font-weight:500;color:var(--dim2);letter-spacing:.8px;text-transform:uppercase;margin-left:4px;padding-left:10px;border-left:1px solid var(--line2)}
+.nav{display:flex;gap:26px;margin-left:auto;font-size:14.5px;color:var(--dim)}
+.nav a:hover{color:var(--ink)}
+.lang{background:var(--panel);color:var(--ink);border:1px solid var(--line2);border-radius:var(--r);padding:7px 8px;font-size:13px;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 20px;border-radius:var(--r);font-weight:700;font-size:15px;border:1px solid var(--line2);background:var(--panel);color:var(--ink);transition:transform .15s,box-shadow .2s,border-color .2s;white-space:nowrap}
+.btn:hover{border-color:var(--violet2);transform:translateY(-1px)}
+.btn.pri{background:var(--grad);border:0;color:#fff;box-shadow:0 10px 30px -10px rgba(124,58,237,.8)}
+.btn.pri:hover{box-shadow:0 14px 38px -10px rgba(34,211,238,.7)}
+.btn svg{width:18px;height:18px;flex:none}
+.top .btn{padding:9px 14px;font-size:14px}
+.menu{display:none;margin-left:auto;background:var(--panel);border:1px solid var(--line2);color:var(--ink);border-radius:var(--r);padding:8px 12px}
+
+/* héros */
+.hero{position:relative;padding:76px 0 40px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:-20% -10% auto;height:720px;background:radial-gradient(600px 340px at 18% 20%,rgba(34,211,238,.16),transparent 70%),radial-gradient(700px 420px at 82% 10%,rgba(124,58,237,.26),transparent 70%);pointer-events:none}
+.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,.035) 1px,transparent 1px);background-size:80px 100%;mask-image:linear-gradient(to bottom,#000 0,transparent 70%);-webkit-mask-image:linear-gradient(to bottom,#000 0,transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--dim);font-weight:600}
+.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+h1{font-size:clamp(32px,9.6vw,96px);line-height:.98;letter-spacing:-.035em;font-weight:700;margin:22px 0 0;max-width:900px}
+h1 .l1{display:block}
+/* signature DedCut : le mot coupé en diagonale, comme le logo */
+.cut{position:relative;display:inline-block;color:transparent;padding-right:.06em;white-space:nowrap}
+.cut:before,.cut:after{content:attr(data-t);position:absolute;inset:0;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.cut:before{clip-path:polygon(0 0,100% 0,100% 44%,0 66%);transform:translateX(-.16em);animation:cj 1s .35s cubic-bezier(.2,.8,.2,1) forwards}
+.cut:after{clip-path:polygon(0 65.6%,100% 43.6%,100% 100%,0 100%);transform:translateX(.16em);animation:cj 1s .35s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes cj{to{transform:none}}
+.hero-row{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:end;margin-top:26px}
+.lead{font-size:19px;line-height:1.6;color:#cdc8da;margin:0;max-width:560px}
+.cta{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.vline{font-size:13px;color:var(--dim2)}
+.vline b{color:var(--dim);font-weight:600}
+.langhint{position:fixed;left:16px;bottom:16px;z-index:90;padding:9px 15px;border-radius:999px;background:rgba(19,16,29,.92);border:1px solid var(--line2);color:var(--ink);font-size:14px;font-weight:600;box-shadow:0 12px 30px -12px rgba(0,0,0,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.langhint:hover{border-color:var(--cyan)}
+.vbeta{display:inline-block;padding:1px 7px;border-radius:999px;background:var(--grad);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;vertical-align:1px}
+.betapill{display:inline-flex;align-items:center;gap:9px;margin:0 0 0 10px;padding:5px 14px 5px 6px;border:1px solid rgba(34,211,238,.35);border-radius:999px;background:rgba(34,211,238,.08);color:#d7f6fc;font-size:13px;line-height:1.3;vertical-align:middle}
+.betapill b{padding:2px 9px;border-radius:999px;background:var(--grad);color:#fff;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.betapill:hover{border-color:rgba(34,211,238,.7)}
+.brand .bbeta{margin-left:-2px;padding:1px 6px;border-radius:999px;background:var(--grad);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;align-self:center}
+@media (max-width:640px){.betapill{margin:10px 0 0;display:flex;width:max-content;max-width:100%}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{font-size:13px;color:#d9d4e6;border:1px solid var(--line2);background:rgba(255,255,255,.02);padding:6px 11px;border-radius:999px;display:inline-flex;gap:7px;align-items:center}
+.chip svg{width:14px;height:14px;color:var(--cyan)}
+.shot{margin:56px 0 0;position:relative}
+.shot .frame{position:relative;border-radius:10px;padding:1px;background:linear-gradient(140deg,rgba(34,211,238,.55),rgba(124,58,237,.55) 45%,rgba(255,255,255,.06));box-shadow:0 40px 120px -30px rgba(124,58,237,.55),0 0 0 1px rgba(0,0,0,.4)}
+.shot .frame>div{border-radius:9px;overflow:hidden;background:#0b0a12}
+.shot img,.shot video{width:100%;height:auto;display:block}
+.don-btn{border-color:rgba(236,72,153,.45)}.don-btn svg{color:#f472b6}.don-btn:hover{border-color:#f472b6;box-shadow:0 8px 24px -12px rgba(236,72,153,.8)}
+.shot figcaption{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.vbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--line2);color:var(--dim);border-radius:var(--r);padding:2px 9px;font-size:12px;cursor:pointer}.vbtn:hover{color:var(--ink);border-color:var(--violet2)}
+.vbtn svg{width:15px;height:15px}#vsnd .w1,#vsnd .w2{display:none}#vsnd[aria-pressed=true] .w1,#vsnd[aria-pressed=true] .w2{display:inline}#vsnd[aria-pressed=true] .x{display:none}
+.vvol{display:inline-flex;align-items:center}.vvol input{width:110px;accent-color:#22d3ee;cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:980px){.top .don-btn{display:none}}
+.nav a{white-space:nowrap}
+/* en-tête : si le menu ne tient pas (langues longues), on retire d'abord « par ByKemi », puis Vie privée et Soutenir, puis Questions (fitTop) */
+.brand{flex:none}.brand small{white-space:nowrap}
+.top .wrap.t1 .brand small{display:none}.top .wrap.t2 .nav a[href="#vie-privee"],.top .wrap.t2 .don-btn{display:none}.top .wrap.t3 .nav a[href="#questions"]{display:none}
+@media (min-width:981px) and (max-width:1211px){.top .don-btn{display:none}.nav{gap:20px}.nav a[href="#vie-privee"]{display:none}}
+.shot figcaption{margin-top:12px;font-size:12.5px;color:var(--dim2);text-align:center}
+
+/* bandeau défilant */
+.marquee{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;margin-top:64px}
+.marquee .track{display:flex;gap:40px;width:max-content;padding:16px 0;animation:mq 40s linear infinite}
+.marquee span{display:inline-flex;align-items:center;gap:40px;font-size:15px;color:#d6d1e3;white-space:nowrap}
+.marquee span:after{content:"";width:9px;height:9px;transform:skewX(-20deg);background:var(--grad);display:inline-block}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{position:relative}
+.sec{padding:110px 0}
+.sec-head{max-width:720px;margin-bottom:46px}
+h2{font-size:clamp(32px,4.4vw,54px);line-height:1.05;letter-spacing:-.03em;margin:16px 0 0;font-weight:700}
+.sec-head p{color:var(--dim);font-size:17px;margin:16px 0 0}
+
+/* grille des fonctions */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tile{position:relative;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:10px;padding:24px;overflow:hidden;transition:border-color .2s,transform .2s}
+.tile:hover{border-color:var(--line2);transform:translateY(-2px)}
+.tile.w2{grid-column:span 2}
+.spaces{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.spaces .tile{padding:22px 20px}
+.spaces .tile p{font-size:14.5px}
+.spaces ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+.spaces li{position:relative;padding-left:16px;font-size:14px;color:#d6d1e3;line-height:1.45}
+.shots2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}.shots2 .shot{margin:0}.shots2 img{aspect-ratio:5/3;object-fit:cover;object-position:top left}
+.spaces li:before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;transform:skewX(-20deg);background:var(--grad)}
+@media (max-width:1180px){.spaces{grid-template-columns:repeat(3,1fr)}}
+.tile .ic{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;background:rgba(124,58,237,.14);color:var(--violet2);border:1px solid rgba(167,139,250,.25);margin-bottom:16px}
+.tile .ic svg{width:21px;height:21px}
+.tile h3{font-size:19px;letter-spacing:-.01em;margin:0 0 8px;font-weight:700}
+.tile p{margin:0;color:var(--dim);font-size:15px;line-height:1.55}
+.tile .tag{position:absolute;top:18px;right:18px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:#fde68a;border:1px solid rgba(250,204,21,.35);background:rgba(250,204,21,.08);padding:3px 8px;border-radius:999px}
+/* mini timeline animée */
+.mini{margin:22px -24px -24px;padding:16px 20px 20px;background:#0b0a12;border-top:1px solid var(--line);position:relative}
+.mini .row{height:22px;margin:7px 0;display:flex;gap:4px}
+.mini .c{border-radius:3px;height:100%;background:#3b2a63;border:1px solid #6d55a8}
+.mini .c.t{background:#0e3a45;border-color:#1f7f92}
+.mini .c.a{background:repeating-linear-gradient(90deg,#1d4239 0 2px,#132c26 2px 5px);border-color:#2f7563}
+.mini .ph{position:absolute;top:8px;bottom:8px;width:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan);left:20px;animation:ph 6s ease-in-out infinite alternate}
+@keyframes ph{to{left:calc(100% - 22px)}}
+/* rangée d'icônes */
+.icons{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.icons svg{width:38px;height:38px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.5));animation:pop 2.4s ease-in-out infinite}
+.icons svg:nth-child(2n){animation-delay:.3s}.icons svg:nth-child(3n){animation-delay:.6s}
+@keyframes pop{0%,70%,100%{transform:scale(1)}80%{transform:scale(1.18)}90%{transform:scale(.96)}}
+
+/* assistant IA */
+.ai{background:radial-gradient(800px 400px at 85% 30%,rgba(124,58,237,.18),transparent 70%),var(--bg2);border-block:1px solid var(--line)}
+.ai-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.ai ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.ai li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
+.ai li svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--cyan)}
+.ai li small{display:block;color:var(--dim2);font-size:13px}
+.note{margin-top:22px;font-size:13.5px;color:var(--dim);border-left:2px solid var(--violet);padding:4px 0 4px 14px}
+.phone{justify-self:center;width:min(380px,100%);border-radius:10px;padding:1px;background:linear-gradient(160deg,rgba(167,139,250,.6),rgba(34,211,238,.35),rgba(255,255,255,.05));box-shadow:0 30px 90px -25px rgba(124,58,237,.6)}
+.phone img{border-radius:9px;width:100%}
+.phone+figcaption,.ai figcaption{font-size:12.5px;color:var(--dim2);text-align:center;margin-top:10px}
+
+/* vie privée */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.trio article{border:1px solid var(--line);border-radius:10px;padding:26px;background:var(--panel)}
+.trio .n{font:700 13px/1 Consolas,ui-monospace,monospace;color:var(--cyan);letter-spacing:1px}
+.trio h3{font-size:20px;margin:14px 0 8px}.trio p{margin:0;color:var(--dim);font-size:15px}
+
+/* installation */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}
+.step{border-top:2px solid var(--line2);padding:22px 4px 0;counter-increment:s}
+.step:before{content:"0" counter(s);font:700 14px Consolas,ui-monospace,monospace;color:var(--violet2)}
+.step h3{font-size:22px;margin:10px 0 8px}.step p{margin:0;color:var(--dim);font-size:15px}
+/* téléchargements : Windows, Mac, Android (Mac et Android s'activent dès qu'ils sont publiés) + VirusTotal */
+.dlgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 34px}
+.dlc{display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+.dlc.main{border-color:rgba(124,58,237,.55);background:linear-gradient(180deg,rgba(124,58,237,.14),var(--panel) 65%)}
+.dlc .os{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:700}
+.dlc .os svg{width:24px;height:24px;flex:none}
+.dlc .tag{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--panel2);color:var(--violet2)}
+.dlc .tag.beta{background:rgba(250,204,21,.12);color:#facc15}
+.dlc p{margin:0;color:var(--dim);font-size:14px}
+.dlc small{display:block;color:var(--dim2);font-size:12.5px;line-height:1.45;flex:1}
+.dlc .btn{width:100%;margin-top:4px}
+.dlc .btn svg{width:18px;height:18px}
+.dlc .btn[aria-disabled=true]{opacity:.5;pointer-events:none;box-shadow:none}
+.vt{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:-16px 0 34px;font-size:13px;color:var(--dim2)}
+.vt a,.vt-mini{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid rgba(34,197,94,.45);background:rgba(34,197,94,.10);color:#4ade80;line-height:1.25;text-decoration:none}
+.vt a:hover,.vt-mini:hover{background:rgba(34,197,94,.18)}
+.vt a span{display:flex;flex-direction:column}.vt a b{color:#e7fbe9;font-weight:600}.vt a small{color:#86efac;opacity:.85}
+.vt code{font:12px Consolas,monospace;color:var(--dim);word-break:break-all}
+.vt-mini{padding:2px 9px;gap:5px;font-size:12px;vertical-align:middle}.vt-mini svg{width:14px;height:14px}
+.vt[hidden],.vt-mini[hidden]{display:none}
+/* boutons Mac / Android du haut : « bientôt » (renvoie vers les explications) tant que le fichier n'est pas publié */
+.os-btn{position:relative;padding:12px 16px}.os-btn svg{width:18px;height:18px}
+.os-btn .soon{position:absolute;top:-9px;right:-6px;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;padding:3px 7px;border-radius:999px;border:1px solid var(--line2);background:var(--bg2);color:var(--dim)}
+.cta-btns .br{flex-basis:100%;height:0;margin-top:-12px}
+/* Windows, Mac et Android tiennent sur une ligne dans toutes les langues (482 px au plus, en allemand) */
+@media (min-width:981px){.hero-row{grid-template-columns:minmax(0,1.25fr) minmax(490px,1fr)}}
+.os-btn.ok .soon{display:none}
+.step:first-child{border-top-color:var(--cyan)}
+
+/* questions */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-weight:600;font-size:17px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"";position:absolute;right:6px;top:50%;width:10px;height:10px;border-right:2px solid var(--cyan);border-bottom:2px solid var(--cyan);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+details[open] summary:after{transform:translateY(-30%) rotate(-135deg)}
+details p{margin:0;padding:0 36px 22px 0;color:var(--dim)}
+
+/* tutoriels */
+.tubox{display:grid;grid-template-columns:1fr 1.15fr;gap:44px;align-items:center;padding:40px;border-radius:14px;border:1px solid var(--line);background:radial-gradient(120% 140% at 0% 0%,rgba(34,211,238,.10),transparent 55%),linear-gradient(180deg,var(--panel2),var(--panel))}
+.tutxt h2{margin:14px 0 0}
+.tutxt p{color:var(--dim);font-size:17px;margin:14px 0 24px}
+.tun{display:block;margin-top:14px;color:var(--dim2);font-size:13.5px}.tun b{color:var(--ink)}
+.tucats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tucats a{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:rgba(9,8,15,.45);font-weight:600;font-size:15px;transition:border-color .2s,transform .2s}
+.tucats a:hover{border-color:rgba(167,139,250,.55);transform:translateY(-2px)}
+.tui{flex:none;width:34px;height:34px;border-radius:8px;display:grid;place-items:center;background:rgba(124,58,237,.14);color:var(--violet2);border:1px solid rgba(167,139,250,.25)}
+.tui svg{width:18px;height:18px}
+.faqmore{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--cyan);font-weight:600}
+.faqmore:hover{text-decoration:underline}
+@media (max-width:980px){.tubox{grid-template-columns:1fr;gap:28px;padding:28px}}
+@media (max-width:420px){.tucats{grid-template-columns:1fr}.tubox{padding:22px 18px}}
+
+/* appel final */
+.final{margin:20px auto 0;border-radius:14px;padding:64px 48px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#0f2a35,#25124a 55%,#120c22);border:1px solid #3c2f5a}
+.final:before{content:"";position:absolute;inset:auto -10% -60% -10%;height:120%;background:radial-gradient(closest-side,rgba(34,211,238,.25),transparent);pointer-events:none}
+.final img{width:76px;height:76px;margin:0 auto 18px;position:relative}
+.final h2{margin:0 auto;max-width:700px;position:relative}
+.final p{color:#cfc9de;margin:14px 0 26px;position:relative}
+.final .btn{position:relative}
+.final .vline{margin-top:14px;position:relative}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-top:56px}
+.stat{border-left:2px solid var(--line2);padding:4px 0 4px 18px}
+.stat b{display:block;font-size:clamp(34px,4vw,50px);line-height:1;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;margin-top:8px;color:var(--dim);font-size:14px}
+.don{background:radial-gradient(700px 380px at 12% 40%,rgba(236,72,153,.12),transparent 70%),var(--bg2);border-block:1px solid var(--line)}
+.don-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start}
+.don-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:26px}
+.don .btn.pri{background:linear-gradient(120deg,#ec4899,#7c3aed);box-shadow:0 10px 30px -10px rgba(236,72,153,.7)}
+.don .btn.pri[aria-disabled=true]{opacity:.55;pointer-events:none}
+.don-soon{font-size:13.5px;color:var(--dim)}
+.uses{display:grid;gap:12px}
+.use{display:flex;gap:16px;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:20px 22px}
+.use .n{font:700 13px/1.6 Consolas,ui-monospace,monospace;color:#f472b6;letter-spacing:1px}
+.use h3{font-size:18px;margin:0 0 6px}.use p{margin:0;color:var(--dim);font-size:15px}
+footer{padding:64px 0 28px;color:var(--dim2);font-size:14px;border-top:1px solid var(--line);margin-top:40px}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:28px}
+.fcol{display:flex;flex-direction:column;gap:10px}.fcol h4{margin:0 0 4px;color:var(--ink);font-size:14px;letter-spacing:.4px}
+.fcol a{color:var(--dim)}.fcol a:hover{color:var(--ink)}
+.fbrand p{margin:6px 0 0;max-width:260px}
+.fbottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px}
+footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;height:28px}
+
+/* apparition au défilement */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .nav{display:none}.menu{display:block}.top .btn{display:none}
+  .nav.open{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:#0f0d17;border-bottom:1px solid var(--line);padding:6px 16px 14px}
+  .nav.open a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .hero-row,.ai-grid,.faq{grid-template-columns:1fr;gap:32px}
+  .bento,.spaces{grid-template-columns:repeat(2,1fr)}.shots2{grid-template-columns:1fr}
+  .trio,.steps,.dlgrid{grid-template-columns:1fr}
+  .don-grid{grid-template-columns:1fr;gap:32px}.stats{grid-template-columns:repeat(2,1fr)}.foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .brand small{display:none}
+  .hero{padding-top:44px}
+  .lead{font-size:17px}
+  .bento,.spaces{grid-template-columns:1fr}.tile.w2{grid-column:auto}
+  .sec{padding:72px 0}
+  .final{padding:44px 20px}
+  .cta-btns .btn{flex:1 1 100%}
+  .fbrand{grid-column:1/-1}
+}
+@media (max-width:420px){.brand span{display:none}.lang{padding:6px 4px}}
+/* haut de page « cinéma » (2026-10-07) : aurore cyan-violet, pistes de timeline qui défilent avec leur tête de lecture,
+   titre centré, vidéo qui se redresse en défilant. Tout est en CSS (transform / opacité), mis en pause hors de l'écran. */
+.hero:before,.hero:after{display:none}
+.hx{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.hx-aur{position:absolute;inset:-4% -10% 22%;mask-image:linear-gradient(#000 45%,transparent);-webkit-mask-image:linear-gradient(#000 45%,transparent)}
+.hx-aur i{position:absolute;width:62vw;height:62vw;max-width:980px;max-height:980px;border-radius:50%;opacity:.8;will-change:transform;animation:hxa 24s ease-in-out infinite alternate}
+.hx-aur i:nth-child(1){left:-6%;top:-20%;background:radial-gradient(closest-side,rgba(34,211,238,.55),rgba(34,211,238,0))}
+.hx-aur i:nth-child(2){right:-8%;top:-28%;background:radial-gradient(closest-side,rgba(124,58,237,.75),rgba(124,58,237,0));animation-duration:30s;animation-delay:-9s}
+.hx-aur i:nth-child(3){left:28%;top:4%;width:44vw;height:44vw;background:radial-gradient(closest-side,rgba(236,72,153,.32),rgba(236,72,153,0));animation-duration:36s;animation-delay:-17s}
+@keyframes hxa{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(7vw,4vh,0) scale(1.12)}100%{transform:translate3d(-5vw,8vh,0) scale(.94)}}
+.hx-tl{position:absolute;left:-12%;right:-12%;top:clamp(40px,9vh,110px);height:clamp(300px,52vh,520px);display:flex;flex-direction:column;justify-content:space-between;opacity:.24;transform:perspective(1300px) rotateX(24deg) rotateZ(-5deg);mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+.hx-tr{display:flex;gap:12px;width:max-content;will-change:transform;animation:hxm var(--d,60s) linear infinite}
+.hx-tr.rev{animation-direction:reverse}
+.hx-tr b{flex:none;height:clamp(18px,2.6vw,30px);border-radius:7px;width:var(--w);background:var(--c);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+@keyframes hxm{to{transform:translate3d(-50%,0,0)}}
+.hx-ph{position:absolute;top:-6%;bottom:-6%;left:22%;width:2px;background:linear-gradient(transparent,#22d3ee 20%,#22d3ee 80%,transparent);box-shadow:0 0 22px 2px rgba(34,211,238,.8);animation:hxp 11s ease-in-out infinite alternate}
+.hx-ph:before{content:"";position:absolute;top:-2px;left:-6px;width:14px;height:14px;background:#22d3ee;clip-path:polygon(0 0,100% 0,50% 100%)}
+@keyframes hxp{to{left:78%}}
+.hx-vig{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 30%,transparent 40%,rgba(9,8,15,.75) 100%),linear-gradient(transparent 70%,var(--bg))}
+.hero.hx-off .hx *{animation-play-state:paused}
+/* texte centré */
+.hero .wrap{text-align:center}
+.hero .eyebrow{padding:7px 15px 7px 13px;border:1px solid rgba(167,139,250,.35);border-radius:999px;background:rgba(124,58,237,.12);color:#e4defa;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.hero h1{margin-inline:auto;max-width:1040px;text-shadow:0 10px 60px rgba(9,8,15,.6)}
+.hero h1 .l1{animation:hxin .9s .05s cubic-bezier(.2,.8,.2,1) both}
+.hero-row{display:flex;flex-direction:column;align-items:center;gap:26px;margin-top:26px}
+.hero .lead{margin-inline:auto;text-align:center;max-width:640px;animation:hxin .9s .25s cubic-bezier(.2,.8,.2,1) both}
+.hero .cta{align-items:center;animation:hxin .9s .4s cubic-bezier(.2,.8,.2,1) both}
+.hero .cta-btns{justify-content:center}
+.hero .chips{justify-content:center;animation:hxin .9s .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes hxin{from{opacity:0;transform:translateY(22px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.hero .btn.pri{position:relative;overflow:hidden}
+.hero .btn.pri:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);animation:hxs 5s 1.6s ease-in-out infinite}
+@keyframes hxs{0%,70%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+/* vidéo de présentation : penchée au départ, elle se redresse en défilant ; lueur dessous */
+.hero-shot{perspective:1600px;margin-top:64px}
+.hero-shot .frame{transform:rotateX(var(--tilt,0deg)) scale(var(--sc,1));transform-origin:50% 0;will-change:transform}
+.hero-shot:before{content:"";position:absolute;left:8%;right:8%;top:12%;bottom:-6%;background:radial-gradient(closest-side,rgba(124,58,237,.55),rgba(34,211,238,.18) 60%,transparent);filter:blur(30px);z-index:-1}
+/* cartes : lueur qui suit la souris */
+.tile:after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(320px circle at var(--mx,50%) var(--my,-40%),rgba(34,211,238,.13),rgba(124,58,237,.08) 40%,transparent 65%);opacity:0;transition:opacity .25s;pointer-events:none}
+.tile:hover:after{opacity:1}
+.tile:hover{border-color:rgba(167,139,250,.45);box-shadow:0 18px 50px -24px rgba(124,58,237,.6)}
+@media (max-width:760px){.hx-tl{opacity:.16;top:30px;height:300px}.hx-aur i{opacity:.4}.hero-shot{margin-top:40px}}
+@media (prefers-reduced-motion:reduce){.hx-tr,.hx-ph,.hx-aur i{animation:none!important}.hero-shot .frame{transform:none!important}.hero h1 .l1,.hero .lead,.hero .cta,.hero .chips{opacity:1;transform:none;filter:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.cut:before,.cut:after{transform:none}.rv{opacity:1;transform:none}
+}
+@media (max-width:600px){.cta-btns .os-btn{flex:1 1 calc(50% - 6px)}}
+/* thème Halloween (2026-10-12) : classe hw posée par le petit script du <head>, du 1er octobre au 2 novembre.
+   Orange citrouille + violet, chauves-souris, toile d'araignée et chapeau de sorcière (dessins originaux, ajoutés par le
+   script en bas de page), pastille avec une citrouille. Rien ne vole si l'on a demandé moins d'animations. */
+.fete{display:none}
+html.hw{--cyan:#fb923c;--grad:linear-gradient(120deg,#fb923c,#7c3aed)}
+.hw .btn.pri:hover{box-shadow:0 14px 38px -10px rgba(251,146,60,.7)}
+.hw .hx-aur i:nth-child(1){background:radial-gradient(closest-side,rgba(249,115,22,.5),rgba(249,115,22,0))}
+.hw .hx-aur i:nth-child(3){background:radial-gradient(closest-side,rgba(220,38,38,.26),rgba(220,38,38,0))}
+.hw .hx-ph{background:linear-gradient(transparent,#fb923c 20%,#fb923c 80%,transparent);box-shadow:0 0 22px 2px rgba(251,146,60,.8)}
+.hw .hx-ph:before{background:#fb923c}
+.hw .betapill{border-color:rgba(251,146,60,.35);background:rgba(251,146,60,.08);color:#ffe4cc}
+.hw .betapill:hover{border-color:rgba(251,146,60,.7)}
+.hw .shot .frame{background:linear-gradient(140deg,rgba(251,146,60,.6),rgba(124,58,237,.55) 45%,rgba(255,255,255,.06))}
+.hw .hero-shot:before{background:radial-gradient(closest-side,rgba(124,58,237,.55),rgba(251,146,60,.2) 60%,transparent)}
+.hw .vvol input{accent-color:#fb923c}
+.hw .hwpill,.xm .xmpill{display:flex;width:max-content;max-width:100%;margin:14px auto 0;align-items:center;gap:10px;padding:5px 16px 5px 7px;border:1px solid rgba(var(--fc),.45);border-radius:999px;background:rgba(var(--fc),.1);color:var(--ft);font-size:14px;font-weight:600;line-height:1.3;text-align:left}
+.hw .hwpill:hover,.xm .xmpill:hover{border-color:rgba(var(--fc),.85)}
+.fete svg{width:30px;height:30px;flex:none;filter:drop-shadow(0 0 9px rgba(var(--fc),.65))}
+.hwpill{--fc:251,146,60;--ft:#ffe4cc}.xmpill{--fc:244,63,94;--ft:#ffe4e6}
+.brand{position:relative}
+.hwhat,.xmhat{position:absolute;left:-9px;top:-11px;width:30px;height:24px;transform:rotate(-20deg);pointer-events:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.6))}
+.hwbat{position:absolute;left:0;top:var(--y);animation:hwx var(--d) linear var(--del) infinite}
+.hwbat i{display:block;animation:hwy var(--b,2.6s) ease-in-out infinite alternate}
+.hwbat svg{display:block;width:var(--s);color:#1a0f26;filter:drop-shadow(0 0 1.5px rgba(253,186,116,.95)) drop-shadow(0 0 12px rgba(251,146,60,.5));animation:hwflap .34s ease-in-out infinite alternate;transform-origin:50% 45%}
+@keyframes hwx{from{transform:translateX(-14vw)}to{transform:translateX(114vw)}}
+@keyframes hwy{to{transform:translateY(38px)}}
+@keyframes hwflap{to{transform:scaleY(.62)}}
+.hwweb{position:absolute;right:0;top:0;width:clamp(130px,17vw,230px);opacity:.5}
+.hwspider{position:absolute;right:clamp(52px,7vw,92px);top:0;width:22px;transform-origin:50% 0;filter:drop-shadow(0 0 5px rgba(251,146,60,.55));animation:hwspi 5s ease-in-out infinite alternate}
+.hwspider:before{content:"";position:absolute;left:10.5px;bottom:100%;width:1px;height:400px;background:rgba(255,255,255,.35)}
+.hwspider svg{display:block;width:22px;height:22px}
+@keyframes hwspi{from{transform:translateY(70px)}to{transform:translateY(150px)}}
+@media (max-width:640px){.hwbat:nth-child(n+4){display:none}.hwspider{display:none}.hwweb{width:110px;opacity:.4}}
+@media (prefers-reduced-motion:reduce){.hwbat,.hwspider{display:none}}
+/* thème Noël (2026-10-12) : classe xm, du 1er décembre au 6 janvier. Rouge + violet, reflets dorés, neige qui tombe, guirlande
+   lumineuse en haut, bonnet sur le logo, pastille avec un sapin (dessins originaux, ajoutés par le script en bas de page). */
+html.xm{--cyan:#fbbf24;--grad:linear-gradient(120deg,#f43f5e,#7c3aed)}
+.xm .btn.pri:hover{box-shadow:0 14px 38px -10px rgba(244,63,94,.7)}
+.xm .hx-aur i:nth-child(1){background:radial-gradient(closest-side,rgba(225,29,72,.45),rgba(225,29,72,0))}
+.xm .hx-aur i:nth-child(3){background:radial-gradient(closest-side,rgba(22,163,74,.24),rgba(22,163,74,0))}
+.xm .hx-ph{background:linear-gradient(transparent,#fbbf24 20%,#fbbf24 80%,transparent);box-shadow:0 0 22px 2px rgba(251,191,36,.8)}
+.xm .hx-ph:before{background:#fbbf24}
+.xm .betapill{border-color:rgba(244,63,94,.35);background:rgba(244,63,94,.08);color:#ffe4e6}
+.xm .betapill:hover{border-color:rgba(244,63,94,.7)}
+.xm .shot .frame{background:linear-gradient(140deg,rgba(244,63,94,.6),rgba(124,58,237,.55) 45%,rgba(255,255,255,.06))}
+.xm .hero-shot:before{background:radial-gradient(closest-side,rgba(124,58,237,.55),rgba(244,63,94,.2) 60%,transparent)}
+.xm .vvol input{accent-color:#f43f5e}
+.xmflake{position:absolute;top:-12px;width:var(--s);height:var(--s);border-radius:50%;background:#fff;box-shadow:0 0 6px rgba(255,255,255,.8);animation:xmfall var(--d) linear var(--del) infinite}
+@keyframes xmfall{to{transform:translate3d(var(--dx),var(--fall,110vh),0)}}
+.xmlights{position:absolute;left:0;top:0;width:100%;height:70px;overflow:visible}
+.xmlights circle{fill:currentColor;filter:drop-shadow(0 0 6px currentColor);animation:xmblink 1.4s ease-in-out infinite alternate}
+@keyframes xmblink{to{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.xmflake{display:none}}
+
+/* ---------- wiki ---------- */
+.whero{position:relative;overflow:hidden;padding:76px 0 34px;text-align:center}.whero .wrap{position:relative;z-index:1}
+.whero .eyebrow{padding:7px 15px 7px 13px;border:1px solid rgba(167,139,250,.35);border-radius:999px;background:rgba(124,58,237,.12);color:#e4defa}
+.whero h1{font-size:clamp(36px,6vw,70px);margin:18px auto 12px;max-width:900px;letter-spacing:-.03em;line-height:1.05}
+.whero .lead{margin:0 auto 24px;color:#cdc8da;max-width:700px;font-size:18px}
+.wsearch{display:flex;align-items:center;gap:10px;margin:0 auto;max-width:640px;height:56px;background:rgba(19,16,29,.85);border:1px solid var(--line2);border-radius:12px;padding:0 14px;text-align:left;box-shadow:0 20px 60px -24px rgba(124,58,237,.7)}
+.wsearch:focus-within{border-color:var(--cyan)}.wsearch svg{width:20px;height:20px;color:var(--dim2);flex:none}
+.wsearch input{flex:1;background:none;border:0;color:var(--ink);font:inherit;font-size:16px;outline:none;min-width:0}
+.wmeta{margin:14px 0 0;color:var(--dim2);font-size:14px}
+.wsec{padding:38px 0 4px;scroll-margin-top:90px}.wsec[hidden]{display:none}
+.wsec-h{display:flex;gap:16px;align-items:center;margin-bottom:16px}.wsec-h h2{margin:0;font-size:26px;letter-spacing:-.4px}.wsec-h p{margin:2px 0 0;color:var(--dim)}
+.wsec-i{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(34,211,238,.16),rgba(124,58,237,.22));border:1px solid var(--line2);color:var(--cyan);flex:none}.wsec-i svg{width:25px;height:25px}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.wcard{display:block;padding:16px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;transition:border-color .15s,transform .15s}.wcard[hidden]{display:none}
+.wcard:hover{border-color:rgba(167,139,250,.5);transform:translateY(-2px)}.wcard b{display:block;font-size:17px;margin-bottom:4px;color:var(--ink)}.wcard span{color:var(--dim);font-size:14.5px;line-height:1.5}
+.wnone{padding:30px 0;color:var(--dim)}
+.wlay{display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;padding:40px 0 30px;align-items:start}
+.wside{position:sticky;top:90px;max-height:calc(100vh - 110px);overflow:auto;font-size:14px;padding-right:6px;scrollbar-width:thin}
+.wside h3{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:var(--dim2);margin:18px 0 6px}.wside h3:first-child{margin-top:0}
+.wside a{display:block;padding:5px 10px;border-radius:7px;color:var(--dim)}.wside a:hover{color:var(--ink);background:var(--panel)}.wside a.on{color:var(--ink);background:var(--panel2);box-shadow:inset 2px 0 0 var(--cyan)}
+.wart{max-width:780px}.wcrumb{font-size:14px;color:var(--dim2);display:flex;flex-wrap:wrap;gap:8px}.wcrumb a{color:var(--cyan)}.wcrumb a:hover{text-decoration:underline}
+.wart h1{font-size:clamp(30px,4.4vw,46px);line-height:1.1;margin:14px 0 10px;letter-spacing:-.02em}
+.wart .wd{font-size:19px;color:#d9d4e6;margin:0 0 18px;line-height:1.5}.wart p{line-height:1.7}
+.wart h2{font-size:21px;margin:30px 0 10px}
+.wwhere{margin:18px 0;padding:14px 16px;border-radius:12px;background:rgba(124,58,237,.1);border:1px solid rgba(167,139,250,.3);line-height:1.6}.wwhere b.lbl{display:block;color:#c4b5fd;font-size:13px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.wart ul.wl{margin:0;padding:0;list-style:none}.wart ul.wl li{position:relative;padding:8px 0 8px 30px;border-top:1px solid var(--line);line-height:1.6}
+.wart ul.wl li:before{content:"";position:absolute;left:6px;top:17px;width:9px;height:9px;border-radius:50%;background:var(--grad)}
+.wtip{margin:8px 0;padding:11px 14px;border-radius:10px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25);color:var(--dim);line-height:1.6}
+.wart b.ui{color:var(--ink);background:rgba(255,255,255,.07);border:1px solid var(--line2);border-radius:5px;padding:0 6px;font-weight:600;white-space:nowrap}
+kbd{font:inherit;font-size:.85em;background:#05070a;border:1px solid var(--line2);border-bottom-width:2px;border-radius:5px;padding:0 6px;white-space:nowrap}
+.wlinks{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}.wlinks a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink)}.wlinks a:hover{border-color:var(--line2)}.wlinks small{display:block;color:var(--dim);margin-top:3px;line-height:1.4}
+.wpn{display:flex;justify-content:space-between;gap:12px;margin:38px 0 10px;flex-wrap:wrap}.wpn a{flex:1;min-width:200px;padding:12px 16px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.wpn a:hover{border-color:var(--line2)}.wpn small{display:block;color:var(--dim2)}.wpn .nx{text-align:right}
+.wver{color:var(--dim2);font-size:13px;margin-top:22px}
+.tnav{display:flex;gap:22px;margin-left:auto;font-size:14.5px;color:var(--dim)}.tnav a:hover,.tnav a.on{color:var(--ink)}
+.wmore{margin:46px 0 60px;padding:24px;border:1px solid var(--line);border-radius:14px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#0f2a35,#25124a 55%,#120c22)}.wmore p{margin:0;font-size:18px;font-weight:600}
+@media (max-width:900px){.wlay{grid-template-columns:1fr;gap:20px}.wside{position:static;max-height:none;display:none}}
+@media (max-width:720px){.wgrid{grid-template-columns:1fr}.tnav{display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">目录</a>
+<div class="playbar" aria-hidden="true"><i></i><b></b></div>
+<header class="top">
+  <div class="wrap">
+    <a href="/zh/" class="brand" aria-label="DedCut"><img src="/assets/logo.svg" alt="" width="32" height="32"><span>Ded<b>Cut</b></span></a>
+    <nav class="tnav"><a href="/zh/">返回首页</a><a href="/zh/tutos.html">教程</a><a href="/zh/wiki/" class="on">Wiki</a></nav>
+    <select class="lang" id="lang" aria-label="Langue / Language"><option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option><option value="de">DE</option><option value="it">IT</option><option value="pt">PT</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="zh">中文</option></select>
+    <a class="btn pri dl" href="https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe">下载 DedCut</a>
+  </div>
+</header>
+<main id="contenu">
+<section class="whero"><div class="hx" aria-hidden="true"><div class="hx-aur"><i></i><i></i><i></i></div><div class="hx-vig"></div></div><div class="wrap">
+  <div class="eyebrow">Wiki</div>
+  <h1>关于 DedCut 的一切</h1>
+  <p class="lead">用简单的话介绍 DedCut 的每个功能：能做什么、在哪里、需要了解什么。分步操作请看教程。</p>
+  <label class="wsearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="搜索百科（字幕、直播、导出…）" aria-label="搜索百科（字幕、直播、导出…）"></label>
+  <p class="wmeta">37 篇文章 · 适用于 DedCut 4.67.2</p>
+</div></section>
+<div class="wrap" id="wlist"><section class="wsec" id="base"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-1.5z"/><path d="M8 7h6M8 11h6"/></svg></span><div><h2>基础</h2><p>了解、安装并上手 DedCut。</p></div></div>
+<div class="wgrid"><a class="wcard" href="/zh/wiki/dedcut.html" data-q="dedcut 是什么？ 免费开源的 windows 创作软件：剪辑、录制、直播、图片、音乐。 dedcut 把五个创作工具和一个 ai 助手放进了同一个软件。它由 bykemi 开发，永久免费，代码开源（gpl-3.0）。一切都在你的电脑上运行：没有账号、没有广告、没有水印。dedcut 目前仍是测试版：所有功能都能用，但可能还有一些 bug。 剪辑最高 4k 的视频，自动字幕在你的电脑上生成。 像在演播室一样录制屏幕、游戏、摄像头和麦克风。 同时在 youtube、twitch、facebook、kick 和 tiktok 上直播。 修图、做封面，用数位板画画。 作曲、录制人声并修正音准。"><b>DedCut 是什么？</b><span>免费开源的 Windows 创作软件：剪辑、录制、直播、图片、音乐。</span></a><a class="wcard" href="/zh/wiki/installer.html" data-q="安装 dedcut dedcut 的运行需求，以及几秒钟就能完成的安装。 dedcut 按 windows 用户安装：不需要管理员权限，也不需要账号。安装程序约 18 mb。如果缺少微软的 webview2（在 windows 10 和 11 上很少见），会自动安装。 windows 10 或 11（64 位）。 较新的显卡能让预览、特效和导出更快，但不是必需的。 ai 模型（字幕、助手、ai 视频）只在你使用时才下载。"><b>安装 DedCut</b><span>DedCut 的运行需求，以及几秒钟就能完成的安装。</span></a><a class="wcard" href="/zh/wiki/maj.html" data-q="更新 dedcut 如何安全地自动更新。 启动时，dedcut 会检查是否有新版本。如果有，它会附上新功能列表告诉你，你可以在方便的时候一键安装。 安装前查看每个版本的新内容。 作品不受影响：更新不会改动你的项目和设置。"><b>更新</b><span>DedCut 如何安全地自动更新。</span></a><a class="wcard" href="/zh/wiki/espaces.html" data-q="首页和五个空间 剪辑、录制、直播、图片、音乐：每个空间的用途。 dedcut 按任务分为五个空间。首页可以选择空间、重新打开最近的项目。空间之间互相连通：图片、音乐或录像一键就能发送到另一个空间。 剪辑：剪辑视频。 录制：录制屏幕、游戏、摄像头。 直播：直播。 图像：修图、制作图片。 音乐：作曲和录音。"><b>首页和五个空间</b><span>剪辑、录制、直播、图片、音乐：每个空间的用途。</span></a><a class="wcard" href="/zh/wiki/projets.html" data-q="项目与保存 dedcut 如何保护你的作品：.dedcut 文件、自动保存、备份版本。 剪辑项目是一个 .dedcut 文件：它不复制视频本身，而是记住视频的位置和你做的修改。dedcut 会自动保存你的作品，并保留备份版本，方便回到之前的状态。 按 ctrl+s 保存。 从首页打开最近的项目，或双击 .dedcut 文件。 恢复项目的备份版本。 在首页把项目移到回收站。"><b>项目与保存</b><span>DedCut 如何保护你的作品：.dedcut 文件、自动保存、备份版本。</span></a><a class="wcard" href="/zh/wiki/raccourcis.html" data-q="键盘快捷键 节省时间的按键，以及如何修改。 dedcut 几乎每个操作都有快捷键。你可以查看全部快捷键并修改。 ctrl+z / ctrl+y：撤销 / 重做。 ctrl+s：保存，ctrl+e：导出。 space：播放 / 暂停，s：分割片段，delete：删除。 ctrl+k：查找命令（输入你想做的事）。 ctrl+shift+r：开始 / 停止录制，ctrl+shift+1 到 ctrl+shift+9：切换场景，ctrl+shift+m：添加标记。"><b>键盘快捷键</b><span>节省时间的按键，以及如何修改。</span></a><a class="wcard" href="/zh/wiki/reglages.html" data-q="语言、主题和设置 修改语言、界面颜色和其他偏好。 dedcut 可以按你的习惯调整：9 种语言、多种界面颜色、可关闭的启动动画，以及适合新手的简易模式。 在 设置 &gt; 语言 中选择语言。 选择界面颜色。 关闭或重看启动动画和声音。 打开 dedcut 保存文件的文件夹。"><b>语言、主题和设置</b><span>修改语言、界面颜色和其他偏好。</span></a></div></section>
+<section class="wsec" id="montage"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="3"/><circle cx="6" cy="17" r="3"/><path d="M8.6 8.6L20 18M8.6 15.4L20 6"/></svg></span><div><h2>视频剪辑</h2><p>剪辑、装饰和导出视频所需的一切。</p></div></div>
+<div class="wgrid"><a class="wcard" href="/zh/wiki/timeline.html" data-q="时间线、轨道和片段 组装视频的地方：轨道、片段、分割、编组、标记。 剪辑空间底部的时间线按时间顺序显示你的视频。添加的每个视频、图片、文字或声音都是一个片段，放在轨道上。轨道可以随意添加并调整顺序。 把素材拖到时间线上，按 s 分割，拖动边缘来缩短。 给片段编组、上色，放置标记。 改变片段速度（声音音调不变）或倒放。 在一个项目里创建多个场景（多条时间线）。"><b>时间线、轨道和片段</b><span>组装视频的地方：轨道、片段、分割、编组、标记。</span></a><a class="wcard" href="/zh/wiki/textes.html" data-q="文字、标题和元素 200 多种文字样式、100 种字体，以及动画元素库。 你可以添加标题、字幕条、计数器、形状和贴纸。每个元素都能在预览中用鼠标摆放，并加上动画。 从 dedcut 自带的 200 多种文字样式和 100 种字体中选择。 为文字的出现和消失加动画。 添加形状、箭头、贴纸、计数器、计时器、二维码。 使用现成的模板（开头吸引、社交媒体等）。"><b>文字、标题和元素</b><span>200 多种文字样式、100 种字体，以及动画元素库。</span></a><a class="wcard" href="/zh/wiki/soustitres.html" data-q="自动字幕 dedcut 听你的视频，并在你的电脑上写出字幕。 dedcut 会把视频里说的话全部转成文字，并作为字幕放到时间线上。语音识别使用开放的 ai 模型在你的电脑上完成：你的声音和视频都不会上传到网络。 选择精度：快速、均衡或精确。 点击字幕修改单词。 一次性修改所有字幕的样式。 把字幕翻译成其他语言。"><b>自动字幕</b><span>DedCut 听你的视频，并在你的电脑上写出字幕。</span></a><a class="wcard" href="/zh/wiki/montage-texte.html" data-q="用文字剪辑 像编辑文档一样，删掉文字就能剪掉视频。 dedcut 会把视频里说的话全部写下来。选中文字删除，视频也会在同一位置被剪掉，后面的部分自动接上。 用鼠标选中，删除整句话。 一次删掉所有「嗯」「呃」。 缩短过长的停顿。"><b>用文字剪辑</b><span>像编辑文档一样，删掉文字就能剪掉视频。</span></a><a class="wcard" href="/zh/wiki/effets.html" data-q="特效 263 种可叠加的特效：故障、光效、粒子、人物、人脸、万圣节… 特效能改变片段的样子：抖动、霓虹、雨、彩纸、复古、扭曲… 它们可以叠加使用，每个都能调整强度。由显卡计算的特效运行流畅。 「人物」特效：背景虚化、背景黑白、轮廓、霓虹… ai 无需绿幕即可抠出人物。 「人脸」特效：眼镜、王冠、耳朵、万圣节装扮… 会跟着脸动。 「跟随音乐」特效：随强拍同步。 预设：一键应用多个特效。"><b>特效</b><span>263 种可叠加的特效：故障、光效、粒子、人物、人脸、万圣节…</span></a><a class="wcard" href="/zh/wiki/filtres.html" data-q="滤镜与色彩 199 种滤镜和精细的色彩调整，为视频定调。 滤镜一键改变片段的色彩：电影、复古、黑白、季节、万圣节… 你也可以自己调整亮度、对比度、饱和度和色调。 对一个片段或整个视频应用滤镜。 调整亮度、对比度、饱和度、色调、暗角和颗粒。 让拍摄条件不同的两个片段色彩一致。"><b>滤镜与色彩</b><span>199 种滤镜和精细的色彩调整，为视频定调。</span></a><a class="wcard" href="/zh/wiki/transitions.html" data-q="转场 82 种连接两个片段的转场（部分由显卡计算）。 转场让一个片段到下一个片段的切换更柔和或更有动感：淡化、滑动、缩放、模糊、形状… 调整转场时长。 一键预览转场。 与上一个片段柔和地交叉淡化。"><b>转场</b><span>82 种连接两个片段的转场（部分由显卡计算）。</span></a><a class="wcard" href="/zh/wiki/son.html" data-q="声音、音乐和人声 免版权音乐、音效、旁白、人声降噪和声音调整。 音频标签汇集了视频声音的一切：真正免版权的音乐库、音效、旁白，以及让声音更干净的工具。 从「音乐」添加音乐或音效。 「剪掉静音」：去掉解说视频里的所有静音。 净化人声，调整均衡器、混响和最高 400% 的音量。 有人说话时自动降低音乐音量。 录制旁白，或让 windows 的语音朗读文字。"><b>声音、音乐和人声</b><span>免版权音乐、音效、旁白、人声降噪和声音调整。</span></a><a class="wcard" href="/zh/wiki/animation.html" data-q="动画、蒙版和抠像 关键帧、曲线、蒙版，以及无需绿幕的去背景。 位置、大小、旋转、不透明度… 一切都可以用关键帧和缓动曲线做成动画。蒙版用来隐藏片段的一部分，抠像用来去掉背景。 放置关键帧，并选择它们之间的曲线。 手绘蒙版或使用形状。 抠掉绿幕，或用 ai 无需绿幕去掉背景。 更改图层混合模式。"><b>动画、蒙版和抠像</b><span>关键帧、曲线、蒙版，以及无需绿幕的去背景。</span></a><a class="wcard" href="/zh/wiki/outils-pro.html" data-q="多机位、跟踪和防抖 高级剪辑工具：自动多机位、物体跟踪、防抖、重新构图。 为了做出更专业的视频，dedcut 可以剪辑多机位、跟踪物体、稳定晃动的视频，并自动围绕人物重新构图。 多机位：用声音同步 2 到 4 台摄像机，并自动切到正在说话的人。 跟踪：让文字或贴纸跟着物体走；给移动的车牌或人脸打码。 为手持拍摄的视频防抖。 跟随人脸的自动缩放和重新构图。"><b>多机位、跟踪和防抖</b><span>高级剪辑工具：自动多机位、物体跟踪、防抖、重新构图。</span></a><a class="wcard" href="/zh/wiki/vertical.html" data-q="竖屏视频和短视频 转成 9:16 用于 tiktok、reels、shorts，并自动生成短视频。 dedcut 一键把横屏视频转成竖屏，并在后面加上模糊背景。它还能在长视频里找出精彩片段，做成多个短视频。 随时转成竖屏或改回横屏。 生成画面跟随人物的短视频。 把视频时长与各应用的限制（15 秒、60 秒、3 分钟…）对比。"><b>竖屏视频和短视频</b><span>转成 9:16 用于 TikTok、Reels、Shorts，并自动生成短视频。</span></a><a class="wcard" href="/zh/wiki/export.html" data-q="导出视频 最高 4k 的 mp4、gif、仅音频、社交平台预设，无水印。 导出会生成最终视频。dedcut 逐帧计算、不损失画质，而且绝不加水印。 选择分辨率（最高 4k）和帧率（24 到 60）。 使用预设：youtube、tiktok、discord（小于 10 mb 或 50 mb）。 只导出一部分，或只导出声音（wav、m4a）。 制作 gif。 根据字幕写 youtube 简介。"><b>导出视频</b><span>最高 4K 的 MP4、GIF、仅音频、社交平台预设，无水印。</span></a></div></section>
+<section class="wsec" id="rec"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></span><div><h2>录制</h2><p>录制屏幕、游戏、摄像头和麦克风。</p></div></div>
+<div class="wgrid"><a class="wcard" href="/zh/wiki/studio.html" data-q="演播室：场景与来源 录制（和直播）空间的工作方式：由来源组成的场景。 dedcut 的演播室和直播软件的原理一样：一个场景就是一种布局（比如「屏幕 + 摄像头」），由你用鼠标摆放的来源组成。录制和直播共用同一套场景。 添加来源：屏幕、窗口、摄像头、图片、文字、聊天、提醒、叠加层、二维码… 创建多个场景，游戏中也能切换。 在音频混音器里分别调整每个声音。 使用 9:16 竖屏演播室，适合 tiktok 和短视频。"><b>演播室：场景与来源</b><span>录制（和直播）空间的工作方式：由来源组成的场景。</span></a><a class="wcard" href="/zh/wiki/capture.html" data-q="屏幕、游戏、摄像头和麦克风 录制屏幕或游戏，同时录下电脑声音、摄像头和你的声音。 dedcut 录制屏幕或窗口，同时录下电脑声音、摄像头和麦克风。视频在录制时就写入视频\dedcut 文件夹，并直接进入剪辑空间。 录下游戏、音乐和 discord 的声音，但不录 dedcut 自己的声音。 无需绿幕即可虚化或去掉摄像头背景。 给麦克风加实时变声效果。 用 ctrl+shift+r 开始和停止。"><b>屏幕、游戏、摄像头和麦克风</b><span>录制屏幕或游戏，同时录下电脑声音、摄像头和你的声音。</span></a></div></section>
+<section class="wsec" id="live"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.5"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2"/></svg></span><div><h2>直播</h2><p>在一个或多个平台上直播。</p></div></div>
+<div class="wgrid"><a class="wcard" href="/zh/wiki/live.html" data-q="开始直播 在 youtube、twitch、facebook、kick、tiktok 直播，也可以同时直播。 dedcut 可以把你的场景同时直播到一个或多个平台。只需粘贴每个平台的推流密钥，然后开始。还可以同时推送一个竖屏版本，用于 tiktok 和短视频。 同时直播到多个平台（「添加直播平台」）。 同时推送 9:16 版本（「竖屏直播（tiktok、shorts）」）。 在电脑上保留一份直播录像（「同时录制」）。 用手机控制直播。"><b>开始直播</b><span>在 YouTube、Twitch、Facebook、Kick、TikTok 直播，也可以同时直播。</span></a><a class="wcard" href="/zh/wiki/chat-alertes.html" data-q="聊天、提醒和直播工具 在画面上显示聊天和提醒、朗读聊天、投票和计数器。 直播时，dedcut 可以读取频道聊天并显示在画面上，也能弹出新关注和打赏的提醒。每个来源都有样式，并可以保存。 选择聊天和提醒的样式（包括万圣节样式）。 让软件朗读聊天（工具 标签）。 添加投票、目标进度条和计数器。 用 ctrl+shift+m 标记精彩时刻，剪辑时更容易找到。"><b>聊天、提醒和直播工具</b><span>在画面上显示聊天和提醒、朗读聊天、投票和计数器。</span></a><a class="wcard" href="/zh/wiki/overlays.html" data-q="叠加层 为直播和录制增色的动画装饰：边框、名字横幅、等待画面… 叠加层用来装饰直播：摄像头边框、名字横幅、等待画面、屏幕边框、「订阅」提示、氛围效果。全部由 dedcut 绘制，文字、颜色和速度都能调整。 从 40 多种样式中选择（包括「霓虹城市游戏」系列和万圣节系列）。 输入名字或留言，选择两种颜色和速度。 在剪辑中也能把同样的设计作为「叠加层」元素使用。"><b>叠加层</b><span>为直播和录制增色的动画装饰：边框、名字横幅、等待画面…</span></a></div></section>
+<section class="wsec" id="image"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg></span><div><h2>图片</h2><p>修图、封面、绘画。</p></div></div>
+<div class="wgrid"><a class="wcard" href="/zh/wiki/image.html" data-q="图片空间 用图层、蒙版、滤镜和 ai 抠图来修图。 图片空间是一个完整的修图软件：图层、蒙版、文字、形状、带预览的可调滤镜，以及人物或物体的自动选择。 修正亮度和色彩（「自动增强」）、曲线、色阶、色调。 用 ai 选中主体并去掉背景。 按图层打开和保存 psd 与 tiff。 把图片发送到剪辑空间，或把视频的一帧发送到图片空间。"><b>图片空间</b><span>用图层、蒙版、滤镜和 AI 抠图来修图。</span></a><a class="wcard" href="/zh/wiki/miniatures.html" data-q="封面和二维码 用模板制作 youtube 封面，在任何地方加入二维码。 dedcut 提供封面模板和现成的尺寸（1280 × 720 的封面、方形帖子等）。你还可以制作指向频道或网站的二维码。 从封面模板开始，替换文字、照片和颜色。 用描边和阴影让文字更醒目。 制作「扫一扫」卡片、标准方块或圆点二维码。"><b>封面和二维码</b><span>用模板制作 YouTube 封面，在任何地方加入二维码。</span></a><a class="wcard" href="/zh/wiki/tablette.html" data-q="数位板 在图片空间里用笔压绘画。 dedcut 支持数位板（wacom、xp-pen、huion 等）和屏幕手写笔：压力改变粗细，倾斜改变角度，笔的橡皮端可以擦除。 调整压力曲线，并在测试区试一试。 在新图层上画，修改时不会弄坏其他内容。"><b>数位板</b><span>在图片空间里用笔压绘画。</span></a></div></section>
+<section class="wsec" id="musique"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></span><div><h2>音乐</h2><p>作曲、录制人声、导出。</p></div></div>
+<div class="wgrid"><a class="wcard" href="/zh/wiki/musique.html" data-q="音乐空间 创作歌曲：步进节拍、钢琴卷帘、乐器、混音和导出。 音乐空间是一个小型录音棚：乐器轨和音频轨、步进式鼓机、用于旋律的钢琴卷帘、混音器和效果器。鼓声和乐器都可以自由使用。 在 步进 标签做节拍。 在 钢琴卷帘 标签写旋律，或用电脑键盘弹奏。 在 混音台 标签给轨道混音。 导出为 wav、flac、m4a 或分轨文件（stems），并发送到剪辑空间。"><b>音乐空间</b><span>创作歌曲：步进节拍、钢琴卷帘、乐器、混音和导出。</span></a><a class="wcard" href="/zh/wiki/voix-chantee.html" data-q="人声、音准修正和和声 分多次录唱、修正音准、加上和声。 在音乐空间里可以循环录唱（每一圈一条），保留每条的最佳部分，然后自动修正音准、添加和声。 用调音器给人声或吉他调音。 修正音准：自然、强烈或机器人。 添加和声（三度、五度、八度），每个都在单独的轨道上。 应用「清晰人声」效果链。"><b>人声、音准修正和和声</b><span>分多次录唱、修正音准、加上和声。</span></a></div></section>
+<section class="wsec" id="ia"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><div><h2>人工智能</h2><p>DedCut 助手和 AI 工具。</p></div></div>
+<div class="wgrid"><a class="wcard" href="/zh/wiki/dedcut-ia.html" data-q="dedcut ai 助手 帮你剪辑、回答问题的助手。免费，可离线。 dedcut ai 能听懂简单的请求，比如「剪掉静音并加上字幕」或「把视频改成竖屏」，并直接在 dedcut 里执行。它在五个空间都能用，也能回答关于软件的问题。 让它帮你剪辑、加字幕、改尺寸、做短视频、写简介… 询问 dedcut 的功能。 对结果不满意，一键全部撤销。"><b>DedCut AI 助手</b><span>帮你剪辑、回答问题的助手。免费，可离线。</span></a><a class="wcard" href="/zh/wiki/ia-externes.html" data-q="claude、chatgpt、gemini、ollama、mcp 把你喜欢的 ai 接入助手，或从 claude desktop 控制 dedcut。 想用更强大的 ai，助手可以用你自己的密钥连接 claude、chatgpt 或 gemini，或使用电脑上的 ollama。还有一个 mcp 连接器，可以从 claude desktop 控制剪辑。 用 api 密钥使用 claude 或 chatgpt（在对应服务付费）。 用免费密钥使用 gemini（有用量限制）。 使用电脑上安装的 ollama 模型。 把 claude desktop 连接到 dedcut（mcp 连接器）。"><b>Claude、ChatGPT、Gemini、Ollama、MCP</b><span>把你喜欢的 AI 接入助手，或从 Claude Desktop 控制 DedCut。</span></a><a class="wcard" href="/zh/wiki/video-ia.html" data-q="ai 视频 用文字生成短视频，或让图片动起来。在你的电脑上完成。 ai 视频可以根据描述生成几秒钟的视频，或让一张图片动起来。模型在你的电脑上运行：免费，但需要一台性能较好的电脑。 让图片动起来（角色、物品等）。 用文字生成视频，并选择风格（写实、3d、动漫…）。 选择模型和时长（最长 15 秒）。"><b>AI 视频</b><span>用文字生成短视频，或让图片动起来。在你的电脑上完成。</span></a></div></section>
+<section class="wsec" id="aide"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg></span><div><h2>帮助与隐私</h2><p>你的数据、常见问题、联系方式。</p></div></div>
+<div class="wgrid"><a class="wcard" href="/zh/wiki/vie-privee.html" data-q="隐私与安全 dedcut 如何对待你的数据：未经你同意，什么都不发送。 dedcut 没有账号、没有广告、没有跟踪。你的视频、照片和声音都留在你的电脑上，ai 工具（字幕、抠像、助手）也在你的电脑上运行。 完全离线工作。 了解哪些功能会联网：直播、检查更新、你主动要求的模型下载，以及你选择使用的在线 ai。 阅读源代码自行核实。"><b>隐私与安全</b><span>DedCut 如何对待你的数据：未经你同意，什么都不发送。</span></a><a class="wcard" href="/zh/wiki/depannage.html" data-q="故障排除 常见问题的解决方法。 大多数问题几秒钟就能解决。下面是最常见的情况。 windows 阻止安装：「更多信息」→「仍要运行」。 游戏画面是黑的：把游戏改为「无边框窗口」模式。 录不到游戏声音：在选择屏幕的窗口中勾选共享音频。 麦克风没声音：在混音器中选中它，并在 windows 设置中允许使用。 预览卡顿：让 dedcut 为大视频生成轻量副本。"><b>故障排除</b><span>常见问题的解决方法。</span></a><a class="wcard" href="/zh/wiki/bug.html" data-q="报告 bug 点几下就能把问题告诉 bykemi。 dedcut 还是测试版：你的反馈非常有帮助。「报告 bug」窗口会帮你准备好消息，如果你愿意，还会附上有用的技术信息（不含文件名和个人信息）。消息从你自己的邮箱发送到 bugs@dedcut.com。 写下发生了什么，以及之前你在做什么。 发送前准确查看附带的内容。 用 gmail、outlook 或其他邮件应用发送，或者复制消息。"><b>报告 bug</b><span>点几下就能把问题告诉 ByKemi。</span></a></div></section>
+<section class="wsec" id="dev"><div class="wsec-h"><span class="wsec-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg></span><div><h2>自由软件</h2><p>许可证、源代码、如何贡献。</p></div></div>
+<div class="wgrid"><a class="wcard" href="/zh/wiki/libre.html" data-q="自由软件、许可证和捐助 dedcut 是开源软件（gpl-3.0），并将永远免费。 dedcut 的代码以 gnu gpl 第 3 版或更高版本发布：任何人都可以阅读、修改和分享，只要分享的内容仍然是自由的。dedcut 的名称和标志属于 bykemi。 在 github（bykemi/dedcut-source）上阅读源代码。 查看第三方组件的许可证（全部是自由许可证）。 自愿捐助（paypal.me/dedcut）支持项目：不会解锁任何东西，一切本来就是免费的。"><b>自由软件、许可证和捐助</b><span>DedCut 是开源软件（GPL-3.0），并将永远免费。</span></a><a class="wcard" href="/zh/wiki/contribuer.html" data-q="编译 dedcut 并参与贡献 自己编译 dedcut，提出改进或翻译。 dedcut 由 tauri 2（rust 核心）、react 界面和 javascript 剪辑引擎构成。你可以在自己的电脑上编译，并提交修改建议。 需要 windows 10 或 11、node.js 20 或更高版本，以及稳定版 rust。 在 tauri 文件夹中运行 npm install，然后运行 npm run tauri dev。 9 种语言的文字在 tauri/public/locales 中：欢迎翻译。"><b>编译 DedCut 并参与贡献</b><span>自己编译 DedCut，提出改进或翻译。</span></a></div></section></div>
+<div class="wrap"><p class="wnone" id="wnone" hidden>没有匹配的文章，换个词试试。</p><div class="wmore"><p>用简单的话介绍 DedCut 的每个功能：能做什么、在哪里、需要了解什么.</p><a class="btn pri dl" href="https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe">下载 DedCut</a></div></div>
+</main>
+<footer><div class="wrap fbottom"><span>© 2026 ByKemi · DedCut</span><a href="/zh/wiki/">Wiki</a><a href="/zh/">返回首页</a></div></footer>
+<script>
+const PAGE_LANG='zh',langUrl=l=>l==='fr'?'/wiki/':'/'+l+'/wiki/';document.getElementById('lang').value=PAGE_LANG;
+document.getElementById('lang').addEventListener('change',e=>{const l=e.target.value;try{localStorage.setItem('dedcut-site-lang',l)}catch(x){}location.href=langUrl(l)});
+const topEl=document.querySelector('.top'),bar=document.querySelector('.playbar i'),knob=document.querySelector('.playbar b');
+function onScroll(){const d=document.documentElement,p=d.scrollTop/Math.max(1,d.scrollHeight-d.clientHeight);bar.style.width=(p*100)+'%';knob.style.left='calc('+(p*100)+'% - 1px)';topEl.classList.toggle('scrolled',d.scrollTop>8)}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+document.getElementById('q').addEventListener('input',e=>{const q=norm(e.target.value.trim());let n=0;
+  document.querySelectorAll('.wsec').forEach(s=>{let k=0;s.querySelectorAll('.wcard').forEach(c=>{const hit=!q||norm(c.dataset.q).includes(q);c.hidden=!hit;if(hit)k++});s.hidden=!k;n+=k});
+  document.getElementById('wnone').hidden=n>0});
+</script>
+</body>
+</html>
