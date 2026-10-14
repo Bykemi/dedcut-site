@@ -265,7 +265,10 @@ footer{padding:64px 0 28px;color:var(--dim2);font-size:14px;border-top:1px solid
 .fcol{display:flex;flex-direction:column;gap:10px}.fcol h4{margin:0 0 4px;color:var(--ink);font-size:14px;letter-spacing:.4px}
 .fcol a{color:var(--dim)}.fcol a:hover{color:var(--ink)}
 .fbrand p{margin:6px 0 0;max-width:260px}
-.fbottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px}
+.fbottom{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px}
+/* réseaux de DedCut (mêmes icônes en bas des tutos et du wiki : site/reseaux.cjs) */
+.social{display:flex;gap:10px;align-items:center}.social a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line2);background:var(--panel);color:var(--dim);transition:color .2s,border-color .2s,transform .2s}.social a:hover{color:var(--ink);border-color:var(--dim);transform:translateY(-2px)}.social svg{width:18px;height:18px}
+.fcol h4.sfol{margin:12px 0 2px}.fbottom .social{gap:8px}.fbottom .social a{width:32px;height:32px}.fbottom .social svg{width:15px;height:15px}
 footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;height:28px}
 
 /* apparition au défilement */
@@ -468,7 +471,7 @@ kbd{font:inherit;font-size:.85em;background:#05070a;border:1px solid var(--line2
   <section class="tsame"><h2>Bildschirmaufnahme</h2><ul><li><a href="/de/tutos/r-ecran.html">Bildschirm oder Spiel aufnehmen</a></li><li><a href="/de/tutos/r-cam.html">Webcam und Mikro hinzufügen</a></li></ul></section>
   <div class="tmore"><p>Deine Frage ist nicht dabei?</p><span><a class="lnk" href="/de/#questions">Zu den FAQ</a></span><a class="btn pri dl" href="https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe">DedCut herunterladen</a></div>
 </main>
-<footer><div class="wrap fbottom"><span>© 2026 ByKemi · DedCut</span><a href="/de/">Zur Startseite</a></div></footer>
+<footer><div class="wrap fbottom"><span>© 2026 ByKemi · DedCut</span><div class="social"><a href="https://github.com/Bykemi" target="_blank" rel="noopener me" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-3.1 19.1c.5.1.67-.21.67-.47v-1.7c-2.73.6-3.3-1.17-3.3-1.17-.45-1.13-1.1-1.43-1.1-1.43-.89-.61.07-.6.07-.6.98.07 1.5 1.01 1.5 1.01.88 1.5 2.3 1.07 2.86.82.09-.64.34-1.07.62-1.32-2.18-.25-4.47-1.09-4.47-4.85 0-1.07.38-1.95 1.01-2.64-.1-.25-.44-1.25.1-2.6 0 0 .82-.26 2.7 1a9.4 9.4 0 0 1 4.92 0c1.87-1.26 2.7-1 2.7-1 .53 1.35.2 2.35.1 2.6.62.69 1 1.57 1 2.64 0 3.77-2.3 4.6-4.48 4.84.35.3.67.9.67 1.82v2.7c0 .26.18.57.68.47A9.8 9.8 0 0 0 12 2.2z"/></svg></a><a href="https://www.instagram.com/dedcut/" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></a><a href="https://x.com/DedCutt" target="_blank" rel="noopener me" aria-label="X" title="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 3h3.1l-6.8 7.7L22 21h-6.3l-4.9-6.4L5.2 21H2.1l7.3-8.3L1.8 3h6.4l4.4 5.9zm-1.1 16.2h1.7L7.6 4.7H5.8z"/></svg></a></div><a href="/de/">Zur Startseite</a></div></footer>
 <script>
 const PAGE_LANG='de',SITE_LANGS=["fr","en","es","de","it","pt","ja","ko","zh"],langUrl=l=>(l==='fr'?'/':'/'+l+'/')+'tutos/r-scenes.html';
 document.getElementById('lang').value=PAGE_LANG;

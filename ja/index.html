@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://dedcut.com/assets/editor.webp">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DedCut","url":"https://dedcut.com/ja/","description":"DedCut は Windows 用の無料・オープンソースのソフト。透かしなしの動画編集、画面録画、YouTube・Twitch・TikTok へのライブ配信、写真編集、音楽制作を AI アシスタント付きで。アカウント不要、広告なし。","applicationCategory":"MultimediaApplication","operatingSystem":"Windows 10, Windows 11","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"downloadUrl":"https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe","license":"https://www.gnu.org/licenses/gpl-3.0.html","image":"https://dedcut.com/assets/editor.webp","author":{"@type":"Person","name":"ByKemi"},"inLanguage":["fr","en","es","de","it","pt","ja","ko","zh"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"DedCut","url":"https://dedcut.com/","logo":"https://dedcut.com/assets/icon-256.png","founder":{"@type":"Person","name":"ByKemi"},"sameAs":["https://x.com/DedCutt","https://github.com/Bykemi/dedcut-source","https://github.com/Bykemi"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"DedCut","url":"https://dedcut.com/","logo":"https://dedcut.com/assets/icon-256.png","founder":{"@type":"Person","name":"ByKemi"},"sameAs":["https://x.com/DedCutt","https://www.instagram.com/dedcut/","https://github.com/Bykemi/dedcut-source","https://github.com/Bykemi"]}</script>
 <link rel="icon" href="/assets/favicon.png">
 <script>/* thèmes de saison, classe sur <html> : hw = Halloween (1er octobre au 2 novembre), xm = Noël (1er décembre au 6 janvier) ; ?theme=halloween, ?theme=noel ou ?theme=aucun pour forcer */(function(){var d=new Date(),m=d.getMonth(),j=d.getDate(),t=m===9||(m===10&&j<=2)?'hw':m===11||(m===0&&j<=6)?'xm':'',q=/[?&]theme=(\w+)/.exec(location.search);if(q)t={halloween:'hw',noel:'xm'}[q[1]]||'';if(t)document.documentElement.classList.add(t)})()</script>
 <style>
@@ -269,7 +269,10 @@ footer{padding:64px 0 28px;color:var(--dim2);font-size:14px;border-top:1px solid
 .fcol{display:flex;flex-direction:column;gap:10px}.fcol h4{margin:0 0 4px;color:var(--ink);font-size:14px;letter-spacing:.4px}
 .fcol a{color:var(--dim)}.fcol a:hover{color:var(--ink)}
 .fbrand p{margin:6px 0 0;max-width:260px}
-.fbottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px}
+.fbottom{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px}
+/* réseaux de DedCut (mêmes icônes en bas des tutos et du wiki : site/reseaux.cjs) */
+.social{display:flex;gap:10px;align-items:center}.social a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line2);background:var(--panel);color:var(--dim);transition:color .2s,border-color .2s,transform .2s}.social a:hover{color:var(--ink);border-color:var(--dim);transform:translateY(-2px)}.social svg{width:18px;height:18px}
+.fcol h4.sfol{margin:12px 0 2px}.fbottom .social{gap:8px}.fbottom .social a{width:32px;height:32px}.fbottom .social svg{width:15px;height:15px}
 footer .brand{font-size:18px;color:var(--ink)}footer .brand img{width:28px;height:28px}
 
 /* apparition au défilement */
@@ -736,10 +739,12 @@ html.xm{--cyan:#fbbf24;--grad:linear-gradient(120deg,#f43f5e,#7c3aed)}
     <div class="fcol fbrand">
       <a href="#" class="brand"><img src="/assets/logo.svg" alt="" width="28" height="28"><span>Ded<b>Cut</b></span></a>
       <p data-i18n="foot.by">企画・開発：ByKemi</p>
+      <h4 class="sfol" data-i18n="foot.follow">DedCut をフォロー</h4>
+      <div class="social"><a href="https://github.com/Bykemi" target="_blank" rel="noopener me" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-3.1 19.1c.5.1.67-.21.67-.47v-1.7c-2.73.6-3.3-1.17-3.3-1.17-.45-1.13-1.1-1.43-1.1-1.43-.89-.61.07-.6.07-.6.98.07 1.5 1.01 1.5 1.01.88 1.5 2.3 1.07 2.86.82.09-.64.34-1.07.62-1.32-2.18-.25-4.47-1.09-4.47-4.85 0-1.07.38-1.95 1.01-2.64-.1-.25-.44-1.25.1-2.6 0 0 .82-.26 2.7 1a9.4 9.4 0 0 1 4.92 0c1.87-1.26 2.7-1 2.7-1 .53 1.35.2 2.35.1 2.6.62.69 1 1.57 1 2.64 0 3.77-2.3 4.6-4.48 4.84.35.3.67.9.67 1.82v2.7c0 .26.18.57.68.47A9.8 9.8 0 0 0 12 2.2z"/></svg></a><a href="https://www.instagram.com/dedcut/" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></a><a href="https://x.com/DedCutt" target="_blank" rel="noopener me" aria-label="X" title="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 3h3.1l-6.8 7.7L22 21h-6.3l-4.9-6.4L5.2 21H2.1l7.3-8.3L1.8 3h6.4l4.4 5.9zm-1.1 16.2h1.7L7.6 4.7H5.8z"/></svg></a></div>
     </div>
     <div class="fcol"><h4 data-i18n="foot.product">製品</h4><a href="#espaces" data-i18n="nav.spaces">スペース</a><a href="#fonctions" data-i18n="nav.features">機能</a><a href="#assistant" data-i18n="nav.ai">AI アシスタント</a><a class="dl" href="https://github.com/Bykemi/DedCut-mises-a-jour/releases/latest/download/DedCut-Installation.exe" data-i18n="nav.dl">ダウンロード</a></div>
     <div class="fcol"><h4 data-i18n="foot.help">ヘルプ</h4><a href="/ja/tutos.html" data-i18n="tu.eyebrow">チュートリアル</a><a href="/ja/wiki/">Wiki</a><a href="#installation" data-i18n="in.eyebrow">インストール</a><a href="#questions" data-i18n="nav.faq">よくある質問</a><a href="#vie-privee" data-i18n="nav.privacy">プライバシー</a><a class="buglink" href="#q-beta" data-i18n="bug.site">不具合を報告</a><a href="https://github.com/Bykemi/dedcut-source" target="_blank" rel="noopener" data-i18n="foot.code">ソースコード</a></div>
-    <div class="fcol"><h4 data-i18n="foot.project">プロジェクト</h4><a href="#soutenir" data-i18n="nav.don">応援する</a><a href="https://github.com/Bykemi/DedCut-mises-a-jour/releases" target="_blank" rel="noopener" data-i18n="foot.versions">すべてのバージョン</a><a href="https://x.com/DedCutt" target="_blank" rel="noopener me">X (@DedCutt)</a></div>
+    <div class="fcol"><h4 data-i18n="foot.project">プロジェクト</h4><a href="#soutenir" data-i18n="nav.don">応援する</a><a href="https://github.com/Bykemi/DedCut-mises-a-jour/releases" target="_blank" rel="noopener" data-i18n="foot.versions">すべてのバージョン</a></div>
   </div>
   <div class="wrap fbottom"><span>© 2026 ByKemi · DedCut</span><span data-i18n="foot.lic">サードパーティ製コンポーネントとライセンス：インストールフォルダーの LICENCES-TIERS.txt。</span></div>
 </footer>
@@ -838,6 +843,14 @@ Object.assign(L.pt,{"xm.pill":"Boas festas! Edite seus vídeos de Natal de graç
 Object.assign(L.ja,{"xm.pill":"ハッピーホリデー！クリスマスの動画も無料で編集しよう"});
 Object.assign(L.ko,{"xm.pill":"즐거운 연말 보내세요! 크리스마스 영상도 무료로 편집하세요"});
 Object.assign(L.zh,{"xm.pill":"节日快乐！免费剪辑你的圣诞视频"});
+Object.assign(L.en,{"foot.follow":"Follow DedCut"});
+Object.assign(L.es,{"foot.follow":"Sigue a DedCut"});
+Object.assign(L.de,{"foot.follow":"DedCut folgen"});
+Object.assign(L.it,{"foot.follow":"Segui DedCut"});
+Object.assign(L.pt,{"foot.follow":"Siga o DedCut"});
+Object.assign(L.ja,{"foot.follow":"DedCut をフォロー"});
+Object.assign(L.ko,{"foot.follow":"DedCut 팔로우"});
+Object.assign(L.zh,{"foot.follow":"关注 DedCut"});
 const FR_MQ=["Montage vidéo","Live multi-plateforme","Retouche photo","Création musicale","Studio d'enregistrement","Sous-titres automatiques","180+ icônes animées","Assistant IA","82 musiques libres","Export jusqu'à la 4K","9 langues","Mises à jour automatiques"];
 let CUR=null;const FR={'vid.play':'Lecture','vid.alt':'Vidéo de présentation de DedCut','vid.mute':'Couper le son'};document.querySelectorAll('[data-i18n]').forEach(e=>FR[e.dataset.i18n]=e.textContent);document.querySelectorAll('[data-i18n-alt]').forEach(e=>FR[e.dataset.i18nAlt]=e.alt);document.querySelectorAll('[data-i18n-html]').forEach(e=>FR[e.dataset.i18nHtml]=e.innerHTML);
 FR.title=document.title;FR.desc=document.querySelector('meta[name=description]').content;
